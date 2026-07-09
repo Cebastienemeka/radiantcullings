@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Radiant Cullings - Empowering People. Transforming Businesses. Driving Innovation.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Radiant Cullings - Technology Consulting & Professional Development</title>
+
+    <link rel="icon" href="img/core-img/radiant_cullings.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/custom-override.css">
+    <style>
+        /* ===== TRUST BAR - BIGGER VERSION ===== */
+        .ve-trust-bar {
+            background: #f8faff;
+            padding: 25px 0;
+            border-top: 2px solid rgba(37, 117, 171, 0.1);
+            border-bottom: 2px solid rgba(37, 117, 171, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ve-trust-inner {
+            display: flex;
+            gap: 50px;
+            animation: scrollTrust 30s linear infinite;
+            white-space: nowrap;
+            align-items: center;
+        }
+
+        .ve-trust-inner span {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a3a4a;
+            letter-spacing: 0.5px;
+            padding: 0 10px;
+        }
+
+        /* Trust Icon Styles - for image icons */
+        .trust-icon {
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            vertical-align: middle;
+            border-radius: 10px;
+            /* filter: brightness(0) saturate(100%) invert(27%) sepia(67%) saturate(1000%) hue-rotate(180deg) brightness(95%); */
+        }
+
+        /* Or if you want colored icons without filter */
+        .trust-icon-color {
+            width: 32px;
+            height: 32px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        /* Marquee Animation */
+        @keyframes scrollTrust {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Pause animation on hover */
+        .ve-trust-bar:hover .ve-trust-inner {
+            animation-play-state: paused;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .ve-trust-bar {
+                padding: 18px 0;
+            }
+            
+            .ve-trust-inner {
+                gap: 30px;
+                animation-duration: 25s;
+            }
+            
+            .ve-trust-inner span {
+                font-size: 15px;
+                gap: 10px;
+            }
+            
+            .trust-icon {
+                width: 26px;
+                height: 26px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .ve-trust-inner span {
+                font-size: 13px;
+                gap: 8px;
+            }
+            
+            .trust-icon {
+                width: 22px;
+                height: 22px;
+            }
+        }
+
+        /* ===== TECHNOLOGY SERVICES SECTION ===== */
+        .ve-tech-services-section {
+            padding: 80px 0;
+            background: #f8faff;
+        }
+
+        .ve-tech-services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        /* ===== TECH CARD ===== */
+        .ve-tech-card {
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+        }
+
+        .ve-tech-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 70px rgba(37, 117, 171, 0.12);
+        }
+
+        /* Card Image */
+        .ve-tech-card-image {
+            position: relative;
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+            background: #e9f0f5;
+        }
+
+        .ve-tech-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .ve-tech-card:hover .ve-tech-card-image img {
+            transform: scale(1.08);
+        }
+
+        /* Price Badge */
+        .ve-tech-price {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            background: linear-gradient(135deg, #2575AB, #1a5a7a);
+            color: #ffffff;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 700;
+            box-shadow: 0 4px 20px rgba(37, 117, 171, 0.3);
+            letter-spacing: 0.5px;
+            z-index: 2;
+            animation: pulseBadge 2s ease-in-out infinite;
+        }
+
+        /* Image Overlay */
+        .ve-tech-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(37, 117, 171, 0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 3;
+        }
+
+        .ve-tech-card:hover .ve-tech-overlay {
+            opacity: 1;
+        }
+
+        .ve-tech-overlay-btn {
+            display: inline-block;
+            padding: 14px 36px;
+            background: #ffffff;
+            color: #2575AB;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            transform: translateY(20px);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .ve-tech-card:hover .ve-tech-overlay-btn {
+            transform: translateY(0);
+        }
+
+        .ve-tech-overlay-btn:hover {
+            background: #ED948C;
+            color: #ffffff;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(237, 148, 140, 0.4);
+        }
+
+        /* Card Body */
+        .ve-tech-card-body {
+            padding: 25px 28px 30px;
+            position: relative;
+        }
+
+        /* Icon */
+        .ve-tech-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2575AB, #1a5a7a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: -45px;
+            margin-bottom: 18px;
+            box-shadow: 0 8px 25px rgba(37, 117, 171, 0.25);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .ve-tech-card:hover .ve-tech-icon {
+            transform: rotate(360deg) scale(1.1);
+            background: linear-gradient(135deg, #ED948C, #d97a72);
+        }
+
+        .ve-tech-icon i {
+            color: #ffffff;
+            font-size: 28px;
+        }
+
+        /* Card Title */
+        .ve-tech-card-body h4 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0f2a38;
+            margin-bottom: 12px;
+            transition: color 0.3s ease;
+        }
+
+        .ve-tech-card:hover .ve-tech-card-body h4 {
+            color: #2575AB;
+        }
+
+        /* Card Description */
+        .ve-tech-card-body p {
+            font-size: 15px;
+            color: #5a7a8a;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        /* Card Link */
+        .ve-tech-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #2575AB;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .ve-tech-link i {
+            transition: transform 0.3s ease;
+            font-size: 14px;
+        }
+
+        .ve-tech-link:hover {
+            color: #ED948C;
+        }
+
+        .ve-tech-link:hover i {
+            transform: translateX(8px);
+        }
+
+        /* ===== VIEW ALL SERVICES BUTTON ===== */
+        .ve-tech-btn-wrap {
+            margin-top: 55px;
+        }
+
+        .ve-btn-tech {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 18px 45px;
+            /* background: linear-gradient(135deg, #2575AB, #1a5a7a); */
+            background: #ED948C;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 8px 35px rgba(37, 117, 171, 0.3);
+            letter-spacing: 0.5px;
+        }
+
+        .ve-btn-tech:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 20px 50px rgba(237, 148, 140, 0.35);
+            color: #ffffff;
+            background: linear-gradient(135deg, #ED948C, #d97a72);
+        }
+
+        /* Button Shine */
+        .ve-btn-tech::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent 30%,
+                rgba(255, 255, 255, 0.15) 50%,
+                transparent 70%
+            );
+            transform: rotate(45deg) translateX(-100%);
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .ve-btn-tech:hover::before {
+            transform: rotate(45deg) translateX(100%);
+        }
+
+        .ve-btn-tech i {
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            font-size: 20px;
+        }
+
+        .ve-btn-tech:hover i {
+            transform: translateX(10px) scale(1.1);
+        }
+
+        .ve-btn-tech span {
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .ve-btn-tech:hover span {
+            transform: scale(1.05);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .ve-tech-services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .ve-tech-services-section {
+                padding: 50px 0;
+            }
+            
+            .ve-tech-services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                max-width: 450px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .ve-tech-card-image {
+                height: 180px;
+            }
+            
+            .ve-tech-price {
+                font-size: 14px;
+                padding: 6px 16px;
+                top: 14px;
+                right: 14px;
+            }
+            
+            .ve-tech-card-body {
+                padding: 20px 22px 25px;
+            }
+            
+            .ve-tech-icon {
+                width: 50px;
+                height: 50px;
+                margin-top: -38px;
+            }
+            
+            .ve-tech-icon i {
+                font-size: 22px;
+            }
+            
+            .ve-tech-card-body h4 {
+                font-size: 18px;
+            }
+            
+            .ve-btn-tech {
+                padding: 14px 32px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .ve-tech-card-image {
+                height: 150px;
+            }
+            
+            .ve-tech-price {
+                font-size: 12px;
+                padding: 4px 12px;
+            }
+            
+            .ve-btn-tech {
+                padding: 12px 24px;
+                font-size: 14px;
+                gap: 10px;
+            }
+            
+            .ve-btn-tech i {
+                font-size: 16px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="lds-ellipsis">
+            <div style="background-color: #2575AB;"></div>
+            <div style="background-color: #2575AB;"></div>
+            <div style="background-color: #2575AB;"></div>
+            <div style="background-color: #2575AB;"></div>
+        </div>
+    </div>
+
+    <!-- ===== NAVBAR (single dark bar, logo left, nav center, CTA right) ===== -->
+    <header class="ve-header" id="ve-sticky">
+        <div class="container-fluid ve-nav-wrap" style="background-color: #2575AB;">
+            <!-- Logo -->
+            <div class="ve-logo">
+                <a href="index.html">
+                    <img src="img/core-img/radiant_cullings.png" alt="Radiant Cullings Logo" class="ve-logo-img" style="max-width: 120px;">
+                </a>
+            </div>
+
+            <!-- Nav Links -->
+            <nav class="ve-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li class="has-drop">
+                        <a href="about.html">About <i class="fa fa-angle-down"></i></a>
+                        <ul class="ve-dropdown">
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="services.html">Our Services</a></li>
+                            <li><a href="portfolio.html">Portfolio</a></li>
+                            <li><a href="products.html">Products</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-drop">
+                        <a href="services.html">Services <i class="fa fa-angle-down"></i></a>
+                        <ul class="ve-dropdown">
+                            <li><a href="services.html#training">Technology Training</a></li>
+                            <li><a href="services.html#consulting">Technology Consulting</a></li>
+                            <li><a href="services.html#cybersecurity">Cybersecurity Services</a></li>
+                            <li><a href="services.html#project">Project Management</a></li>
+                            <li><a href="services.html#digital">Digital Transformation</a></li>
+                            <li><a href="services.html#advisory">Business Technology Advisory</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-drop">
+                        <a href="#">Solutions <i class="fa fa-angle-down"></i></a>
+                        <ul class="ve-dropdown">
+                            <li><a href="#">Workforce Digital Skills</a></li>
+                            <li><a href="#">Cybersecurity Readiness</a></li>
+                            <li><a href="#">IT Strategy Development</a></li>
+                            <li><a href="#">Project Planning & Delivery</a></li>
+                            <li><a href="#">Business Process Improvement</a></li>
+                            <li><a href="#">Digital Workplace Enablement</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="insights.html">Insights</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- CTA -->
+            <div class="ve-nav-cta">
+                <a href="contact.html" class="ve-cta-btn text-white">Get Started <i class="fa fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button class="ve-toggler" id="ve-toggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="ve-mobile-menu" id="ve-mobile-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="#">Solutions</a></li>
+                <li><a href="insights.html">Insights</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- ===== HERO: Split layout — left text, right image panel ===== -->
+    <section class="ve-hero">
+        <!-- Left Panel -->
+        <div class="ve-hero-left">
+            <span class="ve-hero-badge">Empowering People. Transforming Businesses. Driving Innovation.</span>
+            <h1>Welcome to <span class="ve-highlight">Radiant Cullings</span></h1>
+            <p>Where technology meets excellence. We help individuals, organizations, and institutions thrive in today's digital economy through innovative technology solutions, professional training, cybersecurity services, AI Training, project management expertise, and strategic consulting.</p>
+            <div class="ve-hero-btns">
+                <a href="services.html" class="ve-btn-primary text-white">Explore Services</a>
+                <a href="about.html" class="ve-btn-ghost">Learn More</a>
+            </div>
+            <!-- Quick Stats Row -->
+            <div class="ve-hero-stats">
+                <div class="ve-stat">
+                    <strong>500+</strong>
+                    <span>Clients Served</span>
+                </div>
+                <div class="ve-stat-divider"></div>
+                <div class="ve-stat">
+                    <strong>98%</strong>
+                    <span>Satisfaction Rate</span>
+                </div>
+                <div class="ve-stat-divider"></div>
+                <div class="ve-stat">
+                    <strong class>10+</strong>
+                    <span>Years Experience</span>
+                </div>
+            </div>
+        </div>
+        <!-- Right Panel: overlapping image cards -->
+        <div class="ve-hero-right">
+            <div class="ve-hero-img-main bg-img" style="background-image:url(img/bg-img/rad3.png);"></div>
+            <!-- <div class="ve-hero-img-accent bg-img" style="background-image:url(img/bg-img/3.jpg);"></div> -->
+            <!-- Floating card -->
+            <!-- <div class="ve-float-card">
+                <i class="fa fa-line-chart"></i>
+                <div>
+                    <strong>Innovation</strong>
+                    <span>Driving Digital Excellence</span>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- ===== MARQUEE TRUST BAR ===== -->
+    <!-- <div class="ve-trust-bar" style="background-color: #ED948C;"> -->
+    <div class="ve-trust-bar">
+        <div class="ve-trust-inner">
+            <span>
+                Our Partners
+            </span>
+            <span>
+                <img src="./img/bg-img/mtn.png" alt="Cybersecurity Excellence" class="trust-icon">
+                mtn
+            </span>
+            <span>
+                <img src="./img/bg-img/zenith.png" alt="Industry Certified" class="trust-icon">
+                zenith
+            </span>
+            <span>
+                <img src="./img/bg-img/alx.png" alt="500+ Clients Worldwide" class="trust-icon">
+                alx
+            </span>
+            <span>
+                <img src="./img/bg-img/genesis.jpg" alt="Data Protection" class="trust-icon">
+                genesis
+            </span>
+            <span>
+                <img src="./img/bg-img/microsoft.png" alt="Award Winning Training" class="trust-icon">
+                microsoft
+            </span>
+            
+        </div>  
+    </div>
+
+    <!-- ===== TECHNOLOGY SERVICES SECTION ===== -->
+    <section class="ve-section ve-tech-services-section">
+        <div class="container">
+            <div class="ve-section-header text-center">
+                <span class="ve-section-tag">Our Expertise</span>
+                <h2>Technology <span>Services</span></h2>
+                <p>Practical, industry-focused training and consulting services designed to equip you with in-demand digital skills.</p>
+            </div>
+            <div class="ve-tech-services-grid">
+                <!-- Service 1: Technology Training -->
+                <div class="ve-tech-card wow fadeInUp" data-wow-delay="100ms">
+                    <div class="ve-tech-card-image">
+                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=400&fit=crop" alt="Technology Training">
+                        <div class="ve-tech-price">₦150,000</div>
+                        <div class="ve-tech-overlay">
+                            <a href="services.html#training" class="ve-tech-overlay-btn">Explore</a>
+                        </div>
+                    </div>
+                    <div class="ve-tech-card-body">
+                        <div class="ve-tech-icon"><i class="icon-profits"></i></div>
+                        <h4>Technology Training</h4>
+                        <p>Cybersecurity, Data Analysis, AI Training, Project Management, Ui/Ux, Graphic Design, Video Editing, Software Development, and more.</p>
+                        <a href="services.html#training" class="ve-tech-link">Learn more <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 2: Technology Consulting -->
+                <div class="ve-tech-card wow fadeInUp" data-wow-delay="200ms">
+                    <div class="ve-tech-card-image">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop" alt="Technology Consulting">
+                        <div class="ve-tech-price">₦200,000</div>
+                        <div class="ve-tech-overlay">
+                            <a href="services.html#consulting" class="ve-tech-overlay-btn">Explore</a>
+                        </div>
+                    </div>
+                    <div class="ve-tech-card-body">
+                        <div class="ve-tech-icon"><i class="icon-money-1"></i></div>
+                        <h4>Technology Consulting</h4>
+                        <p>Make informed technology decisions, improve operational efficiency, and implement solutions that support sustainable business growth.</p>
+                        <a href="services.html#consulting" class="ve-tech-link">Learn more <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 3: Cybersecurity -->
+                <div class="ve-tech-card wow fadeInUp" data-wow-delay="300ms">
+                    <div class="ve-tech-card-image">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop" alt="Cybersecurity Services">
+                        <div class="ve-tech-price">₦250,000</div>
+                        <div class="ve-tech-overlay">
+                            <a href="services.html#cybersecurity" class="ve-tech-overlay-btn">Explore</a>
+                        </div>
+                    </div>
+                    <div class="ve-tech-card-body">
+                        <div class="ve-tech-icon"><i class="icon-coin"></i></div>
+                        <h4>Cybersecurity Services</h4>
+                        <p>Protect your digital assets with cybersecurity awareness, training, security assessments, risk management, and policy development.</p>
+                        <a href="services.html#cybersecurity" class="ve-tech-link">Learn more <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- View All Services Button -->
+            <div class="ve-tech-btn-wrap text-center wow fadeInUp" data-wow-delay="400ms">
+                <a href="services.html" class="ve-btn-tech">
+                    <span>View All Services</span>
+                    <i class="fa fa-arrow-right"></i>
+                </a>
+
+                <!-- <div class="ve-tech-btn-wrap text-center wow fadeInUp" data-wow-delay="400ms">
+                    <div class="ve-nav-cta">
+                        <a href="contact.html" class="ve-cta-btn">View All Services <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHY US (two-column: image left, content right) ===== -->
+    <section class="ve-section ve-whyus-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Image Side -->
+                <div class="col-12 col-lg-5">
+                    <div class="ve-whyus-img-wrap wow fadeInLeft" data-wow-delay="100ms">
+                        <div class="ve-whyus-img-main bg-img" style="background-image:url(img/bg-img/5.jpg);"></div>
+                        <div class="ve-whyus-badge">
+                            <strong>10+</strong>
+                            <span>Years of Excellence</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Content Side -->
+                <div class="col-12 col-lg-7 wow fadeInRight" data-wow-delay="200ms">
+                    <div class="ve-whyus-content">
+                        <span class="ve-section-tag">About Us</span>
+                        <h2>Who We <span>Are</span></h2>
+                        <p>Radiant Cullings is a technology consulting and professional development firm dedicated to empowering individuals and organizations with the knowledge, tools, and strategies needed to succeed in an ever-evolving digital world.</p>
+                        <p>We combine technical expertise with practical experience to deliver innovative solutions that improve productivity, enhance security, strengthen project delivery, and build future-ready professionals.</p>
+                        <div class="ve-checklist">
+                            <div class="ve-check-item">
+                                <i class="fa fa-check-circle"></i>
+                                <div><strong>Our Mission</strong><p>To empower individuals and organizations through technology, innovation, and continuous learning.</p></div>
+                            </div>
+                            <div class="ve-check-item">
+                                <i class="fa fa-check-circle"></i>
+                                <div><strong>Our Vision</strong><p>To become a trusted leader in technology consulting, professional training, and digital transformation across Africa and beyond.</p></div>
+                            </div>
+                            <div class="ve-check-item">
+                                <i class="fa fa-check-circle"></i>
+                                <div><strong>Core Values</strong><p>Excellence · Innovation · Integrity · Professionalism · Collaboration · Continuous Learning · Customer Success</p></div>
+                            </div>
+                        </div>
+                        <a href="about.html" class="ve-btn-primary mt-30 text-white">Discover Our Story</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== COUNTERS ===== -->
+    <section class="ve-counter-section">
+        <div class="container">
+            <div class="ve-counter-grid">
+                <div class="ve-counter-item wow fadeInUp" data-wow-delay="100ms">
+                    <i class="fa fa-users"></i>
+                    <strong class="counter" data-count="500">0</strong><span>+</span>
+                    <p>Clients Served</p>
+                </div>
+                <div class="ve-counter-item wow fadeInUp" data-wow-delay="200ms">
+                    <i class="fa fa-briefcase"></i>
+                    <strong class="counter" data-count="50">0</strong><span>+</span>
+                    <p>Training Programs</p>
+                </div>
+                <div class="ve-counter-item wow fadeInUp" data-wow-delay="300ms">
+                    <i class="fa fa-globe"></i>
+                    <strong class="counter" data-count="10">0</strong><span>+</span>
+                    <p>Countries Served</p>
+                </div>
+                <div class="ve-counter-item wow fadeInUp" data-wow-delay="400ms">
+                    <i class="fa fa-trophy"></i>
+                    <strong class="counter" data-count="98">0</strong><span>%</span>
+                    <p>Satisfaction Rate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== INDUSTRIES ===== -->
+    <section class="ve-section ve-services-section">
+        <div class="container">
+            <div class="ve-section-header text-center">
+                <span class="ve-section-tag">Industries We Serve</span>
+                <h2>Trusted Across <span>Sectors</span></h2>
+                <p>Radiant Cullings serves clients across multiple sectors, delivering solutions that deliver measurable impact.</p>
+            </div>
+            <div class="ve-services-grid">
+                <div class="ve-service-card wow fadeInUp" data-wow-delay="100ms">
+                    <div class="ve-service-icon"><i class="icon-profits"></i></div>
+                    <h4>Government</h4>
+                    <p>Digital transformation, cybersecurity, and capacity building for public sector organizations.</p>
+                </div>
+                <div class="ve-service-card wow fadeInUp" data-wow-delay="200ms">
+                    <div class="ve-service-icon"><i class="icon-money-1"></i></div>
+                    <h4>Education</h4>
+                    <p>Technology training, digital literacy, and e-learning solutions for educational institutions.</p>
+                </div>
+                <div class="ve-service-card wow fadeInUp" data-wow-delay="300ms">
+                    <div class="ve-service-icon"><i class="icon-coin"></i></div>
+                    <h4>Financial Services</h4>
+                    <p>Cybersecurity, data analysis, and technology consulting for banks and financial institutions.</p>
+                </div>
+                <div class="ve-service-card wow fadeInUp" data-wow-delay="400ms">
+                    <div class="ve-service-icon"><i class="icon-smartphone-1"></i></div>
+                    <h4>Healthcare</h4>
+                    <p>Digital health solutions, data management, and technology advisory for healthcare providers.</p>
+                </div>
+                <div class="ve-service-card wow fadeInUp" data-wow-delay="500ms">
+                    <div class="ve-service-icon"><i class="icon-diamond"></i></div>
+                    <h4>Oil & Gas</h4>
+                    <p>Technology consulting, project management, and digital transformation for the energy sector.</p>
+                </div>
+                <div class="ve-service-card wow fadeInUp" data-wow-delay="600ms">
+                    <div class="ve-service-icon"><i class="icon-piggy-bank"></i></div>
+                    <h4>SMEs & Startups</h4>
+                    <p>Technology adoption, business process improvement, and capacity building for small businesses.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="ve-section ve-testimonials-section">
+        <div class="container">
+            <div class="ve-section-header text-center">
+                <span class="ve-section-tag">Client Stories</span>
+                <h2>What Our Clients <span>Say</span></h2>
+            </div>
+            <div class="ve-testi-grid">
+                <div class="ve-testi-card wow fadeInUp" data-wow-delay="100ms">
+                    <div class="ve-testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>"Radiant Cullings transformed our organization's digital capabilities. Their training programs are practical, hands-on, and immediately applicable."</p>
+                    <div class="ve-testi-author">
+                        <div class="ve-testi-avatar bg-img" style="background-image:url(img/bg-img/32.jpg);"></div>
+                        <div><strong>Alex Morgan</strong><span>CEO, TechCorp</span></div>
+                    </div>
+                </div>
+                <div class="ve-testi-card wow fadeInUp" data-wow-delay="250ms">
+                    <div class="ve-testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>"The cybersecurity assessment and training provided by Radiant Cullings significantly improved our security posture. Highly recommended!"</p>
+                    <div class="ve-testi-author">
+                        <div class="ve-testi-avatar bg-img" style="background-image:url(img/bg-img/33.jpg);"></div>
+                        <div><strong>Sarah Patel</strong><span>IT Director, SecureBank</span></div>
+                    </div>
+                </div>
+                <div class="ve-testi-card wow fadeInUp" data-wow-delay="400ms">
+                    <div class="ve-testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>"Their project management expertise helped us deliver our complex digital transformation project on time and within budget."</p>
+                    <div class="ve-testi-author">
+                        <div class="ve-testi-avatar bg-img" style="background-image:url(img/bg-img/14.jpg);"></div>
+                        <div><strong>James Liu</strong><span>Project Lead, GlobalCorp</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TRAINING MODE ===== -->
+    <section class="ve-cta-banner bg-img" style="background-image:url(img/bg-img/rad5.png);">
+        <div class="ve-cta-overlay"></div>
+        <div class="container ve-cta-content">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-8">
+                    <h2>Hybrid Training <span>Mode</span></h2>
+                    <p>We offer training both in physical class and online class (Hybrid Class). Flexible learning options for your convenience.</p>
+                </div>
+                <div class="col-12 col-lg-4 text-lg-right">
+                    <a href="contact.html" class="ve-btn-white">Enroll Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LATEST INSIGHTS ===== -->
+    <section class="ve-section ve-insights-section">
+        <div class="container">
+            <div class="ve-section-header text-center">
+                <span class="ve-section-tag">Insights</span>
+                <h2>Ideas That Inspire <span>Innovation</span></h2>
+                <p>Expert perspectives on emerging technologies, AI, cybersecurity, project management, digital transformation, and more.</p>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-4 wow fadeInUp" data-wow-delay="100ms">
+                    <div class="ve-insight-card">
+                        <div class="ve-insight-img bg-img" style="background-image:url(img/bg-img/10.jpg);"></div>
+                        <div class="ve-insight-body">
+                            <span class="ve-insight-cat">AI</span>
+                            <h5><a href="single-post.html">The Future of Artificial Intelligence in Business</a></h5>
+                            <p>Explore how AI is transforming industries and creating new opportunities for innovation.</p>
+                            <div class="ve-insight-meta">
+                                <span><i class="fa fa-calendar"></i> April 26</span>
+                                <a href="single-post.html">Read More <i class="fa fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 wow fadeInUp" data-wow-delay="250ms">
+                    <div class="ve-insight-card">
+                        <div class="ve-insight-img bg-img" style="background-image:url(img/bg-img/11.jpg);"></div>
+                        <div class="ve-insight-body">
+                            <span class="ve-insight-cat">Cybersecurity</span>
+                            <h5><a href="single-post.html">Building Cyber Resilience in 2025</a></h5>
+                            <p>Best practices for protecting your organization against evolving cyber threats.</p>
+                            <div class="ve-insight-meta">
+                                <span><i class="fa fa-calendar"></i> April 20</span>
+                                <a href="single-post.html">Read More <i class="fa fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 wow fadeInUp" data-wow-delay="400ms">
+                    <div class="ve-insight-card">
+                        <div class="ve-insight-img bg-img" style="background-image:url(img/bg-img/12.jpg);"></div>
+                        <div class="ve-insight-body">
+                            <span class="ve-insight-cat">Digital Transformation</span>
+                            <h5><a href="single-post.html">Digital Transformation: A Strategic Guide</a></h5>
+                            <p>Key strategies for successful digital transformation in today's competitive landscape.</p>
+                            <div class="ve-insight-meta">
+                                <span><i class="fa fa-calendar"></i> April 14</span>
+                                <a href="single-post.html">Read More <i class="fa fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NEWSLETTER ===== -->
+    <!-- <section class="ve-newsletter-section" style="background: #5fa0cb !important;">
+        <div class="container">
+            <div class="ve-newsletter-wrap">
+                <div class="ve-nl-left">
+                    <i class="fa fa-envelope-o"></i>
+                    <div>
+                        <h3>Stay Informed</h3>
+                        <p>Weekly insights, tips, and updates on technology, innovation, and professional development.</p>
+                    </div>
+                </div>
+                <div class="ve-nl-right">
+                    <form class="ve-nl-form" action="#" method="post">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- ===== FOOTER (dark, 4-column) ===== -->
+    <footer class="ve-footer">
+        <div class="container">
+            <div class="row">
+                <!-- Col 1: Brand -->
+                <div class="col-12 col-sm-6 col-lg-4 mb-50">
+                    <div class="ve-footer-brand">
+                        <a href="index.html" class="ve-footer-logo">
+                            <img src="img/core-img/radiant_cullings.png" alt="Radiant Cullings" style="max-width: 120px;">
+                        </a>
+                        <p>Empowering People. Transforming Businesses. Driving Innovation.</p>
+                        <div class="ve-social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Col 2: Quick Links -->
+                <div class="col-12 col-sm-6 col-lg-2 mb-50">
+                    <h5 class="ve-footer-title">Quick Links</h5>
+                    <ul class="ve-footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="insights.html">Insights</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Col 3: Services -->
+                <div class="col-12 col-sm-6 col-lg-3 mb-50">
+                    <h5 class="ve-footer-title">Our Services</h5>
+                    <ul class="ve-footer-links">
+                        <li><a href="services.html#training">Technology Training</a></li>
+                        <li><a href="services.html#consulting">Technology Consulting</a></li>
+                        <li><a href="services.html#cybersecurity">Cybersecurity</a></li>
+                        <li><a href="services.html#project">Project Management</a></li>
+                        <li><a href="services.html#digital">Digital Transformation</a></li>
+                        <li><a href="services.html#advisory">Business Advisory</a></li>
+                    </ul>
+                </div>
+                <!-- Col 4: Contact -->
+                <div class="col-12 col-sm-6 col-lg-3 mb-50">
+                    <h5 class="ve-footer-title">Contact Us</h5>
+                    <ul class="ve-footer-contact">
+                        <li><i class="fa fa-map-marker"></i> Ikeja, Lagos, Nigeria</li>
+                        <li><i class="fa fa-map-marker"></i> 17 Romoke Complex, Igodo Rd, Magboro, Ogun State</li>
+                        <li><i class="fa fa-phone"></i> +234 8146710908, +234 7037403162</li>
+                        <li><i class="fa fa-envelope"></i> info@radiantcullings.com</li>
+                        <li><i class="fa fa-clock-o"></i> Mon–Fri, 9am – 6pm</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom Bar -->
+        <div class="ve-footer-bottom">
+            <div class="container">
+                <div class="ve-footer-bottom-inner">
+                    <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> Radiant Cullings. All Rights Reserved.</p>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="js/bootstrap/popper.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/plugins/plugins.js"></script>
+    <script src="js/active.js"></script>
+    <script src="js/vaultedge.js"></script>
+</body>
+</html>
