@@ -1,0 +1,3698 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Explore practical technology courses from Radiant Cullings, available through physical, online, and hybrid classes."
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Courses — Radiant Cullings</title>
+    <link rel="icon" href="img/core-img/radiant_cullings.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/custom-override.css" />
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("darkMode") === "enabled")
+            document.documentElement.classList.add("dark-theme-loading");
+        } catch (e) {}
+      })();
+    </script>
+    <style>
+      :root {
+        --b: #2575ab;
+        --bd: #164f73;
+        --p: #ed948c;
+        --pd: #d97a72;
+        --ink: #102f40;
+        --muted: #617b89;
+        --soft: #f4f8fb;
+        --white: #fff;
+        --border: rgba(37, 117, 171, 0.12);
+        --shadow: 0 18px 55px rgba(20, 62, 86, 0.1);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: #fff;
+        color: var(--ink);
+        transition: 0.35s;
+      }
+
+      html.dark-theme-loading body {
+        background: #11111f;
+      }
+
+      body.rc-modal-open {
+        overflow: hidden;
+      }
+
+      button,
+      input {
+        font: inherit;
+      }
+
+      .dark-mode-toggle {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        margin-left: 12px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.14);
+        color: #fff;
+        font-size: 19px;
+        cursor: pointer;
+        overflow: hidden;
+        transition: 0.3s;
+      }
+
+      .dark-mode-toggle:hover {
+        background: rgba(255, 255, 255, 0.25);
+        transform: translateY(-2px);
+      }
+
+      .dark-mode-toggle i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transition: 0.35s;
+      }
+
+      .dark-mode-toggle .fa-moon-o {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
+
+      .dark-mode-toggle .fa-sun-o {
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(-90deg) scale(0.5);
+      }
+
+      body.dark-mode .dark-mode-toggle .fa-moon-o {
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(90deg) scale(0.5);
+      }
+
+      body.dark-mode .dark-mode-toggle .fa-sun-o {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
+
+      body.dark-mode .dark-mode-toggle {
+        color: #fbbf24;
+      }
+
+      .floating-whatsapp {
+        position: fixed;
+        left: 20px;
+        bottom: 30px;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        animation: wPulse 2s ease-in-out infinite;
+      }
+
+      .floating-whatsapp a {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: var(--b);
+        color: #fff;
+        text-decoration: none;
+        box-shadow: 0 6px 25px rgba(37, 117, 171, 0.4);
+        transition: 0.3s;
+      }
+
+      .floating-whatsapp a:hover {
+        background: var(--p);
+        color: #fff;
+        transform: scale(1.1) translateY(-4px);
+      }
+
+      .floating-whatsapp a i {
+        font-size: 32px;
+      }
+
+      .floating-whatsapp a:before {
+        content: "";
+        position: absolute;
+        inset: -8px;
+        border: 2px solid rgba(37, 117, 171, 0.3);
+        border-radius: 50%;
+        animation: wRipple 2s ease-out infinite;
+      }
+
+      .whatsapp-label {
+        padding: 6px 14px;
+        border-radius: 20px;
+        background: var(--b);
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        opacity: 0;
+        transform: translateX(-10px);
+        transition: 0.3s;
+      }
+
+      .floating-whatsapp:hover .whatsapp-label {
+        opacity: 1;
+        transform: none;
+      }
+
+      @keyframes wPulse {
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      @keyframes wRipple {
+        0% {
+          opacity: 1;
+          transform: scale(0.8);
+        }
+
+        100% {
+          opacity: 0;
+          transform: scale(1.5);
+        }
+      }
+
+      .rc-course-hero {
+        position: relative;
+        min-height: 660px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        isolation: isolate;
+        background:
+          linear-gradient(
+            115deg,
+            rgba(8, 37, 60, 0.97),
+            rgba(16, 77, 112, 0.91) 52%,
+            rgba(37, 117, 171, 0.55)
+          ),
+          url("https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1800&h=1000&fit=crop")
+            center/cover no-repeat;
+      }
+
+      .rc-course-hero:before,
+      .rc-course-hero:after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        z-index: -1;
+      }
+
+      .rc-course-hero:before {
+        width: 500px;
+        height: 500px;
+        top: -220px;
+        right: -120px;
+        border: 70px solid rgba(255, 255, 255, 0.07);
+      }
+
+      .rc-course-hero:after {
+        width: 350px;
+        height: 350px;
+        bottom: -190px;
+        left: -120px;
+        background: rgba(237, 148, 140, 0.11);
+      }
+
+      .rc-course-hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+        align-items: center;
+        gap: 60px;
+        padding: 105px 0 90px;
+      }
+
+      .rc-course-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 9px 17px;
+        margin-bottom: 22px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .rc-course-kicker i {
+        color: var(--p);
+      }
+
+      .rc-course-hero h1 {
+        max-width: 760px;
+        margin: 0 0 22px;
+        color: #fff;
+        font-size: clamp(44px, 6vw, 78px);
+        line-height: 1.02;
+        letter-spacing: -0.045em;
+      }
+
+      .rc-course-hero h1 span {
+        color: var(--p);
+      }
+
+      .rc-course-hero-copy > p {
+        max-width: 680px;
+        margin: 0 0 30px;
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 18px;
+        line-height: 1.8;
+      }
+
+      .rc-course-hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-bottom: 34px;
+      }
+
+      .rc-course-primary,
+      .rc-course-secondary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        min-height: 54px;
+        padding: 0 27px;
+        border-radius: 999px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+
+      .rc-course-primary {
+        border: 2px solid var(--p);
+        background: var(--p);
+        color: #fff;
+        box-shadow: 0 14px 34px rgba(237, 148, 140, 0.28);
+      }
+
+      .rc-course-primary:hover {
+        background: var(--pd);
+        border-color: var(--pd);
+        color: #fff;
+        transform: translateY(-4px);
+      }
+
+      .rc-course-secondary {
+        border: 2px solid rgba(255, 255, 255, 0.32);
+        background: rgba(255, 255, 255, 0.08);
+        color: #fff;
+      }
+
+      .rc-course-secondary:hover {
+        border-color: #fff;
+        background: rgba(255, 255, 255, 0.16);
+        color: #fff;
+        transform: translateY(-4px);
+      }
+
+      .rc-course-highlights {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px 28px;
+      }
+
+      .rc-course-highlight {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: rgba(255, 255, 255, 0.88);
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .rc-course-highlight i {
+        color: var(--p);
+        font-size: 18px;
+      }
+
+      .rc-hero-panel {
+        position: relative;
+        padding: 26px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.12);
+        box-shadow: 0 28px 70px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(18px);
+      }
+
+      .rc-hero-panel-image {
+        position: relative;
+        height: 265px;
+        overflow: hidden;
+        border-radius: 20px;
+      }
+
+      .rc-hero-panel-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .rc-hero-panel-badge {
+        position: absolute;
+        top: 18px;
+        left: 18px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: #fff;
+        color: var(--b);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .rc-hero-panel-content {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 16px;
+      }
+
+      .rc-mini-stat {
+        padding: 16px;
+        border-radius: 16px;
+        background: rgba(7, 31, 49, 0.38);
+        color: #fff;
+      }
+
+      .rc-mini-stat strong {
+        display: block;
+        margin-bottom: 4px;
+        font-size: 21px;
+      }
+
+      .rc-mini-stat span {
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 12px;
+      }
+
+      .rc-course-section {
+        position: relative;
+        padding: 90px 0;
+      }
+
+      .rc-course-section-soft {
+        background: var(--soft);
+      }
+
+      .rc-course-section-heading {
+        max-width: 720px;
+        margin: 0 auto 44px;
+        text-align: center;
+      }
+
+      .rc-section-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 15px;
+        margin-bottom: 14px;
+        border-radius: 999px;
+        background: rgba(37, 117, 171, 0.1);
+        color: var(--b);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .rc-course-section-heading h2,
+      .rc-split-content h2,
+      .rc-faq-heading h2 {
+        margin: 0 0 15px;
+        color: var(--ink);
+        font-size: clamp(34px, 4vw, 52px);
+        line-height: 1.1;
+        letter-spacing: -0.035em;
+      }
+
+      .rc-course-section-heading h2 span,
+      .rc-split-content h2 span,
+      .rc-faq-heading h2 span {
+        color: var(--p);
+      }
+
+      .rc-course-section-heading p,
+      .rc-split-content > p,
+      .rc-faq-heading p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.8;
+      }
+
+      .rc-course-tools {
+        display: grid;
+        grid-template-columns: minmax(230px, 1fr) auto;
+        gap: 20px;
+        align-items: center;
+        margin-bottom: 34px;
+      }
+
+      .rc-course-search {
+        position: relative;
+      }
+
+      .rc-course-search i {
+        position: absolute;
+        top: 50%;
+        left: 19px;
+        color: var(--b);
+        transform: translateY(-50%);
+      }
+
+      .rc-course-search input {
+        width: 100%;
+        height: 54px;
+        padding: 0 20px 0 49px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: #fff;
+        color: var(--ink);
+        box-shadow: 0 10px 30px rgba(31, 87, 119, 0.06);
+        outline: none;
+      }
+
+      .rc-course-search input:focus {
+        border-color: var(--b);
+        box-shadow: 0 0 0 4px rgba(37, 117, 171, 0.12);
+      }
+
+      .rc-course-filters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 9px;
+      }
+
+      .rc-filter-button {
+        min-height: 42px;
+        padding: 0 16px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: #fff;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: 0.25s;
+      }
+
+      .rc-filter-button:hover,
+      .rc-filter-button.is-active {
+        border-color: var(--b);
+        background: var(--b);
+        color: #fff;
+        transform: translateY(-2px);
+      }
+
+      .rc-results-status {
+        margin-bottom: 22px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .rc-course-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 28px;
+      }
+
+      .rc-course-card {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        background: #fff;
+        box-shadow: var(--shadow);
+        transition: 0.35s;
+      }
+
+      .rc-course-card:hover {
+        border-color: rgba(237, 148, 140, 0.45);
+        transform: translateY(-10px);
+        box-shadow: 0 28px 75px rgba(31, 87, 119, 0.16);
+      }
+
+      .rc-course-card[hidden] {
+        display: none !important;
+      }
+
+      .rc-course-image {
+        position: relative;
+        height: 210px;
+        overflow: hidden;
+        background: #dcebf4;
+      }
+
+      .rc-course-image:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          transparent 40%,
+          rgba(4, 28, 45, 0.64)
+        );
+      }
+
+      .rc-course-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.55s;
+      }
+
+      .rc-course-card:hover .rc-course-image img {
+        transform: scale(1.07);
+      }
+
+      .rc-course-level,
+      .rc-course-mode {
+        position: absolute;
+        z-index: 2;
+        top: 16px;
+        padding: 7px 11px;
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .rc-course-level {
+        left: 16px;
+        background: rgba(255, 255, 255, 0.92);
+        color: var(--b);
+      }
+
+      .rc-course-mode {
+        right: 16px;
+        background: var(--p);
+        color: #fff;
+      }
+
+      .rc-course-category {
+        position: absolute;
+        z-index: 2;
+        left: 17px;
+        bottom: 15px;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .rc-course-card-body {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        padding: 24px;
+      }
+
+      .rc-course-card h3 {
+        margin: 0 0 11px;
+        color: var(--ink);
+        font-size: 22px;
+        line-height: 1.25;
+      }
+
+      .rc-course-card-description {
+        margin: 0 0 18px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.75;
+      }
+
+      .rc-course-meta {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .rc-course-meta span {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      .rc-course-meta i {
+        color: var(--b);
+      }
+
+      .rc-course-card-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: auto;
+        padding-top: 18px;
+        border-top: 1px solid rgba(37, 117, 171, 0.09);
+      }
+
+      .rc-course-price {
+        color: var(--b);
+        font-size: 20px;
+        font-weight: 800;
+      }
+
+      .rc-course-price small {
+        display: block;
+        color: var(--muted);
+        font-size: 10px;
+        text-transform: uppercase;
+      }
+
+      .rc-course-details-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        min-height: 42px;
+        padding: 0 15px;
+        border: 0;
+        border-radius: 999px;
+        background: var(--b);
+        color: #fff;
+        font-size: 13px;
+        font-weight: 800;
+        cursor: pointer;
+        transition: 0.25s;
+      }
+
+      .rc-course-details-button:hover {
+        background: var(--p);
+        transform: translateY(-2px);
+      }
+
+      .rc-no-results {
+        display: none;
+        padding: 48px 24px;
+        border: 1px dashed rgba(37, 117, 171, 0.25);
+        border-radius: 22px;
+        background: rgba(37, 117, 171, 0.04);
+        text-align: center;
+        color: var(--muted);
+      }
+
+      .rc-no-results.is-visible {
+        display: block;
+      }
+
+      .rc-split-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+        align-items: center;
+        gap: 60px;
+      }
+
+      .rc-split-image {
+        position: relative;
+        min-height: 520px;
+        overflow: hidden;
+        border-radius: 30px;
+        box-shadow: 0 28px 70px rgba(20, 62, 86, 0.18);
+      }
+
+      .rc-split-image img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .rc-split-image:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          transparent 45%,
+          rgba(6, 39, 61, 0.82)
+        );
+      }
+
+      .rc-split-badge {
+        position: absolute;
+        z-index: 2;
+        right: 22px;
+        bottom: 22px;
+        max-width: 230px;
+        padding: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.14);
+        color: #fff;
+        backdrop-filter: blur(16px);
+      }
+
+      .rc-split-badge strong {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 22px;
+      }
+
+      .rc-split-badge span {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .rc-feature-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        margin: 28px 0 30px;
+      }
+
+      .rc-feature-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 13px;
+        padding: 18px;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        background: #fff;
+        box-shadow: 0 10px 30px rgba(31, 87, 119, 0.06);
+      }
+
+      .rc-feature-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        width: 42px;
+        height: 42px;
+        border-radius: 13px;
+        background: rgba(37, 117, 171, 0.1);
+        color: var(--b);
+      }
+
+      .rc-feature-item strong {
+        display: block;
+        margin-bottom: 4px;
+        color: var(--ink);
+        font-size: 14px;
+      }
+
+      .rc-feature-item span {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.6;
+      }
+
+      .rc-path-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .rc-path-card {
+        padding: 28px 22px;
+        border: 1px solid var(--border);
+        border-radius: 22px;
+        background: #fff;
+        box-shadow: 0 14px 38px rgba(31, 87, 119, 0.07);
+      }
+
+      .rc-path-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        margin-bottom: 18px;
+        border-radius: 15px;
+        background: var(--b);
+        color: #fff;
+        font-size: 17px;
+        font-weight: 800;
+      }
+
+      .rc-path-card:nth-child(even) .rc-path-number {
+        background: var(--p);
+      }
+
+      .rc-path-card h3 {
+        margin: 0 0 10px;
+        color: var(--ink);
+        font-size: 19px;
+      }
+
+      .rc-path-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      .rc-faq-grid {
+        display: grid;
+        grid-template-columns: minmax(280px, 0.75fr) minmax(0, 1.25fr);
+        gap: 55px;
+        align-items: start;
+      }
+
+      .rc-faq-heading {
+        position: sticky;
+        top: 110px;
+      }
+
+      .rc-faq-list {
+        display: grid;
+        gap: 14px;
+      }
+
+      .rc-faq-item {
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        background: #fff;
+        box-shadow: 0 10px 28px rgba(31, 87, 119, 0.05);
+      }
+
+      .rc-faq-question {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 20px 22px;
+        border: 0;
+        background: transparent;
+        color: var(--ink);
+        text-align: left;
+        font-size: 15px;
+        font-weight: 800;
+        cursor: pointer;
+      }
+
+      .rc-faq-question i {
+        color: var(--b);
+        transition: 0.3s;
+      }
+
+      .rc-faq-item.is-open .rc-faq-question i {
+        transform: rotate(45deg);
+      }
+
+      .rc-faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+      }
+
+      .rc-faq-answer p {
+        margin: 0;
+        padding: 0 22px 22px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.75;
+      }
+
+      .rc-course-cta {
+        position: relative;
+        overflow: hidden;
+        padding: 75px 0;
+        background: linear-gradient(135deg, #173f59, #2575ab);
+        color: #fff;
+      }
+
+      .rc-course-cta-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+      }
+
+      .rc-course-cta h2 {
+        margin: 0 0 10px;
+        color: #fff;
+        font-size: clamp(34px, 4vw, 52px);
+      }
+
+      .rc-course-cta p {
+        max-width: 680px;
+        margin: 0;
+        color: rgba(255, 255, 255, 0.78);
+        line-height: 1.75;
+      }
+
+      .rc-course-cta-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: flex-end;
+      }
+
+      .rc-course-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 1000000;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        background: rgba(5, 19, 30, 0.82);
+        backdrop-filter: blur(10px);
+      }
+
+      .rc-course-modal.is-open {
+        display: flex;
+      }
+
+      .rc-course-modal-dialog {
+        position: relative;
+        width: min(940px, 100%);
+        max-height: calc(100vh - 48px);
+        overflow-y: auto;
+        border-radius: 28px;
+        background: #fff;
+        box-shadow: 0 35px 100px rgba(0, 0, 0, 0.35);
+      }
+
+      .rc-course-modal-close {
+        position: sticky;
+        top: 16px;
+        z-index: 3;
+        float: right;
+        width: 44px;
+        height: 44px;
+        margin: 16px 16px -60px 0;
+        border: 0;
+        border-radius: 50%;
+        background: rgba(15, 47, 64, 0.88);
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .rc-modal-hero {
+        position: relative;
+        min-height: 310px;
+        display: flex;
+        align-items: flex-end;
+        padding: 44px;
+        overflow: hidden;
+        border-radius: 28px 28px 0 0;
+        background-position: center;
+        background-size: cover;
+      }
+
+      .rc-modal-hero:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(6, 25, 38, 0.1),
+          rgba(5, 27, 43, 0.94)
+        );
+      }
+
+      .rc-modal-hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .rc-modal-hero-content span {
+        display: inline-flex;
+        padding: 7px 12px;
+        margin-bottom: 12px;
+        border-radius: 999px;
+        background: var(--p);
+        color: #fff;
+        font-size: 11px;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .rc-modal-hero h2 {
+        margin: 0;
+        color: #fff;
+        font-size: clamp(30px, 5vw, 48px);
+      }
+
+      .rc-modal-body {
+        padding: 36px 44px 44px;
+      }
+
+      .rc-modal-summary {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        margin-bottom: 30px;
+      }
+
+      .rc-modal-summary-item {
+        padding: 15px;
+        border: 1px solid var(--border);
+        border-radius: 15px;
+        background: var(--soft);
+      }
+
+      .rc-modal-summary-item span {
+        display: block;
+        margin-bottom: 5px;
+        color: var(--muted);
+        font-size: 10px;
+        text-transform: uppercase;
+      }
+
+      .rc-modal-summary-item strong {
+        color: var(--ink);
+        font-size: 14px;
+      }
+
+      .rc-modal-description {
+        margin: 0 0 26px;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.8;
+      }
+
+      .rc-modal-columns {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px;
+      }
+
+      .rc-modal-column h3 {
+        margin: 0 0 13px;
+        color: var(--ink);
+        font-size: 18px;
+      }
+
+      .rc-modal-list {
+        display: grid;
+        gap: 10px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .rc-modal-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .rc-modal-list i {
+        margin-top: 4px;
+        color: var(--p);
+      }
+
+      .rc-modal-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 30px;
+        padding-top: 25px;
+        border-top: 1px solid var(--border);
+      }
+
+      @media (pointer: fine) and (hover: hover) {
+        html,
+        body,
+        a,
+        button,
+        input,
+        [role="button"] {
+          cursor: none !important;
+        }
+      }
+
+      .custom-cursor-dot,
+      .custom-cursor-circle {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000001;
+        pointer-events: none;
+        opacity: 0;
+        transform: translate(-50%, -50%);
+      }
+
+      .custom-cursor-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--p);
+      }
+
+      .custom-cursor-circle {
+        z-index: 1000000;
+        width: 38px;
+        height: 38px;
+        border: 2px solid var(--b);
+        border-radius: 50%;
+        background: rgba(37, 117, 171, 0.04);
+        transition: 0.25s;
+      }
+
+      .cursor-visible {
+        opacity: 1;
+      }
+
+      .custom-cursor-circle.cursor-hover {
+        width: 58px;
+        height: 58px;
+        border-color: var(--p);
+        background: rgba(237, 148, 140, 0.13);
+      }
+
+      .custom-cursor-dot.cursor-hover {
+        width: 9px;
+        height: 9px;
+        background: var(--b);
+      }
+
+      .custom-cursor-circle.cursor-click {
+        width: 28px;
+        height: 28px;
+      }
+
+      .cursor-hidden {
+        opacity: 0;
+      }
+
+      body.dark-mode {
+        background: #11111f;
+        color: #e8e8ef;
+      }
+
+      body.dark-mode .ve-nav-wrap {
+        background: #17172a !important;
+      }
+
+      body.dark-mode .ve-nav ul li a,
+      body.dark-mode .ve-mobile-menu ul li a {
+        color: #d7d7e2;
+      }
+
+      body.dark-mode .ve-nav ul li a:hover,
+      body.dark-mode .ve-nav ul li a.active {
+        color: var(--p);
+      }
+
+      body.dark-mode .ve-dropdown,
+      body.dark-mode .ve-mobile-menu {
+        background: #1b1b30;
+      }
+
+      body.dark-mode .rc-course-section {
+        background: #11111f;
+      }
+
+      body.dark-mode .rc-course-section-soft {
+        background: #17172a;
+      }
+
+      body.dark-mode .rc-course-section-heading h2,
+      body.dark-mode .rc-split-content h2,
+      body.dark-mode .rc-faq-heading h2,
+      body.dark-mode .rc-course-card h3,
+      body.dark-mode .rc-feature-item strong,
+      body.dark-mode .rc-path-card h3,
+      body.dark-mode .rc-faq-question,
+      body.dark-mode .rc-modal-summary-item strong,
+      body.dark-mode .rc-modal-column h3 {
+        color: #f0f0f5;
+      }
+
+      body.dark-mode .rc-course-section-heading p,
+      body.dark-mode .rc-split-content > p,
+      body.dark-mode .rc-faq-heading p,
+      body.dark-mode .rc-course-card-description,
+      body.dark-mode .rc-course-meta span,
+      body.dark-mode .rc-results-status,
+      body.dark-mode .rc-feature-item span,
+      body.dark-mode .rc-path-card p,
+      body.dark-mode .rc-faq-answer p,
+      body.dark-mode .rc-modal-description,
+      body.dark-mode .rc-modal-list li {
+        color: #adadbb;
+      }
+
+      body.dark-mode .rc-course-card,
+      body.dark-mode .rc-feature-item,
+      body.dark-mode .rc-path-card,
+      body.dark-mode .rc-faq-item,
+      body.dark-mode .rc-course-modal-dialog {
+        border-color: rgba(255, 255, 255, 0.07);
+        background: #1d1d31;
+      }
+
+      body.dark-mode .rc-course-search input,
+      body.dark-mode .rc-filter-button {
+        border-color: rgba(255, 255, 255, 0.09);
+        background: #202036;
+        color: #e5e5ed;
+      }
+
+      body.dark-mode .rc-modal-summary-item {
+        background: #25253b;
+        border-color: rgba(255, 255, 255, 0.07);
+      }
+
+      @media (max-width: 1100px) {
+        .rc-course-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .rc-path-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 991px) {
+        .ve-nav-wrap {
+          display: flex;
+          align-items: center;
+        }
+
+        .dark-mode-toggle {
+          order: 8;
+          width: 40px;
+          height: 40px;
+          margin-left: auto;
+          margin-right: 9px;
+        }
+
+        .ve-toggler {
+          order: 9;
+          margin-left: 0 !important;
+        }
+
+        .rc-course-hero-grid,
+        .rc-split-grid,
+        .rc-faq-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .rc-course-tools {
+          grid-template-columns: 1fr;
+        }
+
+        .rc-course-filters {
+          justify-content: flex-start;
+        }
+
+        .rc-faq-heading {
+          position: static;
+        }
+
+        .rc-course-cta-inner {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .rc-course-cta-actions {
+          justify-content: flex-start;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .rc-course-hero {
+          min-height: auto;
+        }
+
+        .rc-course-hero-grid {
+          padding: 85px 0 70px;
+        }
+
+        .rc-course-hero h1 {
+          font-size: 47px;
+        }
+
+        .rc-course-section {
+          padding: 70px 0;
+        }
+
+        .rc-course-grid,
+        .rc-feature-list,
+        .rc-path-grid,
+        .rc-modal-columns {
+          grid-template-columns: 1fr;
+        }
+
+        .rc-split-image {
+          min-height: 420px;
+        }
+
+        .rc-modal-summary {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .rc-modal-body {
+          padding: 28px 24px 34px;
+        }
+
+        .floating-whatsapp {
+          left: 15px;
+          bottom: 20px;
+        }
+
+        .floating-whatsapp a {
+          width: 50px;
+          height: 50px;
+        }
+
+        .whatsapp-label {
+          display: none;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .rc-course-hero h1 {
+          font-size: 40px;
+        }
+
+        .rc-course-hero-actions,
+        .rc-course-cta-actions,
+        .rc-modal-actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .rc-course-primary,
+        .rc-course-secondary {
+          width: 100%;
+        }
+
+        .rc-course-card-footer {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .rc-course-details-button {
+          width: 100%;
+        }
+
+        .rc-modal-summary {
+          grid-template-columns: 1fr;
+        }
+
+        .rc-course-modal {
+          padding: 10px;
+        }
+      }
+
+      @media (pointer: coarse), (hover: none) {
+        html,
+        body,
+        a,
+        button,
+        input,
+        [role="button"] {
+          cursor: auto !important;
+        }
+
+        .custom-cursor-dot,
+        .custom-cursor-circle {
+          display: none !important;
+        }
+      }
+
+      /* ==================================================
+         IMPROVED COURSE PRICING
+      ================================================== */
+      .rc-course-price-badge {
+        position: absolute;
+        right: 16px;
+        bottom: 14px;
+        z-index: 3;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-end;
+        min-width: 112px;
+        padding: 9px 13px;
+        border: 1px solid rgba(255, 255, 255, 0.55);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.94);
+        color: var(--b);
+        box-shadow: 0 10px 26px rgba(4, 28, 45, 0.2);
+        backdrop-filter: blur(12px);
+      }
+
+      .rc-course-price-badge small {
+        display: block;
+        margin-bottom: 2px;
+        color: var(--muted);
+        font-size: 9px;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .rc-course-price-badge strong {
+        color: var(--b);
+        font-size: 17px;
+        font-weight: 900;
+        line-height: 1.15;
+      }
+
+      .rc-course-card-footer {
+        justify-content: stretch;
+      }
+
+      .rc-course-card-footer .rc-course-details-button {
+        width: 100%;
+        min-height: 46px;
+      }
+
+      body.dark-mode .rc-course-price-badge {
+        border-color: rgba(255, 255, 255, 0.12);
+        background: rgba(29, 29, 49, 0.94);
+      }
+
+      body.dark-mode .rc-course-price-badge small {
+        color: #adadbb;
+      }
+
+      body.dark-mode .rc-course-price-badge strong {
+        color: #8bc5ef;
+      }
+
+      @media (max-width: 520px) {
+        .rc-course-price-badge {
+          right: 12px;
+          bottom: 12px;
+          min-width: 102px;
+          padding: 8px 11px;
+        }
+
+        .rc-course-price-badge strong {
+          font-size: 15px;
+        }
+      }
+
+      /* ==================================================
+         HOMEPAGE-STYLE BLUE AND PINK HEADINGS
+      ================================================== */
+      .rc-course-section-heading h2,
+      .rc-split-content h2,
+      .rc-faq-heading h2 {
+        color: var(--b) !important;
+        font-family: inherit !important;
+        font-size: 42px !important;
+        font-weight: 700;
+        line-height: 1.15;
+        letter-spacing: -0.025em;
+      }
+
+      .rc-course-section-heading h2 span,
+      .rc-split-content h2 span,
+      .rc-faq-heading h2 span {
+        color: var(--p) !important;
+      }
+
+      .rc-course-card h3,
+      .rc-feature-item strong,
+      .rc-path-card h3,
+      .rc-modal-column h3,
+      .rc-modal-summary-item strong {
+        color: var(--b) !important;
+        font-family: inherit !important;
+      }
+
+      .rc-course-card:hover h3,
+      .rc-path-card:hover h3 {
+        color: var(--p) !important;
+      }
+
+      body.dark-mode .rc-course-section-heading h2,
+      body.dark-mode .rc-split-content h2,
+      body.dark-mode .rc-faq-heading h2,
+      body.dark-mode .rc-course-card h3,
+      body.dark-mode .rc-feature-item strong,
+      body.dark-mode .rc-path-card h3,
+      body.dark-mode .rc-modal-column h3,
+      body.dark-mode .rc-modal-summary-item strong {
+        color: #8ec2e7 !important;
+      }
+
+      body.dark-mode .rc-course-section-heading h2 span,
+      body.dark-mode .rc-split-content h2 span,
+      body.dark-mode .rc-faq-heading h2 span {
+        color: var(--p) !important;
+      }
+
+      /* Headings on dark blue/image backgrounds remain white for contrast. */
+      .rc-course-cta h2,
+      .rc-modal-hero h2,
+      body.dark-mode .rc-course-cta h2,
+      body.dark-mode .rc-modal-hero h2 {
+        color: #ffffff !important;
+        font-family: inherit !important;
+      }
+
+      @media (max-width: 991px) {
+        .rc-course-section-heading h2,
+        .rc-split-content h2,
+        .rc-faq-heading h2 {
+          font-size: 38px !important;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .rc-course-section-heading h2,
+        .rc-split-content h2,
+        .rc-faq-heading h2 {
+          font-size: 34px !important;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .rc-course-section-heading h2,
+        .rc-split-content h2,
+        .rc-faq-heading h2 {
+          font-size: 30px !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div
+      class="custom-cursor-circle"
+      id="customCursorCircle"
+      aria-hidden="true"
+    ></div>
+    <div
+      class="custom-cursor-dot"
+      id="customCursorDot"
+      aria-hidden="true"
+    ></div>
+    <div class="preloader d-flex align-items-center justify-content-center">
+      <div class="lds-ellipsis">
+        <div style="background-color: #2575ab"></div>
+        <div style="background-color: #2575ab"></div>
+        <div style="background-color: #2575ab"></div>
+        <div style="background-color: #2575ab"></div>
+      </div>
+    </div>
+    <div class="floating-whatsapp">
+      <a
+        href="https://wa.me/2348146710908?text=Hello%20Radiant%20Cullings%2C%20I%20want%20to%20enquire%20about%20your%20courses"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Ask about courses on WhatsApp"
+        ><i class="fa fa-whatsapp"></i></a
+      ><span class="whatsapp-label">Ask about courses</span>
+    </div>
+
+    <header class="ve-header" id="ve-sticky">
+      <div
+        class="container-fluid ve-nav-wrap"
+        style="background-color: #2575ab"
+      >
+        <!-- Logo -->
+
+        <div class="ve-logo">
+          <a href="index.html">
+            <img
+              src="img/core-img/radiant_cullings.png"
+              alt="Radiant Cullings Logo"
+              class="ve-logo-img"
+              style="max-width: 120px"
+            />
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+
+        <nav class="ve-nav" aria-label="Main navigation">
+          <ul>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+
+            <li class="has-drop">
+              <a href="about.html">
+                About
+                <!-- <i
+                                class="fa fa-angle-down"
+                                aria-hidden="true"
+                            ></i> -->
+              </a>
+
+              <!-- <ul class="ve-dropdown">
+                            <li>
+                                <a href="about.html">About Us</a>
+                            </li>
+
+                            <li>
+                                <a href="services.html">Our Services</a>
+                            </li>
+
+                            <li>
+                                <a href="portfolio.html">Portfolio</a>
+                            </li>
+
+                            <li>
+                                <a href="products.html">Products</a>
+                            </li>
+                        </ul> -->
+            </li>
+
+            <li class="has-drop">
+              <a href="services.html">
+                Services
+
+                <!-- <i
+                                class="fa fa-angle-down"
+                                aria-hidden="true"
+                            ></i> -->
+              </a>
+            </li>
+
+            <li>
+              <a href="courses.html" class="active">Courses</a>
+            </li>
+
+            <li>
+              <a href="blogs.html">Blogs</a>
+            </li>
+
+            <li>
+              <a href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- CTA -->
+
+        <div class="ve-nav-cta">
+          <a href="contact.html" class="ve-cta-btn text-white">
+            Get Started
+
+            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <!-- Dark and Light Mode Button -->
+
+        <button
+          class="dark-mode-toggle"
+          id="darkModeToggle"
+          type="button"
+          aria-label="Switch to dark mode"
+          aria-pressed="false"
+          title="Switch to dark mode"
+        >
+          <i class="fa fa-moon-o" aria-hidden="true"></i>
+          <i class="fa fa-sun-o" aria-hidden="true"></i>
+        </button>
+
+        <!-- Hamburger Button -->
+
+        <button
+          class="ve-toggler"
+          id="ve-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-controls="ve-mobile-menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+
+      <div class="ve-mobile-menu" id="ve-mobile-menu">
+        <ul>
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+
+          <li>
+            <a href="about.html">About</a>
+          </li>
+
+          <li>
+            <a href="services.html">Services</a>
+          </li>
+
+          <li>
+            <a href="courses.html" class="active">Courses</a>
+          </li>
+
+          <li>
+            <a href="blogs.html">Blogs</a>
+          </li>
+
+          <li>
+            <a href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <section
+      class="rc-course-section rc-course-section-soft"
+      id="courseCatalogue"
+    >
+      <div class="container">
+        <div class="rc-course-section-heading">
+          <span class="rc-section-tag"
+            ><i class="fa fa-book"></i> Course Catalogue</span
+          >
+          <h2>Choose Your <span>Learning Path</span></h2>
+          <p>
+            Search our practical programmes or filter them by subject area.
+            Compare tuition, learning level, delivery mode, and course outcomes.
+            Select any programme to view full details and enrolment information.
+          </p>
+        </div>
+        <div class="rc-course-tools">
+          <label class="rc-course-search" for="courseSearch"
+            ><i class="fa fa-search"></i
+            ><input
+              type="search"
+              id="courseSearch"
+              placeholder="Search courses, skills, or topics..."
+              autocomplete="off"
+          /></label>
+          <div class="rc-course-filters" aria-label="Course filters">
+            <button
+              class="rc-filter-button is-active"
+              type="button"
+              data-filter="all"
+            >
+              All</button
+            ><button
+              class="rc-filter-button"
+              type="button"
+              data-filter="security"
+            >
+              Security</button
+            ><button
+              class="rc-filter-button"
+              type="button"
+              data-filter="data-ai"
+            >
+              Data &amp; AI</button
+            ><button
+              class="rc-filter-button"
+              type="button"
+              data-filter="development"
+            >
+              Development</button
+            ><button
+              class="rc-filter-button"
+              type="button"
+              data-filter="creative"
+            >
+              Creative</button
+            ><button
+              class="rc-filter-button"
+              type="button"
+              data-filter="business"
+            >
+              Business</button
+            ><button
+              class="rc-filter-button"
+              type="button"
+              data-filter="infrastructure"
+            >
+              Infrastructure
+            </button>
+          </div>
+        </div>
+        <p
+          class="rc-results-status"
+          id="courseResultsStatus"
+          aria-live="polite"
+        ></p>
+        <div class="rc-course-grid" id="courseGrid">
+          <article
+            class="rc-course-card"
+            data-category="security"
+            data-course="cybersecurity"
+          >
+            <div class="rc-course-image">
+              <img
+                src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=900&h=600&fit=crop"
+                alt="Cybersecurity"
+              />
+              <span class="rc-course-level">Beginner–Advanced</span>
+              <span class="rc-course-mode">Hybrid</span>
+              <span class="rc-course-category">Security</span>
+
+              <span class="rc-course-price-badge"
+                ><small>Tuition</small><strong>₦200,000</strong></span
+              >
+            </div>
+            <div class="rc-course-card-body">
+              <h3>Cybersecurity</h3>
+              <p class="rc-course-card-description">
+                Learn digital security, cyber-risk awareness, threat detection,
+                access control, incident response, and practical defensive
+                techniques.
+              </p>
+              <div class="rc-course-meta">
+                <span><i class="fa fa-clock-o"></i> Flexible schedule</span>
+                <span><i class="fa fa-cogs"></i> Practical learning</span>
+                <span><i class="fa fa-users"></i> Individual / Corporate</span>
+                <span><i class="fa fa-check-circle"></i> Guided learning</span>
+              </div>
+              <div class="rc-course-card-footer">
+                <button
+                  class="rc-course-details-button"
+                  type="button"
+                  data-open-course="cybersecurity"
+                >
+                  View Details <i class="fa fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="rc-course-card"
+            data-category="data-ai"
+            data-course="data-analysis"
+          >
+            <div class="rc-course-image">
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&h=600&fit=crop"
+                alt="Data Analysis"
+              />
+              <span class="rc-course-level">Beginner</span>
+              <span class="rc-course-mode">Hybrid</span>
+              <span class="rc-course-category">Data &amp; AI</span>
+
+              <span class="rc-course-price-badge"
+                ><small>Tuition</small><strong>₦150,000</strong></span
+              >
+            </div>
+            <div class="rc-course-card-body">
+              <h3>Data Analysis</h3>
+              <p class="rc-course-card-description">
+                Turn raw information into clear business insights using
+                spreadsheets, SQL, dashboards, and practical analytical
+                thinking.
+              </p>
+              <div class="rc-course-meta">
+                <span><i class="fa fa-clock-o"></i> Flexible schedule</span>
+                <span><i class="fa fa-cogs"></i> Practical learning</span>
+                <span><i class="fa fa-users"></i> Individual / Corporate</span>
+                <span><i class="fa fa-check-circle"></i> Guided learning</span>
+              </div>
+              <div class="rc-course-card-footer">
+                <button
+                  class="rc-course-details-button"
+                  type="button"
+                  data-open-course="data-analysis"
+                >
+                  View Details <i class="fa fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="rc-course-card"
+            data-category="data-ai"
+            data-course="ai-training"
+          >
+            <div class="rc-course-image">
+              <img
+                src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=900&h=600&fit=crop"
+                alt="Artificial Intelligence Training"
+              />
+              <span class="rc-course-level">Beginner–Intermediate</span>
+              <span class="rc-course-mode">Hybrid</span>
+              <span class="rc-course-category">Data &amp; AI</span>
+
+              <span class="rc-course-price-badge"
+                ><small>Tuition</small><strong>₦150,000</strong></span
+              >
+            </div>
+            <div class="rc-course-card-body">
+              <h3>Artificial Intelligence Training</h3>
+              <p class="rc-course-card-description">
+                Understand modern AI, prompt engineering, generative tools,
+                automation, responsible use, and workplace applications.
+              </p>
+              <div class="rc-course-meta">
+                <span><i class="fa fa-clock-o"></i> Flexible schedule</span>
+                <span><i class="fa fa-cogs"></i> Practical learning</span>
+                <span><i class="fa fa-users"></i> Individual / Corporate</span>
+                <span><i class="fa fa-check-circle"></i> Guided learning</span>
+              </div>
+              <div class="rc-course-card-footer">
+                <button
+                  class="rc-course-details-button"
+                  type="button"
+                  data-open-course="ai-training"
+                >
+                  View Details <i class="fa fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="rc-course-card"
+            data-category="business"
+            data-course="project-management"
+          >
+            <div class="rc-course-image">
+              <img
+                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&h=600&fit=crop"
+                alt="Project Management"
+              />
+              <span class="rc-course-level">Beginner–Professional</span>
+              <span class="rc-course-mode">Hybrid</span>
+              <span class="rc-course-category">Business</span>
+
+              <span class="rc-course-price-badge"
+                ><small>Tuition</small><strong>₦150,000</strong></span
+              >
+            </div>
+            <div class="rc-course-card-body">
+              <h3>Project Management</h3>
+              <p class="rc-course-card-description">
+                Plan, execute, monitor, and close projects with stronger control
+                over scope, schedule, cost, quality, risks, and stakeholders.
+              </p>
+              <div class="rc-course-meta">
+                <span><i class="fa fa-clock-o"></i> Flexible schedule</span>
+                <span><i class="fa fa-cogs"></i> Practical learning</span>
+                <span><i class="fa fa-users"></i> Individual / Corporate</span>
+                <span><i class="fa fa-check-circle"></i> Guided learning</span>
+              </div>
+              <div class="rc-course-card-footer">
+                <button
+                  class="rc-course-details-button"
+                  type="button"
+                  data-open-course="project-management"
+                >
+                  View Details <i class="fa fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="rc-course-card"
+            data-category="creative"
+            data-course="ui-ux"
+          >
+            <div class="rc-course-image">
+              <img
+                src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=900&h=600&fit=crop"
+                alt="UI/UX Design"
+              />
+              <span class="rc-course-level">Beginner</span>
+              <span class="rc-course-mode">Hybrid</span>
+              <span class="rc-course-category">Creative</span>
+
+              <span class="rc-course-price-badge"
+                ><small>Tuition</small><strong>₦120,000</strong></span
+              >
+            </div>
+            <div class="rc-course-card-body">
+              <h3>UI/UX Design</h3>
+              <p class="rc-course-card-description">
+                Design useful, accessible, and attractive digital experiences
+                through research, wireframes, prototypes, and interface systems.
+              </p>
+              <div class="rc-course-meta">
+                <span><i class="fa fa-clock-o"></i> Flexible schedule</span>
+                <span><i class="fa fa-cogs"></i> Practical learning</span>
+                <span><i class="fa fa-users"></i> Individual / Corporate</span>
+                <span><i class="fa fa-check-circle"></i> Guided learning</span>
+              </div>
+              <div class="rc-course-card-footer">
+                <button
+                  class="rc-course-details-button"
+                  type="button"
+                  data-open-course="ui-ux"
+                >
+                  View Details <i class="fa fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="rc-course-card"
+            data-category="creative"
+            data-course="graphic-design"
+          >
+            <div class="rc-course-image">
+              <img
+                src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=900&h=600&fit=crop"
+                alt="Graphic Design"
+              />
+              <span class="rc-course-level">Beginner</span>
+              <span class="rc-course-mode">Hybrid</span>
+              <span class="rc-course-category">Creative</span>
+
+              <span class="rc-course-price-badge"
+                ><small>Tuition</small><strong>₦100,000</strong></span
+              >
+            </div>
+            <div class="rc-course-card-body">
+              <h3>Graphic Design</h3>
+              <p class="rc-course-card-description">
+                Build visual communication skills for branding, social media,
+                advertising, presentations, print, and digital campaigns.
+              </p>
+              <div class="rc-course-meta">
+                <span><i class="fa fa-clock-o"></i> Flexible schedule</span>
+                <span><i class="fa fa-cogs"></i> Practical learning</span>
+                <span><i class="fa fa-users"></i> Individual / Corporate</span>
+                <span><i class="fa fa-check-circle"></i> Guided learning</span>
+              </div>
+              <div class="rc-course-card-footer">
+                <button
+                  class="rc-course-details-button"
+                  type="button"
+                  data-open-course="graphic-design"
+                >
+                  View Details <i class="fa fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="rc-course-card"
+            data-category="creative"
+            data-course="video-editing"
+          >
+            <div class="rc-course-image">
+              <img
+                src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=900&h=600&fit=crop"
+                alt="Video Editing"
+              />
+              <span class="rc-course-level">Beginner–Intermediate</span>
+              <span class="rc-course-mode">Hybrid</span>
+              <span class="rc-course-category">Creative</span>
+
+              <span class="rc-course-price-badge"
+                ><small>Tuition</small><strong>₦120,000</strong></span
+              >
+            </div>
+            <div class="rc-course-card-body">
+              <h3>Video Editing</h3>
+              <p class="rc-course-card-description">
+                Learn storytelling, cutting, audio cleanup, colour correction,
+                motion graphics, subtitles, and export workflows.
+              </p>
+              <div class="rc-course-meta">
+                <span><i class="fa fa-clock-o"></i> Flexible schedule</span>
+                <span><i class="fa fa-cogs"></i> Practical learning</span>
+                <span><i class="fa fa-users"></i> Individual / Corporate</span>
+                <span><i class="fa fa-check-circle"></i> Guided learning</span>
+              </div>
+              <div class="rc-course-card-footer">
+                <button
+                  class="rc-course-details-button"
+                  type="button"
+                  data-open-course="video-editing"
+                >
+                  View Details <i class="fa fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="rc-course-card"
+            data-category="development"
+            data-course="software-development"
+          >
+            <div class="rc-course-image">
+              <img
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900&h=600&fit=crop"
+                alt="Software Development"
+              />
+              <span class="rc-course-level">Beginner–Advanced</span>
+              <span class="rc-course-mode">Hybrid</span>
+              <span class="rc-course-category">Development</span>
+
+              <span class="rc-course-price-badge"
+                ><small>Tuition</small><strong>₦250,000</strong></span
+              >
+            </div>
+            <div class="rc-course-card-body">
+              <h3>Software Development</h3>
+              <p class="rc-course-card-description">
+                Build programming foundations and learn how to design, develop,
+                test, document, and improve real software applications.
+              </p>
+              <div class="rc-course-meta">
+                <span><i class="fa fa-clock-o"></i> Flexible schedule</span>
+                <span><i class="fa fa-cogs"></i> Practical learning</span>
+                <span><i class="fa fa-users"></i> Individual / Corporate</span>
+                <span><i class="fa fa-check-circle"></i> Guided learning</span>
+              </div>
+              <div class="rc-course-card-footer">
+                <button
+                  class="rc-course-details-button"
+                  type="button"
+                  data-open-course="software-development"
+                >
+                  View Details <i class="fa fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="rc-course-card"
+            data-category="development"
+            data-course="web-development"
+          >
+            <div class="rc-course-image">
+              <img
+                src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=900&h=600&fit=crop"
+                alt="Website Development"
+              />
+              <span class="rc-course-level">Beginner</span>
+              <span class="rc-course-mode">Hybrid</span>
+              <span class="rc-course-category">Development</span>
+
+              <span class="rc-course-price-badge"
+                ><small>Tuition</small><strong>₦150,000</strong></span
+              >
+            </div>
+            <div class="rc-course-card-body">
+              <h3>Website Development</h3>
+              <p class="rc-course-card-description">
+                Create responsive websites using modern front-end foundations,
+                interactive features, hosting, and deployment.
+              </p>
+              <div class="rc-course-meta">
+                <span><i class="fa fa-clock-o"></i> Flexible schedule</span>
+                <span><i class="fa fa-cogs"></i> Practical learning</span>
+                <span><i class="fa fa-users"></i> Individual / Corporate</span>
+                <span><i class="fa fa-check-circle"></i> Guided learning</span>
+              </div>
+              <div class="rc-course-card-footer">
+                <button
+                  class="rc-course-details-button"
+                  type="button"
+                  data-open-course="web-development"
+                >
+                  View Details <i class="fa fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="rc-course-card"
+            data-category="development"
+            data-course="app-development"
+          >
+            <div class="rc-course-image">
+              <img
+                src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=900&h=600&fit=crop"
+                alt="App Development"
+              />
+              <span class="rc-course-level">Intermediate</span>
+              <span class="rc-course-mode">Hybrid</span>
+              <span class="rc-course-category">Development</span>
+
+              <span class="rc-course-price-badge"
+                ><small>Tuition</small><strong>₦220,000</strong></span
+              >
+            </div>
+            <div class="rc-course-card-body">
+              <h3>App Development</h3>
+              <p class="rc-course-card-description">
+                Plan, build, test, and publish mobile applications while
+                learning user flows, APIs, storage, and deployment.
+              </p>
+              <div class="rc-course-meta">
+                <span><i class="fa fa-clock-o"></i> Flexible schedule</span>
+                <span><i class="fa fa-cogs"></i> Practical learning</span>
+                <span><i class="fa fa-users"></i> Individual / Corporate</span>
+                <span><i class="fa fa-check-circle"></i> Guided learning</span>
+              </div>
+              <div class="rc-course-card-footer">
+                <button
+                  class="rc-course-details-button"
+                  type="button"
+                  data-open-course="app-development"
+                >
+                  View Details <i class="fa fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="rc-course-card"
+            data-category="business"
+            data-course="digital-marketing"
+          >
+            <div class="rc-course-image">
+              <img
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&h=600&fit=crop"
+                alt="Digital Marketing"
+              />
+              <span class="rc-course-level">Beginner</span>
+              <span class="rc-course-mode">Hybrid</span>
+              <span class="rc-course-category">Business</span>
+
+              <span class="rc-course-price-badge"
+                ><small>Tuition</small><strong>₦100,000</strong></span
+              >
+            </div>
+            <div class="rc-course-card-body">
+              <h3>Digital Marketing</h3>
+              <p class="rc-course-card-description">
+                Develop practical skills in content, social media, advertising,
+                campaign strategy, analytics, and conversion.
+              </p>
+              <div class="rc-course-meta">
+                <span><i class="fa fa-clock-o"></i> Flexible schedule</span>
+                <span><i class="fa fa-cogs"></i> Practical learning</span>
+                <span><i class="fa fa-users"></i> Individual / Corporate</span>
+                <span><i class="fa fa-check-circle"></i> Guided learning</span>
+              </div>
+              <div class="rc-course-card-footer">
+                <button
+                  class="rc-course-details-button"
+                  type="button"
+                  data-open-course="digital-marketing"
+                >
+                  View Details <i class="fa fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="rc-course-card"
+            data-category="business"
+            data-course="procurement"
+          >
+            <div class="rc-course-image">
+              <img
+                src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=900&h=600&fit=crop"
+                alt="Procurement &amp; Supply Chain"
+              />
+              <span class="rc-course-level">Beginner–Professional</span>
+              <span class="rc-course-mode">Hybrid</span>
+              <span class="rc-course-category">Business</span>
+
+              <span class="rc-course-price-badge"
+                ><small>Tuition</small><strong>₦150,000</strong></span
+              >
+            </div>
+            <div class="rc-course-card-body">
+              <h3>Procurement &amp; Supply Chain</h3>
+              <p class="rc-course-card-description">
+                Understand sourcing, vendor management, purchasing, inventory,
+                logistics, contracts, compliance, and performance.
+              </p>
+              <div class="rc-course-meta">
+                <span><i class="fa fa-clock-o"></i> Flexible schedule</span>
+                <span><i class="fa fa-cogs"></i> Practical learning</span>
+                <span><i class="fa fa-users"></i> Individual / Corporate</span>
+                <span><i class="fa fa-check-circle"></i> Guided learning</span>
+              </div>
+              <div class="rc-course-card-footer">
+                <button
+                  class="rc-course-details-button"
+                  type="button"
+                  data-open-course="procurement"
+                >
+                  View Details <i class="fa fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="rc-course-card"
+            data-category="business"
+            data-course="entrepreneurship"
+          >
+            <div class="rc-course-image">
+              <img
+                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=900&h=600&fit=crop"
+                alt="Entrepreneurship"
+              />
+              <span class="rc-course-level">Beginner</span>
+              <span class="rc-course-mode">Hybrid</span>
+              <span class="rc-course-category">Business</span>
+
+              <span class="rc-course-price-badge"
+                ><small>Tuition</small><strong>₦100,000</strong></span
+              >
+            </div>
+            <div class="rc-course-card-body">
+              <h3>Entrepreneurship</h3>
+              <p class="rc-course-card-description">
+                Develop and validate business ideas, understand customers, build
+                business models, manage operations, and plan growth.
+              </p>
+              <div class="rc-course-meta">
+                <span><i class="fa fa-clock-o"></i> Flexible schedule</span>
+                <span><i class="fa fa-cogs"></i> Practical learning</span>
+                <span><i class="fa fa-users"></i> Individual / Corporate</span>
+                <span><i class="fa fa-check-circle"></i> Guided learning</span>
+              </div>
+              <div class="rc-course-card-footer">
+                <button
+                  class="rc-course-details-button"
+                  type="button"
+                  data-open-course="entrepreneurship"
+                >
+                  View Details <i class="fa fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="rc-course-card"
+            data-category="infrastructure security"
+            data-course="cctv"
+          >
+            <div class="rc-course-image">
+              <img
+                src="https://images.unsplash.com/photo-1558002038-1055907df827?w=900&h=600&fit=crop"
+                alt="CCTV Training &amp; Installation"
+              />
+              <span class="rc-course-level">Beginner–Technical</span>
+              <span class="rc-course-mode">Physical / Hybrid</span>
+              <span class="rc-course-category">Infrastructure</span>
+
+              <span class="rc-course-price-badge"
+                ><small>Tuition</small><strong>₦180,000</strong></span
+              >
+            </div>
+            <div class="rc-course-card-body">
+              <h3>CCTV Training &amp; Installation</h3>
+              <p class="rc-course-card-description">
+                Learn camera selection, positioning, cabling, DVR/NVR setup,
+                networking, troubleshooting, and maintenance.
+              </p>
+              <div class="rc-course-meta">
+                <span><i class="fa fa-clock-o"></i> Flexible schedule</span>
+                <span><i class="fa fa-cogs"></i> Practical learning</span>
+                <span><i class="fa fa-users"></i> Individual / Corporate</span>
+                <span><i class="fa fa-check-circle"></i> Guided learning</span>
+              </div>
+              <div class="rc-course-card-footer">
+                <button
+                  class="rc-course-details-button"
+                  type="button"
+                  data-open-course="cctv"
+                >
+                  View Details <i class="fa fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="rc-course-card"
+            data-category="infrastructure security"
+            data-course="networking"
+          >
+            <div class="rc-course-image">
+              <img
+                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&h=600&fit=crop"
+                alt="Networking &amp; Network Security"
+              />
+              <span class="rc-course-level">Beginner–Intermediate</span>
+              <span class="rc-course-mode">Hybrid</span>
+              <span class="rc-course-category">Infrastructure</span>
+
+              <span class="rc-course-price-badge"
+                ><small>Tuition</small><strong>₦180,000</strong></span
+              >
+            </div>
+            <div class="rc-course-card-body">
+              <h3>Networking &amp; Network Security</h3>
+              <p class="rc-course-card-description">
+                Understand networks, addressing, routing, switching, wireless
+                systems, secure configuration, monitoring, and troubleshooting.
+              </p>
+              <div class="rc-course-meta">
+                <span><i class="fa fa-clock-o"></i> Flexible schedule</span>
+                <span><i class="fa fa-cogs"></i> Practical learning</span>
+                <span><i class="fa fa-users"></i> Individual / Corporate</span>
+                <span><i class="fa fa-check-circle"></i> Guided learning</span>
+              </div>
+              <div class="rc-course-card-footer">
+                <button
+                  class="rc-course-details-button"
+                  type="button"
+                  data-open-course="networking"
+                >
+                  View Details <i class="fa fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="rc-course-card"
+            data-category="infrastructure"
+            data-course="cloud-engineering"
+          >
+            <div class="rc-course-image">
+              <img
+                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=900&h=600&fit=crop"
+                alt="Cloud Engineering"
+              />
+              <span class="rc-course-level">Intermediate</span>
+              <span class="rc-course-mode">Hybrid</span>
+              <span class="rc-course-category">Infrastructure</span>
+
+              <span class="rc-course-price-badge"
+                ><small>Tuition</small><strong>₦220,000</strong></span
+              >
+            </div>
+            <div class="rc-course-card-body">
+              <h3>Cloud Engineering</h3>
+              <p class="rc-course-card-description">
+                Learn cloud concepts, compute, storage, networking, identity,
+                security, deployment, monitoring, and cost-aware architecture.
+              </p>
+              <div class="rc-course-meta">
+                <span><i class="fa fa-clock-o"></i> Flexible schedule</span>
+                <span><i class="fa fa-cogs"></i> Practical learning</span>
+                <span><i class="fa fa-users"></i> Individual / Corporate</span>
+                <span><i class="fa fa-check-circle"></i> Guided learning</span>
+              </div>
+              <div class="rc-course-card-footer">
+                <button
+                  class="rc-course-details-button"
+                  type="button"
+                  data-open-course="cloud-engineering"
+                >
+                  View Details <i class="fa fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="rc-course-card"
+            data-category="infrastructure development"
+            data-course="devops"
+          >
+            <div class="rc-course-image">
+              <img
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&h=600&fit=crop"
+                alt="DevOps Engineering"
+              />
+              <span class="rc-course-level">Intermediate</span>
+              <span class="rc-course-mode">Hybrid</span>
+              <span class="rc-course-category">Infrastructure</span>
+
+              <span class="rc-course-price-badge"
+                ><small>Tuition</small><strong>₦250,000</strong></span
+              >
+            </div>
+            <div class="rc-course-card-body">
+              <h3>DevOps Engineering</h3>
+              <p class="rc-course-card-description">
+                Develop practical skills in Linux, Git, automation, containers,
+                CI/CD, monitoring, and reliable delivery.
+              </p>
+              <div class="rc-course-meta">
+                <span><i class="fa fa-clock-o"></i> Flexible schedule</span>
+                <span><i class="fa fa-cogs"></i> Practical learning</span>
+                <span><i class="fa fa-users"></i> Individual / Corporate</span>
+                <span><i class="fa fa-check-circle"></i> Guided learning</span>
+              </div>
+              <div class="rc-course-card-footer">
+                <button
+                  class="rc-course-details-button"
+                  type="button"
+                  data-open-course="devops"
+                >
+                  View Details <i class="fa fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="rc-course-card"
+            data-category="business"
+            data-course="corporate-training"
+          >
+            <div class="rc-course-image">
+              <img
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&h=600&fit=crop"
+                alt="Corporate Training Programmes"
+              />
+              <span class="rc-course-level">Custom</span>
+              <span class="rc-course-mode">Flexible</span>
+              <span class="rc-course-category">Business</span>
+
+              <span class="rc-course-price-badge"
+                ><small>Tuition</small><strong>From ₦500,000</strong></span
+              >
+            </div>
+            <div class="rc-course-card-body">
+              <h3>Corporate Training Programmes</h3>
+              <p class="rc-course-card-description">
+                Tailored workforce development in digital skills, cybersecurity,
+                AI, project delivery, productivity, and technology adoption.
+              </p>
+              <div class="rc-course-meta">
+                <span><i class="fa fa-clock-o"></i> Flexible schedule</span>
+                <span><i class="fa fa-cogs"></i> Practical learning</span>
+                <span><i class="fa fa-users"></i> Individual / Corporate</span>
+                <span><i class="fa fa-check-circle"></i> Guided learning</span>
+              </div>
+              <div class="rc-course-card-footer">
+                <button
+                  class="rc-course-details-button"
+                  type="button"
+                  data-open-course="corporate-training"
+                >
+                  View Details <i class="fa fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="rc-no-results" id="courseNoResults">
+          <i class="fa fa-search"></i><strong>No matching course found.</strong>
+          <p>Try another search term or category.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="rc-course-section">
+      <div class="container">
+        <div class="rc-split-grid">
+          <div class="rc-split-image">
+            <img
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1000&h=1100&fit=crop"
+              alt="Students collaborating in a technology class"
+            />
+            <div class="rc-split-badge">
+              <strong>Hybrid Training</strong
+              ><span
+                >Choose physical classes, online instruction, or a blended
+                learning experience.</span
+              >
+            </div>
+          </div>
+          <div class="rc-split-content">
+            <span class="rc-section-tag"
+              ><i class="fa fa-laptop"></i> Flexible Learning</span
+            >
+            <h2>Built Around Your <span>Schedule and Goals</span></h2>
+            <p>
+              Radiant Cullings combines expert instruction with practical
+              exercises, real projects, guided feedback, and flexible learning
+              modes for students, professionals, entrepreneurs, teams, and
+              organisations.
+            </p>
+            <div class="rc-feature-list">
+              <div class="rc-feature-item">
+                <span class="rc-feature-icon"><i class="fa fa-users"></i></span>
+                <div>
+                  <strong>Instructor-led sessions</strong
+                  ><span>Guidance, demonstrations, and direct support.</span>
+                </div>
+              </div>
+              <div class="rc-feature-item">
+                <span class="rc-feature-icon"><i class="fa fa-cogs"></i></span>
+                <div>
+                  <strong>Practical projects</strong
+                  ><span>Tasks, labs, and portfolio work.</span>
+                </div>
+              </div>
+              <div class="rc-feature-item">
+                <span class="rc-feature-icon"
+                  ><i class="fa fa-building"></i
+                ></span>
+                <div>
+                  <strong>Corporate programmes</strong
+                  ><span>Training aligned with organisational goals.</span>
+                </div>
+              </div>
+              <div class="rc-feature-item">
+                <span class="rc-feature-icon"
+                  ><i class="fa fa-certificate"></i
+                ></span>
+                <div>
+                  <strong>Completion recognition</strong
+                  ><span>Programme support and guided completion.</span>
+                </div>
+              </div>
+            </div>
+            <a
+              href="https://wa.me/2348146710908?text=Hello%20Radiant%20Cullings%2C%20I%20want%20to%20discuss%20your%20hybrid%20training%20options"
+              class="rc-course-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Discuss Your Training Plan <i class="fa fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rc-course-section rc-course-section-soft">
+      <div class="container">
+        <div class="rc-course-section-heading">
+          <span class="rc-section-tag"
+            ><i class="fa fa-map-signs"></i> Your Learning Journey</span
+          >
+          <h2>From Interest to <span>Practical Ability</span></h2>
+          <p>
+            Choose correctly, learn consistently, and finish with demonstrable
+            skills.
+          </p>
+        </div>
+        <div class="rc-path-grid">
+          <article class="rc-path-card">
+            <span class="rc-path-number">01</span>
+            <h3>Choose a Programme</h3>
+            <p>Browse the catalogue or speak with an adviser.</p>
+          </article>
+          <article class="rc-path-card">
+            <span class="rc-path-number">02</span>
+            <h3>Select Your Mode</h3>
+            <p>Join physically, online, or through a hybrid arrangement.</p>
+          </article>
+          <article class="rc-path-card">
+            <span class="rc-path-number">03</span>
+            <h3>Learn by Doing</h3>
+            <p>Complete guided exercises, labs, assignments, and projects.</p>
+          </article>
+          <article class="rc-path-card">
+            <span class="rc-path-number">04</span>
+            <h3>Build Your Next Step</h3>
+            <p>Use your skills and project work to advance your goals.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="rc-course-section">
+      <div class="container">
+        <div class="rc-faq-grid">
+          <div class="rc-faq-heading">
+            <span class="rc-section-tag"
+              ><i class="fa fa-question-circle"></i> Frequently Asked
+              Questions</span
+            >
+            <h2>Course <span>Information</span></h2>
+            <p>
+              Common questions about eligibility, learning modes, certificates,
+              schedules, and corporate training.
+            </p>
+          </div>
+          <div class="rc-faq-list">
+            <article class="rc-faq-item is-open">
+              <button
+                class="rc-faq-question"
+                type="button"
+                aria-expanded="true"
+              >
+                Do I need previous experience?<i class="fa fa-plus"></i>
+              </button>
+              <div class="rc-faq-answer">
+                <p>
+                  Many programmes begin at foundation level. Intermediate
+                  programmes may require basic computer knowledge or related
+                  experience.
+                </p>
+              </div>
+            </article>
+            <article class="rc-faq-item">
+              <button
+                class="rc-faq-question"
+                type="button"
+                aria-expanded="false"
+              >
+                Are courses online or physical?<i class="fa fa-plus"></i>
+              </button>
+              <div class="rc-faq-answer">
+                <p>
+                  Radiant Cullings offers physical, online, and hybrid classes
+                  depending on the programme and cohort.
+                </p>
+              </div>
+            </article>
+            <article class="rc-faq-item">
+              <button
+                class="rc-faq-question"
+                type="button"
+                aria-expanded="false"
+              >
+                Are assessments and completion documents included?<i
+                  class="fa fa-plus"
+                ></i>
+              </button>
+              <div class="rc-faq-answer">
+                <p>
+                  Assessment methods and completion documents may vary by
+                  programme. Confirm the exact arrangement with the Radiant
+                  Cullings team before enrolment.
+                </p>
+              </div>
+            </article>
+            <article class="rc-faq-item">
+              <button
+                class="rc-faq-question"
+                type="button"
+                aria-expanded="false"
+              >
+                Can organisations request customised training?<i
+                  class="fa fa-plus"
+                ></i>
+              </button>
+              <div class="rc-faq-answer">
+                <p>
+                  Yes. Corporate training can be tailored to workforce gaps,
+                  schedules, delivery modes, and measurable outcomes.
+                </p>
+              </div>
+            </article>
+            <article class="rc-faq-item">
+              <button
+                class="rc-faq-question"
+                type="button"
+                aria-expanded="false"
+              >
+                How do I confirm the next start date?<i class="fa fa-plus"></i>
+              </button>
+              <div class="rc-faq-answer">
+                <p>
+                  Use the WhatsApp enrolment button or contact the team to
+                  confirm the next cohort and payment arrangement.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rc-course-cta">
+      <div class="container">
+        <div class="rc-course-cta-inner">
+          <div>
+            <h2>Ready to Build a Future-Ready Skill?</h2>
+            <p>
+              Tell us your goal and current experience. Our team will help you
+              choose a suitable course and learning mode.
+            </p>
+          </div>
+          <div class="rc-course-cta-actions">
+            <a
+              href="https://wa.me/2348146710908?text=Hello%20Radiant%20Cullings%2C%20I%20am%20ready%20to%20enrol%20for%20a%20course"
+              class="rc-course-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Enrol on WhatsApp <i class="fa fa-whatsapp"></i></a
+            ><a href="contact.html" class="rc-course-secondary"
+              >Contact the Team <i class="fa fa-envelope"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="ve-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-lg-4 mb-50">
+            <div class="ve-footer-brand">
+              <a href="index.html" class="ve-footer-logo"
+                ><img
+                  src="img/core-img/radiant_cullings.png"
+                  alt="Radiant Cullings"
+                  style="max-width: 120px"
+              /></a>
+              <p>
+                Empowering People. Transforming Businesses. Driving Innovation.
+              </p>
+              <div class="ve-social">
+                <a href="#" aria-label="Facebook"
+                  ><i class="fa fa-facebook"></i></a
+                ><a href="#" aria-label="Twitter"
+                  ><i class="fa fa-twitter"></i></a
+                ><a href="#" aria-label="LinkedIn"
+                  ><i class="fa fa-linkedin"></i></a
+                ><a href="#" aria-label="Instagram"
+                  ><i class="fa fa-instagram"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-2 mb-50">
+            <h5 class="ve-footer-title">Quick Links</h5>
+            <ul class="ve-footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="courses.html">Courses</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3 mb-50">
+            <h5 class="ve-footer-title">Our Services</h5>
+            <ul class="ve-footer-links">
+              <li><a href="courses.html">Technology Training</a></li>
+              <li><a href="consulting.html">Technology Consulting</a></li>
+              <li><a href="services.html#cybersecurity">Cybersecurity</a></li>
+              <li><a href="services.html#project">Project Management</a></li>
+              <li>
+                <a href="services.html#digital">Digital Transformation</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3 mb-50">
+            <h5 class="ve-footer-title">Contact Us</h5>
+            <ul class="ve-footer-contact">
+              <li><i class="fa fa-map-marker"></i> Ikeja, Lagos, Nigeria</li>
+              <li>
+                <i class="fa fa-map-marker"></i> 17 Romoke Complex, Igodo Road,
+                Magboro, Ogun State
+              </li>
+              <li><i class="fa fa-phone"></i> +234 814 671 0908</li>
+              <li><i class="fa fa-phone"></i> +234 703 740 3162</li>
+              <li><i class="fa fa-phone"></i> +234 704 383 7008</li>
+              <li><i class="fa fa-envelope"></i> info@radiantcullings.com</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="ve-footer-bottom">
+        <div class="container">
+          <div class="ve-footer-bottom-inner">
+            <p>
+              Copyright &copy; <span id="currentYear"></span> Radiant Cullings.
+              All Rights Reserved.
+            </p>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div
+      class="rc-course-modal"
+      id="courseModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="courseModalTitle"
+      aria-hidden="true"
+    >
+      <div class="rc-course-modal-dialog">
+        <button
+          class="rc-course-modal-close"
+          id="courseModalClose"
+          type="button"
+          aria-label="Close course details"
+        >
+          <i class="fa fa-times"></i>
+        </button>
+        <div class="rc-modal-hero" id="courseModalHero">
+          <div class="rc-modal-hero-content">
+            <span id="courseModalCategory">Course</span>
+            <h2 id="courseModalTitle">Course Title</h2>
+          </div>
+        </div>
+        <div class="rc-modal-body">
+          <div class="rc-modal-summary">
+            <div class="rc-modal-summary-item">
+              <span>Duration</span><strong id="courseModalDuration"></strong>
+            </div>
+            <div class="rc-modal-summary-item">
+              <span>Level</span><strong id="courseModalLevel"></strong>
+            </div>
+            <div class="rc-modal-summary-item">
+              <span>Mode</span><strong id="courseModalMode"></strong>
+            </div>
+            <div class="rc-modal-summary-item">
+              <span>Tuition</span><strong id="courseModalPrice"></strong>
+            </div>
+          </div>
+          <p class="rc-modal-description" id="courseModalDescription"></p>
+          <div class="rc-modal-columns">
+            <div class="rc-modal-column">
+              <h3>What You Will Learn</h3>
+              <ul class="rc-modal-list" id="courseModalLearn"></ul>
+            </div>
+            <div class="rc-modal-column">
+              <h3>Who This Is For</h3>
+              <ul class="rc-modal-list" id="courseModalAudience"></ul>
+            </div>
+          </div>
+          <div class="rc-modal-actions">
+            <a
+              href="#"
+              class="rc-course-primary"
+              id="courseModalWhatsApp"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Enquire on WhatsApp <i class="fa fa-whatsapp"></i></a
+            ><a
+              href="contact.html"
+              class="rc-course-secondary"
+              style="
+                color: #2575ab;
+                border-color: rgba(37, 117, 171, 0.25);
+                background: rgba(37, 117, 171, 0.06);
+              "
+              >Contact Us <i class="fa fa-envelope"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const body = document.body,
+          root = document.documentElement,
+          toggle = document.getElementById("darkModeToggle"),
+          year = document.getElementById("currentYear");
+        try {
+          if (localStorage.getItem("darkMode") === "enabled")
+            body.classList.add("dark-mode");
+        } catch (e) {}
+        root.classList.remove("dark-theme-loading");
+        if (year) year.textContent = new Date().getFullYear();
+        function syncTheme() {
+          if (!toggle) return;
+          const d = body.classList.contains("dark-mode");
+          toggle.setAttribute("aria-pressed", d);
+          toggle.setAttribute(
+            "aria-label",
+            d ? "Switch to light mode" : "Switch to dark mode",
+          );
+          toggle.title = d ? "Switch to light mode" : "Switch to dark mode";
+        }
+        if (toggle) {
+          syncTheme();
+          toggle.addEventListener("click", () => {
+            body.classList.toggle("dark-mode");
+            try {
+              localStorage.setItem(
+                "darkMode",
+                body.classList.contains("dark-mode") ? "enabled" : "disabled",
+              );
+            } catch (e) {}
+            syncTheme();
+          });
+        }
+        const search = document.getElementById("courseSearch"),
+          buttons = [...document.querySelectorAll(".rc-filter-button")],
+          cards = [...document.querySelectorAll(".rc-course-card")],
+          status = document.getElementById("courseResultsStatus"),
+          empty = document.getElementById("courseNoResults");
+        let active = "all";
+        function filterCourses() {
+          const q = (search?.value || "").trim().toLowerCase();
+          let count = 0;
+          cards.forEach((card) => {
+            const cats = (card.dataset.category || "").split(" "),
+              matchCat = active === "all" || cats.includes(active),
+              matchText = !q || card.textContent.toLowerCase().includes(q),
+              show = matchCat && matchText;
+            card.hidden = !show;
+            if (show) count++;
+          });
+          status.textContent = `${count} ${count === 1 ? "course" : "courses"} found`;
+          empty.classList.toggle("is-visible", count === 0);
+        }
+        buttons.forEach((b) =>
+          b.addEventListener("click", () => {
+            active = b.dataset.filter || "all";
+            buttons.forEach((x) => x.classList.toggle("is-active", x === b));
+            filterCourses();
+          }),
+        );
+        search?.addEventListener("input", filterCourses);
+        filterCourses();
+        document.querySelectorAll(".rc-faq-item").forEach((item) => {
+          const q = item.querySelector(".rc-faq-question"),
+            a = item.querySelector(".rc-faq-answer");
+          function sync() {
+            const o = item.classList.contains("is-open");
+            q.setAttribute("aria-expanded", o);
+            a.style.maxHeight = o ? a.scrollHeight + "px" : "0";
+          }
+          q.addEventListener("click", () => {
+            item.classList.toggle("is-open");
+            sync();
+          });
+          sync();
+        });
+        const data = {
+          cybersecurity: {
+            title: "Cybersecurity",
+            category: "Security",
+            duration: "Flexible schedule",
+            level: "Beginner–Advanced",
+            mode: "Hybrid",
+            price: "₦200,000",
+            image:
+              "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=900&h=600&fit=crop",
+            description:
+              "Learn digital security, cyber-risk awareness, threat detection, access control, incident response, and practical defensive techniques.",
+            learn: [
+              "Security foundations and cyber-risk awareness",
+              "Common threats, vulnerabilities, and attack methods",
+              "Identity, access control, and secure configuration",
+              "Network and endpoint protection",
+              "Incident response and security best practices",
+            ],
+            audience: [
+              "Students and recent graduates",
+              "Working professionals",
+              "Entrepreneurs and business owners",
+              "Organisations developing staff capability",
+            ],
+          },
+          "data-analysis": {
+            title: "Data Analysis",
+            category: "Data & AI",
+            duration: "Flexible schedule",
+            level: "Beginner",
+            mode: "Hybrid",
+            price: "₦150,000",
+            image:
+              "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&h=600&fit=crop",
+            description:
+              "Turn raw information into clear business insights using spreadsheets, SQL, dashboards, and practical analytical thinking.",
+            learn: [
+              "Spreadsheet analysis and data cleaning",
+              "SQL and structured data queries",
+              "Charts, dashboards, and business reporting",
+              "Basic statistics for practical decisions",
+              "Portfolio-ready analysis projects",
+            ],
+            audience: [
+              "Students and recent graduates",
+              "Working professionals",
+              "Entrepreneurs and business owners",
+              "Organisations developing staff capability",
+            ],
+          },
+          "ai-training": {
+            title: "Artificial Intelligence Training",
+            category: "Data & AI",
+            duration: "Flexible schedule",
+            level: "Beginner–Intermediate",
+            mode: "Hybrid",
+            price: "₦150,000",
+            image:
+              "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=900&h=600&fit=crop",
+            description:
+              "Understand modern AI, prompt engineering, generative tools, automation, responsible use, and workplace applications.",
+            learn: [
+              "AI and generative AI foundations",
+              "Prompt design and evaluation",
+              "AI-assisted research and content workflows",
+              "Automation opportunities and limitations",
+              "Responsible and secure AI use",
+            ],
+            audience: [
+              "Students and recent graduates",
+              "Working professionals",
+              "Entrepreneurs and business owners",
+              "Organisations developing staff capability",
+            ],
+          },
+          "project-management": {
+            title: "Project Management",
+            category: "Business",
+            duration: "Flexible schedule",
+            level: "Beginner–Professional",
+            mode: "Hybrid",
+            price: "₦150,000",
+            image:
+              "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&h=600&fit=crop",
+            description:
+              "Plan, execute, monitor, and close projects with stronger control over scope, schedule, cost, quality, risks, and stakeholders.",
+            learn: [
+              "Project initiation and planning",
+              "Scope, schedule, cost, and quality control",
+              "Risk and stakeholder management",
+              "Progress monitoring and reporting",
+              "Project closure and lessons learned",
+            ],
+            audience: [
+              "Students and recent graduates",
+              "Working professionals",
+              "Entrepreneurs and business owners",
+              "Organisations developing staff capability",
+            ],
+          },
+          "ui-ux": {
+            title: "UI/UX Design",
+            category: "Creative",
+            duration: "Flexible schedule",
+            level: "Beginner",
+            mode: "Hybrid",
+            price: "₦120,000",
+            image:
+              "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=900&h=600&fit=crop",
+            description:
+              "Design useful, accessible, and attractive digital experiences through research, wireframes, prototypes, and interface systems.",
+            learn: [
+              "User research and problem definition",
+              "Information architecture and user flows",
+              "Wireframing and prototyping",
+              "Interface design systems",
+              "Usability testing and portfolio presentation",
+            ],
+            audience: [
+              "Students and recent graduates",
+              "Working professionals",
+              "Entrepreneurs and business owners",
+              "Organisations developing staff capability",
+            ],
+          },
+          "graphic-design": {
+            title: "Graphic Design",
+            category: "Creative",
+            duration: "Flexible schedule",
+            level: "Beginner",
+            mode: "Hybrid",
+            price: "₦100,000",
+            image:
+              "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=900&h=600&fit=crop",
+            description:
+              "Build visual communication skills for branding, social media, advertising, presentations, print, and digital campaigns.",
+            learn: [
+              "Design principles and visual hierarchy",
+              "Typography, colour, and composition",
+              "Brand and social-media design",
+              "Print and digital production",
+              "Portfolio development",
+            ],
+            audience: [
+              "Students and recent graduates",
+              "Working professionals",
+              "Entrepreneurs and business owners",
+              "Organisations developing staff capability",
+            ],
+          },
+          "video-editing": {
+            title: "Video Editing",
+            category: "Creative",
+            duration: "Flexible schedule",
+            level: "Beginner–Intermediate",
+            mode: "Hybrid",
+            price: "₦120,000",
+            image:
+              "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=900&h=600&fit=crop",
+            description:
+              "Learn storytelling, cutting, audio cleanup, colour correction, motion graphics, subtitles, and export workflows.",
+            learn: [
+              "Editing workflow and storytelling",
+              "Cuts, pacing, transitions, and continuity",
+              "Audio cleanup and mixing",
+              "Colour correction and motion graphics",
+              "Publishing formats and portfolio projects",
+            ],
+            audience: [
+              "Students and recent graduates",
+              "Working professionals",
+              "Entrepreneurs and business owners",
+              "Organisations developing staff capability",
+            ],
+          },
+          "software-development": {
+            title: "Software Development",
+            category: "Development",
+            duration: "Flexible schedule",
+            level: "Beginner–Advanced",
+            mode: "Hybrid",
+            price: "₦250,000",
+            image:
+              "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900&h=600&fit=crop",
+            description:
+              "Build programming foundations and learn how to design, develop, test, document, and improve real software applications.",
+            learn: [
+              "Programming logic and problem solving",
+              "Application structure and reusable code",
+              "Databases and APIs",
+              "Testing, debugging, and documentation",
+              "Version control and portfolio applications",
+            ],
+            audience: [
+              "Students and recent graduates",
+              "Working professionals",
+              "Entrepreneurs and business owners",
+              "Organisations developing staff capability",
+            ],
+          },
+          "web-development": {
+            title: "Website Development",
+            category: "Development",
+            duration: "Flexible schedule",
+            level: "Beginner",
+            mode: "Hybrid",
+            price: "₦150,000",
+            image:
+              "https://images.unsplash.com/photo-1547658719-da2b51169166?w=900&h=600&fit=crop",
+            description:
+              "Create responsive websites using modern front-end foundations, interactive features, hosting, and deployment.",
+            learn: [
+              "HTML structure and accessible content",
+              "Modern CSS layouts and responsive design",
+              "JavaScript interactions",
+              "Forms, components, and basic APIs",
+              "Hosting, domains, and deployment",
+            ],
+            audience: [
+              "Students and recent graduates",
+              "Working professionals",
+              "Entrepreneurs and business owners",
+              "Organisations developing staff capability",
+            ],
+          },
+          "app-development": {
+            title: "App Development",
+            category: "Development",
+            duration: "Flexible schedule",
+            level: "Intermediate",
+            mode: "Hybrid",
+            price: "₦220,000",
+            image:
+              "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=900&h=600&fit=crop",
+            description:
+              "Plan, build, test, and publish mobile applications while learning user flows, APIs, storage, and deployment.",
+            learn: [
+              "Mobile application architecture",
+              "Interface and navigation design",
+              "Data storage and API integration",
+              "Testing and performance",
+              "Application publishing workflow",
+            ],
+            audience: [
+              "Students and recent graduates",
+              "Working professionals",
+              "Entrepreneurs and business owners",
+              "Organisations developing staff capability",
+            ],
+          },
+          "digital-marketing": {
+            title: "Digital Marketing",
+            category: "Business",
+            duration: "Flexible schedule",
+            level: "Beginner",
+            mode: "Hybrid",
+            price: "₦100,000",
+            image:
+              "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&h=600&fit=crop",
+            description:
+              "Develop practical skills in content, social media, advertising, campaign strategy, analytics, and conversion.",
+            learn: [
+              "Marketing strategy and audience definition",
+              "Content and social-media planning",
+              "Digital advertising fundamentals",
+              "Campaign measurement and optimisation",
+              "Practical campaign portfolio",
+            ],
+            audience: [
+              "Students and recent graduates",
+              "Working professionals",
+              "Entrepreneurs and business owners",
+              "Organisations developing staff capability",
+            ],
+          },
+          procurement: {
+            title: "Procurement & Supply Chain",
+            category: "Business",
+            duration: "Flexible schedule",
+            level: "Beginner–Professional",
+            mode: "Hybrid",
+            price: "₦150,000",
+            image:
+              "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=900&h=600&fit=crop",
+            description:
+              "Understand sourcing, vendor management, purchasing, inventory, logistics, contracts, compliance, and performance.",
+            learn: [
+              "Procurement planning and sourcing",
+              "Supplier selection and vendor management",
+              "Purchasing, inventory, and logistics",
+              "Contract and compliance fundamentals",
+              "Performance measurement and risk management",
+            ],
+            audience: [
+              "Students and recent graduates",
+              "Working professionals",
+              "Entrepreneurs and business owners",
+              "Organisations developing staff capability",
+            ],
+          },
+          entrepreneurship: {
+            title: "Entrepreneurship",
+            category: "Business",
+            duration: "Flexible schedule",
+            level: "Beginner",
+            mode: "Hybrid",
+            price: "₦100,000",
+            image:
+              "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=900&h=600&fit=crop",
+            description:
+              "Develop and validate business ideas, understand customers, build business models, manage operations, and plan growth.",
+            learn: [
+              "Opportunity identification and idea validation",
+              "Customer and market research",
+              "Business models and value propositions",
+              "Basic finance and operations",
+              "Launch and growth planning",
+            ],
+            audience: [
+              "Students and recent graduates",
+              "Working professionals",
+              "Entrepreneurs and business owners",
+              "Organisations developing staff capability",
+            ],
+          },
+          cctv: {
+            title: "CCTV Training & Installation",
+            category: "Infrastructure",
+            duration: "Flexible schedule",
+            level: "Beginner–Technical",
+            mode: "Physical / Hybrid",
+            price: "₦180,000",
+            image:
+              "https://images.unsplash.com/photo-1558002038-1055907df827?w=900&h=600&fit=crop",
+            description:
+              "Learn camera selection, positioning, cabling, DVR/NVR setup, networking, troubleshooting, and maintenance.",
+            learn: [
+              "Camera types and site assessment",
+              "Cabling, power, and equipment selection",
+              "DVR/NVR configuration",
+              "Remote access and basic networking",
+              "Troubleshooting and maintenance",
+            ],
+            audience: [
+              "Students and recent graduates",
+              "Working professionals",
+              "Entrepreneurs and business owners",
+              "Organisations developing staff capability",
+            ],
+          },
+          networking: {
+            title: "Networking & Network Security",
+            category: "Infrastructure",
+            duration: "Flexible schedule",
+            level: "Beginner–Intermediate",
+            mode: "Hybrid",
+            price: "₦180,000",
+            image:
+              "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&h=600&fit=crop",
+            description:
+              "Understand networks, addressing, routing, switching, wireless systems, secure configuration, monitoring, and troubleshooting.",
+            learn: [
+              "Network models, addressing, and protocols",
+              "Routing, switching, and wireless networks",
+              "Network services and device configuration",
+              "Access control and network security",
+              "Monitoring and troubleshooting",
+            ],
+            audience: [
+              "Students and recent graduates",
+              "Working professionals",
+              "Entrepreneurs and business owners",
+              "Organisations developing staff capability",
+            ],
+          },
+          "cloud-engineering": {
+            title: "Cloud Engineering",
+            category: "Infrastructure",
+            duration: "Flexible schedule",
+            level: "Intermediate",
+            mode: "Hybrid",
+            price: "₦220,000",
+            image:
+              "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=900&h=600&fit=crop",
+            description:
+              "Learn cloud concepts, compute, storage, networking, identity, security, deployment, monitoring, and cost-aware architecture.",
+            learn: [
+              "Cloud computing models and architecture",
+              "Compute, storage, and network services",
+              "Identity and access management",
+              "Security, monitoring, and cost control",
+              "Practical cloud deployment projects",
+            ],
+            audience: [
+              "Students and recent graduates",
+              "Working professionals",
+              "Entrepreneurs and business owners",
+              "Organisations developing staff capability",
+            ],
+          },
+          devops: {
+            title: "DevOps Engineering",
+            category: "Infrastructure",
+            duration: "Flexible schedule",
+            level: "Intermediate",
+            mode: "Hybrid",
+            price: "₦250,000",
+            image:
+              "https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&h=600&fit=crop",
+            description:
+              "Develop practical skills in Linux, Git, automation, containers, CI/CD, monitoring, and reliable delivery.",
+            learn: [
+              "Linux and command-line foundations",
+              "Git and collaborative workflows",
+              "Automation and continuous integration",
+              "Containers and deployment pipelines",
+              "Monitoring and infrastructure practices",
+            ],
+            audience: [
+              "Students and recent graduates",
+              "Working professionals",
+              "Entrepreneurs and business owners",
+              "Organisations developing staff capability",
+            ],
+          },
+          "corporate-training": {
+            title: "Corporate Training Programmes",
+            category: "Business",
+            duration: "Flexible schedule",
+            level: "Custom",
+            mode: "Flexible",
+            price: "From ₦500,000",
+            image:
+              "https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&h=600&fit=crop",
+            description:
+              "Tailored workforce development in digital skills, cybersecurity, AI, project delivery, productivity, and technology adoption.",
+            learn: [
+              "Custom digital-skills curriculum",
+              "Role-based practical learning",
+              "Cybersecurity and AI awareness",
+              "Project, productivity, and technology training",
+              "Programme evaluation and reporting",
+            ],
+            audience: [
+              "Students and recent graduates",
+              "Working professionals",
+              "Entrepreneurs and business owners",
+              "Organisations developing staff capability",
+            ],
+          },
+        };
+        const modal = document.getElementById("courseModal"),
+          close = document.getElementById("courseModalClose"),
+          hero = document.getElementById("courseModalHero"),
+          cat = document.getElementById("courseModalCategory"),
+          title = document.getElementById("courseModalTitle"),
+          dur = document.getElementById("courseModalDuration"),
+          level = document.getElementById("courseModalLevel"),
+          mode = document.getElementById("courseModalMode"),
+          price = document.getElementById("courseModalPrice"),
+          desc = document.getElementById("courseModalDescription"),
+          learn = document.getElementById("courseModalLearn"),
+          aud = document.getElementById("courseModalAudience"),
+          wa = document.getElementById("courseModalWhatsApp");
+        let last = null;
+        const list = (items) =>
+          items
+            .map(
+              (x) =>
+                `<li><i class="fa fa-check-circle"></i><span>${x}</span></li>`,
+            )
+            .join("");
+        function openModal(id) {
+          const c = data[id];
+          if (!c) return;
+          last = document.activeElement;
+          hero.style.backgroundImage = `url("${c.image}")`;
+          cat.textContent = c.category;
+          title.textContent = c.title;
+          dur.textContent = c.duration;
+          level.textContent = c.level;
+          mode.textContent = c.mode;
+          price.textContent = c.price;
+          desc.textContent = c.description;
+          learn.innerHTML = list(c.learn);
+          aud.innerHTML = list(c.audience);
+          wa.href =
+            "https://wa.me/2348146710908?text=" +
+            encodeURIComponent(
+              "Hello Radiant Cullings, I want to enquire about the " +
+                c.title +
+                " course.",
+            );
+          modal.classList.add("is-open");
+          modal.setAttribute("aria-hidden", "false");
+          body.classList.add("rc-modal-open");
+          close.focus();
+        }
+        function closeModal() {
+          modal.classList.remove("is-open");
+          modal.setAttribute("aria-hidden", "true");
+          body.classList.remove("rc-modal-open");
+          last?.focus();
+        }
+        document
+          .querySelectorAll("[data-open-course]")
+          .forEach((b) =>
+            b.addEventListener("click", () => openModal(b.dataset.openCourse)),
+          );
+        close.addEventListener("click", closeModal);
+        modal.addEventListener("click", (e) => {
+          if (e.target === modal) closeModal();
+        });
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && modal.classList.contains("is-open"))
+            closeModal();
+        });
+        const dot = document.getElementById("customCursorDot"),
+          circle = document.getElementById("customCursorCircle"),
+          fine =
+            matchMedia("(pointer:fine)").matches &&
+            matchMedia("(hover:hover)").matches;
+        if (dot && circle && fine) {
+          let mx = 0,
+            my = 0,
+            cx = 0,
+            cy = 0,
+            started = false;
+          document.addEventListener("mousemove", (e) => {
+            mx = e.clientX;
+            my = e.clientY;
+            dot.style.left = mx + "px";
+            dot.style.top = my + "px";
+            if (!started) {
+              cx = mx;
+              cy = my;
+              started = true;
+              dot.classList.add("cursor-visible");
+              circle.classList.add("cursor-visible");
+            }
+          });
+          (function animate() {
+            cx += (mx - cx) * 0.16;
+            cy += (my - cy) * 0.16;
+            circle.style.left = cx + "px";
+            circle.style.top = cy + "px";
+            requestAnimationFrame(animate);
+          })();
+          const sel =
+            "a,button,input,[role='button'],.rc-course-card,.rc-faq-item";
+          document.addEventListener("mouseover", (e) => {
+            if (e.target.closest(sel)) {
+              dot.classList.add("cursor-hover");
+              circle.classList.add("cursor-hover");
+            }
+          });
+          document.addEventListener("mouseout", (e) => {
+            if (e.target.closest(sel)) {
+              dot.classList.remove("cursor-hover");
+              circle.classList.remove("cursor-hover");
+            }
+          });
+          document.addEventListener("mousedown", () =>
+            circle.classList.add("cursor-click"),
+          );
+          document.addEventListener("mouseup", () =>
+            circle.classList.remove("cursor-click"),
+          );
+        }
+      });
+    </script>
+    <script type="text/javascript">
+      var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+      (function () {
+        var s1 = document.getElementsByTagName("script")[0],
+          s0 = document.createElement("script");
+        s0.async = true;
+        s0.src = "https://embed.tawk.to/6a3513702fa5b31d456f8768/1jrfl7tle";
+        s0.charset = "UTF-8";
+        s0.setAttribute("crossorigin", "*");
+        s1.parentNode.insertBefore(s0, s1);
+      })();
+    </script>
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="js/bootstrap/popper.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/plugins/plugins.js"></script>
+    <script src="js/active.js"></script>
+    <script src="js/vaultedge.js"></script>
+  </body>
+</html>

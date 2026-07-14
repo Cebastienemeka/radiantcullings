@@ -1,111 +1,393 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Radiant Cullings - Empowering People. Transforming Businesses. Driving Innovation.">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8" />
 
-    <title>Radiant Cullings - Technology Consulting & Professional Development</title>
+    <meta
+        name="description"
+        content="Radiant Cullings - Empowering People. Transforming Businesses. Driving Innovation."
+    />
 
-    <link rel="icon" href="img/core-img/radiant_cullings.png">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/custom-override.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>
+        Radiant Cullings - Technology Consulting &amp; Professional Development
+    </title>
+
+    <link rel="icon" href="img/core-img/radiant_cullings.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/custom-override.css" />
+
+    <!-- Apply saved theme before the page becomes visible -->
+    <script>
+        (function () {
+            try {
+                if (localStorage.getItem("darkMode") === "enabled") {
+                    document.documentElement.classList.add(
+                        "dark-theme-loading"
+                    );
+                }
+            } catch (error) {
+                /* Continue normally if localStorage is unavailable. */
+            }
+        })();
+    </script>
+
     <style>
-        /* ===== TRUST BAR - BIGGER VERSION ===== */
+        /* ==================================================
+           GENERAL THEME TRANSITIONS
+        ================================================== */
+
+        html,
+        body,
+        section,
+        header,
+        footer,
+        nav,
+        div,
+        article,
+        aside {
+            transition:
+                background-color 0.35s ease,
+                border-color 0.35s ease,
+                color 0.35s ease,
+                box-shadow 0.35s ease;
+        }
+
+        body {
+            background: #ffffff;
+            color: #0f2a38;
+        }
+
+        html.dark-theme-loading body {
+            background: #12121f;
+        }
+
+
+        /* ==================================================
+           FLOATING WHATSAPP BUTTON
+        ================================================== */
+
+        .floating-whatsapp {
+            position: fixed;
+            left: 20px;
+            bottom: 30px;
+            z-index: 9999;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+
+            animation: whatsappPulse 2s ease-in-out infinite;
+        }
+
+        .floating-whatsapp a {
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 60px;
+            height: 60px;
+
+            border-radius: 50%;
+
+            background: #2575ab;
+            color: #ffffff;
+
+            text-decoration: none;
+
+            box-shadow: 0 6px 25px rgba(37, 117, 171, 0.4);
+
+            transition:
+                background 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .floating-whatsapp a:hover {
+            background: #ed948c;
+            color: #ffffff;
+
+            transform: scale(1.1) translateY(-4px);
+
+            box-shadow: 0 10px 40px rgba(237, 148, 140, 0.5);
+        }
+
+        .floating-whatsapp a i {
+            font-size: 32px;
+            transition: transform 0.3s ease;
+        }
+
+        .floating-whatsapp a:hover i {
+            transform: scale(1.1);
+        }
+
+        .floating-whatsapp a::before {
+            content: "";
+
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            bottom: -8px;
+            left: -8px;
+
+            border: 2px solid rgba(37, 117, 171, 0.3);
+            border-radius: 50%;
+
+            animation: whatsappRipple 2s ease-out infinite;
+        }
+
+        .floating-whatsapp .whatsapp-label {
+            padding: 6px 14px;
+
+            border-radius: 20px;
+
+            background: #2575ab;
+            color: #ffffff;
+
+            font-family:
+                system-ui,
+                "Segoe UI",
+                Roboto,
+                "Helvetica Neue",
+                Arial,
+                sans-serif;
+
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+
+            opacity: 0;
+            transform: translateX(-10px);
+
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+            transition:
+                opacity 0.3s ease,
+                transform 0.3s ease;
+        }
+
+        .floating-whatsapp:hover .whatsapp-label {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        @keyframes whatsappPulse {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes whatsappRipple {
+            0% {
+                opacity: 1;
+                transform: scale(0.8);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(1.5);
+            }
+        }
+
+
+        /* ==================================================
+           DARK AND LIGHT MODE BUTTON
+        ================================================== */
+
+        .dark-mode-toggle {
+            position: relative;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 auto;
+
+            width: 44px;
+            height: 44px;
+            padding: 0;
+            margin-left: 12px;
+
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.14);
+            color: #ffffff;
+
+            font-size: 19px;
+            line-height: 1;
+
+            cursor: pointer;
+            overflow: hidden;
+
+            transition:
+                background 0.3s ease,
+                border-color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .dark-mode-toggle:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+        }
+
+        .dark-mode-toggle:focus-visible {
+            outline: 3px solid rgba(255, 255, 255, 0.45);
+            outline-offset: 3px;
+        }
+
+        .dark-mode-toggle i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            transition:
+                opacity 0.3s ease,
+                transform 0.35s ease;
+        }
+
+        .dark-mode-toggle .fa-moon-o {
+            opacity: 1;
+
+            transform:
+                translate(-50%, -50%)
+                rotate(0deg)
+                scale(1);
+        }
+
+        .dark-mode-toggle .fa-sun-o {
+            opacity: 0;
+
+            transform:
+                translate(-50%, -50%)
+                rotate(-90deg)
+                scale(0.5);
+        }
+
+        body.dark-mode .dark-mode-toggle .fa-moon-o {
+            opacity: 0;
+
+            transform:
+                translate(-50%, -50%)
+                rotate(90deg)
+                scale(0.5);
+        }
+
+        body.dark-mode .dark-mode-toggle .fa-sun-o {
+            opacity: 1;
+
+            transform:
+                translate(-50%, -50%)
+                rotate(0deg)
+                scale(1);
+        }
+
+        body.dark-mode .dark-mode-toggle {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.35);
+            color: #fbbf24;
+        }
+
+        body.dark-mode .dark-mode-toggle:hover {
+            background: rgba(255, 255, 255, 0.22);
+            border-color: rgba(251, 191, 36, 0.65);
+        }
+
+
+        /* ==================================================
+           TRUST BAR
+        ================================================== */
+
         .ve-trust-bar {
-            background: #f8faff;
+            position: relative;
+
             padding: 25px 0;
+
+            overflow: hidden;
+
+            background: #f8faff;
+
             border-top: 2px solid rgba(37, 117, 171, 0.1);
             border-bottom: 2px solid rgba(37, 117, 171, 0.1);
-            overflow: hidden;
-            position: relative;
         }
 
         .ve-trust-inner {
             display: flex;
-            gap: 50px;
-            animation: scrollTrust 30s linear infinite;
-            white-space: nowrap;
             align-items: center;
+            gap: 50px;
+
+            width: max-content;
+
+            white-space: nowrap;
+
+            animation: scrollTrust 30s linear infinite;
         }
 
         .ve-trust-inner span {
             display: inline-flex;
             align-items: center;
             gap: 15px;
+
+            padding: 0 10px;
+
+            color: #1a3a4a;
+
             font-size: 18px;
             font-weight: 600;
-            color: #1a3a4a;
             letter-spacing: 0.5px;
-            padding: 0 10px;
         }
 
-        /* Trust Icon Styles - for image icons */
         .trust-icon {
+            display: inline-block;
+
             width: 40px;
             height: 40px;
-            display: inline-block;
-            vertical-align: middle;
+
             border-radius: 10px;
-            /* filter: brightness(0) saturate(100%) invert(27%) sepia(67%) saturate(1000%) hue-rotate(180deg) brightness(95%); */
-        }
 
-        /* Or if you want colored icons without filter */
-        .trust-icon-color {
-            width: 32px;
-            height: 32px;
-            display: inline-block;
+            object-fit: contain;
             vertical-align: middle;
         }
 
-        /* Marquee Animation */
-        @keyframes scrollTrust {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        /* Pause animation on hover */
         .ve-trust-bar:hover .ve-trust-inner {
             animation-play-state: paused;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .ve-trust-bar {
-                padding: 18px 0;
+        @keyframes scrollTrust {
+            0% {
+                transform: translateX(0);
             }
-            
-            .ve-trust-inner {
-                gap: 30px;
-                animation-duration: 25s;
-            }
-            
-            .ve-trust-inner span {
-                font-size: 15px;
-                gap: 10px;
-            }
-            
-            .trust-icon {
-                width: 26px;
-                height: 26px;
+
+            100% {
+                transform: translateX(-50%);
             }
         }
 
-        @media (max-width: 480px) {
-            .ve-trust-inner span {
-                font-size: 13px;
-                gap: 8px;
-            }
-            
-            .trust-icon {
-                width: 22px;
-                height: 22px;
-            }
-        }
 
-        /* ===== TECHNOLOGY SERVICES SECTION ===== */
+        /* ==================================================
+           TECHNOLOGY SERVICES
+        ================================================== */
+
         .ve-tech-services-section {
             padding: 80px 0;
             background: #f8faff;
@@ -113,77 +395,102 @@
 
         .ve-tech-services-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 30px;
+
             margin-top: 50px;
         }
 
-        /* ===== TECH CARD ===== */
         .ve-tech-card {
-            background: #ffffff;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             position: relative;
+
+            overflow: hidden;
+
+            border: 1px solid rgba(37, 117, 171, 0.06);
+            border-radius: 20px;
+
+            background: #ffffff;
+
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+
+            transition:
+                transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.4s ease,
+                border-color 0.4s ease;
         }
 
         .ve-tech-card:hover {
+            border-color: rgba(37, 117, 171, 0.18);
+
             transform: translateY(-15px) scale(1.02);
+
             box-shadow: 0 25px 70px rgba(37, 117, 171, 0.12);
         }
 
-        /* Card Image */
         .ve-tech-card-image {
             position: relative;
+
             width: 100%;
             height: 240px;
+
             overflow: hidden;
+
             background: #e9f0f5;
         }
 
         .ve-tech-card-image img {
             width: 100%;
             height: 100%;
+
             object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+            transition: transform 0.6s ease;
         }
 
         .ve-tech-card:hover .ve-tech-card-image img {
             transform: scale(1.08);
         }
 
-        /* Price Badge */
         .ve-tech-price {
             position: absolute;
             top: 18px;
             right: 18px;
-            background: linear-gradient(135deg, #2575AB, #1a5a7a);
-            color: #ffffff;
+            z-index: 4;
+
             padding: 8px 20px;
+
             border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2575ab,
+                    #1a5a7a
+                );
+
+            color: #ffffff;
+
             font-size: 16px;
             font-weight: 700;
-            box-shadow: 0 4px 20px rgba(37, 117, 171, 0.3);
             letter-spacing: 0.5px;
-            z-index: 2;
-            animation: pulseBadge 2s ease-in-out infinite;
+
+            box-shadow: 0 4px 20px rgba(37, 117, 171, 0.3);
         }
 
-        /* Image Overlay */
         .ve-tech-overlay {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(37, 117, 171, 0.85);
+            inset: 0;
+            z-index: 3;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
+            background: rgba(37, 117, 171, 0.85);
+
             opacity: 0;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            z-index: 3;
+
+            transition: opacity 0.4s ease;
         }
 
         .ve-tech-card:hover .ve-tech-overlay {
@@ -192,15 +499,26 @@
 
         .ve-tech-overlay-btn {
             display: inline-block;
+
             padding: 14px 36px;
-            background: #ffffff;
-            color: #2575AB;
+
             border-radius: 50px;
-            font-weight: 600;
+
+            background: #ffffff;
+            color: #2575ab;
+
             font-size: 16px;
+            font-weight: 600;
+
             text-decoration: none;
+
             transform: translateY(20px);
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+            transition:
+                background 0.3s ease,
+                color 0.3s ease,
+                transform 0.4s ease,
+                box-shadow 0.3s ease;
         }
 
         .ve-tech-card:hover .ve-tech-overlay-btn {
@@ -208,36 +526,55 @@
         }
 
         .ve-tech-overlay-btn:hover {
-            background: #ED948C;
+            background: #ed948c;
             color: #ffffff;
+
             transform: translateY(-4px);
+
             box-shadow: 0 10px 30px rgba(237, 148, 140, 0.4);
         }
 
-        /* Card Body */
         .ve-tech-card-body {
-            padding: 25px 28px 30px;
             position: relative;
+            padding: 25px 28px 30px;
         }
 
-        /* Icon */
         .ve-tech-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #2575AB, #1a5a7a);
-            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+
+            width: 60px;
+            height: 60px;
+
             margin-top: -45px;
             margin-bottom: 18px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2575ab,
+                    #1a5a7a
+                );
+
             box-shadow: 0 8px 25px rgba(37, 117, 171, 0.25);
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+            transition:
+                transform 0.4s ease,
+                background 0.4s ease;
         }
 
         .ve-tech-card:hover .ve-tech-icon {
+            background:
+                linear-gradient(
+                    135deg,
+                    #ed948c,
+                    #d97a72
+                );
+
             transform: rotate(360deg) scale(1.1);
-            background: linear-gradient(135deg, #ED948C, #d97a72);
         }
 
         .ve-tech-icon i {
@@ -245,761 +582,4871 @@
             font-size: 28px;
         }
 
-        /* Card Title */
         .ve-tech-card-body h4 {
+            margin-bottom: 12px;
+
+            color: #0f2a38;
+
             font-size: 20px;
             font-weight: 700;
-            color: #0f2a38;
-            margin-bottom: 12px;
-            transition: color 0.3s ease;
         }
 
-        .ve-tech-card:hover .ve-tech-card-body h4 {
-            color: #2575AB;
-        }
-
-        /* Card Description */
         .ve-tech-card-body p {
-            font-size: 15px;
-            color: #5a7a8a;
-            line-height: 1.7;
             margin-bottom: 20px;
+
+            color: #5a7a8a;
+
+            font-size: 15px;
+            line-height: 1.7;
         }
 
-        /* Card Link */
         .ve-tech-link {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            color: #2575AB;
-            font-weight: 600;
-            text-decoration: none;
+
+            color: #2575ab;
+
             font-size: 14px;
-            transition: all 0.3s ease;
+            font-weight: 600;
+
+            text-decoration: none;
+
+            transition: color 0.3s ease;
         }
 
         .ve-tech-link i {
-            transition: transform 0.3s ease;
             font-size: 14px;
+            transition: transform 0.3s ease;
         }
 
         .ve-tech-link:hover {
-            color: #ED948C;
+            color: #ed948c;
         }
 
         .ve-tech-link:hover i {
             transform: translateX(8px);
         }
 
-        /* ===== VIEW ALL SERVICES BUTTON ===== */
         .ve-tech-btn-wrap {
             margin-top: 55px;
         }
 
         .ve-btn-tech {
+            position: relative;
+
             display: inline-flex;
             align-items: center;
             gap: 15px;
+
             padding: 18px 45px;
-            /* background: linear-gradient(135deg, #2575AB, #1a5a7a); */
-            background: #ED948C;
+
+            overflow: hidden;
+
+            border-radius: 50px;
+
+            background: #ed948c;
             color: #ffffff;
+
             font-size: 18px;
             font-weight: 600;
-            text-decoration: none;
-            border-radius: 50px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            box-shadow: 0 8px 35px rgba(37, 117, 171, 0.3);
             letter-spacing: 0.5px;
+
+            text-decoration: none;
+
+            box-shadow: 0 8px 35px rgba(237, 148, 140, 0.25);
+
+            transition:
+                background 0.4s ease,
+                transform 0.4s ease,
+                box-shadow 0.4s ease;
         }
 
         .ve-btn-tech:hover {
-            transform: translateY(-6px) scale(1.03);
-            box-shadow: 0 20px 50px rgba(237, 148, 140, 0.35);
+            background:
+                linear-gradient(
+                    135deg,
+                    #ed948c,
+                    #d97a72
+                );
+
             color: #ffffff;
-            background: linear-gradient(135deg, #ED948C, #d97a72);
-        }
 
-        /* Button Shine */
-        .ve-btn-tech::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                45deg,
-                transparent 30%,
-                rgba(255, 255, 255, 0.15) 50%,
-                transparent 70%
-            );
-            transform: rotate(45deg) translateX(-100%);
-            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
+            transform: translateY(-6px) scale(1.03);
 
-        .ve-btn-tech:hover::before {
-            transform: rotate(45deg) translateX(100%);
+            box-shadow: 0 20px 50px rgba(237, 148, 140, 0.35);
         }
 
         .ve-btn-tech i {
-            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            font-size: 20px;
+            transition: transform 0.35s ease;
         }
 
         .ve-btn-tech:hover i {
-            transform: translateX(10px) scale(1.1);
+            transform: translateX(8px);
         }
 
-        .ve-btn-tech span {
+
+        /* ==================================================
+           DONATION SECTION
+        ================================================== */
+
+        .ve-donations-section {
             position: relative;
-            transition: transform 0.3s ease;
+
+            padding: 80px 0;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f8faff 0%,
+                    #eef4f9 100%
+                );
+
+            overflow: hidden;
         }
 
-        .ve-btn-tech:hover span {
-            transform: scale(1.05);
+        .ve-donations-section::before {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at 10% 20%,
+                    rgba(37, 117, 171, 0.05) 0,
+                    rgba(37, 117, 171, 0.05) 4px,
+                    transparent 5px
+                );
+
+            background-size: 60px 60px;
+
+            pointer-events: none;
         }
 
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 992px) {
-            .ve-tech-services-grid {
-                grid-template-columns: repeat(2, 1fr);
+        .ve-donations-section > .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .ve-donations-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 30px;
+
+            margin-top: 50px;
+        }
+
+        .ve-donation-card {
+            position: relative;
+
+            overflow: hidden;
+
+            border: 1px solid rgba(37, 117, 171, 0.06);
+            border-radius: 20px;
+
+            background: #ffffff;
+
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+
+            transition:
+                transform 0.4s ease,
+                box-shadow 0.4s ease,
+                border-color 0.4s ease;
+        }
+
+        .ve-donation-card::before {
+            content: "";
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 4;
+
+            width: 100%;
+            height: 4px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #2575ab,
+                    #ed948c
+                );
+
+            transform: scaleX(0);
+            transform-origin: left;
+
+            transition: transform 0.4s ease;
+        }
+
+        .ve-donation-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .ve-donation-card:hover {
+            border-color: rgba(237, 148, 140, 0.2);
+
+            transform: translateY(-15px) scale(1.02);
+
+            box-shadow: 0 25px 70px rgba(237, 148, 140, 0.15);
+        }
+
+        .ve-donation-image {
+            position: relative;
+
+            width: 100%;
+            height: 220px;
+
+            overflow: hidden;
+
+            background: #e9f0f5;
+        }
+
+        .ve-donation-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: transform 0.6s ease;
+        }
+
+        .ve-donation-card:hover .ve-donation-image img {
+            transform: scale(1.08);
+        }
+
+        .ve-donation-overlay {
+            position: absolute;
+            inset: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: rgba(37, 117, 171, 0.72);
+
+            opacity: 0;
+
+            transition: opacity 0.4s ease;
+        }
+
+        .ve-donation-card:hover .ve-donation-overlay {
+            opacity: 1;
+        }
+
+        .ve-donation-overlay i {
+            color: #ffffff;
+            font-size: 48px;
+
+            transform: scale(0.5);
+
+            transition: transform 0.4s ease;
+        }
+
+        .ve-donation-card:hover .ve-donation-overlay i {
+            transform: scale(1);
+        }
+
+        .ve-donation-body {
+            padding: 25px 28px 30px;
+        }
+
+        .ve-donation-body h4 {
+            margin-bottom: 12px;
+
+            color: #0f2a38;
+
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .ve-donation-body p {
+            margin-bottom: 18px;
+
+            color: #5a7a8a;
+
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .ve-bank-details {
+            margin: 15px 0 20px;
+            padding: 15px 20px;
+
+            border-left: 3px solid #2575ab;
+            border-radius: 12px;
+
+            background: #f8faff;
+
+            text-align: left;
+        }
+
+        .ve-bank-details p {
+            margin-bottom: 4px;
+
+            color: #0f2a38;
+
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .ve-bank-details p:last-child {
+            margin-bottom: 0;
+        }
+
+        .ve-bank-details strong {
+            color: #2575ab;
+        }
+
+        .ve-donation-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .ve-btn-donate,
+        .ve-btn-copy {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+
+            padding: 12px 24px;
+
+            border-radius: 50px;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            text-decoration: none;
+
+            transition:
+                background 0.3s ease,
+                color 0.3s ease,
+                border-color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .ve-btn-donate {
+            border: 2px solid transparent;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2575ab,
+                    #1a5a7a
+                );
+
+            color: #ffffff;
+
+            box-shadow: 0 8px 25px rgba(37, 117, 171, 0.25);
+        }
+
+        .ve-btn-donate:hover {
+            background:
+                linear-gradient(
+                    135deg,
+                    #ed948c,
+                    #d97a72
+                );
+
+            color: #ffffff;
+
+            transform: translateY(-4px);
+
+            box-shadow: 0 15px 40px rgba(237, 148, 140, 0.35);
+        }
+
+        .ve-btn-copy {
+            border: 2px solid #e0e8ef;
+
+            background: #f0f5fa;
+            color: #2575ab;
+        }
+
+        .ve-btn-copy:hover {
+            border-color: #2575ab;
+
+            background: #2575ab;
+            color: #ffffff;
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 8px 25px rgba(37, 117, 171, 0.2);
+        }
+
+        .ve-sponsorship-partners {
+            margin-top: 60px;
+            padding: 40px 0;
+
+            border-top: 2px solid rgba(37, 117, 171, 0.08);
+            border-bottom: 2px solid rgba(37, 117, 171, 0.08);
+        }
+
+        .ve-sponsorship-partners h4 {
+            margin-bottom: 30px;
+
+            color: #0f2a38;
+
+            font-size: 20px;
+            font-weight: 600;
+
+            text-align: center;
+        }
+
+        .ve-partners-grid {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .ve-partner-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            min-width: 135px;
+            min-height: 70px;
+            padding: 10px 20px;
+
+            border: 1px solid rgba(37, 117, 171, 0.06);
+            border-radius: 12px;
+
+            background: #ffffff;
+
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .ve-partner-item:hover {
+            transform: translateY(-4px);
+
+            box-shadow: 0 8px 30px rgba(237, 148, 140, 0.15);
+        }
+
+        .ve-partner-item img {
+            max-width: 120px;
+            max-height: 50px;
+
+            object-fit: contain;
+
+            filter: grayscale(100%);
+            opacity: 0.65;
+
+            transition:
+                filter 0.3s ease,
+                opacity 0.3s ease;
+        }
+
+        .ve-partner-item:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        .ve-donation-cta {
+            margin-top: 50px;
+        }
+
+        .ve-donation-cta p {
+            margin-bottom: 25px;
+
+            color: #0f2a38;
+
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .ve-donation-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .ve-btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+
+            padding: 14px 36px;
+
+            border: 2px solid #25d366;
+            border-radius: 50px;
+
+            background: #25d366;
+            color: #ffffff;
+
+            font-size: 18px;
+            font-weight: 600;
+
+            text-decoration: none;
+
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.3);
+
+            transition:
+                background 0.3s ease,
+                border-color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .ve-btn-whatsapp:hover {
+            border-color: #20b85a;
+
+            background: #20b85a;
+            color: #ffffff;
+
+            transform: translateY(-4px) scale(1.03);
+
+            box-shadow: 0 15px 45px rgba(37, 211, 102, 0.35);
+        }
+
+
+        /* ==================================================
+           DARK MODE
+        ================================================== */
+
+        body.dark-mode {
+            background: #12121f;
+            color: #e7e7ef;
+        }
+
+        body.dark-mode .ve-nav-wrap {
+            background-color: #17172a !important;
+        }
+
+        body.dark-mode .ve-nav ul li a {
+            color: #d5d5df;
+        }
+
+        body.dark-mode .ve-nav ul li a:hover,
+        body.dark-mode .ve-nav ul li a.active {
+            color: #ed948c;
+        }
+
+        body.dark-mode .ve-dropdown {
+            border-color: rgba(255, 255, 255, 0.08);
+            background: #1e1e33;
+        }
+
+        body.dark-mode .ve-dropdown li a {
+            color: #d0d0da;
+        }
+
+        body.dark-mode .ve-dropdown li a:hover {
+            background: rgba(237, 148, 140, 0.1);
+            color: #ed948c;
+        }
+
+        body.dark-mode .ve-mobile-menu {
+            background: #17172a;
+        }
+
+        body.dark-mode .ve-mobile-menu ul li a {
+            color: #d5d5df;
+        }
+
+        body.dark-mode .ve-mobile-menu ul li a:hover,
+        body.dark-mode .ve-mobile-menu ul li a.active {
+            color: #ed948c;
+        }
+
+        body.dark-mode .ve-hero,
+        body.dark-mode .ve-hero-left {
+            background: #12121f;
+        }
+
+        body.dark-mode .ve-hero-left h1 {
+            color: #f4f4f8;
+        }
+
+        body.dark-mode .ve-hero-left p,
+        body.dark-mode .ve-stat span {
+            color: #b8b8c5;
+        }
+
+        body.dark-mode .ve-hero-badge {
+            border-color: rgba(110, 168, 212, 0.25);
+            background: rgba(37, 117, 171, 0.16);
+            color: #8ec2e7;
+        }
+
+        body.dark-mode .ve-btn-ghost {
+            border-color: rgba(255, 255, 255, 0.2);
+            color: #e5e5ed;
+        }
+
+        body.dark-mode .ve-btn-ghost:hover {
+            border-color: #ed948c;
+            background: #ed948c;
+            color: #ffffff;
+        }
+
+        body.dark-mode .ve-stat-divider {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        body.dark-mode .ve-trust-bar {
+            border-color: rgba(255, 255, 255, 0.07);
+            background: #18182a;
+        }
+
+        body.dark-mode .ve-trust-inner span {
+            color: #d8d8e2;
+        }
+
+        body.dark-mode .ve-section,
+        body.dark-mode .ve-tech-services-section,
+        body.dark-mode .ve-whyus-section,
+        body.dark-mode .ve-services-section,
+        body.dark-mode .ve-testimonials-section,
+        body.dark-mode .ve-insights-section {
+            background: #12121f;
+        }
+
+        body.dark-mode .ve-section-header h2,
+        body.dark-mode .ve-whyus-content h2 {
+            color: #f0f0f5 !important;
+        }
+
+        body.dark-mode .ve-section-header p,
+        body.dark-mode .ve-whyus-content > p {
+            color: #ababba;
+        }
+
+        body.dark-mode .ve-section-tag {
+            background: rgba(37, 117, 171, 0.18);
+            color: #7cb5df;
+        }
+
+        body.dark-mode .ve-tech-card {
+            border-color: rgba(255, 255, 255, 0.06);
+            background: #1d1d31;
+
+            box-shadow: 0 12px 45px rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark-mode .ve-tech-card:hover {
+            border-color: rgba(237, 148, 140, 0.25);
+
+            box-shadow: 0 25px 65px rgba(0, 0, 0, 0.42);
+        }
+
+        body.dark-mode .ve-tech-card-image {
+            background: #25253a;
+        }
+
+        body.dark-mode .ve-tech-card-body h4 {
+            color: #ededf3;
+        }
+
+        body.dark-mode .ve-tech-card-body p {
+            color: #ababba;
+        }
+
+        body.dark-mode .ve-tech-link {
+            color: #77b4df;
+        }
+
+        body.dark-mode .ve-tech-link:hover {
+            color: #ed948c;
+        }
+
+        body.dark-mode .ve-check-item strong {
+            color: #ededf3;
+        }
+
+        body.dark-mode .ve-check-item p {
+            color: #ababba;
+        }
+
+        body.dark-mode .ve-counter-section {
+            background: #17172a;
+        }
+
+        body.dark-mode .ve-counter-item {
+            border-color: rgba(255, 255, 255, 0.07);
+        }
+
+        body.dark-mode .ve-counter-item strong,
+        body.dark-mode .ve-counter-item span {
+            color: #ffffff;
+        }
+
+        body.dark-mode .ve-counter-item p {
+            color: #b9b9c7;
+        }
+
+        body.dark-mode .ve-service-card {
+            border-color: rgba(255, 255, 255, 0.06);
+            background: #1d1d31;
+
+            box-shadow: 0 10px 38px rgba(0, 0, 0, 0.28);
+        }
+
+        body.dark-mode .ve-service-card h4 {
+            color: #ededf3;
+        }
+
+        body.dark-mode .ve-service-card p {
+            color: #ababba;
+        }
+
+        body.dark-mode .ve-service-card:hover {
+            border-color: rgba(237, 148, 140, 0.25);
+
+            box-shadow: 0 22px 55px rgba(0, 0, 0, 0.4);
+        }
+
+        body.dark-mode .ve-testi-card {
+            border-color: rgba(255, 255, 255, 0.06);
+            background: #1d1d31;
+
+            box-shadow: 0 10px 38px rgba(0, 0, 0, 0.28);
+        }
+
+        body.dark-mode .ve-testi-card > p {
+            color: #c0c0cc;
+        }
+
+        body.dark-mode .ve-testi-author strong {
+            color: #ededf3;
+        }
+
+        body.dark-mode .ve-testi-author span {
+            color: #9797a7;
+        }
+
+        body.dark-mode .ve-donations-section {
+            background:
+                linear-gradient(
+                    135deg,
+                    #17172a 0%,
+                    #12121f 100%
+                );
+        }
+
+        body.dark-mode .ve-donations-section::before {
+            opacity: 0.45;
+        }
+
+        body.dark-mode .ve-donation-card {
+            border-color: rgba(255, 255, 255, 0.06);
+            background: #1d1d31;
+
+            box-shadow: 0 12px 45px rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark-mode .ve-donation-card:hover {
+            border-color: rgba(237, 148, 140, 0.25);
+
+            box-shadow: 0 25px 65px rgba(0, 0, 0, 0.42);
+        }
+
+        body.dark-mode .ve-donation-body h4 {
+            color: #ededf3;
+        }
+
+        body.dark-mode .ve-donation-body > p {
+            color: #ababba;
+        }
+
+        body.dark-mode .ve-bank-details {
+            border-left-color: #6ea8d4;
+            background: #24243a;
+        }
+
+        body.dark-mode .ve-bank-details p {
+            color: #c6c6d2;
+        }
+
+        body.dark-mode .ve-bank-details strong {
+            color: #7ebce8;
+        }
+
+        body.dark-mode .ve-btn-copy {
+            border-color: rgba(255, 255, 255, 0.1);
+            background: #292940;
+            color: #88c2ea;
+        }
+
+        body.dark-mode .ve-btn-copy:hover {
+            border-color: #2575ab;
+            background: #2575ab;
+            color: #ffffff;
+        }
+
+        body.dark-mode .ve-sponsorship-partners {
+            border-color: rgba(255, 255, 255, 0.07);
+        }
+
+        body.dark-mode .ve-sponsorship-partners h4,
+        body.dark-mode .ve-donation-cta p {
+            color: #ededf3;
+        }
+
+        body.dark-mode .ve-partner-item {
+            border-color: rgba(255, 255, 255, 0.06);
+            background: #232338;
+
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        body.dark-mode .ve-insight-card {
+            border-color: rgba(255, 255, 255, 0.06);
+            background: #1d1d31;
+
+            box-shadow: 0 10px 38px rgba(0, 0, 0, 0.28);
+        }
+
+        body.dark-mode .ve-insight-body h5 a {
+            color: #ededf3;
+        }
+
+        body.dark-mode .ve-insight-body h5 a:hover {
+            color: #ed948c;
+        }
+
+        body.dark-mode .ve-insight-body p,
+        body.dark-mode .ve-insight-meta {
+            color: #ababba;
+        }
+
+        body.dark-mode .ve-footer {
+            background: #0d0d18;
+        }
+
+        body.dark-mode .ve-footer p,
+        body.dark-mode .ve-footer-links li a,
+        body.dark-mode .ve-footer-contact li {
+            color: #a8a8b6;
+        }
+
+        body.dark-mode .ve-footer-title {
+            color: #eeeeF4;
+        }
+
+        body.dark-mode .ve-footer-links li a:hover {
+            color: #ed948c;
+        }
+
+        body.dark-mode .ve-footer-bottom {
+            border-top-color: rgba(255, 255, 255, 0.06);
+            background: #090912;
+        }
+
+        body.dark-mode .ve-footer-bottom p,
+        body.dark-mode .ve-footer-bottom ul li a {
+            color: #858596;
+        }
+
+        body.dark-mode .ve-footer-bottom ul li a:hover {
+            color: #ed948c;
+        }
+
+
+        /* ==================================================
+           RESPONSIVE NAVIGATION AND CONTENT
+        ================================================== */
+
+        @media (max-width: 1100px) {
+            .ve-nav ul {
+                gap: 13px;
+            }
+
+            .ve-nav ul li a {
+                font-size: 13px;
+            }
+
+            .ve-nav-cta .ve-cta-btn {
+                padding-right: 17px;
+                padding-left: 17px;
+            }
+
+            .dark-mode-toggle {
+                margin-left: 8px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .ve-nav-wrap {
+                display: flex;
+                align-items: center;
+            }
+
+            .dark-mode-toggle {
+                order: 8;
+
+                width: 40px;
+                height: 40px;
+
+                margin-left: auto;
+                margin-right: 9px;
+
+                font-size: 17px;
+            }
+
+            .ve-toggler {
+                order: 9;
+                flex: 0 0 auto;
+
+                margin-left: 0 !important;
+            }
+
+            .ve-tech-services-grid,
+            .ve-donations-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
                 gap: 25px;
             }
         }
 
         @media (max-width: 768px) {
-            .ve-tech-services-section {
-                padding: 50px 0;
+            .floating-whatsapp {
+                left: 15px;
+                bottom: 20px;
             }
-            
-            .ve-tech-services-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                max-width: 450px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            
-            .ve-tech-card-image {
-                height: 180px;
-            }
-            
-            .ve-tech-price {
-                font-size: 14px;
-                padding: 6px 16px;
-                top: 14px;
-                right: 14px;
-            }
-            
-            .ve-tech-card-body {
-                padding: 20px 22px 25px;
-            }
-            
-            .ve-tech-icon {
+
+            .floating-whatsapp a {
                 width: 50px;
                 height: 50px;
-                margin-top: -38px;
             }
-            
-            .ve-tech-icon i {
-                font-size: 22px;
+
+            .floating-whatsapp a i {
+                font-size: 26px;
             }
-            
-            .ve-tech-card-body h4 {
-                font-size: 18px;
+
+            .floating-whatsapp .whatsapp-label {
+                display: none;
             }
-            
-            .ve-btn-tech {
-                padding: 14px 32px;
+
+            .dark-mode-toggle {
+                width: 38px;
+                height: 38px;
+
+                margin-right: 8px;
+
                 font-size: 16px;
+            }
+
+            .ve-trust-bar {
+                padding: 18px 0;
+            }
+
+            .ve-trust-inner {
+                gap: 30px;
+                animation-duration: 25s;
+            }
+
+            .ve-trust-inner span {
+                gap: 10px;
+                font-size: 15px;
+            }
+
+            .trust-icon {
+                width: 27px;
+                height: 27px;
+            }
+
+            .ve-tech-services-section,
+            .ve-donations-section {
+                padding: 55px 0;
+            }
+
+            .ve-tech-services-grid,
+            .ve-donations-grid {
+                grid-template-columns: 1fr;
+
+                max-width: 460px;
+                margin-right: auto;
+                margin-left: auto;
+            }
+
+            .ve-tech-card-image,
+            .ve-donation-image {
+                height: 190px;
+            }
+
+            .ve-tech-card-body,
+            .ve-donation-body {
+                padding: 22px 23px 27px;
+            }
+
+            .ve-tech-price {
+                top: 14px;
+                right: 14px;
+
+                padding: 6px 16px;
+
+                font-size: 14px;
+            }
+
+            .ve-partners-grid {
+                gap: 15px;
+            }
+
+            .ve-donation-buttons {
+                flex-direction: column;
+            }
+
+            .ve-donation-buttons a {
+                justify-content: center;
+
+                width: 100%;
+                max-width: 320px;
             }
         }
 
         @media (max-width: 480px) {
-            .ve-tech-card-image {
-                height: 150px;
+            .floating-whatsapp {
+                left: 10px;
+                bottom: 15px;
             }
-            
+
+            .floating-whatsapp a {
+                width: 45px;
+                height: 45px;
+            }
+
+            .floating-whatsapp a i {
+                font-size: 22px;
+            }
+
+            .dark-mode-toggle {
+                width: 36px;
+                height: 36px;
+
+                margin-right: 7px;
+
+                border-width: 1.5px;
+
+                font-size: 15px;
+            }
+
+            .ve-trust-inner span {
+                font-size: 13px;
+            }
+
+            .trust-icon {
+                width: 23px;
+                height: 23px;
+            }
+
+            .ve-tech-card-image,
+            .ve-donation-image {
+                height: 165px;
+            }
+
             .ve-tech-price {
+                padding: 5px 12px;
                 font-size: 12px;
-                padding: 4px 12px;
             }
-            
+
+            .ve-tech-card-body h4,
+            .ve-donation-body h4 {
+                font-size: 19px;
+            }
+
             .ve-btn-tech {
-                padding: 12px 24px;
-                font-size: 14px;
                 gap: 10px;
+
+                padding: 14px 27px;
+
+                font-size: 15px;
             }
-            
-            .ve-btn-tech i {
-                font-size: 16px;
+
+            .ve-donation-actions {
+                flex-direction: column;
+            }
+
+            .ve-btn-donate,
+            .ve-btn-copy {
+                width: 100%;
+            }
+
+            .ve-partner-item {
+                min-width: 105px;
+                padding: 8px 12px;
+            }
+
+            .ve-partner-item img {
+                max-width: 85px;
+                max-height: 36px;
             }
         }
 
+
+
+        /* ==================================================
+           INTERACTIVE IMAGE CAROUSEL
+        ================================================== */
+
+        .rc-gallery-section {
+            position: relative;
+            padding: 80px 0;
+            overflow: hidden;
+            background:
+                linear-gradient(
+                    180deg,
+                    #ffffff 0%,
+                    #f4f9fd 100%
+                );
+        }
+
+        .rc-gallery-section::before,
+        .rc-gallery-section::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .rc-gallery-section::before {
+            width: 420px;
+            height: 420px;
+            top: -230px;
+            left: -170px;
+            background: rgba(37, 117, 171, 0.07);
+        }
+
+        .rc-gallery-section::after {
+            width: 360px;
+            height: 360px;
+            right: -180px;
+            bottom: -210px;
+            background: rgba(237, 148, 140, 0.08);
+        }
+
+        .rc-gallery-section > .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .rc-gallery-shell {
+            position: relative;
+            margin-top: 46px;
+        }
+
+        .rc-gallery-viewport {
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+            overscroll-behavior-inline: contain;
+            direction: ltr;
+            touch-action: pan-x;
+        }
+
+        .rc-gallery-viewport::-webkit-scrollbar {
+            display: none;
+        }
+
+        .rc-gallery-track {
+            display: flex;
+            gap: 24px;
+            width: 100%;
+            padding: 8px 4px 26px;
+            direction: ltr;
+        }
+
+        .rc-gallery-slide {
+            flex: 0 0 calc((100% - 48px) / 3);
+            min-width: 0;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+        }
+
+        .rc-gallery-card {
+            position: relative;
+            display: block;
+            width: 100%;
+            padding: 0;
+            overflow: hidden;
+            border: 0;
+            border-radius: 22px;
+            background: #dfeaf2;
+            cursor: pointer;
+            box-shadow: 0 12px 36px rgba(18, 61, 91, 0.12);
+            transform: translateY(0);
+            transition:
+                transform 0.35s ease,
+                box-shadow 0.35s ease;
+        }
+
+        .rc-gallery-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            background:
+                linear-gradient(
+                    180deg,
+                    transparent 48%,
+                    rgba(5, 31, 50, 0.58) 100%
+                );
+            opacity: 0.75;
+            transition: opacity 0.35s ease;
+        }
+
+        .rc-gallery-card:hover,
+        .rc-gallery-card:focus-visible {
+            transform: translateY(-8px);
+            box-shadow: 0 22px 55px rgba(37, 117, 171, 0.2);
+        }
+
+        .rc-gallery-card:hover::after,
+        .rc-gallery-card:focus-visible::after {
+            opacity: 0.42;
+        }
+
+        .rc-gallery-card:focus-visible {
+            outline: 4px solid rgba(237, 148, 140, 0.55);
+            outline-offset: 4px;
+        }
+
+        .rc-gallery-card img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .rc-gallery-card:hover img,
+        .rc-gallery-card:focus-visible img {
+            transform: scale(1.055);
+        }
+
+        .rc-gallery-zoom {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            z-index: 4;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 46px;
+            height: 46px;
+            border: 1px solid rgba(255, 255, 255, 0.55);
+            border-radius: 50%;
+            background: rgba(10, 47, 72, 0.62);
+            color: #ffffff;
+            font-size: 17px;
+            backdrop-filter: blur(8px);
+            transform: scale(0.9);
+            transition:
+                background 0.3s ease,
+                transform 0.3s ease;
+        }
+
+        .rc-gallery-card:hover .rc-gallery-zoom,
+        .rc-gallery-card:focus-visible .rc-gallery-zoom {
+            background: #ed948c;
+            transform: scale(1);
+        }
+
+        .rc-gallery-caption {
+            position: absolute;
+            left: 22px;
+            right: 22px;
+            bottom: 18px;
+            z-index: 4;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .rc-gallery-caption strong {
+            display: block;
+            margin-bottom: 3px;
+            color: #ffffff;
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .rc-gallery-caption span {
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 13px;
+        }
+
+        .rc-gallery-arrow {
+            position: absolute;
+            top: 50%;
+            z-index: 8;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            padding: 0;
+            border: 0;
+            border-radius: 50%;
+            background: #ffffff;
+            color: #2575ab;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(12, 48, 74, 0.2);
+            transform: translateY(-50%);
+            transition:
+                background 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .rc-gallery-arrow:hover,
+        .rc-gallery-arrow:focus-visible {
+            background: #ed948c;
+            color: #ffffff;
+            transform: translateY(-50%) scale(1.08);
+            box-shadow: 0 14px 38px rgba(237, 148, 140, 0.32);
+        }
+
+        .rc-gallery-arrow:focus-visible {
+            outline: 3px solid rgba(37, 117, 171, 0.35);
+            outline-offset: 3px;
+        }
+
+        .rc-gallery-prev {
+            left: -26px;
+        }
+
+        .rc-gallery-next {
+            right: -26px;
+        }
+
+        .rc-gallery-status {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 4px;
+        }
+
+        .rc-gallery-progress {
+            width: 120px;
+            height: 4px;
+            overflow: hidden;
+            border-radius: 999px;
+            background: rgba(37, 117, 171, 0.14);
+        }
+
+        .rc-gallery-progress-bar {
+            display: block;
+            width: 20%;
+            height: 100%;
+            border-radius: inherit;
+            background:
+                linear-gradient(
+                    90deg,
+                    #2575ab,
+                    #ed948c
+                );
+            transition:
+                width 0.35s ease,
+                transform 0.35s ease;
+        }
+
+        .rc-gallery-counter {
+            min-width: 58px;
+            color: #537181;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+        }
+
+
+        /* ==================================================
+           GALLERY LIGHTBOX
+        ================================================== */
+
+        body.rc-lightbox-open {
+            overflow: hidden;
+        }
+
+        .rc-lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 1000000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 38px 82px;
+            background: rgba(4, 15, 26, 0.94);
+            opacity: 0;
+            transition: opacity 0.28s ease;
+        }
+
+        .rc-lightbox.is-open {
+            display: flex;
+        }
+
+        .rc-lightbox.is-visible {
+            opacity: 1;
+        }
+
+        .rc-lightbox-dialog {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: min(1180px, 100%);
+            max-height: calc(100vh - 76px);
+        }
+
+        .rc-lightbox-image {
+            display: block;
+            max-width: 100%;
+            max-height: calc(100vh - 150px);
+            border-radius: 18px;
+            object-fit: contain;
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.48);
+            user-select: none;
+        }
+
+        .rc-lightbox-caption {
+            margin: 14px 0 0;
+            color: rgba(255, 255, 255, 0.84);
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .rc-lightbox-close,
+        .rc-lightbox-control {
+            position: fixed;
+            z-index: 2;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition:
+                background 0.3s ease,
+                border-color 0.3s ease,
+                transform 0.3s ease;
+        }
+
+        .rc-lightbox-close:hover,
+        .rc-lightbox-control:hover,
+        .rc-lightbox-close:focus-visible,
+        .rc-lightbox-control:focus-visible {
+            border-color: #ed948c;
+            background: #ed948c;
+            transform: scale(1.08);
+        }
+
+        .rc-lightbox-close:focus-visible,
+        .rc-lightbox-control:focus-visible {
+            outline: 3px solid rgba(255, 255, 255, 0.45);
+            outline-offset: 3px;
+        }
+
+        .rc-lightbox-close {
+            top: 24px;
+            right: 26px;
+            width: 48px;
+            height: 48px;
+            font-size: 20px;
+        }
+
+        .rc-lightbox-control {
+            top: 50%;
+            width: 56px;
+            height: 56px;
+            font-size: 21px;
+            transform: translateY(-50%);
+        }
+
+        .rc-lightbox-control:hover,
+        .rc-lightbox-control:focus-visible {
+            transform: translateY(-50%) scale(1.08);
+        }
+
+        .rc-lightbox-prev {
+            left: 22px;
+        }
+
+        .rc-lightbox-next {
+            right: 22px;
+        }
+
+        .rc-lightbox-count {
+            position: fixed;
+            top: 32px;
+            left: 28px;
+            color: rgba(255, 255, 255, 0.84);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+        }
+
+
+        /* Dark mode carousel */
+
+        body.dark-mode .rc-gallery-section {
+            background:
+                linear-gradient(
+                    180deg,
+                    #12121f 0%,
+                    #18182a 100%
+                );
+        }
+
+        body.dark-mode .rc-gallery-section::before {
+            background: rgba(37, 117, 171, 0.13);
+        }
+
+        body.dark-mode .rc-gallery-section::after {
+            background: rgba(237, 148, 140, 0.11);
+        }
+
+        body.dark-mode .rc-gallery-card {
+            background: #22223a;
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.32);
+        }
+
+        body.dark-mode .rc-gallery-arrow {
+            background: #23233a;
+            color: #8ec2e7;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.34);
+        }
+
+        body.dark-mode .rc-gallery-arrow:hover,
+        body.dark-mode .rc-gallery-arrow:focus-visible {
+            background: #ed948c;
+            color: #ffffff;
+        }
+
+        body.dark-mode .rc-gallery-counter {
+            color: #aeb8c3;
+        }
+
+        body.dark-mode .rc-gallery-progress {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+
+        /* Responsive carousel */
+
+        @media (max-width: 991px) {
+            .rc-gallery-slide {
+                flex-basis: calc((100% - 22px) / 2);
+            }
+
+            .rc-gallery-track {
+                gap: 22px;
+            }
+
+            .rc-gallery-prev {
+                left: -12px;
+            }
+
+            .rc-gallery-next {
+                right: -12px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .rc-gallery-section {
+                padding: 58px 0;
+            }
+
+            .rc-gallery-shell {
+                margin-top: 34px;
+            }
+
+            .rc-gallery-track {
+                gap: 16px;
+                padding-right: 2px;
+                padding-left: 2px;
+            }
+
+            .rc-gallery-slide {
+                flex-basis: 88%;
+            }
+
+            .rc-gallery-arrow {
+                top: auto;
+                bottom: -58px;
+                width: 44px;
+                height: 44px;
+                font-size: 17px;
+                transform: none;
+            }
+
+            .rc-gallery-arrow:hover,
+            .rc-gallery-arrow:focus-visible {
+                transform: scale(1.06);
+            }
+
+            .rc-gallery-prev {
+                left: calc(50% - 54px);
+            }
+
+            .rc-gallery-next {
+                right: calc(50% - 54px);
+            }
+
+            .rc-gallery-status {
+                margin-top: 60px;
+            }
+
+            .rc-gallery-caption {
+                left: 17px;
+                right: 17px;
+                bottom: 15px;
+            }
+
+            .rc-gallery-caption strong {
+                font-size: 15px;
+            }
+
+            .rc-gallery-caption span {
+                font-size: 12px;
+            }
+
+            .rc-gallery-zoom {
+                top: 13px;
+                right: 13px;
+                width: 40px;
+                height: 40px;
+            }
+
+            .rc-lightbox {
+                padding: 64px 16px 92px;
+            }
+
+            .rc-lightbox-image {
+                max-height: calc(100vh - 190px);
+                border-radius: 12px;
+            }
+
+            .rc-lightbox-close {
+                top: 14px;
+                right: 14px;
+                width: 44px;
+                height: 44px;
+            }
+
+            .rc-lightbox-count {
+                top: 27px;
+                left: 18px;
+            }
+
+            .rc-lightbox-control {
+                top: auto;
+                bottom: 20px;
+                width: 48px;
+                height: 48px;
+                transform: none;
+            }
+
+            .rc-lightbox-control:hover,
+            .rc-lightbox-control:focus-visible {
+                transform: scale(1.06);
+            }
+
+            .rc-lightbox-prev {
+                left: calc(50% - 58px);
+            }
+
+            .rc-lightbox-next {
+                right: calc(50% - 58px);
+            }
+        }
+
+        /* ==================================================
+           CUSTOM CIRCLE AND DOT CURSOR
+        ================================================== */
+
+        @media (pointer: fine) and (hover: hover) {
+            html,
+            body,
+            a,
+            button,
+            input,
+            textarea,
+            select,
+            [role="button"] {
+                cursor: none !important;
+            }
+        }
+
+        .custom-cursor-dot,
+        .custom-cursor-circle {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999999;
+
+            pointer-events: none;
+
+            opacity: 0;
+
+            transform: translate(-50%, -50%);
+
+            will-change:
+                left,
+                top,
+                width,
+                height,
+                transform,
+                opacity;
+        }
+
+        .custom-cursor-dot {
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: #ed948c;
+
+            transition:
+                width 0.2s ease,
+                height 0.2s ease,
+                background-color 0.2s ease,
+                opacity 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .custom-cursor-circle {
+            z-index: 999998;
+
+            width: 38px;
+            height: 38px;
+
+            border: 2px solid #2575ab;
+            border-radius: 50%;
+
+            background: rgba(37, 117, 171, 0.04);
+
+            transition:
+                width 0.25s ease,
+                height 0.25s ease,
+                border-color 0.25s ease,
+                background-color 0.25s ease,
+                opacity 0.2s ease;
+        }
+
+        .custom-cursor-dot.cursor-visible,
+        .custom-cursor-circle.cursor-visible {
+            opacity: 1;
+        }
+
+        .custom-cursor-circle.cursor-hover {
+            width: 58px;
+            height: 58px;
+
+            border-color: #ed948c;
+
+            background: rgba(237, 148, 140, 0.13);
+        }
+
+        .custom-cursor-dot.cursor-hover {
+            width: 9px;
+            height: 9px;
+
+            background: #2575ab;
+        }
+
+        .custom-cursor-circle.cursor-click {
+            width: 28px;
+            height: 28px;
+
+            background: rgba(237, 148, 140, 0.3);
+        }
+
+        .custom-cursor-dot.cursor-click {
+            width: 5px;
+            height: 5px;
+        }
+
+        .custom-cursor-dot.cursor-hidden,
+        .custom-cursor-circle.cursor-hidden {
+            opacity: 0;
+        }
+
+        body.dark-mode .custom-cursor-circle {
+            border-color: #7cb5df;
+            background: rgba(124, 181, 223, 0.08);
+        }
+
+        body.dark-mode .custom-cursor-dot {
+            background: #ed948c;
+        }
+
+        body.dark-mode .custom-cursor-circle.cursor-hover {
+            border-color: #ed948c;
+            background: rgba(237, 148, 140, 0.16);
+        }
+
+        body.dark-mode .custom-cursor-dot.cursor-hover {
+            background: #7cb5df;
+        }
+
+        @media (pointer: coarse), (hover: none) {
+            html,
+            body,
+            a,
+            button,
+            input,
+            textarea,
+            select,
+            [role="button"] {
+                cursor: auto !important;
+            }
+
+            .custom-cursor-dot,
+            .custom-cursor-circle {
+                display: none !important;
+            }
+        }
+
+
+        /* ==================================================
+           REDUCED MOTION ACCESSIBILITY
+        ================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
     </style>
 </head>
 
 <body>
+
+    <!-- Custom Circle and Dot Cursor -->
+
+    <div
+        class="custom-cursor-circle"
+        id="customCursorCircle"
+        aria-hidden="true"
+    ></div>
+
+    <div
+        class="custom-cursor-dot"
+        id="customCursorDot"
+        aria-hidden="true"
+    ></div>
+
+
     <!-- Preloader -->
+
     <div class="preloader d-flex align-items-center justify-content-center">
         <div class="lds-ellipsis">
-            <div style="background-color: #2575AB;"></div>
-            <div style="background-color: #2575AB;"></div>
-            <div style="background-color: #2575AB;"></div>
-            <div style="background-color: #2575AB;"></div>
+            <div style="background-color: #2575ab"></div>
+            <div style="background-color: #2575ab"></div>
+            <div style="background-color: #2575ab"></div>
+            <div style="background-color: #2575ab"></div>
         </div>
     </div>
 
-    <!-- ===== NAVBAR (single dark bar, logo left, nav center, CTA right) ===== -->
+
+    <!-- Floating WhatsApp Button -->
+
+    <div class="floating-whatsapp">
+        <a
+            href="https://wa.me/2348146710908?text=Hello%20Radiant%20Cullings%2C%20I%20want%20to%20make%20an%20enquiry"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="whatsapp-brand"
+            aria-label="Chat with Radiant Cullings on WhatsApp"
+        >
+            <i class="fa fa-whatsapp" aria-hidden="true"></i>
+        </a>
+
+        <span class="whatsapp-label">Chat with us</span>
+    </div>
+
+
+    <!-- Header -->
+
     <header class="ve-header" id="ve-sticky">
-        <div class="container-fluid ve-nav-wrap" style="background-color: #2575AB;">
+
+        <div
+            class="container-fluid ve-nav-wrap"
+            style="background-color: #2575ab"
+        >
+
             <!-- Logo -->
+
             <div class="ve-logo">
                 <a href="index.html">
-                    <img src="img/core-img/radiant_cullings.png" alt="Radiant Cullings Logo" class="ve-logo-img" style="max-width: 120px;">
+                    <img
+                        src="img/core-img/radiant_cullings.png"
+                        alt="Radiant Cullings Logo"
+                        class="ve-logo-img"
+                        style="max-width: 120px"
+                    />
                 </a>
             </div>
 
-            <!-- Nav Links -->
-            <nav class="ve-nav">
+
+            <!-- Desktop Navigation -->
+
+            <nav class="ve-nav" aria-label="Main navigation">
                 <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li class="has-drop">
-                        <a href="about.html">About <i class="fa fa-angle-down"></i></a>
-                        <ul class="ve-dropdown">
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="services.html">Our Services</a></li>
-                            <li><a href="portfolio.html">Portfolio</a></li>
-                            <li><a href="products.html">Products</a></li>
-                        </ul>
+                    <li>
+                        <a href="index.html" class="active">Home</a>
                     </li>
+
                     <li class="has-drop">
-                        <a href="services.html">Services <i class="fa fa-angle-down"></i></a>
-                        <ul class="ve-dropdown">
-                            <li><a href="services.html#training">Technology Training</a></li>
-                            <li><a href="services.html#consulting">Technology Consulting</a></li>
-                            <li><a href="services.html#cybersecurity">Cybersecurity Services</a></li>
-                            <li><a href="services.html#project">Project Management</a></li>
-                            <li><a href="services.html#digital">Digital Transformation</a></li>
-                            <li><a href="services.html#advisory">Business Technology Advisory</a></li>
-                        </ul>
+                        <a href="about.html">
+                            About
+                            <!-- <i
+                                class="fa fa-angle-down"
+                                aria-hidden="true"
+                            ></i> -->
+                        </a>
+
+                        <!-- <ul class="ve-dropdown">
+                            <li>
+                                <a href="about.html">About Us</a>
+                            </li>
+
+                            <li>
+                                <a href="services.html">Our Services</a>
+                            </li>
+
+                            <li>
+                                <a href="portfolio.html">Portfolio</a>
+                            </li>
+
+                            <li>
+                                <a href="products.html">Products</a>
+                            </li>
+                        </ul> -->
                     </li>
+
                     <li class="has-drop">
-                        <a href="#">Solutions <i class="fa fa-angle-down"></i></a>
-                        <ul class="ve-dropdown">
-                            <li><a href="#">Workforce Digital Skills</a></li>
-                            <li><a href="#">Cybersecurity Readiness</a></li>
-                            <li><a href="#">IT Strategy Development</a></li>
-                            <li><a href="#">Project Planning & Delivery</a></li>
-                            <li><a href="#">Business Process Improvement</a></li>
-                            <li><a href="#">Digital Workplace Enablement</a></li>
-                        </ul>
+                        <a href="services.html">
+                            Services
+
+                            <!-- <i
+                                class="fa fa-angle-down"
+                                aria-hidden="true"
+                            ></i> -->
+                        </a>
+
+                        
                     </li>
-                    <li><a href="insights.html">Insights</a></li>
-                    <li><a href="careers.html">Careers</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+
+                    <li>
+                        <a href="courses.html">Courses</a>
+                    </li>
+
+                    <li>
+                        <a href="blogs.html">Blogs</a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
                 </ul>
             </nav>
 
+
             <!-- CTA -->
+
             <div class="ve-nav-cta">
-                <a href="contact.html" class="ve-cta-btn text-white">Get Started <i class="fa fa-arrow-right"></i></a>
+                <a href="contact.html" class="ve-cta-btn text-white">
+                    Get Started
+
+                    <i
+                        class="fa fa-arrow-right"
+                        aria-hidden="true"
+                    ></i>
+                </a>
             </div>
 
-            <!-- Mobile Toggle -->
-            <button class="ve-toggler" id="ve-toggle">
-                <span></span><span></span><span></span>
+
+            <!-- Dark and Light Mode Button -->
+
+            <button
+                class="dark-mode-toggle"
+                id="darkModeToggle"
+                type="button"
+                aria-label="Switch to dark mode"
+                aria-pressed="false"
+                title="Switch to dark mode"
+            >
+                <i class="fa fa-moon-o" aria-hidden="true"></i>
+                <i class="fa fa-sun-o" aria-hidden="true"></i>
             </button>
+
+
+            <!-- Hamburger Button -->
+
+            <button
+                class="ve-toggler"
+                id="ve-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-controls="ve-mobile-menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
         </div>
+
 
         <!-- Mobile Menu -->
+
         <div class="ve-mobile-menu" id="ve-mobile-menu">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="#">Solutions</a></li>
-                <li><a href="insights.html">Insights</a></li>
-                <li><a href="careers.html">Careers</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <a href="index.html" class="active">Home</a>
+                </li>
+
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+
+                <li>
+                    <a href="services.html">Services</a>
+                </li>
+
+                <li>
+                    <a href="courses.html">Courses</a>
+                </li>
+
+                <li>
+                    <a href="blogs.html">Blogs</a>
+                </li>
+
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
             </ul>
         </div>
+
     </header>
 
-    <!-- ===== HERO: Split layout — left text, right image panel ===== -->
+
+    <!-- Hero Section -->
+
     <section class="ve-hero">
-        <!-- Left Panel -->
+
         <div class="ve-hero-left">
-            <span class="ve-hero-badge">Empowering People. Transforming Businesses. Driving Innovation.</span>
-            <h1>Welcome to <span class="ve-highlight">Radiant Cullings</span></h1>
-            <p>Where technology meets excellence. We help individuals, organizations, and institutions thrive in today's digital economy through innovative technology solutions, professional training, cybersecurity services, AI Training, project management expertise, and strategic consulting.</p>
+
+            <span class="ve-hero-badge">
+                Empowering People. Transforming Businesses. Driving Innovation.
+            </span>
+
+            <h1>
+                Welcome to
+                <span class="ve-highlight">Radiant Cullings</span>
+            </h1>
+
+            <p>
+                Where technology meets excellence. We help individuals,
+                organizations, and institutions thrive in today's digital
+                economy through innovative technology solutions, professional
+                training, cybersecurity services, AI training, project
+                management expertise, and strategic consulting.
+            </p>
+
             <div class="ve-hero-btns">
-                <a href="services.html" class="ve-btn-primary text-white">Explore Services</a>
-                <a href="about.html" class="ve-btn-ghost">Learn More</a>
+                <a
+                    href="services.html"
+                    class="ve-btn-primary text-white"
+                >
+                    Explore Services
+                </a>
+
+                <a href="about.html" class="ve-btn-ghost">
+                    Learn More
+                </a>
             </div>
-            <!-- Quick Stats Row -->
+
+
+            <!-- Quick Statistics -->
+
             <div class="ve-hero-stats">
+
                 <div class="ve-stat">
                     <strong>500+</strong>
                     <span>Clients Served</span>
                 </div>
+
                 <div class="ve-stat-divider"></div>
+
                 <div class="ve-stat">
                     <strong>98%</strong>
                     <span>Satisfaction Rate</span>
                 </div>
+
                 <div class="ve-stat-divider"></div>
+
                 <div class="ve-stat">
-                    <strong class>10+</strong>
+                    <strong>5+</strong>
                     <span>Years Experience</span>
                 </div>
+
             </div>
+
         </div>
-        <!-- Right Panel: overlapping image cards -->
+
+
         <div class="ve-hero-right">
-            <div class="ve-hero-img-main bg-img" style="background-image:url(img/bg-img/rad3.png);"></div>
-            <!-- <div class="ve-hero-img-accent bg-img" style="background-image:url(img/bg-img/3.jpg);"></div> -->
-            <!-- Floating card -->
-            <!-- <div class="ve-float-card">
-                <i class="fa fa-line-chart"></i>
-                <div>
-                    <strong>Innovation</strong>
-                    <span>Driving Digital Excellence</span>
-                </div>
-            </div> -->
+            <div
+                class="ve-hero-img-main bg-img"
+                style="background-image: url(img/bg-img/rad6.png)"
+            ></div>
         </div>
+
     </section>
 
-    <!-- ===== MARQUEE TRUST BAR ===== -->
-    <!-- <div class="ve-trust-bar" style="background-color: #ED948C;"> -->
+
+    <!-- Trust Bar -->
+
     <div class="ve-trust-bar">
         <div class="ve-trust-inner">
+
+            <span>Our Partners</span>
+
             <span>
-                Our Partners
+                <img
+                    src="img/bg-img/mtn.png"
+                    alt="MTN"
+                    class="trust-icon"
+                />
+
+                MTN
             </span>
+
             <span>
-                <img src="./img/bg-img/mtn.png" alt="Cybersecurity Excellence" class="trust-icon">
-                mtn
+                <img
+                    src="img/bg-img/zenith.png"
+                    alt="Zenith Bank"
+                    class="trust-icon"
+                />
+
+                Zenith
             </span>
+
             <span>
-                <img src="./img/bg-img/zenith.png" alt="Industry Certified" class="trust-icon">
-                zenith
+                <img
+                    src="img/bg-img/alx.png"
+                    alt="ALX"
+                    class="trust-icon"
+                />
+
+                ALX
             </span>
+
             <span>
-                <img src="./img/bg-img/alx.png" alt="500+ Clients Worldwide" class="trust-icon">
-                alx
+                <img
+                    src="img/bg-img/genesis.jpg"
+                    alt="Genesis"
+                    class="trust-icon"
+                />
+
+                Genesis
             </span>
+
             <span>
-                <img src="./img/bg-img/genesis.jpg" alt="Data Protection" class="trust-icon">
-                genesis
+                <img
+                    src="img/bg-img/microsoft.png"
+                    alt="Microsoft"
+                    class="trust-icon"
+                />
+
+                Microsoft
             </span>
+
+            <!-- Repeated items create continuous movement -->
+
+            <span>Our Partners</span>
+
             <span>
-                <img src="./img/bg-img/microsoft.png" alt="Award Winning Training" class="trust-icon">
-                microsoft
+                <img
+                    src="img/bg-img/mtn.png"
+                    alt=""
+                    class="trust-icon"
+                />
+
+                MTN
             </span>
-            
-        </div>  
+
+            <span>
+                <img
+                    src="img/bg-img/zenith.png"
+                    alt=""
+                    class="trust-icon"
+                />
+
+                Zenith
+            </span>
+
+            <span>
+                <img
+                    src="img/bg-img/alx.png"
+                    alt=""
+                    class="trust-icon"
+                />
+
+                ALX
+            </span>
+
+            <span>
+                <img
+                    src="img/bg-img/genesis.jpg"
+                    alt=""
+                    class="trust-icon"
+                />
+
+                Genesis
+            </span>
+
+            <span>
+                <img
+                    src="img/bg-img/microsoft.png"
+                    alt=""
+                    class="trust-icon"
+                />
+
+                Microsoft
+            </span>
+
+        </div>
     </div>
 
-    <!-- ===== TECHNOLOGY SERVICES SECTION ===== -->
+    <!-- Full-screen Gallery Viewer -->
+
+    <div
+        class="rc-lightbox"
+        id="rcGalleryLightbox"
+        role="dialog"
+        aria-modal="true"
+        aria-hidden="true"
+        aria-label="Expanded image viewer"
+    >
+        <span
+            class="rc-lightbox-count"
+            id="rcLightboxCount"
+        >
+            01 / 06
+        </span>
+
+        <button
+            class="rc-lightbox-close"
+            id="rcLightboxClose"
+            type="button"
+            aria-label="Close image viewer"
+        >
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </button>
+
+        <button
+            class="rc-lightbox-control rc-lightbox-prev"
+            id="rcLightboxPrev"
+            type="button"
+            aria-label="View previous image"
+        >
+            <i
+                class="fa fa-chevron-left"
+                aria-hidden="true"
+            ></i>
+        </button>
+
+        <div class="rc-lightbox-dialog">
+            <img
+                class="rc-lightbox-image"
+                id="rcLightboxImage"
+                src=""
+                alt=""
+            />
+
+            <p
+                class="rc-lightbox-caption"
+                id="rcLightboxCaption"
+            ></p>
+        </div>
+
+        <button
+            class="rc-lightbox-control rc-lightbox-next"
+            id="rcLightboxNext"
+            type="button"
+            aria-label="View next image"
+        >
+            <i
+                class="fa fa-chevron-right"
+                aria-hidden="true"
+            ></i>
+        </button>
+    </div>
+
+
+    <!-- Technology Services -->
+
     <section class="ve-section ve-tech-services-section">
         <div class="container">
+
             <div class="ve-section-header text-center">
                 <span class="ve-section-tag">Our Expertise</span>
-                <h2>Technology <span>Services</span></h2>
-                <p>Practical, industry-focused training and consulting services designed to equip you with in-demand digital skills.</p>
+
+                <h2>
+                    Technology
+                    <span>Services</span>
+                </h2>
+
+                <p>
+                    Practical, industry-focused training and consulting
+                    services designed to equip you with in-demand digital
+                    skills.
+                </p>
             </div>
+
+
             <div class="ve-tech-services-grid">
-                <!-- Service 1: Technology Training -->
-                <div class="ve-tech-card wow fadeInUp" data-wow-delay="100ms">
+
+                <!-- Technology Training -->
+
+                <article
+                    class="ve-tech-card wow fadeInUp"
+                    data-wow-delay="100ms"
+                >
                     <div class="ve-tech-card-image">
-                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=400&fit=crop" alt="Technology Training">
+                        <img
+                            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=400&fit=crop"
+                            alt="Technology training class"
+                        />
+
                         <div class="ve-tech-price">₦150,000</div>
+
                         <div class="ve-tech-overlay">
-                            <a href="services.html#training" class="ve-tech-overlay-btn">Explore</a>
+                            <a
+                                href="services.html#training"
+                                class="ve-tech-overlay-btn"
+                            >
+                                Explore
+                            </a>
                         </div>
                     </div>
+
                     <div class="ve-tech-card-body">
-                        <div class="ve-tech-icon"><i class="icon-profits"></i></div>
+                        <div class="ve-tech-icon">
+                            <i class="icon-profits"></i>
+                        </div>
+
                         <h4>Technology Training</h4>
-                        <p>Cybersecurity, Data Analysis, AI Training, Project Management, Ui/Ux, Graphic Design, Video Editing, Software Development, and more.</p>
-                        <a href="services.html#training" class="ve-tech-link">Learn more <i class="fa fa-arrow-right"></i></a>
-                    </div>
-                </div>
 
-                <!-- Service 2: Technology Consulting -->
-                <div class="ve-tech-card wow fadeInUp" data-wow-delay="200ms">
+                        <p>
+                            Cybersecurity, data analysis, AI training, project
+                            management, UI/UX, graphic design, video editing,
+                            software development, and more.
+                        </p>
+
+                        <a
+                            href="services.html#training"
+                            class="ve-tech-link"
+                        >
+                            Learn more
+
+                            <i
+                                class="fa fa-arrow-right"
+                                aria-hidden="true"
+                            ></i>
+                        </a>
+                    </div>
+                </article>
+
+
+                <!-- Technology Consulting -->
+
+                <article
+                    class="ve-tech-card wow fadeInUp"
+                    data-wow-delay="200ms"
+                >
                     <div class="ve-tech-card-image">
-                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop" alt="Technology Consulting">
+                        <img
+                            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop"
+                            alt="Technology consulting"
+                        />
+
                         <div class="ve-tech-price">₦200,000</div>
-                        <div class="ve-tech-overlay">
-                            <a href="services.html#consulting" class="ve-tech-overlay-btn">Explore</a>
-                        </div>
-                    </div>
-                    <div class="ve-tech-card-body">
-                        <div class="ve-tech-icon"><i class="icon-money-1"></i></div>
-                        <h4>Technology Consulting</h4>
-                        <p>Make informed technology decisions, improve operational efficiency, and implement solutions that support sustainable business growth.</p>
-                        <a href="services.html#consulting" class="ve-tech-link">Learn more <i class="fa fa-arrow-right"></i></a>
-                    </div>
-                </div>
 
-                <!-- Service 3: Cybersecurity -->
-                <div class="ve-tech-card wow fadeInUp" data-wow-delay="300ms">
-                    <div class="ve-tech-card-image">
-                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop" alt="Cybersecurity Services">
-                        <div class="ve-tech-price">₦250,000</div>
                         <div class="ve-tech-overlay">
-                            <a href="services.html#cybersecurity" class="ve-tech-overlay-btn">Explore</a>
+                            <a
+                                href="services.html#consulting"
+                                class="ve-tech-overlay-btn"
+                            >
+                                Explore
+                            </a>
                         </div>
                     </div>
+
                     <div class="ve-tech-card-body">
-                        <div class="ve-tech-icon"><i class="icon-coin"></i></div>
-                        <h4>Cybersecurity Services</h4>
-                        <p>Protect your digital assets with cybersecurity awareness, training, security assessments, risk management, and policy development.</p>
-                        <a href="services.html#cybersecurity" class="ve-tech-link">Learn more <i class="fa fa-arrow-right"></i></a>
+                        <div class="ve-tech-icon">
+                            <i class="icon-money-1"></i>
+                        </div>
+
+                        <h4>Technology Consulting</h4>
+
+                        <p>
+                            Make informed technology decisions, improve
+                            operational efficiency, and implement solutions
+                            that support sustainable business growth.
+                        </p>
+
+                        <a
+                            href="services.html#consulting"
+                            class="ve-tech-link"
+                        >
+                            Learn more
+
+                            <i
+                                class="fa fa-arrow-right"
+                                aria-hidden="true"
+                            ></i>
+                        </a>
                     </div>
-                </div>
+                </article>
+
+
+                <!-- Cybersecurity -->
+
+                <article
+                    class="ve-tech-card wow fadeInUp"
+                    data-wow-delay="300ms"
+                >
+                    <div class="ve-tech-card-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop"
+                            alt="Cybersecurity services"
+                        />
+
+                        <div class="ve-tech-price">₦250,000</div>
+
+                        <div class="ve-tech-overlay">
+                            <a
+                                href="services.html#cybersecurity"
+                                class="ve-tech-overlay-btn"
+                            >
+                                Explore
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="ve-tech-card-body">
+                        <div class="ve-tech-icon">
+                            <i class="icon-coin"></i>
+                        </div>
+
+                        <h4>Cybersecurity Services</h4>
+
+                        <p>
+                            Protect your digital assets with cybersecurity
+                            awareness, training, security assessments, risk
+                            management, and policy development.
+                        </p>
+
+                        <a
+                            href="services.html#cybersecurity"
+                            class="ve-tech-link"
+                        >
+                            Learn more
+
+                            <i
+                                class="fa fa-arrow-right"
+                                aria-hidden="true"
+                            ></i>
+                        </a>
+                    </div>
+                </article>
+
             </div>
-            
-            <!-- View All Services Button -->
-            <div class="ve-tech-btn-wrap text-center wow fadeInUp" data-wow-delay="400ms">
+
+
+            <div
+                class="ve-tech-btn-wrap text-center wow fadeInUp"
+                data-wow-delay="400ms"
+            >
                 <a href="services.html" class="ve-btn-tech">
                     <span>View All Services</span>
-                    <i class="fa fa-arrow-right"></i>
-                </a>
 
-                <!-- <div class="ve-tech-btn-wrap text-center wow fadeInUp" data-wow-delay="400ms">
-                    <div class="ve-nav-cta">
-                        <a href="contact.html" class="ve-cta-btn">View All Services <i class="fa fa-arrow-right"></i></a>
-                    </div>
-                </div> -->
+                    <i
+                        class="fa fa-arrow-right"
+                        aria-hidden="true"
+                    ></i>
+                </a>
             </div>
+
         </div>
     </section>
 
-    <!-- ===== WHY US (two-column: image left, content right) ===== -->
+
+    <!-- Why Choose Us -->
+
     <section class="ve-section ve-whyus-section">
         <div class="container">
             <div class="row align-items-center">
-                <!-- Image Side -->
+
                 <div class="col-12 col-lg-5">
-                    <div class="ve-whyus-img-wrap wow fadeInLeft" data-wow-delay="100ms">
-                        <div class="ve-whyus-img-main bg-img" style="background-image:url(img/bg-img/5.jpg);"></div>
+                    <div
+                        class="ve-whyus-img-wrap wow fadeInLeft"
+                        data-wow-delay="100ms"
+                    >
+                        <div
+                            class="ve-whyus-img-main bg-img"
+                            style="background-image: url(img/bg-img/5.jpg)"
+                        ></div>
+
                         <div class="ve-whyus-badge">
                             <strong>10+</strong>
                             <span>Years of Excellence</span>
                         </div>
                     </div>
                 </div>
-                <!-- Content Side -->
-                <div class="col-12 col-lg-7 wow fadeInRight" data-wow-delay="200ms">
+
+
+                <div
+                    class="col-12 col-lg-7 wow fadeInRight"
+                    data-wow-delay="200ms"
+                >
                     <div class="ve-whyus-content">
+
                         <span class="ve-section-tag">About Us</span>
-                        <h2>Who We <span>Are</span></h2>
-                        <p>Radiant Cullings is a technology consulting and professional development firm dedicated to empowering individuals and organizations with the knowledge, tools, and strategies needed to succeed in an ever-evolving digital world.</p>
-                        <p>We combine technical expertise with practical experience to deliver innovative solutions that improve productivity, enhance security, strengthen project delivery, and build future-ready professionals.</p>
+
+                        <h2 style="color: #2575ab">
+                            Who We
+                            <span>Are</span>
+                        </h2>
+
+                        <p>
+                            Radiant Cullings is a technology consulting and
+                            professional development firm dedicated to
+                            empowering individuals and organizations with the
+                            knowledge, tools, and strategies needed to succeed
+                            in an ever-evolving digital world.
+                        </p>
+
+                        <p>
+                            We combine technical expertise with practical
+                            experience to deliver innovative solutions that
+                            improve productivity, enhance security, strengthen
+                            project delivery, and build future-ready
+                            professionals.
+                        </p>
+
                         <div class="ve-checklist">
+
                             <div class="ve-check-item">
-                                <i class="fa fa-check-circle"></i>
-                                <div><strong>Our Mission</strong><p>To empower individuals and organizations through technology, innovation, and continuous learning.</p></div>
+                                <i
+                                    class="fa fa-check-circle"
+                                    aria-hidden="true"
+                                ></i>
+
+                                <div>
+                                    <strong>Our Mission</strong>
+
+                                    <p>
+                                        To empower individuals and organizations
+                                        through technology, innovation, and
+                                        continuous learning.
+                                    </p>
+                                </div>
                             </div>
+
                             <div class="ve-check-item">
-                                <i class="fa fa-check-circle"></i>
-                                <div><strong>Our Vision</strong><p>To become a trusted leader in technology consulting, professional training, and digital transformation across Africa and beyond.</p></div>
+                                <i
+                                    class="fa fa-check-circle"
+                                    aria-hidden="true"
+                                ></i>
+
+                                <div>
+                                    <strong>Our Vision</strong>
+
+                                    <p>
+                                        To become a trusted leader in technology
+                                        consulting, professional training, and
+                                        digital transformation across Africa
+                                        and beyond.
+                                    </p>
+                                </div>
                             </div>
+
                             <div class="ve-check-item">
-                                <i class="fa fa-check-circle"></i>
-                                <div><strong>Core Values</strong><p>Excellence · Innovation · Integrity · Professionalism · Collaboration · Continuous Learning · Customer Success</p></div>
+                                <i
+                                    class="fa fa-check-circle"
+                                    aria-hidden="true"
+                                ></i>
+
+                                <div>
+                                    <strong>Core Values</strong>
+
+                                    <p>
+                                        Excellence · Innovation · Integrity ·
+                                        Professionalism · Collaboration ·
+                                        Continuous Learning · Customer Success
+                                    </p>
+                                </div>
                             </div>
+
                         </div>
-                        <a href="about.html" class="ve-btn-primary mt-30 text-white">Discover Our Story</a>
+
+                        <a
+                            href="about.html"
+                            class="ve-btn-primary mt-30 text-white"
+                            style="text-decoration: none"
+                        >
+                            Discover Our Story
+                        </a>
+
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- ===== COUNTERS ===== -->
+
+    <!-- Counters -->
+
     <section class="ve-counter-section">
         <div class="container">
             <div class="ve-counter-grid">
-                <div class="ve-counter-item wow fadeInUp" data-wow-delay="100ms">
-                    <i class="fa fa-users"></i>
-                    <strong class="counter" data-count="500">0</strong><span>+</span>
+
+                <div
+                    class="ve-counter-item wow fadeInUp"
+                    data-wow-delay="100ms"
+                >
+                    <i class="fa fa-users" aria-hidden="true"></i>
+
+                    <strong class="counter" data-count="500">0</strong>
+                    <span>+</span>
+
                     <p>Clients Served</p>
                 </div>
-                <div class="ve-counter-item wow fadeInUp" data-wow-delay="200ms">
-                    <i class="fa fa-briefcase"></i>
-                    <strong class="counter" data-count="50">0</strong><span>+</span>
+
+                <div
+                    class="ve-counter-item wow fadeInUp"
+                    data-wow-delay="200ms"
+                >
+                    <i class="fa fa-briefcase" aria-hidden="true"></i>
+
+                    <strong class="counter" data-count="50">0</strong>
+                    <span>+</span>
+
                     <p>Training Programs</p>
                 </div>
-                <div class="ve-counter-item wow fadeInUp" data-wow-delay="300ms">
-                    <i class="fa fa-globe"></i>
-                    <strong class="counter" data-count="10">0</strong><span>+</span>
+
+                <div
+                    class="ve-counter-item wow fadeInUp"
+                    data-wow-delay="300ms"
+                >
+                    <i class="fa fa-globe" aria-hidden="true"></i>
+
+                    <strong class="counter" data-count="10">0</strong>
+                    <span>+</span>
+
                     <p>Countries Served</p>
                 </div>
-                <div class="ve-counter-item wow fadeInUp" data-wow-delay="400ms">
-                    <i class="fa fa-trophy"></i>
-                    <strong class="counter" data-count="98">0</strong><span>%</span>
+
+                <div
+                    class="ve-counter-item wow fadeInUp"
+                    data-wow-delay="400ms"
+                >
+                    <i class="fa fa-trophy" aria-hidden="true"></i>
+
+                    <strong class="counter" data-count="98">0</strong>
+                    <span>%</span>
+
                     <p>Satisfaction Rate</p>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- ===== INDUSTRIES ===== -->
+
+    <!-- Industries -->
+
     <section class="ve-section ve-services-section">
         <div class="container">
+
             <div class="ve-section-header text-center">
                 <span class="ve-section-tag">Industries We Serve</span>
-                <h2>Trusted Across <span>Sectors</span></h2>
-                <p>Radiant Cullings serves clients across multiple sectors, delivering solutions that deliver measurable impact.</p>
+
+                <h2>
+                    Trusted Across
+                    <span>Sectors</span>
+                </h2>
+
+                <p>
+                    Radiant Cullings serves clients across multiple sectors,
+                    delivering solutions that create measurable impact.
+                </p>
             </div>
+
+
             <div class="ve-services-grid">
-                <div class="ve-service-card wow fadeInUp" data-wow-delay="100ms">
-                    <div class="ve-service-icon"><i class="icon-profits"></i></div>
+
+                <div
+                    class="ve-service-card wow fadeInUp"
+                    data-wow-delay="100ms"
+                >
+                    <div class="ve-service-icon">
+                        <i class="icon-profits"></i>
+                    </div>
+
                     <h4>Government</h4>
-                    <p>Digital transformation, cybersecurity, and capacity building for public sector organizations.</p>
+
+                    <p>
+                        Digital transformation, cybersecurity, and capacity
+                        building for public-sector organizations.
+                    </p>
                 </div>
-                <div class="ve-service-card wow fadeInUp" data-wow-delay="200ms">
-                    <div class="ve-service-icon"><i class="icon-money-1"></i></div>
+
+                <div
+                    class="ve-service-card wow fadeInUp"
+                    data-wow-delay="200ms"
+                >
+                    <div class="ve-service-icon">
+                        <i class="icon-money-1"></i>
+                    </div>
+
                     <h4>Education</h4>
-                    <p>Technology training, digital literacy, and e-learning solutions for educational institutions.</p>
+
+                    <p>
+                        Technology training, digital literacy, and e-learning
+                        solutions for educational institutions.
+                    </p>
                 </div>
-                <div class="ve-service-card wow fadeInUp" data-wow-delay="300ms">
-                    <div class="ve-service-icon"><i class="icon-coin"></i></div>
+
+                <div
+                    class="ve-service-card wow fadeInUp"
+                    data-wow-delay="300ms"
+                >
+                    <div class="ve-service-icon">
+                        <i class="icon-coin"></i>
+                    </div>
+
                     <h4>Financial Services</h4>
-                    <p>Cybersecurity, data analysis, and technology consulting for banks and financial institutions.</p>
+
+                    <p>
+                        Cybersecurity, data analysis, and technology consulting
+                        for banks and financial institutions.
+                    </p>
                 </div>
-                <div class="ve-service-card wow fadeInUp" data-wow-delay="400ms">
-                    <div class="ve-service-icon"><i class="icon-smartphone-1"></i></div>
+
+                <div
+                    class="ve-service-card wow fadeInUp"
+                    data-wow-delay="400ms"
+                >
+                    <div class="ve-service-icon">
+                        <i class="icon-smartphone-1"></i>
+                    </div>
+
                     <h4>Healthcare</h4>
-                    <p>Digital health solutions, data management, and technology advisory for healthcare providers.</p>
+
+                    <p>
+                        Digital-health solutions, data management, and
+                        technology advisory for healthcare providers.
+                    </p>
                 </div>
-                <div class="ve-service-card wow fadeInUp" data-wow-delay="500ms">
-                    <div class="ve-service-icon"><i class="icon-diamond"></i></div>
-                    <h4>Oil & Gas</h4>
-                    <p>Technology consulting, project management, and digital transformation for the energy sector.</p>
+
+                <div
+                    class="ve-service-card wow fadeInUp"
+                    data-wow-delay="500ms"
+                >
+                    <div class="ve-service-icon">
+                        <i class="icon-diamond"></i>
+                    </div>
+
+                    <h4>Oil &amp; Gas</h4>
+
+                    <p>
+                        Technology consulting, project management, and digital
+                        transformation for the energy sector.
+                    </p>
                 </div>
-                <div class="ve-service-card wow fadeInUp" data-wow-delay="600ms">
-                    <div class="ve-service-icon"><i class="icon-piggy-bank"></i></div>
-                    <h4>SMEs & Startups</h4>
-                    <p>Technology adoption, business process improvement, and capacity building for small businesses.</p>
+
+                <div
+                    class="ve-service-card wow fadeInUp"
+                    data-wow-delay="600ms"
+                >
+                    <div class="ve-service-icon">
+                        <i class="icon-piggy-bank"></i>
+                    </div>
+
+                    <h4>SMEs &amp; Startups</h4>
+
+                    <p>
+                        Technology adoption, business-process improvement, and
+                        capacity building for growing businesses.
+                    </p>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- ===== TESTIMONIALS ===== -->
+
+    <!-- Testimonials -->
+
     <section class="ve-section ve-testimonials-section">
         <div class="container">
+
             <div class="ve-section-header text-center">
                 <span class="ve-section-tag">Client Stories</span>
-                <h2>What Our Clients <span>Say</span></h2>
+
+                <h2>
+                    What Our Clients
+                    <span>Say</span>
+                </h2>
             </div>
+
+
             <div class="ve-testi-grid">
-                <div class="ve-testi-card wow fadeInUp" data-wow-delay="100ms">
-                    <div class="ve-testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p>"Radiant Cullings transformed our organization's digital capabilities. Their training programs are practical, hands-on, and immediately applicable."</p>
-                    <div class="ve-testi-author">
-                        <div class="ve-testi-avatar bg-img" style="background-image:url(img/bg-img/32.jpg);"></div>
-                        <div><strong>Alex Morgan</strong><span>CEO, TechCorp</span></div>
+
+                <article
+                    class="ve-testi-card wow fadeInUp"
+                    data-wow-delay="100ms"
+                >
+                    <div class="ve-testi-stars">
+                        &#9733;&#9733;&#9733;&#9733;&#9733;
                     </div>
-                </div>
-                <div class="ve-testi-card wow fadeInUp" data-wow-delay="250ms">
-                    <div class="ve-testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p>"The cybersecurity assessment and training provided by Radiant Cullings significantly improved our security posture. Highly recommended!"</p>
+
+                    <p>
+                        “Radiant Cullings transformed our organization's
+                        digital capabilities. Their training programmes are
+                        practical, hands-on, and immediately applicable.”
+                    </p>
+
                     <div class="ve-testi-author">
-                        <div class="ve-testi-avatar bg-img" style="background-image:url(img/bg-img/33.jpg);"></div>
-                        <div><strong>Sarah Patel</strong><span>IT Director, SecureBank</span></div>
+                        <div
+                            class="ve-testi-avatar bg-img"
+                            style="background-image: url(img/bg-img/32.jpg)"
+                        ></div>
+
+                        <div>
+                            <strong>Alex Morgan</strong>
+                            <span>CEO, TechCorp</span>
+                        </div>
                     </div>
-                </div>
-                <div class="ve-testi-card wow fadeInUp" data-wow-delay="400ms">
-                    <div class="ve-testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p>"Their project management expertise helped us deliver our complex digital transformation project on time and within budget."</p>
+                </article>
+
+                <article
+                    class="ve-testi-card wow fadeInUp"
+                    data-wow-delay="250ms"
+                >
+                    <div class="ve-testi-stars">
+                        &#9733;&#9733;&#9733;&#9733;&#9733;
+                    </div>
+
+                    <p>
+                        “The cybersecurity assessment and training provided by
+                        Radiant Cullings significantly improved our security
+                        posture. Highly recommended!”
+                    </p>
+
                     <div class="ve-testi-author">
-                        <div class="ve-testi-avatar bg-img" style="background-image:url(img/bg-img/14.jpg);"></div>
-                        <div><strong>James Liu</strong><span>Project Lead, GlobalCorp</span></div>
+                        <div
+                            class="ve-testi-avatar bg-img"
+                            style="background-image: url(img/bg-img/33.jpg)"
+                        ></div>
+
+                        <div>
+                            <strong>Sarah Patel</strong>
+                            <span>IT Director, SecureBank</span>
+                        </div>
                     </div>
-                </div>
+                </article>
+
+                <article
+                    class="ve-testi-card wow fadeInUp"
+                    data-wow-delay="400ms"
+                >
+                    <div class="ve-testi-stars">
+                        &#9733;&#9733;&#9733;&#9733;&#9733;
+                    </div>
+
+                    <p>
+                        “Their project-management expertise helped us deliver
+                        our complex digital-transformation project on time and
+                        within budget.”
+                    </p>
+
+                    <div class="ve-testi-author">
+                        <div
+                            class="ve-testi-avatar bg-img"
+                            style="background-image: url(img/bg-img/14.jpg)"
+                        ></div>
+
+                        <div>
+                            <strong>James Liu</strong>
+                            <span>Project Lead, GlobalCorp</span>
+                        </div>
+                    </div>
+                </article>
+
             </div>
         </div>
     </section>
 
-    <!-- ===== TRAINING MODE ===== -->
-    <section class="ve-cta-banner bg-img" style="background-image:url(img/bg-img/rad5.png);">
+    <!-- Interactive Image Carousel -->
+
+    <section
+        class="rc-gallery-section"
+        id="innovation-gallery"
+        aria-labelledby="innovationGalleryTitle"
+    >
+        <div class="container">
+
+            <div class="ve-section-header text-center">
+                <span class="ve-section-tag">
+                    Innovation in Action
+                </span>
+
+                <h2 id="innovationGalleryTitle">
+                    Explore Our
+                    <span>Digital Journey</span>
+                </h2>
+
+                <p>
+                    Browse moments that reflect collaboration, technology,
+                    professional development, and digital transformation.
+                </p>
+            </div>
+
+
+            <div class="rc-gallery-shell">
+
+                <button
+                    class="rc-gallery-arrow rc-gallery-prev"
+                    id="rcGalleryPrev"
+                    type="button"
+                    aria-label="Show previous gallery images"
+                >
+                    <i
+                        class="fa fa-chevron-left"
+                        aria-hidden="true"
+                    ></i>
+                </button>
+
+
+                <div
+                    class="rc-gallery-viewport"
+                    id="rcGalleryViewport"
+                    dir="ltr"
+                    tabindex="0"
+                    aria-label="Radiant Cullings image gallery"
+                >
+                    <div
+                        class="rc-gallery-track"
+                        id="rcGalleryTrack"
+                    >
+
+                        <div class="rc-gallery-slide">
+                            <button
+                                class="rc-gallery-card"
+                                type="button"
+                                data-gallery-index="0"
+                                aria-label="Open team innovation image"
+                            >
+                                <img
+                                    src="img/bg-img/rad6.png"
+                                    alt="Professionals collaborating around a laptop in a technology-focused office"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+
+                                <span
+                                    class="rc-gallery-zoom"
+                                    aria-hidden="true"
+                                >
+                                    <i class="fa fa-search-plus"></i>
+                                </span>
+
+                                <!-- <span class="rc-gallery-caption">
+                                    <strong>People and Innovation</strong>
+                                    <span>Technology-driven collaboration</span>
+                                </span> -->
+                            </button>
+                        </div>
+
+
+                        <div class="rc-gallery-slide">
+                            <button
+                                class="rc-gallery-card"
+                                type="button"
+                                data-gallery-index="1"
+                                aria-label="Open African technology collaboration image"
+                            >
+                                <img
+                                    src="img/bg-img/rad6.png"
+                                    alt="African technology professionals working together in a modern office"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+
+                                <span
+                                    class="rc-gallery-zoom"
+                                    aria-hidden="true"
+                                >
+                                    <i class="fa fa-search-plus"></i>
+                                </span>
+
+                                <!-- <span class="rc-gallery-caption">
+                                    <strong>Collaboration Across Africa</strong>
+                                    <span>Building practical digital solutions</span>
+                                </span> -->
+                            </button>
+                        </div>
+
+
+                        <div class="rc-gallery-slide">
+                            <button
+                                class="rc-gallery-card"
+                                type="button"
+                                data-gallery-index="2"
+                                aria-label="Open digital transformation image"
+                            >
+                                <img
+                                    src="img/bg-img/rad6.png"
+                                    alt="Abstract digital transformation scene with data flows and a modern city"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+
+                                <span
+                                    class="rc-gallery-zoom"
+                                    aria-hidden="true"
+                                >
+                                    <i class="fa fa-search-plus"></i>
+                                </span>
+
+                                <!-- <span class="rc-gallery-caption">
+                                    <strong>Digital Transformation</strong>
+                                    <span>Progress powered by modern technology</span>
+                                </span> -->
+                            </button>
+                        </div>
+
+
+                        <div class="rc-gallery-slide">
+                            <button
+                                class="rc-gallery-card"
+                                type="button"
+                                data-gallery-index="3"
+                                aria-label="Open corporate technology image"
+                            >
+                                <img
+                                    src="img/bg-img/rad6.png"
+                                    alt="Corporate technology collage showing teamwork, data, and digital systems"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+
+                                <span
+                                    class="rc-gallery-zoom"
+                                    aria-hidden="true"
+                                >
+                                    <i class="fa fa-search-plus"></i>
+                                </span>
+
+                                <!-- <span class="rc-gallery-caption">
+                                    <strong>Connected Solutions</strong>
+                                    <span>Strategy, security, and transformation</span>
+                                </span> -->
+                            </button>
+                        </div>
+
+
+                        <div class="rc-gallery-slide">
+                            <button
+                                class="rc-gallery-card"
+                                type="button"
+                                data-gallery-index="4"
+                                aria-label="Open technology excellence image"
+                            >
+                                <img
+                                    src="img/bg-img/rad6.png"
+                                    alt="Radiant Cullings technology and professional development presentation"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+
+                                <span
+                                    class="rc-gallery-zoom"
+                                    aria-hidden="true"
+                                >
+                                    <i class="fa fa-search-plus"></i>
+                                </span>
+
+                                <!-- <span class="rc-gallery-caption">
+                                    <strong>Technology Excellence</strong>
+                                    <span>Empowering people and organizations</span>
+                                </span> -->
+                            </button>
+                        </div>
+
+
+                        <div class="rc-gallery-slide">
+                            <button
+                                class="rc-gallery-card"
+                                type="button"
+                                data-gallery-index="5"
+                                aria-label="Open future-ready training image"
+                            >
+                                <img
+                                    src="img/bg-img/rad7.png"
+                                    alt="Technology education and future-ready professional training"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+
+                                <span
+                                    class="rc-gallery-zoom"
+                                    aria-hidden="true"
+                                >
+                                    <i class="fa fa-search-plus"></i>
+                                </span>
+
+                                <!-- <span class="rc-gallery-caption">
+                                    <strong>Future-Ready Learning</strong>
+                                    <span>Skills that create lasting opportunity</span>
+                                </span> -->
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <button
+                    class="rc-gallery-arrow rc-gallery-next"
+                    id="rcGalleryNext"
+                    type="button"
+                    aria-label="Show next gallery images"
+                >
+                    <i
+                        class="fa fa-chevron-right"
+                        aria-hidden="true"
+                    ></i>
+                </button>
+
+            </div>
+
+
+            <div
+                class="rc-gallery-status"
+                aria-live="polite"
+            >
+                <div
+                    class="rc-gallery-progress"
+                    aria-hidden="true"
+                >
+                    <span
+                        class="rc-gallery-progress-bar"
+                        id="rcGalleryProgress"
+                    ></span>
+                </div>
+
+                <span
+                    class="rc-gallery-counter"
+                    id="rcGalleryCounter"
+                >
+                    01 / 06
+                </span>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Donations and Sponsorship -->
+
+    <section
+        class="ve-section ve-donations-section"
+        id="donations"
+    >
+        <div class="container">
+
+            <div class="ve-section-header text-center">
+                <span class="ve-section-tag">Support Our Mission</span>
+
+                <h2>
+                    Donations &amp;
+                    <span>Sponsorship</span>
+                </h2>
+
+                <p>
+                    Help us empower more individuals and organizations through
+                    technology education, training, and innovation. Your
+                    support makes a difference.
+                </p>
+            </div>
+
+
+            <div class="ve-donations-grid">
+
+                <!-- Sponsor a Student -->
+
+                <article
+                    class="ve-donation-card wow fadeInUp"
+                    data-wow-delay="100ms"
+                >
+                    <div class="ve-donation-image">
+                        <img
+                            src="img/bg-img/rad7.png"
+                            alt="Sponsor a student"
+                        />
+
+                        <div class="ve-donation-overlay">
+                            <i
+                                class="fa fa-graduation-cap"
+                                aria-hidden="true"
+                            ></i>
+                        </div>
+                    </div>
+
+                    <div class="ve-donation-body">
+                        <h4>Sponsor a Student</h4>
+
+                        <p>
+                            Provide technology-training scholarships to
+                            underserved individuals and help them build
+                            future-ready careers.
+                        </p>
+
+                        <div class="ve-bank-details">
+                            <p>
+                                <strong>Bank:</strong>
+                                GTBank
+                            </p>
+
+                            <p>
+                                <strong>Account Name:</strong>
+                                Radiant Cullings Foundation
+                            </p>
+
+                            <p>
+                                <strong>Account Number:</strong>
+                                0123456789
+                            </p>
+                        </div>
+
+                        <div class="ve-donation-actions">
+                            <a
+                                href="#"
+                                class="ve-btn-donate"
+                                data-copy-account="student"
+                            >
+                                <i
+                                    class="fa fa-heart"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Donate Now
+                            </a>
+
+                            <a
+                                href="#"
+                                class="ve-btn-copy"
+                                data-copy-account="student"
+                            >
+                                <i
+                                    class="fa fa-copy"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Copy Details
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- Corporate Sponsorship -->
+
+                <article
+                    class="ve-donation-card wow fadeInUp"
+                    data-wow-delay="200ms"
+                >
+                    <div class="ve-donation-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&h=400&fit=crop"
+                            alt="Corporate sponsorship"
+                        />
+
+                        <div class="ve-donation-overlay">
+                            <i
+                                class="fa fa-building"
+                                aria-hidden="true"
+                            ></i>
+                        </div>
+                    </div>
+
+                    <div class="ve-donation-body">
+                        <h4>Corporate Sponsorship</h4>
+
+                        <p>
+                            Partner with us to deliver technology-training
+                            programmes, workshops, and digital-transformation
+                            initiatives for organizations.
+                        </p>
+
+                        <div class="ve-bank-details">
+                            <p>
+                                <strong>Bank:</strong>
+                                Zenith Bank
+                            </p>
+
+                            <p>
+                                <strong>Account Name:</strong>
+                                Radiant Cullings Consulting
+                            </p>
+
+                            <p>
+                                <strong>Account Number:</strong>
+                                9876543210
+                            </p>
+                        </div>
+
+                        <div class="ve-donation-actions">
+                            <a
+                                href="#"
+                                class="ve-btn-donate"
+                                data-copy-account="corporate"
+                            >
+                                <i
+                                    class="fa fa-handshake-o"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Partner With Us
+                            </a>
+
+                            <a
+                                href="#"
+                                class="ve-btn-copy"
+                                data-copy-account="corporate"
+                            >
+                                <i
+                                    class="fa fa-copy"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Copy Details
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- Equipment and Resources -->
+
+                <article
+                    class="ve-donation-card wow fadeInUp"
+                    data-wow-delay="300ms"
+                >
+                    <div class="ve-donation-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop"
+                            alt="Technology equipment and resources"
+                        />
+
+                        <div class="ve-donation-overlay">
+                            <i
+                                class="fa fa-laptop"
+                                aria-hidden="true"
+                            ></i>
+                        </div>
+                    </div>
+
+                    <div class="ve-donation-body">
+                        <h4>Equipment &amp; Resources</h4>
+
+                        <p>
+                            Donate laptops, software, learning materials, or
+                            infrastructure to support our training centres and
+                            programmes.
+                        </p>
+
+                        <div class="ve-bank-details">
+                            <p>
+                                <strong>Bank:</strong>
+                                First Bank
+                            </p>
+
+                            <p>
+                                <strong>Account Name:</strong>
+                                Radiant Cullings Foundation
+                            </p>
+
+                            <p>
+                                <strong>Account Number:</strong>
+                                5678901234
+                            </p>
+                        </div>
+
+                        <div class="ve-donation-actions">
+                            <a
+                                href="#"
+                                class="ve-btn-donate"
+                                data-copy-account="equipment"
+                            >
+                                <i
+                                    class="fa fa-gift"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Donate Equipment
+                            </a>
+
+                            <a
+                                href="#"
+                                class="ve-btn-copy"
+                                data-copy-account="equipment"
+                            >
+                                <i
+                                    class="fa fa-copy"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Copy Details
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+
+            <!-- Sponsorship Partners -->
+
+            <div
+                class="ve-sponsorship-partners wow fadeInUp"
+                data-wow-delay="400ms"
+            >
+                <h4>Our Sponsorship Partners</h4>
+
+                <div class="ve-partners-grid">
+
+                    <div class="ve-partner-item">
+                        <img src="img/bg-img/mtn.png" alt="MTN" />
+                    </div>
+
+                    <div class="ve-partner-item">
+                        <img src="img/bg-img/zenith.png" alt="Zenith" />
+                    </div>
+
+                    <div class="ve-partner-item">
+                        <img src="img/bg-img/alx.png" alt="ALX" />
+                    </div>
+
+                    <div class="ve-partner-item">
+                        <img
+                            src="img/bg-img/genesis.jpg"
+                            alt="Genesis"
+                        />
+                    </div>
+
+                    <div class="ve-partner-item">
+                        <img
+                            src="img/bg-img/microsoft.png"
+                            alt="Microsoft"
+                        />
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Donation CTA -->
+
+            <div
+                class="ve-donation-cta text-center wow fadeInUp"
+                data-wow-delay="500ms"
+            >
+                <p>
+                    Every contribution counts. Join us in building a digitally
+                    empowered future for Africa.
+                </p>
+
+                <div class="ve-donation-buttons">
+                    <a
+                        href="#donations"
+                        class="ve-btn-primary text-white"
+                        style="text-decoration: none"
+                    >
+                        <i
+                            class="fa fa-heart"
+                            style="color: #ed948c"
+                            aria-hidden="true"
+                        ></i>
+
+                        Make a Donation
+                    </a>
+
+                    <a
+                        href="https://wa.me/2348146710908?text=Hello%20Radiant%20Cullings%2C%20I%20want%20to%20make%20a%20donation%20or%20sponsorship"
+                        class="ve-btn-whatsapp"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i
+                            class="fa fa-whatsapp"
+                            aria-hidden="true"
+                        ></i>
+
+                        Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Training Mode CTA -->
+
+    <section
+        class="ve-cta-banner bg-img"
+        style="background-image: url(img/bg-img/rad5.png)"
+    >
         <div class="ve-cta-overlay"></div>
+
         <div class="container ve-cta-content">
             <div class="row align-items-center">
+
                 <div class="col-12 col-lg-8">
-                    <h2>Hybrid Training <span>Mode</span></h2>
-                    <p>We offer training both in physical class and online class (Hybrid Class). Flexible learning options for your convenience.</p>
+                    <h2>
+                        Hybrid Training
+                        <span>Mode</span>
+                    </h2>
+
+                    <p>
+                        We offer training in both physical and online classes.
+                        Enjoy flexible learning options designed around your
+                        convenience.
+                    </p>
                 </div>
+
                 <div class="col-12 col-lg-4 text-lg-right">
-                    <a href="contact.html" class="ve-btn-white">Enroll Now</a>
+                    <a href="contact.html" class="ve-btn-white">
+                        Enrol Now
+                    </a>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- ===== LATEST INSIGHTS ===== -->
+
+    <!-- Latest Insights -->
+
     <section class="ve-section ve-insights-section">
         <div class="container">
+
             <div class="ve-section-header text-center">
                 <span class="ve-section-tag">Insights</span>
-                <h2>Ideas That Inspire <span>Innovation</span></h2>
-                <p>Expert perspectives on emerging technologies, AI, cybersecurity, project management, digital transformation, and more.</p>
+
+                <h2>
+                    Ideas That Inspire
+                    <span>Innovation</span>
+                </h2>
+
+                <p class="mx-auto" style="max-width: 600px">
+                    Expert perspectives on emerging technologies, AI,
+                    cybersecurity, project management, digital transformation,
+                    and more.
+                </p>
             </div>
+
+
             <div class="row">
-                <div class="col-12 col-md-4 wow fadeInUp" data-wow-delay="100ms">
-                    <div class="ve-insight-card">
-                        <div class="ve-insight-img bg-img" style="background-image:url(img/bg-img/10.jpg);"></div>
+
+                <div
+                    class="col-12 col-md-4 wow fadeInUp"
+                    data-wow-delay="100ms"
+                >
+                    <article class="ve-insight-card">
+
+                        <div
+                            class="ve-insight-img bg-img"
+                            style="background-image: url(img/bg-img/10.jpg)"
+                        ></div>
+
                         <div class="ve-insight-body">
                             <span class="ve-insight-cat">AI</span>
-                            <h5><a href="single-post.html">The Future of Artificial Intelligence in Business</a></h5>
-                            <p>Explore how AI is transforming industries and creating new opportunities for innovation.</p>
+
+                            <h5>
+                                <a href="single-post.html">
+                                    The Future of Artificial Intelligence in
+                                    Business
+                                </a>
+                            </h5>
+
+                            <p>
+                                Explore how AI is transforming industries and
+                                creating new opportunities for innovation.
+                            </p>
+
                             <div class="ve-insight-meta">
-                                <span><i class="fa fa-calendar"></i> April 26</span>
-                                <a href="single-post.html">Read More <i class="fa fa-arrow-right"></i></a>
+                                <span>
+                                    <i
+                                        class="fa fa-calendar"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    April 26
+                                </span>
+
+                                <a href="single-post.html">
+                                    Read More
+
+                                    <i
+                                        class="fa fa-arrow-right"
+                                        aria-hidden="true"
+                                    ></i>
+                                </a>
                             </div>
                         </div>
-                    </div>
+
+                    </article>
                 </div>
-                <div class="col-12 col-md-4 wow fadeInUp" data-wow-delay="250ms">
-                    <div class="ve-insight-card">
-                        <div class="ve-insight-img bg-img" style="background-image:url(img/bg-img/11.jpg);"></div>
+
+
+                <div
+                    class="col-12 col-md-4 wow fadeInUp"
+                    data-wow-delay="250ms"
+                >
+                    <article class="ve-insight-card">
+
+                        <div
+                            class="ve-insight-img bg-img"
+                            style="background-image: url(img/bg-img/11.jpg)"
+                        ></div>
+
                         <div class="ve-insight-body">
-                            <span class="ve-insight-cat">Cybersecurity</span>
-                            <h5><a href="single-post.html">Building Cyber Resilience in 2025</a></h5>
-                            <p>Best practices for protecting your organization against evolving cyber threats.</p>
+                            <span class="ve-insight-cat">
+                                Cybersecurity
+                            </span>
+
+                            <h5>
+                                <a href="single-post.html">
+                                    Building Cyber Resilience in 2025
+                                </a>
+                            </h5>
+
+                            <p>
+                                Best practices for protecting your
+                                organization against evolving cyber threats.
+                            </p>
+
                             <div class="ve-insight-meta">
-                                <span><i class="fa fa-calendar"></i> April 20</span>
-                                <a href="single-post.html">Read More <i class="fa fa-arrow-right"></i></a>
+                                <span>
+                                    <i
+                                        class="fa fa-calendar"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    April 20
+                                </span>
+
+                                <a href="single-post.html">
+                                    Read More
+
+                                    <i
+                                        class="fa fa-arrow-right"
+                                        aria-hidden="true"
+                                    ></i>
+                                </a>
                             </div>
                         </div>
-                    </div>
+
+                    </article>
                 </div>
-                <div class="col-12 col-md-4 wow fadeInUp" data-wow-delay="400ms">
-                    <div class="ve-insight-card">
-                        <div class="ve-insight-img bg-img" style="background-image:url(img/bg-img/12.jpg);"></div>
+
+
+                <div
+                    class="col-12 col-md-4 wow fadeInUp"
+                    data-wow-delay="400ms"
+                >
+                    <article class="ve-insight-card">
+
+                        <div
+                            class="ve-insight-img bg-img"
+                            style="background-image: url(img/bg-img/12.jpg)"
+                        ></div>
+
                         <div class="ve-insight-body">
-                            <span class="ve-insight-cat">Digital Transformation</span>
-                            <h5><a href="single-post.html">Digital Transformation: A Strategic Guide</a></h5>
-                            <p>Key strategies for successful digital transformation in today's competitive landscape.</p>
+                            <span class="ve-insight-cat">
+                                Digital Transformation
+                            </span>
+
+                            <h5>
+                                <a href="single-post.html">
+                                    Digital Transformation: A Strategic Guide
+                                </a>
+                            </h5>
+
+                            <p>
+                                Key strategies for successful digital
+                                transformation in today's competitive
+                                landscape.
+                            </p>
+
                             <div class="ve-insight-meta">
-                                <span><i class="fa fa-calendar"></i> April 14</span>
-                                <a href="single-post.html">Read More <i class="fa fa-arrow-right"></i></a>
+                                <span>
+                                    <i
+                                        class="fa fa-calendar"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    April 14
+                                </span>
+
+                                <a href="single-post.html">
+                                    Read More
+
+                                    <i
+                                        class="fa fa-arrow-right"
+                                        aria-hidden="true"
+                                    ></i>
+                                </a>
                             </div>
                         </div>
-                    </div>
+
+                    </article>
                 </div>
+
             </div>
+
+
+            <div
+                class="text-center mt-5 wow fadeInUp"
+                data-wow-delay="500ms"
+            >
+                <a
+                    href="blogs.html"
+                    class="ve-btn-primary text-white d-inline-flex align-items-center"
+                    style="gap: 10px; text-decoration: none"
+                >
+                    See More
+
+                    <i
+                        class="fa fa-arrow-right"
+                        aria-hidden="true"
+                    ></i>
+                </a>
+            </div>
+
         </div>
     </section>
 
-    <!-- ===== NEWSLETTER ===== -->
-    <!-- <section class="ve-newsletter-section" style="background: #5fa0cb !important;">
-        <div class="container">
-            <div class="ve-newsletter-wrap">
-                <div class="ve-nl-left">
-                    <i class="fa fa-envelope-o"></i>
-                    <div>
-                        <h3>Stay Informed</h3>
-                        <p>Weekly insights, tips, and updates on technology, innovation, and professional development.</p>
-                    </div>
-                </div>
-                <div class="ve-nl-right">
-                    <form class="ve-nl-form" action="#" method="post">
-                        <input type="email" placeholder="Enter your email address" required>
-                        <button type="submit">Subscribe</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
-    <!-- ===== FOOTER (dark, 4-column) ===== -->
+    <!-- Footer -->
+
     <footer class="ve-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-lg-4 mb-50">
+            <div class="ve-footer-brand">
+              <a href="index.html" class="ve-footer-logo"
+                ><img
+                  src="img/core-img/radiant_cullings.png"
+                  alt="Radiant Cullings"
+                  style="max-width: 120px"
+              /></a>
+              <p>
+                Empowering People. Transforming Businesses. Driving Innovation.
+              </p>
+              <div class="ve-social">
+                <a href="#" aria-label="Facebook"
+                  ><i class="fa fa-facebook"></i></a
+                ><a href="#" aria-label="Twitter"
+                  ><i class="fa fa-twitter"></i></a
+                ><a href="#" aria-label="LinkedIn"
+                  ><i class="fa fa-linkedin"></i></a
+                ><a href="#" aria-label="Instagram"
+                  ><i class="fa fa-instagram"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-2 mb-50">
+            <h5 class="ve-footer-title">Quick Links</h5>
+            <ul class="ve-footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="courses.html">Courses</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3 mb-50">
+            <h5 class="ve-footer-title">Our Services</h5>
+            <ul class="ve-footer-links">
+              <li><a href="courses.html">Technology Training</a></li>
+              <li><a href="consulting.html">Technology Consulting</a></li>
+              <li><a href="services.html#cybersecurity">Cybersecurity</a></li>
+              <li><a href="services.html#project">Project Management</a></li>
+              <li>
+                <a href="services.html#digital">Digital Transformation</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3 mb-50">
+            <h5 class="ve-footer-title">Contact Us</h5>
+            <ul class="ve-footer-contact">
+              <li><i class="fa fa-map-marker"></i> Ikeja, Lagos, Nigeria</li>
+              <li>
+                <i class="fa fa-map-marker"></i> 17 Romoke Complex, Igodo Road,
+                Magboro, Ogun State
+              </li>
+              <li><i class="fa fa-phone"></i> +234 814 671 0908</li>
+              <li><i class="fa fa-phone"></i> +234 703 740 3162</li>
+              <li><i class="fa fa-phone"></i> +234 704 383 7008</li>
+              <li><i class="fa fa-envelope"></i> info@radiantcullings.com</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="ve-footer-bottom">
         <div class="container">
-            <div class="row">
-                <!-- Col 1: Brand -->
-                <div class="col-12 col-sm-6 col-lg-4 mb-50">
-                    <div class="ve-footer-brand">
-                        <a href="index.html" class="ve-footer-logo">
-                            <img src="img/core-img/radiant_cullings.png" alt="Radiant Cullings" style="max-width: 120px;">
-                        </a>
-                        <p>Empowering People. Transforming Businesses. Driving Innovation.</p>
-                        <div class="ve-social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Col 2: Quick Links -->
-                <div class="col-12 col-sm-6 col-lg-2 mb-50">
-                    <h5 class="ve-footer-title">Quick Links</h5>
-                    <ul class="ve-footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="insights.html">Insights</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <!-- Col 3: Services -->
-                <div class="col-12 col-sm-6 col-lg-3 mb-50">
-                    <h5 class="ve-footer-title">Our Services</h5>
-                    <ul class="ve-footer-links">
-                        <li><a href="services.html#training">Technology Training</a></li>
-                        <li><a href="services.html#consulting">Technology Consulting</a></li>
-                        <li><a href="services.html#cybersecurity">Cybersecurity</a></li>
-                        <li><a href="services.html#project">Project Management</a></li>
-                        <li><a href="services.html#digital">Digital Transformation</a></li>
-                        <li><a href="services.html#advisory">Business Advisory</a></li>
-                    </ul>
-                </div>
-                <!-- Col 4: Contact -->
-                <div class="col-12 col-sm-6 col-lg-3 mb-50">
-                    <h5 class="ve-footer-title">Contact Us</h5>
-                    <ul class="ve-footer-contact">
-                        <li><i class="fa fa-map-marker"></i> Ikeja, Lagos, Nigeria</li>
-                        <li><i class="fa fa-map-marker"></i> 17 Romoke Complex, Igodo Rd, Magboro, Ogun State</li>
-                        <li><i class="fa fa-phone"></i> +234 8146710908, +234 7037403162</li>
-                        <li><i class="fa fa-envelope"></i> info@radiantcullings.com</li>
-                        <li><i class="fa fa-clock-o"></i> Mon–Fri, 9am – 6pm</li>
-                    </ul>
-                </div>
-            </div>
+          <div class="ve-footer-bottom-inner">
+            <p>
+              Copyright &copy; <span id="currentYear"></span> Radiant Cullings.
+              All Rights Reserved.
+            </p>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+            </ul>
+          </div>
         </div>
-
-        <!-- Footer Bottom Bar -->
-        <div class="ve-footer-bottom">
-            <div class="container">
-                <div class="ve-footer-bottom-inner">
-                    <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> Radiant Cullings. All Rights Reserved.</p>
-                    <ul>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Use</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+      </div>
     </footer>
 
-    <!-- Scripts -->
+
+    <!-- Dark Mode, Current Year and Donation Scripts -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var body = document.body;
+            var root = document.documentElement;
+            var toggle = document.getElementById("darkModeToggle");
+            var currentYear = document.getElementById("currentYear");
+
+            var accountButtons =
+                document.querySelectorAll("[data-copy-account]");
+
+            try {
+                if (localStorage.getItem("darkMode") === "enabled") {
+                    body.classList.add("dark-mode");
+                }
+            } catch (error) {
+                /* Continue without a saved theme. */
+            }
+
+            root.classList.remove("dark-theme-loading");
+
+
+            /* Current footer year */
+
+            if (currentYear) {
+                currentYear.textContent = new Date().getFullYear();
+            }
+
+
+            /* Update theme button */
+
+            function updateThemeButton() {
+                if (!toggle) {
+                    return;
+                }
+
+                var isDark =
+                    body.classList.contains("dark-mode");
+
+                toggle.setAttribute(
+                    "aria-pressed",
+                    isDark ? "true" : "false"
+                );
+
+                toggle.setAttribute(
+                    "aria-label",
+                    isDark
+                        ? "Switch to light mode"
+                        : "Switch to dark mode"
+                );
+
+                toggle.setAttribute(
+                    "title",
+                    isDark
+                        ? "Switch to light mode"
+                        : "Switch to dark mode"
+                );
+            }
+
+
+            /* Change theme */
+
+            if (toggle) {
+                updateThemeButton();
+
+                toggle.addEventListener("click", function () {
+                    body.classList.toggle("dark-mode");
+
+                    var isDark =
+                        body.classList.contains("dark-mode");
+
+                    try {
+                        localStorage.setItem(
+                            "darkMode",
+                            isDark ? "enabled" : "disabled"
+                        );
+                    } catch (error) {
+                        /* Theme works even without localStorage. */
+                    }
+
+                    updateThemeButton();
+                });
+            }
+
+
+            /* Donation account details */
+
+            var accountDetails = {
+                student:
+                    "Bank: GTBank\n" +
+                    "Account Name: Radiant Cullings Foundation\n" +
+                    "Account Number: 0123456789",
+
+                corporate:
+                    "Bank: Zenith Bank\n" +
+                    "Account Name: Radiant Cullings Consulting\n" +
+                    "Account Number: 9876543210",
+
+                equipment:
+                    "Bank: First Bank\n" +
+                    "Account Name: Radiant Cullings Foundation\n" +
+                    "Account Number: 5678901234"
+            };
+
+
+            function copyTextWithFallback(text) {
+                if (
+                    navigator.clipboard &&
+                    window.isSecureContext
+                ) {
+                    return navigator.clipboard.writeText(text);
+                }
+
+                return new Promise(function (resolve, reject) {
+                    var textarea =
+                        document.createElement("textarea");
+
+                    textarea.value = text;
+                    textarea.style.position = "fixed";
+                    textarea.style.left = "-9999px";
+                    textarea.setAttribute("readonly", "");
+
+                    document.body.appendChild(textarea);
+                    textarea.select();
+
+                    try {
+                        var successful =
+                            document.execCommand("copy");
+
+                        document.body.removeChild(textarea);
+
+                        if (successful) {
+                            resolve();
+                        } else {
+                            reject(
+                                new Error("Copy command failed.")
+                            );
+                        }
+                    } catch (error) {
+                        document.body.removeChild(textarea);
+                        reject(error);
+                    }
+                });
+            }
+
+
+            accountButtons.forEach(function (button) {
+                button.addEventListener("click", function (event) {
+                    event.preventDefault();
+
+                    var accountType =
+                        button.getAttribute("data-copy-account");
+
+                    var details =
+                        accountDetails[accountType];
+
+                    if (!details) {
+                        return;
+                    }
+
+                    copyTextWithFallback(details)
+                        .then(function () {
+                            alert(
+                                "Account details copied successfully!\n\n" +
+                                details
+                            );
+                        })
+                        .catch(function () {
+                            alert(
+                                "Please copy these account details:\n\n" +
+                                details
+                            );
+                        });
+                });
+            });
+        });
+    </script>
+
+
+    <!-- Custom Circle and Dot Cursor Script -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var cursorDot =
+                document.getElementById("customCursorDot");
+
+            var cursorCircle =
+                document.getElementById("customCursorCircle");
+
+            if (!cursorDot || !cursorCircle) {
+                return;
+            }
+
+            var supportsCustomCursor =
+                window.matchMedia("(pointer: fine)").matches &&
+                window.matchMedia("(hover: hover)").matches;
+
+            if (!supportsCustomCursor) {
+                return;
+            }
+
+            var mouseX = 0;
+            var mouseY = 0;
+
+            var circleX = 0;
+            var circleY = 0;
+
+            var cursorStarted = false;
+
+
+            /* Dot follows the mouse immediately */
+
+            document.addEventListener(
+                "mousemove",
+                function (event) {
+                    mouseX = event.clientX;
+                    mouseY = event.clientY;
+
+                    cursorDot.style.left =
+                        mouseX + "px";
+
+                    cursorDot.style.top =
+                        mouseY + "px";
+
+                    if (!cursorStarted) {
+                        circleX = mouseX;
+                        circleY = mouseY;
+
+                        cursorStarted = true;
+
+                        cursorDot.classList.add(
+                            "cursor-visible"
+                        );
+
+                        cursorCircle.classList.add(
+                            "cursor-visible"
+                        );
+                    }
+
+                    cursorDot.classList.remove(
+                        "cursor-hidden"
+                    );
+
+                    cursorCircle.classList.remove(
+                        "cursor-hidden"
+                    );
+                }
+            );
+
+
+            /* Outer circle follows smoothly */
+
+            function animateCursorCircle() {
+                circleX +=
+                    (mouseX - circleX) * 0.16;
+
+                circleY +=
+                    (mouseY - circleY) * 0.16;
+
+                cursorCircle.style.left =
+                    circleX + "px";
+
+                cursorCircle.style.top =
+                    circleY + "px";
+
+                window.requestAnimationFrame(
+                    animateCursorCircle
+                );
+            }
+
+            animateCursorCircle();
+
+
+            /* Elements that enlarge the cursor */
+
+            var interactiveSelector = [
+                "a",
+                "button",
+                "input",
+                "textarea",
+                "select",
+                "[role='button']",
+                ".ve-tech-card",
+                ".ve-service-card",
+                ".ve-testi-card",
+                ".ve-donation-card",
+                ".ve-insight-card",
+                ".ve-partner-item",
+                ".rc-gallery-card",
+                ".rc-gallery-arrow",
+                ".rc-lightbox-control",
+                ".rc-lightbox-close",
+                ".floating-whatsapp"
+            ].join(",");
+
+
+            document.addEventListener(
+                "mouseover",
+                function (event) {
+                    if (
+                        event.target.closest(
+                            interactiveSelector
+                        )
+                    ) {
+                        cursorDot.classList.add(
+                            "cursor-hover"
+                        );
+
+                        cursorCircle.classList.add(
+                            "cursor-hover"
+                        );
+                    }
+                }
+            );
+
+
+            document.addEventListener(
+                "mouseout",
+                function (event) {
+                    if (
+                        event.target.closest(
+                            interactiveSelector
+                        )
+                    ) {
+                        cursorDot.classList.remove(
+                            "cursor-hover"
+                        );
+
+                        cursorCircle.classList.remove(
+                            "cursor-hover"
+                        );
+                    }
+                }
+            );
+
+
+            /* Click effect */
+
+            document.addEventListener(
+                "mousedown",
+                function () {
+                    cursorDot.classList.add(
+                        "cursor-click"
+                    );
+
+                    cursorCircle.classList.add(
+                        "cursor-click"
+                    );
+                }
+            );
+
+            document.addEventListener(
+                "mouseup",
+                function () {
+                    cursorDot.classList.remove(
+                        "cursor-click"
+                    );
+
+                    cursorCircle.classList.remove(
+                        "cursor-click"
+                    );
+                }
+            );
+
+
+            /* Hide cursor outside the browser area */
+
+            document.addEventListener(
+                "mouseleave",
+                function () {
+                    cursorDot.classList.add(
+                        "cursor-hidden"
+                    );
+
+                    cursorCircle.classList.add(
+                        "cursor-hidden"
+                    );
+                }
+            );
+
+            document.addEventListener(
+                "mouseenter",
+                function () {
+                    if (cursorStarted) {
+                        cursorDot.classList.remove(
+                            "cursor-hidden"
+                        );
+
+                        cursorCircle.classList.remove(
+                            "cursor-hidden"
+                        );
+                    }
+                }
+            );
+
+
+            window.addEventListener(
+                "blur",
+                function () {
+                    cursorDot.classList.add(
+                        "cursor-hidden"
+                    );
+
+                    cursorCircle.classList.add(
+                        "cursor-hidden"
+                    );
+                }
+            );
+
+            window.addEventListener(
+                "focus",
+                function () {
+                    if (cursorStarted) {
+                        cursorDot.classList.remove(
+                            "cursor-hidden"
+                        );
+
+                        cursorCircle.classList.remove(
+                            "cursor-hidden"
+                        );
+                    }
+                }
+            );
+        });
+    </script>
+
+
+
+    <!-- Interactive Image Carousel Script -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var viewport =
+                document.getElementById("rcGalleryViewport");
+
+            var track =
+                document.getElementById("rcGalleryTrack");
+
+            var previousButton =
+                document.getElementById("rcGalleryPrev");
+
+            var nextButton =
+                document.getElementById("rcGalleryNext");
+
+            var progressBar =
+                document.getElementById("rcGalleryProgress");
+
+            var galleryCounter =
+                document.getElementById("rcGalleryCounter");
+
+            var lightbox =
+                document.getElementById("rcGalleryLightbox");
+
+            var lightboxImage =
+                document.getElementById("rcLightboxImage");
+
+            var lightboxCaption =
+                document.getElementById("rcLightboxCaption");
+
+            var lightboxCounter =
+                document.getElementById("rcLightboxCount");
+
+            var lightboxClose =
+                document.getElementById("rcLightboxClose");
+
+            var lightboxPrevious =
+                document.getElementById("rcLightboxPrev");
+
+            var lightboxNext =
+                document.getElementById("rcLightboxNext");
+
+            if (
+                !viewport ||
+                !track ||
+                !previousButton ||
+                !nextButton
+            ) {
+                return;
+            }
+
+            var slides = Array.prototype.slice.call(
+                track.querySelectorAll(".rc-gallery-slide")
+            );
+
+            var galleryButtons = Array.prototype.slice.call(
+                track.querySelectorAll("[data-gallery-index]")
+            );
+
+            if (!slides.length) {
+                return;
+            }
+
+            var currentIndex = 0;
+            var lightboxIndex = 0;
+            var visibleSlides = 1;
+            var maximumIndex = slides.length - 1;
+            var autoplayTimer = null;
+            var scrollTimer = null;
+            var lastFocusedElement = null;
+
+            var reducedMotion =
+                window.matchMedia(
+                    "(prefers-reduced-motion: reduce)"
+                ).matches;
+
+
+            function formatNumber(number) {
+                return String(number).padStart(2, "0");
+            }
+
+
+            function calculateVisibleSlides() {
+                var firstSlide = slides[0];
+
+                if (!firstSlide) {
+                    visibleSlides = 1;
+                    maximumIndex = slides.length - 1;
+                    return;
+                }
+
+                var trackStyles =
+                    window.getComputedStyle(track);
+
+                var gap =
+                    parseFloat(trackStyles.columnGap) ||
+                    parseFloat(trackStyles.gap) ||
+                    0;
+
+                var unitWidth =
+                    firstSlide.getBoundingClientRect().width + gap;
+
+                visibleSlides = Math.max(
+                    1,
+                    Math.floor(
+                        (viewport.clientWidth + gap) / unitWidth
+                    )
+                );
+
+                maximumIndex = Math.max(
+                    0,
+                    slides.length - visibleSlides
+                );
+
+                currentIndex = Math.min(
+                    currentIndex,
+                    maximumIndex
+                );
+            }
+
+
+            function slideLeftPosition(index) {
+                return (
+                    slides[index].offsetLeft -
+                    track.offsetLeft
+                );
+            }
+
+
+            function updateGalleryStatus() {
+                var progress =
+                    ((currentIndex + 1) /
+                        (maximumIndex + 1)) *
+                    100;
+
+                if (progressBar) {
+                    progressBar.style.width =
+                        Math.max(8, progress) + "%";
+                }
+
+                if (galleryCounter) {
+                    galleryCounter.textContent =
+                        formatNumber(currentIndex + 1) +
+                        " / " +
+                        formatNumber(maximumIndex + 1);
+                }
+            }
+
+
+            function goToSlide(index, smooth) {
+                if (index < 0) {
+                    index = maximumIndex;
+                }
+
+                if (index > maximumIndex) {
+                    index = 0;
+                }
+
+                currentIndex = index;
+
+                viewport.scrollTo({
+                    left: slideLeftPosition(currentIndex),
+                    behavior: smooth === false
+                        ? "auto"
+                        : "smooth"
+                });
+
+                updateGalleryStatus();
+            }
+
+
+            function goToNextSlide() {
+                goToSlide(currentIndex + 1, true);
+            }
+
+
+            function goToPreviousSlide() {
+                goToSlide(currentIndex - 1, true);
+            }
+
+
+            function stopAutoplay() {
+                if (autoplayTimer) {
+                    window.clearInterval(autoplayTimer);
+                    autoplayTimer = null;
+                }
+            }
+
+
+            function startAutoplay() {
+                stopAutoplay();
+
+                if (reducedMotion || maximumIndex === 0) {
+                    return;
+                }
+
+                autoplayTimer = window.setInterval(
+                    goToNextSlide,
+                    4500
+                );
+            }
+
+
+            function restartAutoplay() {
+                stopAutoplay();
+                startAutoplay();
+            }
+
+
+            function nearestSlideIndex() {
+                var currentLeft = viewport.scrollLeft;
+                var nearestIndex = 0;
+                var nearestDistance = Infinity;
+
+                for (
+                    var index = 0;
+                    index <= maximumIndex;
+                    index += 1
+                ) {
+                    var distance = Math.abs(
+                        currentLeft -
+                        slideLeftPosition(index)
+                    );
+
+                    if (distance < nearestDistance) {
+                        nearestDistance = distance;
+                        nearestIndex = index;
+                    }
+                }
+
+                return nearestIndex;
+            }
+
+
+            previousButton.addEventListener(
+                "click",
+                function () {
+                    goToPreviousSlide();
+                    restartAutoplay();
+                }
+            );
+
+            nextButton.addEventListener(
+                "click",
+                function () {
+                    goToNextSlide();
+                    restartAutoplay();
+                }
+            );
+
+
+            viewport.addEventListener(
+                "scroll",
+                function () {
+                    window.clearTimeout(scrollTimer);
+
+                    scrollTimer = window.setTimeout(
+                        function () {
+                            currentIndex =
+                                nearestSlideIndex();
+
+                            updateGalleryStatus();
+                        },
+                        90
+                    );
+                },
+                { passive: true }
+            );
+
+
+            viewport.addEventListener(
+                "keydown",
+                function (event) {
+                    if (event.key === "ArrowRight") {
+                        event.preventDefault();
+                        goToNextSlide();
+                        restartAutoplay();
+                    }
+
+                    if (event.key === "ArrowLeft") {
+                        event.preventDefault();
+                        goToPreviousSlide();
+                        restartAutoplay();
+                    }
+                }
+            );
+
+
+            viewport.addEventListener(
+                "mouseenter",
+                stopAutoplay
+            );
+
+            viewport.addEventListener(
+                "mouseleave",
+                startAutoplay
+            );
+
+            viewport.addEventListener(
+                "focusin",
+                stopAutoplay
+            );
+
+            viewport.addEventListener(
+                "focusout",
+                startAutoplay
+            );
+
+            viewport.addEventListener(
+                "touchstart",
+                stopAutoplay,
+                { passive: true }
+            );
+
+            viewport.addEventListener(
+                "touchend",
+                startAutoplay,
+                { passive: true }
+            );
+
+
+            function galleryImageData(index) {
+                var button = galleryButtons[index];
+                var image = button.querySelector("img");
+                var title = button.querySelector(
+                    ".rc-gallery-caption strong"
+                );
+
+                return {
+                    src: image.currentSrc || image.src,
+                    alt: image.alt || "Gallery image",
+                    caption: title
+                        ? title.textContent.trim()
+                        : image.alt
+                };
+            }
+
+
+            function updateLightbox() {
+                var data =
+                    galleryImageData(lightboxIndex);
+
+                lightboxImage.src = data.src;
+                lightboxImage.alt = data.alt;
+                lightboxCaption.textContent =
+                    data.caption;
+
+                lightboxCounter.textContent =
+                    formatNumber(lightboxIndex + 1) +
+                    " / " +
+                    formatNumber(galleryButtons.length);
+            }
+
+
+            function openLightbox(index, trigger) {
+                lightboxIndex = index;
+                lastFocusedElement = trigger;
+
+                updateLightbox();
+
+                lightbox.classList.add("is-open");
+                lightbox.setAttribute(
+                    "aria-hidden",
+                    "false"
+                );
+
+                document.body.classList.add(
+                    "rc-lightbox-open"
+                );
+
+                stopAutoplay();
+
+                window.requestAnimationFrame(
+                    function () {
+                        lightbox.classList.add(
+                            "is-visible"
+                        );
+
+                        lightboxClose.focus();
+                    }
+                );
+            }
+
+
+            function closeLightbox() {
+                lightbox.classList.remove("is-visible");
+                lightbox.setAttribute(
+                    "aria-hidden",
+                    "true"
+                );
+
+                window.setTimeout(
+                    function () {
+                        lightbox.classList.remove("is-open");
+                        lightboxImage.src = "";
+
+                        document.body.classList.remove(
+                            "rc-lightbox-open"
+                        );
+
+                        if (lastFocusedElement) {
+                            lastFocusedElement.focus();
+                        }
+
+                        startAutoplay();
+                    },
+                    280
+                );
+            }
+
+
+            function showNextLightboxImage() {
+                lightboxIndex =
+                    (lightboxIndex + 1) %
+                    galleryButtons.length;
+
+                updateLightbox();
+            }
+
+
+            function showPreviousLightboxImage() {
+                lightboxIndex =
+                    (
+                        lightboxIndex -
+                        1 +
+                        galleryButtons.length
+                    ) %
+                    galleryButtons.length;
+
+                updateLightbox();
+            }
+
+
+            galleryButtons.forEach(
+                function (button, index) {
+                    button.addEventListener(
+                        "click",
+                        function () {
+                            openLightbox(index, button);
+                        }
+                    );
+                }
+            );
+
+
+            lightboxClose.addEventListener(
+                "click",
+                closeLightbox
+            );
+
+            lightboxNext.addEventListener(
+                "click",
+                showNextLightboxImage
+            );
+
+            lightboxPrevious.addEventListener(
+                "click",
+                showPreviousLightboxImage
+            );
+
+
+            lightbox.addEventListener(
+                "click",
+                function (event) {
+                    if (event.target === lightbox) {
+                        closeLightbox();
+                    }
+                }
+            );
+
+
+            document.addEventListener(
+                "keydown",
+                function (event) {
+                    if (
+                        !lightbox.classList.contains(
+                            "is-open"
+                        )
+                    ) {
+                        return;
+                    }
+
+                    if (event.key === "Escape") {
+                        closeLightbox();
+                    }
+
+                    if (event.key === "ArrowRight") {
+                        showNextLightboxImage();
+                    }
+
+                    if (event.key === "ArrowLeft") {
+                        showPreviousLightboxImage();
+                    }
+                }
+            );
+
+
+            var resizeTimer = null;
+
+            window.addEventListener(
+                "resize",
+                function () {
+                    window.clearTimeout(resizeTimer);
+
+                    resizeTimer = window.setTimeout(
+                        function () {
+                            calculateVisibleSlides();
+                            goToSlide(
+                                currentIndex,
+                                false
+                            );
+                            restartAutoplay();
+                        },
+                        150
+                    );
+                }
+            );
+
+
+            calculateVisibleSlides();
+            goToSlide(0, false);
+            startAutoplay();
+        });
+    </script>
+
+
+    <!-- Tawk.to Chat Widget -->
+
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {};
+        var Tawk_LoadStart = new Date();
+
+        (function () {
+            var firstScript =
+                document.getElementsByTagName("script")[0];
+
+            var tawkScript =
+                document.createElement("script");
+
+            tawkScript.async = true;
+
+            tawkScript.src =
+                "https://embed.tawk.to/6a3513702fa5b31d456f8768/1jrfl7tle";
+
+            tawkScript.charset = "UTF-8";
+
+            tawkScript.setAttribute(
+                "crossorigin",
+                "*"
+            );
+
+            firstScript.parentNode.insertBefore(
+                tawkScript,
+                firstScript
+            );
+        })();
+    </script>
+
+
+    <!-- Website JavaScript Files -->
+
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
     <script src="js/bootstrap/popper.min.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
     <script src="js/plugins/plugins.js"></script>
     <script src="js/active.js"></script>
     <script src="js/vaultedge.js"></script>
+
 </body>
 </html>
