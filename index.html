@@ -2432,6 +2432,568 @@
                 transition-duration: 0.01ms !important;
             }
         }
+    
+        /* ==================================================
+           FEATURED COURSES CAROUSEL
+           Course-card design adapted from courses.html
+        ================================================== */
+
+        .rc-home-courses-section {
+            position: relative;
+            padding: 82px 0 88px;
+            overflow: hidden;
+            background:
+                linear-gradient(
+                    180deg,
+                    #ffffff 0%,
+                    #f4f8fb 100%
+                );
+        }
+
+        .rc-home-courses-section::before,
+        .rc-home-courses-section::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .rc-home-courses-section::before {
+            width: 420px;
+            height: 420px;
+            top: -245px;
+            left: -180px;
+            background: rgba(37, 117, 171, 0.065);
+        }
+
+        .rc-home-courses-section::after {
+            width: 360px;
+            height: 360px;
+            right: -190px;
+            bottom: -220px;
+            background: rgba(237, 148, 140, 0.08);
+        }
+
+        .rc-home-courses-section > .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .rc-home-courses-shell {
+            position: relative;
+            margin-top: 46px;
+        }
+
+        .rc-home-courses-viewport {
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+            overscroll-behavior-inline: contain;
+            touch-action: pan-x;
+        }
+
+        .rc-home-courses-viewport::-webkit-scrollbar {
+            display: none;
+        }
+
+        .rc-home-courses-track {
+            display: flex;
+            align-items: stretch;
+            gap: 28px;
+            padding: 8px 4px 28px;
+        }
+
+        .rc-home-course-slide {
+            flex: 0 0 calc((100% - 56px) / 3);
+            min-width: 0;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+        }
+
+        .rc-home-course-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            overflow: hidden;
+            border: 1px solid rgba(37, 117, 171, 0.12);
+            border-radius: 24px;
+            background: #ffffff;
+            box-shadow: 0 18px 55px rgba(20, 62, 86, 0.10);
+            transition:
+                transform 0.35s ease,
+                border-color 0.35s ease,
+                box-shadow 0.35s ease;
+        }
+
+        .rc-home-course-card:hover {
+            border-color: rgba(237, 148, 140, 0.45);
+            transform: translateY(-10px);
+            box-shadow: 0 28px 75px rgba(31, 87, 119, 0.16);
+        }
+
+        .rc-home-course-image {
+            position: relative;
+            height: 210px;
+            overflow: hidden;
+            background: #dcebf4;
+        }
+
+        .rc-home-course-image::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(
+                    180deg,
+                    transparent 40%,
+                    rgba(4, 28, 45, 0.66)
+                );
+        }
+
+        .rc-home-course-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.55s ease;
+        }
+
+        .rc-home-course-card:hover .rc-home-course-image img {
+            transform: scale(1.07);
+        }
+
+        .rc-home-course-level,
+        .rc-home-course-mode,
+        .rc-home-course-category,
+        .rc-home-course-price {
+            position: absolute;
+            z-index: 3;
+        }
+
+        .rc-home-course-level,
+        .rc-home-course-mode {
+            top: 16px;
+            padding: 7px 11px;
+            border-radius: 999px;
+            font-size: 10px;
+            font-weight: 800;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        .rc-home-course-level {
+            left: 16px;
+            max-width: 54%;
+            background: rgba(255, 255, 255, 0.94);
+            color: #2575ab;
+        }
+
+        .rc-home-course-mode {
+            right: 16px;
+            background: #ed948c;
+            color: #ffffff;
+        }
+
+        .rc-home-course-category {
+            left: 17px;
+            bottom: 16px;
+            max-width: calc(100% - 155px);
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .rc-home-course-price {
+            right: 15px;
+            bottom: 13px;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: flex-end;
+            min-width: 110px;
+            padding: 8px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.55);
+            border-radius: 13px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #2575ab;
+            box-shadow: 0 10px 26px rgba(4, 28, 45, 0.20);
+            backdrop-filter: blur(12px);
+        }
+
+        .rc-home-course-price small {
+            display: block;
+            margin-bottom: 2px;
+            color: #617b89;
+            font-size: 8px;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        .rc-home-course-price strong {
+            color: #2575ab;
+            font-size: 16px;
+            font-weight: 900;
+            line-height: 1.15;
+        }
+
+        .rc-home-course-body {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            padding: 24px;
+        }
+
+        .rc-home-course-body h3 {
+            margin: 0 0 11px;
+            color: #2575ab;
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1.25;
+            transition: color 0.3s ease;
+        }
+
+        .rc-home-course-card:hover .rc-home-course-body h3 {
+            color: #ed948c;
+        }
+
+        .rc-home-course-description {
+            margin: 0 0 18px;
+            color: #617b89;
+            font-size: 14px;
+            line-height: 1.75;
+        }
+
+        .rc-home-course-meta {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .rc-home-course-meta span {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            color: #617b89;
+            font-size: 11px;
+            font-weight: 600;
+            line-height: 1.45;
+        }
+
+        .rc-home-course-meta i {
+            margin-top: 2px;
+            color: #2575ab;
+        }
+
+        .rc-home-course-footer {
+            margin-top: auto;
+            padding-top: 18px;
+            border-top: 1px solid rgba(37, 117, 171, 0.09);
+        }
+
+        .rc-home-course-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            min-height: 46px;
+            padding: 0 16px;
+            border-radius: 999px;
+            background: #2575ab;
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 800;
+            text-decoration: none;
+            transition:
+                background 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .rc-home-course-button:hover {
+            background: #ed948c;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(237, 148, 140, 0.28);
+        }
+
+        .rc-home-course-button i {
+            transition: transform 0.3s ease;
+        }
+
+        .rc-home-course-button:hover i {
+            transform: translateX(5px);
+        }
+
+        .rc-home-courses-arrow {
+            position: absolute;
+            top: 50%;
+            z-index: 8;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            padding: 0;
+            border: 0;
+            border-radius: 50%;
+            background: #ffffff;
+            color: #2575ab;
+            font-size: 19px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(12, 48, 74, 0.20);
+            transform: translateY(-50%);
+            transition:
+                background 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .rc-home-courses-arrow:hover,
+        .rc-home-courses-arrow:focus-visible {
+            background: #ed948c;
+            color: #ffffff;
+            transform: translateY(-50%) scale(1.08);
+            box-shadow: 0 14px 38px rgba(237, 148, 140, 0.32);
+        }
+
+        .rc-home-courses-arrow:focus-visible {
+            outline: 3px solid rgba(37, 117, 171, 0.35);
+            outline-offset: 3px;
+        }
+
+        .rc-home-courses-prev {
+            left: -26px;
+        }
+
+        .rc-home-courses-next {
+            right: -26px;
+        }
+
+        .rc-home-courses-status {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 13px;
+            margin-top: 3px;
+        }
+
+        .rc-home-courses-progress {
+            width: 130px;
+            height: 4px;
+            overflow: hidden;
+            border-radius: 999px;
+            background: rgba(37, 117, 171, 0.14);
+        }
+
+        .rc-home-courses-progress-bar {
+            display: block;
+            width: 25%;
+            height: 100%;
+            border-radius: inherit;
+            background:
+                linear-gradient(
+                    90deg,
+                    #2575ab,
+                    #ed948c
+                );
+            transition: width 0.35s ease;
+        }
+
+        .rc-home-courses-counter {
+            min-width: 62px;
+            color: #537181;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+        }
+
+        .rc-home-courses-view-all {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .rc-home-courses-view-all .ve-btn-tech {
+            padding: 15px 34px;
+            font-size: 15px;
+        }
+
+        body.dark-mode .rc-home-courses-section {
+            background:
+                linear-gradient(
+                    180deg,
+                    #12121f 0%,
+                    #18182a 100%
+                );
+        }
+
+        body.dark-mode .rc-home-courses-section::before {
+            background: rgba(37, 117, 171, 0.13);
+        }
+
+        body.dark-mode .rc-home-courses-section::after {
+            background: rgba(237, 148, 140, 0.11);
+        }
+
+        body.dark-mode .rc-home-course-card {
+            border-color: rgba(255, 255, 255, 0.07);
+            background: #1d1d31;
+            box-shadow: 0 16px 46px rgba(0, 0, 0, 0.26);
+        }
+
+        body.dark-mode .rc-home-course-card:hover {
+            border-color: rgba(237, 148, 140, 0.28);
+            box-shadow: 0 25px 65px rgba(0, 0, 0, 0.42);
+        }
+
+        body.dark-mode .rc-home-course-body h3 {
+            color: #8ec2e7;
+        }
+
+        body.dark-mode .rc-home-course-card:hover .rc-home-course-body h3 {
+            color: #ed948c;
+        }
+
+        body.dark-mode .rc-home-course-description,
+        body.dark-mode .rc-home-course-meta span {
+            color: #adadbb;
+        }
+
+        body.dark-mode .rc-home-course-price {
+            border-color: rgba(255, 255, 255, 0.12);
+            background: rgba(29, 29, 49, 0.94);
+        }
+
+        body.dark-mode .rc-home-course-price small {
+            color: #adadbb;
+        }
+
+        body.dark-mode .rc-home-course-price strong {
+            color: #8bc5ef;
+        }
+
+        body.dark-mode .rc-home-courses-arrow {
+            background: #23233a;
+            color: #8ec2e7;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.34);
+        }
+
+        body.dark-mode .rc-home-courses-arrow:hover,
+        body.dark-mode .rc-home-courses-arrow:focus-visible {
+            background: #ed948c;
+            color: #ffffff;
+        }
+
+        body.dark-mode .rc-home-courses-counter {
+            color: #aeb8c3;
+        }
+
+        body.dark-mode .rc-home-courses-progress {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        @media (max-width: 991px) {
+            .rc-home-course-slide {
+                flex-basis: calc((100% - 24px) / 2);
+            }
+
+            .rc-home-courses-track {
+                gap: 24px;
+            }
+
+            .rc-home-courses-prev {
+                left: -12px;
+            }
+
+            .rc-home-courses-next {
+                right: -12px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .rc-home-courses-section {
+                padding: 58px 0 68px;
+            }
+
+            .rc-home-courses-shell {
+                margin-top: 34px;
+            }
+
+            .rc-home-courses-track {
+                gap: 16px;
+                padding-right: 2px;
+                padding-left: 2px;
+            }
+
+            .rc-home-course-slide {
+                flex-basis: 88%;
+            }
+
+            .rc-home-courses-arrow {
+                top: auto;
+                bottom: -58px;
+                width: 44px;
+                height: 44px;
+                font-size: 16px;
+                transform: none;
+            }
+
+            .rc-home-courses-arrow:hover,
+            .rc-home-courses-arrow:focus-visible {
+                transform: scale(1.06);
+            }
+
+            .rc-home-courses-prev {
+                left: calc(50% - 54px);
+            }
+
+            .rc-home-courses-next {
+                right: calc(50% - 54px);
+            }
+
+            .rc-home-courses-status {
+                margin-top: 62px;
+            }
+
+            .rc-home-course-image {
+                height: 195px;
+            }
+
+            .rc-home-course-body {
+                padding: 22px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .rc-home-course-slide {
+                flex-basis: 94%;
+            }
+
+            .rc-home-course-meta {
+                grid-template-columns: 1fr;
+            }
+
+            .rc-home-course-level {
+                max-width: 58%;
+                font-size: 9px;
+            }
+
+            .rc-home-course-price {
+                min-width: 100px;
+            }
+
+            .rc-home-course-price strong {
+                font-size: 14px;
+            }
+        }
+
     </style>
 </head>
 
@@ -3102,6 +3664,582 @@
     </section>
 
 
+
+    <!-- Featured Courses Carousel -->
+
+    <section
+        class="rc-home-courses-section"
+        id="featured-courses"
+        aria-labelledby="featuredCoursesTitle"
+    >
+        <div class="container">
+
+            <div class="ve-section-header text-center">
+                <span class="ve-section-tag">Popular Courses</span>
+
+                <h2 id="featuredCoursesTitle">
+                    Build Skills for a
+                    <span>Digital Future</span>
+                </h2>
+
+                <p class="mx-auto" style="max-width: 720px">
+                    Explore six practical programmes from our course catalogue.
+                    Learn through physical, online, or hybrid classes designed
+                    for individuals, professionals, and organisations.
+                </p>
+            </div>
+
+
+            <div class="rc-home-courses-shell">
+
+                <button
+                    class="rc-home-courses-arrow rc-home-courses-prev"
+                    id="rcHomeCoursesPrev"
+                    type="button"
+                    aria-label="Show previous courses"
+                >
+                    <i
+                        class="fa fa-chevron-left"
+                        aria-hidden="true"
+                    ></i>
+                </button>
+
+
+                <div
+                    class="rc-home-courses-viewport"
+                    id="rcHomeCoursesViewport"
+                    tabindex="0"
+                    aria-label="Featured courses carousel"
+                >
+                    <div
+                        class="rc-home-courses-track"
+                        id="rcHomeCoursesTrack"
+                    >
+
+                        <div class="rc-home-course-slide">
+                            <article class="rc-home-course-card">
+                                <div class="rc-home-course-image">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=900&h=600&fit=crop"
+                                        alt="Cybersecurity course"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+
+                                    <span class="rc-home-course-level">
+                                        Beginner–Advanced
+                                    </span>
+
+                                    <span class="rc-home-course-mode">
+                                        Hybrid
+                                    </span>
+
+                                    <span class="rc-home-course-category">
+                                        Security
+                                    </span>
+
+                                    <span class="rc-home-course-price">
+                                        <small>Tuition</small>
+                                        <strong>₦200,000</strong>
+                                    </span>
+                                </div>
+
+                                <div class="rc-home-course-body">
+                                    <h3>Cybersecurity</h3>
+
+                                    <p class="rc-home-course-description">
+                                        Learn digital security, cyber-risk
+                                        awareness, threat detection, access
+                                        control, incident response, and
+                                        practical defensive techniques.
+                                    </p>
+
+                                    <div class="rc-home-course-meta">
+                                        <span>
+                                            <i class="fa fa-clock-o"></i>
+                                            Flexible schedule
+                                        </span>
+
+                                        <span>
+                                            <i class="fa fa-cogs"></i>
+                                            Practical learning
+                                        </span>
+
+                                        <span>
+                                            <i class="fa fa-users"></i>
+                                            Individual / Corporate
+                                        </span>
+
+                                        <span>
+                                            <i class="fa fa-check-circle"></i>
+                                            Guided learning
+                                        </span>
+                                    </div>
+
+                                    <div class="rc-home-course-footer">
+                                        <a
+                                            href="courses.html#courseCatalogue"
+                                            class="rc-home-course-button"
+                                        >
+                                            View Course
+
+                                            <i
+                                                class="fa fa-arrow-right"
+                                                aria-hidden="true"
+                                            ></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+
+                        <div class="rc-home-course-slide">
+                            <article class="rc-home-course-card">
+                                <div class="rc-home-course-image">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&h=600&fit=crop"
+                                        alt="Data analysis course"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+
+                                    <span class="rc-home-course-level">
+                                        Beginner
+                                    </span>
+
+                                    <span class="rc-home-course-mode">
+                                        Hybrid
+                                    </span>
+
+                                    <span class="rc-home-course-category">
+                                        Data &amp; AI
+                                    </span>
+
+                                    <span class="rc-home-course-price">
+                                        <small>Tuition</small>
+                                        <strong>₦150,000</strong>
+                                    </span>
+                                </div>
+
+                                <div class="rc-home-course-body">
+                                    <h3>Data Analysis</h3>
+
+                                    <p class="rc-home-course-description">
+                                        Turn raw information into clear business
+                                        insights using spreadsheets, SQL,
+                                        dashboards, and practical analytical
+                                        thinking.
+                                    </p>
+
+                                    <div class="rc-home-course-meta">
+                                        <span>
+                                            <i class="fa fa-clock-o"></i>
+                                            Flexible schedule
+                                        </span>
+
+                                        <span>
+                                            <i class="fa fa-cogs"></i>
+                                            Practical learning
+                                        </span>
+
+                                        <span>
+                                            <i class="fa fa-users"></i>
+                                            Individual / Corporate
+                                        </span>
+
+                                        <span>
+                                            <i class="fa fa-check-circle"></i>
+                                            Guided learning
+                                        </span>
+                                    </div>
+
+                                    <div class="rc-home-course-footer">
+                                        <a
+                                            href="courses.html#courseCatalogue"
+                                            class="rc-home-course-button"
+                                        >
+                                            View Course
+
+                                            <i
+                                                class="fa fa-arrow-right"
+                                                aria-hidden="true"
+                                            ></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+
+                        <div class="rc-home-course-slide">
+                            <article class="rc-home-course-card">
+                                <div class="rc-home-course-image">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=900&h=600&fit=crop"
+                                        alt="Artificial intelligence training course"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+
+                                    <span class="rc-home-course-level">
+                                        Beginner–Intermediate
+                                    </span>
+
+                                    <span class="rc-home-course-mode">
+                                        Hybrid
+                                    </span>
+
+                                    <span class="rc-home-course-category">
+                                        Data &amp; AI
+                                    </span>
+
+                                    <span class="rc-home-course-price">
+                                        <small>Tuition</small>
+                                        <strong>₦150,000</strong>
+                                    </span>
+                                </div>
+
+                                <div class="rc-home-course-body">
+                                    <h3>Artificial Intelligence Training</h3>
+
+                                    <p class="rc-home-course-description">
+                                        Understand modern AI, prompt
+                                        engineering, generative tools,
+                                        automation, responsible use, and
+                                        workplace applications.
+                                    </p>
+
+                                    <div class="rc-home-course-meta">
+                                        <span>
+                                            <i class="fa fa-clock-o"></i>
+                                            Flexible schedule
+                                        </span>
+
+                                        <span>
+                                            <i class="fa fa-cogs"></i>
+                                            Practical learning
+                                        </span>
+
+                                        <span>
+                                            <i class="fa fa-users"></i>
+                                            Individual / Corporate
+                                        </span>
+
+                                        <span>
+                                            <i class="fa fa-check-circle"></i>
+                                            Guided learning
+                                        </span>
+                                    </div>
+
+                                    <div class="rc-home-course-footer">
+                                        <a
+                                            href="courses.html#courseCatalogue"
+                                            class="rc-home-course-button"
+                                        >
+                                            View Course
+
+                                            <i
+                                                class="fa fa-arrow-right"
+                                                aria-hidden="true"
+                                            ></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+
+                        <div class="rc-home-course-slide">
+                            <article class="rc-home-course-card">
+                                <div class="rc-home-course-image">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&h=600&fit=crop"
+                                        alt="Project management course"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+
+                                    <span class="rc-home-course-level">
+                                        Beginner–Professional
+                                    </span>
+
+                                    <span class="rc-home-course-mode">
+                                        Hybrid
+                                    </span>
+
+                                    <span class="rc-home-course-category">
+                                        Business
+                                    </span>
+
+                                    <span class="rc-home-course-price">
+                                        <small>Tuition</small>
+                                        <strong>₦150,000</strong>
+                                    </span>
+                                </div>
+
+                                <div class="rc-home-course-body">
+                                    <h3>Project Management</h3>
+
+                                    <p class="rc-home-course-description">
+                                        Plan, execute, monitor, and close
+                                        projects with stronger control over
+                                        scope, schedule, cost, quality, risks,
+                                        and stakeholders.
+                                    </p>
+
+                                    <div class="rc-home-course-meta">
+                                        <span>
+                                            <i class="fa fa-clock-o"></i>
+                                            Flexible schedule
+                                        </span>
+
+                                        <span>
+                                            <i class="fa fa-cogs"></i>
+                                            Practical learning
+                                        </span>
+
+                                        <span>
+                                            <i class="fa fa-users"></i>
+                                            Individual / Corporate
+                                        </span>
+
+                                        <span>
+                                            <i class="fa fa-check-circle"></i>
+                                            Guided learning
+                                        </span>
+                                    </div>
+
+                                    <div class="rc-home-course-footer">
+                                        <a
+                                            href="courses.html#courseCatalogue"
+                                            class="rc-home-course-button"
+                                        >
+                                            View Course
+
+                                            <i
+                                                class="fa fa-arrow-right"
+                                                aria-hidden="true"
+                                            ></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+
+                        <div class="rc-home-course-slide">
+                            <article class="rc-home-course-card">
+                                <div class="rc-home-course-image">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=900&h=600&fit=crop"
+                                        alt="UI and UX design course"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+
+                                    <span class="rc-home-course-level">
+                                        Beginner
+                                    </span>
+
+                                    <span class="rc-home-course-mode">
+                                        Hybrid
+                                    </span>
+
+                                    <span class="rc-home-course-category">
+                                        Creative
+                                    </span>
+
+                                    <span class="rc-home-course-price">
+                                        <small>Tuition</small>
+                                        <strong>₦120,000</strong>
+                                    </span>
+                                </div>
+
+                                <div class="rc-home-course-body">
+                                    <h3>UI/UX Design</h3>
+
+                                    <p class="rc-home-course-description">
+                                        Design useful, accessible, and
+                                        attractive digital experiences through
+                                        research, wireframes, prototypes, and
+                                        interface systems.
+                                    </p>
+
+                                    <div class="rc-home-course-meta">
+                                        <span>
+                                            <i class="fa fa-clock-o"></i>
+                                            Flexible schedule
+                                        </span>
+
+                                        <span>
+                                            <i class="fa fa-cogs"></i>
+                                            Practical learning
+                                        </span>
+
+                                        <span>
+                                            <i class="fa fa-users"></i>
+                                            Individual / Corporate
+                                        </span>
+
+                                        <span>
+                                            <i class="fa fa-check-circle"></i>
+                                            Guided learning
+                                        </span>
+                                    </div>
+
+                                    <div class="rc-home-course-footer">
+                                        <a
+                                            href="courses.html#courseCatalogue"
+                                            class="rc-home-course-button"
+                                        >
+                                            View Course
+
+                                            <i
+                                                class="fa fa-arrow-right"
+                                                aria-hidden="true"
+                                            ></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+
+                        <div class="rc-home-course-slide">
+                            <article class="rc-home-course-card">
+                                <div class="rc-home-course-image">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=900&h=600&fit=crop"
+                                        alt="Graphic design course"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+
+                                    <span class="rc-home-course-level">
+                                        Beginner
+                                    </span>
+
+                                    <span class="rc-home-course-mode">
+                                        Hybrid
+                                    </span>
+
+                                    <span class="rc-home-course-category">
+                                        Creative
+                                    </span>
+
+                                    <span class="rc-home-course-price">
+                                        <small>Tuition</small>
+                                        <strong>₦100,000</strong>
+                                    </span>
+                                </div>
+
+                                <div class="rc-home-course-body">
+                                    <h3>Graphic Design</h3>
+
+                                    <p class="rc-home-course-description">
+                                        Build visual communication skills for
+                                        branding, social media, advertising,
+                                        presentations, print, and digital
+                                        campaigns.
+                                    </p>
+
+                                    <div class="rc-home-course-meta">
+                                        <span>
+                                            <i class="fa fa-clock-o"></i>
+                                            Flexible schedule
+                                        </span>
+
+                                        <span>
+                                            <i class="fa fa-cogs"></i>
+                                            Practical learning
+                                        </span>
+
+                                        <span>
+                                            <i class="fa fa-users"></i>
+                                            Individual / Corporate
+                                        </span>
+
+                                        <span>
+                                            <i class="fa fa-check-circle"></i>
+                                            Guided learning
+                                        </span>
+                                    </div>
+
+                                    <div class="rc-home-course-footer">
+                                        <a
+                                            href="courses.html#courseCatalogue"
+                                            class="rc-home-course-button"
+                                        >
+                                            View Course
+
+                                            <i
+                                                class="fa fa-arrow-right"
+                                                aria-hidden="true"
+                                            ></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <button
+                    class="rc-home-courses-arrow rc-home-courses-next"
+                    id="rcHomeCoursesNext"
+                    type="button"
+                    aria-label="Show next courses"
+                >
+                    <i
+                        class="fa fa-chevron-right"
+                        aria-hidden="true"
+                    ></i>
+                </button>
+
+            </div>
+
+
+            <div
+                class="rc-home-courses-status"
+                aria-live="polite"
+            >
+                <div
+                    class="rc-home-courses-progress"
+                    aria-hidden="true"
+                >
+                    <span
+                        class="rc-home-courses-progress-bar"
+                        id="rcHomeCoursesProgress"
+                    ></span>
+                </div>
+
+                <span
+                    class="rc-home-courses-counter"
+                    id="rcHomeCoursesCounter"
+                >
+                    01 / 04
+                </span>
+            </div>
+
+
+            <div class="rc-home-courses-view-all">
+                <a href="courses.html" class="ve-btn-tech">
+                    <span>View All Courses</span>
+
+                    <i
+                        class="fa fa-arrow-right"
+                        aria-hidden="true"
+                    ></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
     <!-- Why Choose Us -->
 
     <section class="ve-section ve-whyus-section">
@@ -3115,7 +4253,7 @@
                     >
                         <div
                             class="ve-whyus-img-main bg-img"
-                            style="background-image: url(img/bg-img/5.jpg)"
+                            style="background-image: url(img/bg-img/rad12.png)"
                         ></div>
 
                         <div class="ve-whyus-badge">
@@ -5378,6 +6516,354 @@
 
 
             var resizeTimer = null;
+
+            window.addEventListener(
+                "resize",
+                function () {
+                    window.clearTimeout(resizeTimer);
+
+                    resizeTimer = window.setTimeout(
+                        function () {
+                            calculateVisibleSlides();
+                            goToSlide(
+                                currentIndex,
+                                false
+                            );
+                            restartAutoplay();
+                        },
+                        150
+                    );
+                }
+            );
+
+
+            calculateVisibleSlides();
+            goToSlide(0, false);
+            startAutoplay();
+        });
+    </script>
+
+
+
+    <!-- Featured Courses Carousel Script -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var viewport =
+                document.getElementById("rcHomeCoursesViewport");
+
+            var track =
+                document.getElementById("rcHomeCoursesTrack");
+
+            var previousButton =
+                document.getElementById("rcHomeCoursesPrev");
+
+            var nextButton =
+                document.getElementById("rcHomeCoursesNext");
+
+            var progressBar =
+                document.getElementById("rcHomeCoursesProgress");
+
+            var counter =
+                document.getElementById("rcHomeCoursesCounter");
+
+            if (
+                !viewport ||
+                !track ||
+                !previousButton ||
+                !nextButton
+            ) {
+                return;
+            }
+
+            var slides = Array.prototype.slice.call(
+                track.querySelectorAll(".rc-home-course-slide")
+            );
+
+            if (!slides.length) {
+                return;
+            }
+
+            var currentIndex = 0;
+            var visibleSlides = 1;
+            var maximumIndex = slides.length - 1;
+            var autoplayTimer = null;
+            var scrollTimer = null;
+            var resizeTimer = null;
+
+            var reducedMotion =
+                window.matchMedia(
+                    "(prefers-reduced-motion: reduce)"
+                ).matches;
+
+
+            function formatNumber(number) {
+                return String(number).padStart(2, "0");
+            }
+
+
+            function calculateVisibleSlides() {
+                var firstSlide = slides[0];
+
+                if (!firstSlide) {
+                    return;
+                }
+
+                var styles =
+                    window.getComputedStyle(track);
+
+                var gap =
+                    parseFloat(styles.columnGap) ||
+                    parseFloat(styles.gap) ||
+                    0;
+
+                var unitWidth =
+                    firstSlide.getBoundingClientRect().width +
+                    gap;
+
+                visibleSlides = Math.max(
+                    1,
+                    Math.floor(
+                        (viewport.clientWidth + gap) /
+                        unitWidth
+                    )
+                );
+
+                maximumIndex = Math.max(
+                    0,
+                    slides.length - visibleSlides
+                );
+
+                currentIndex = Math.min(
+                    currentIndex,
+                    maximumIndex
+                );
+            }
+
+
+            function slideLeftPosition(index) {
+                return (
+                    slides[index].offsetLeft -
+                    track.offsetLeft
+                );
+            }
+
+
+            function updateStatus() {
+                var totalPositions =
+                    maximumIndex + 1;
+
+                var progress =
+                    ((currentIndex + 1) /
+                        totalPositions) *
+                    100;
+
+                if (progressBar) {
+                    progressBar.style.width =
+                        Math.max(10, progress) + "%";
+                }
+
+                if (counter) {
+                    counter.textContent =
+                        formatNumber(currentIndex + 1) +
+                        " / " +
+                        formatNumber(totalPositions);
+                }
+            }
+
+
+            function goToSlide(index, smooth) {
+                if (index < 0) {
+                    index = maximumIndex;
+                }
+
+                if (index > maximumIndex) {
+                    index = 0;
+                }
+
+                currentIndex = index;
+
+                viewport.scrollTo({
+                    left: slideLeftPosition(currentIndex),
+                    behavior:
+                        smooth === false ||
+                        reducedMotion
+                            ? "auto"
+                            : "smooth"
+                });
+
+                updateStatus();
+            }
+
+
+            function nextSlide() {
+                goToSlide(currentIndex + 1, true);
+            }
+
+
+            function previousSlide() {
+                goToSlide(currentIndex - 1, true);
+            }
+
+
+            function stopAutoplay() {
+                if (autoplayTimer) {
+                    window.clearInterval(autoplayTimer);
+                    autoplayTimer = null;
+                }
+            }
+
+
+            function startAutoplay() {
+                stopAutoplay();
+
+                if (
+                    reducedMotion ||
+                    maximumIndex === 0 ||
+                    document.hidden
+                ) {
+                    return;
+                }
+
+                autoplayTimer = window.setInterval(
+                    nextSlide,
+                    4200
+                );
+            }
+
+
+            function restartAutoplay() {
+                stopAutoplay();
+                startAutoplay();
+            }
+
+
+            function nearestIndex() {
+                var currentLeft =
+                    viewport.scrollLeft;
+
+                var nearest = 0;
+                var shortestDistance = Infinity;
+
+                for (
+                    var index = 0;
+                    index <= maximumIndex;
+                    index += 1
+                ) {
+                    var distance = Math.abs(
+                        currentLeft -
+                        slideLeftPosition(index)
+                    );
+
+                    if (distance < shortestDistance) {
+                        shortestDistance = distance;
+                        nearest = index;
+                    }
+                }
+
+                return nearest;
+            }
+
+
+            previousButton.addEventListener(
+                "click",
+                function () {
+                    previousSlide();
+                    restartAutoplay();
+                }
+            );
+
+
+            nextButton.addEventListener(
+                "click",
+                function () {
+                    nextSlide();
+                    restartAutoplay();
+                }
+            );
+
+
+            viewport.addEventListener(
+                "scroll",
+                function () {
+                    window.clearTimeout(scrollTimer);
+
+                    scrollTimer = window.setTimeout(
+                        function () {
+                            currentIndex =
+                                nearestIndex();
+
+                            updateStatus();
+                        },
+                        90
+                    );
+                },
+                { passive: true }
+            );
+
+
+            viewport.addEventListener(
+                "keydown",
+                function (event) {
+                    if (event.key === "ArrowRight") {
+                        event.preventDefault();
+                        nextSlide();
+                        restartAutoplay();
+                    }
+
+                    if (event.key === "ArrowLeft") {
+                        event.preventDefault();
+                        previousSlide();
+                        restartAutoplay();
+                    }
+                }
+            );
+
+
+            viewport.addEventListener(
+                "mouseenter",
+                stopAutoplay
+            );
+
+            viewport.addEventListener(
+                "mouseleave",
+                startAutoplay
+            );
+
+            viewport.addEventListener(
+                "focusin",
+                stopAutoplay
+            );
+
+            viewport.addEventListener(
+                "focusout",
+                startAutoplay
+            );
+
+            viewport.addEventListener(
+                "touchstart",
+                stopAutoplay,
+                { passive: true }
+            );
+
+            viewport.addEventListener(
+                "touchend",
+                startAutoplay,
+                { passive: true }
+            );
+
+
+            document.addEventListener(
+                "visibilitychange",
+                function () {
+                    if (document.hidden) {
+                        stopAutoplay();
+                    } else {
+                        startAutoplay();
+                    }
+                }
+            );
+
 
             window.addEventListener(
                 "resize",

@@ -210,7 +210,7 @@
             rgba(14, 72, 105, 0.93) 54%,
             rgba(37, 117, 171, 0.62)
           ),
-          url("https://images.unsplash.com/photo-1552664730-d307ca884978?w=1900&h=1100&fit=crop")
+          url("img/bg-img/rad2.png")
             center/cover no-repeat;
       }
 
@@ -1574,6 +1574,426 @@
           font-size: 30px;
         }
       }
+    
+      /* ==================================================
+         HOMEPAGE TECHNOLOGY SERVICES DESIGN
+         Implemented on the Services page
+      ================================================== */
+
+      .ve-tech-services-section {
+        padding: 90px 0;
+        background: #f8faff;
+      }
+
+      .ve-tech-services-section .ve-section-header {
+        max-width: 760px;
+        margin: 0 auto 46px;
+        text-align: center;
+      }
+
+      .ve-tech-services-section .ve-section-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 15px;
+        margin-bottom: 14px;
+        border-radius: 999px;
+        background: rgba(37, 117, 171, 0.1);
+        color: #2575ab;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .ve-tech-services-section .ve-section-header h2 {
+        margin: 0 0 16px;
+        color: #2575ab;
+        font-family: inherit;
+        font-size: 42px;
+        font-weight: 700;
+        line-height: 1.15;
+        letter-spacing: -0.025em;
+      }
+
+      .ve-tech-services-section .ve-section-header h2 span {
+        color: #ed948c;
+      }
+
+      .ve-tech-services-section .ve-section-header p {
+        margin: 0;
+        color: #607985;
+        font-size: 17px;
+        line-height: 1.8;
+      }
+
+      .ve-tech-services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .ve-tech-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border: 1px solid rgba(37, 117, 171, 0.06);
+        border-radius: 20px;
+        background: #ffffff;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+        transition:
+          transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+          box-shadow 0.4s ease,
+          border-color 0.4s ease;
+      }
+
+      .ve-tech-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 6;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, #2575ab, #ed948c);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
+      }
+
+      .ve-tech-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .ve-tech-card:hover {
+        border-color: rgba(37, 117, 171, 0.18);
+        transform: translateY(-15px) scale(1.02);
+        box-shadow: 0 25px 70px rgba(37, 117, 171, 0.12);
+      }
+
+      .ve-tech-card-image {
+        position: relative;
+        width: 100%;
+        height: 240px;
+        overflow: hidden;
+        background: #e9f0f5;
+      }
+
+      .ve-tech-card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+
+      .ve-tech-card:hover .ve-tech-card-image img {
+        transform: scale(1.08);
+      }
+
+      .ve-tech-price {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        z-index: 4;
+        padding: 8px 18px;
+        border-radius: 30px;
+        background: linear-gradient(135deg, #2575ab, #1a5a7a);
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.4px;
+        box-shadow: 0 4px 20px rgba(37, 117, 171, 0.3);
+      }
+
+      .ve-tech-overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(37, 117, 171, 0.85);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+
+      .ve-tech-card:hover .ve-tech-overlay {
+        opacity: 1;
+      }
+
+      .ve-tech-overlay-btn {
+        display: inline-block;
+        padding: 14px 32px;
+        border-radius: 50px;
+        background: #ffffff;
+        color: #2575ab;
+        font-size: 15px;
+        font-weight: 700;
+        text-decoration: none;
+        transform: translateY(20px);
+        transition:
+          background 0.3s ease,
+          color 0.3s ease,
+          transform 0.4s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .ve-tech-card:hover .ve-tech-overlay-btn {
+        transform: translateY(0);
+      }
+
+      .ve-tech-overlay-btn:hover {
+        background: #ed948c;
+        color: #ffffff;
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px rgba(237, 148, 140, 0.4);
+      }
+
+      .ve-tech-card-body {
+        position: relative;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        padding: 25px 28px 30px;
+      }
+
+      .ve-tech-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        margin-top: -45px;
+        margin-bottom: 18px;
+        border: 5px solid #ffffff;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #2575ab, #1a5a7a);
+        box-shadow: 0 8px 25px rgba(37, 117, 171, 0.25);
+        transition:
+          transform 0.4s ease,
+          background 0.4s ease;
+      }
+
+      .ve-tech-card:hover .ve-tech-icon {
+        background: linear-gradient(135deg, #ed948c, #d97a72);
+        transform: rotate(360deg) scale(1.1);
+      }
+
+      .ve-tech-icon i {
+        color: #ffffff;
+        font-size: 25px;
+      }
+
+      .ve-tech-card-body h4 {
+        margin: 0 0 12px;
+        color: #2575ab;
+        font-family: inherit;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.35;
+        transition: color 0.3s ease;
+      }
+
+      .ve-tech-card:hover .ve-tech-card-body h4 {
+        color: #ed948c;
+      }
+
+      .ve-tech-card-body p {
+        margin: 0 0 20px;
+        color: #5a7a8a;
+        font-size: 14px;
+        line-height: 1.75;
+      }
+
+      .ve-tech-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: auto;
+        color: #2575ab;
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .ve-tech-link i {
+        font-size: 14px;
+        transition: transform 0.3s ease;
+      }
+
+      .ve-tech-link:hover {
+        color: #ed948c;
+      }
+
+      .ve-tech-link:hover i {
+        transform: translateX(8px);
+      }
+
+      .ve-tech-btn-wrap {
+        margin-top: 55px;
+      }
+
+      .ve-btn-tech {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: 15px;
+        padding: 18px 45px;
+        overflow: hidden;
+        border-radius: 50px;
+        background: #ed948c;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-decoration: none;
+        box-shadow: 0 8px 35px rgba(237, 148, 140, 0.25);
+        transition:
+          background 0.4s ease,
+          transform 0.4s ease,
+          box-shadow 0.4s ease;
+      }
+
+      .ve-btn-tech:hover {
+        background: linear-gradient(135deg, #ed948c, #d97a72);
+        color: #ffffff;
+        transform: translateY(-6px) scale(1.03);
+        box-shadow: 0 20px 50px rgba(237, 148, 140, 0.35);
+      }
+
+      .ve-btn-tech i {
+        transition: transform 0.35s ease;
+      }
+
+      .ve-btn-tech:hover i {
+        transform: translateX(8px);
+      }
+
+      body.dark-mode .ve-tech-services-section {
+        background: #11111f;
+      }
+
+      body.dark-mode .ve-tech-services-section .ve-section-header h2 {
+        color: #7cb5df;
+      }
+
+      body.dark-mode .ve-tech-services-section .ve-section-header h2 span {
+        color: #ed948c;
+      }
+
+      body.dark-mode .ve-tech-services-section .ve-section-header p {
+        color: #adadbb;
+      }
+
+      body.dark-mode .ve-tech-services-section .ve-section-tag {
+        background: rgba(37, 117, 171, 0.18);
+        color: #7cb5df;
+      }
+
+      body.dark-mode .ve-tech-card {
+        border-color: rgba(255, 255, 255, 0.06);
+        background: #1d1d31;
+        box-shadow: 0 12px 45px rgba(0, 0, 0, 0.3);
+      }
+
+      body.dark-mode .ve-tech-card:hover {
+        border-color: rgba(237, 148, 140, 0.25);
+        box-shadow: 0 25px 65px rgba(0, 0, 0, 0.42);
+      }
+
+      body.dark-mode .ve-tech-card-image {
+        background: #25253a;
+      }
+
+      body.dark-mode .ve-tech-icon {
+        border-color: #1d1d31;
+      }
+
+      body.dark-mode .ve-tech-card-body h4 {
+        color: #7cb5df;
+      }
+
+      body.dark-mode .ve-tech-card:hover .ve-tech-card-body h4 {
+        color: #ed948c;
+      }
+
+      body.dark-mode .ve-tech-card-body p {
+        color: #ababba;
+      }
+
+      body.dark-mode .ve-tech-link {
+        color: #77b4df;
+      }
+
+      body.dark-mode .ve-tech-link:hover {
+        color: #ed948c;
+      }
+
+      @media (max-width: 991px) {
+        .ve-tech-services-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 25px;
+        }
+
+        .ve-tech-services-section .ve-section-header h2 {
+          font-size: 38px;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .ve-tech-services-section {
+          padding: 70px 0;
+        }
+
+        .ve-tech-services-grid {
+          grid-template-columns: 1fr;
+          max-width: 470px;
+          margin-right: auto;
+          margin-left: auto;
+        }
+
+        .ve-tech-card-image {
+          height: 210px;
+        }
+
+        .ve-tech-services-section .ve-section-header h2 {
+          font-size: 34px;
+        }
+
+        .ve-tech-card-body {
+          padding: 22px 23px 27px;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .ve-tech-services-section .ve-section-header h2 {
+          font-size: 30px;
+        }
+
+        .ve-tech-card-image {
+          height: 180px;
+        }
+
+        .ve-tech-price {
+          top: 14px;
+          right: 14px;
+          padding: 6px 13px;
+          font-size: 11px;
+        }
+
+        .ve-tech-card-body h4 {
+          font-size: 19px;
+        }
+
+        .ve-btn-tech {
+          padding: 14px 27px;
+          font-size: 15px;
+        }
+      }
+
     </style>
   </head>
 
@@ -1795,7 +2215,7 @@
           <div class="hero-panel">
             <div class="hero-image">
               <img
-                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1000&h=720&fit=crop"
+                src="img/bg-img/rad8.png"
                 alt="Consultants collaborating with business leaders"
               /><span class="hero-badge"
                 ><i class="fa fa-compass"></i> Strategy to execution</span
@@ -1928,150 +2348,290 @@
       </div>
     </section> -->
 
-    <section class="section soft" id="services">
+    
+    <section class="ve-tech-services-section" id="services">
       <div class="container">
-        <div class="heading">
-          <span class="tag"
-            ><i class="fa fa-briefcase"></i> Consulting Expertise</span
-          >
-          <h2>Practical Support Across Your <span>Technology Journey</span></h2>
+
+        <div class="ve-section-header text-center">
+          <span class="ve-section-tag">
+            <i class="fa fa-briefcase" aria-hidden="true"></i>
+            Consulting Expertise
+          </span>
+
+          <h2>
+            Practical Support Across Your
+            <span>Technology Journey</span>
+          </h2>
+
           <p>
             From strategy and cybersecurity to project delivery, process
-            improvement, and digital transformation.
+            improvement, infrastructure, and digital transformation.
           </p>
         </div>
-        <div class="service-grid">
-          <article class="service-card">
-            <span class="service-icon"><i class="fa fa-compass"></i></span>
-            <h3>Technology Strategy &amp; Roadmaps</h3>
-            <p>
-              Align technology priorities, investments, and capabilities with
-              organisational goals.
-            </p>
-            <ul class="list">
-              <li>
-                <i class="fa fa-check-circle"></i>Technology needs assessment
-              </li>
-              <li>
-                <i class="fa fa-check-circle"></i>IT strategy and transformation
-                roadmap
-              </li>
-              <li>
-                <i class="fa fa-check-circle"></i>Investment prioritisation
-              </li>
-              <li><i class="fa fa-check-circle"></i>Governance frameworks</li>
-            </ul>
+
+        <div class="ve-tech-services-grid">
+
+          <article
+            class="ve-tech-card wow fadeInUp"
+            id="consulting"
+            data-wow-delay="100ms"
+          >
+            <div class="ve-tech-card-image">
+              <img
+                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&h=620&fit=crop"
+                alt="Technology strategy meeting"
+                loading="lazy"
+              />
+
+              <div class="ve-tech-price">Strategy</div>
+
+              <div class="ve-tech-overlay">
+                <a href="#consultationPlanner" class="ve-tech-overlay-btn">
+                  Discuss Service
+                </a>
+              </div>
+            </div>
+
+            <div class="ve-tech-card-body">
+              <div class="ve-tech-icon">
+                <i class="fa fa-compass" aria-hidden="true"></i>
+              </div>
+
+              <h4>Technology Strategy &amp; Roadmaps</h4>
+
+              <p>
+                Align technology priorities, investments, governance, and
+                capabilities with clear organisational goals and a practical
+                implementation roadmap.
+              </p>
+
+              <a href="#consultationPlanner" class="ve-tech-link">
+                Learn more
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
           </article>
-          <article class="service-card">
-            <span class="service-icon"><i class="fa fa-refresh"></i></span>
-            <h3>Digital Transformation</h3>
-            <p>
-              Modernise operations, improve customer experience, and strengthen
-              agility.
-            </p>
-            <ul class="list">
-              <li>
-                <i class="fa fa-check-circle"></i>Digital maturity assessment
-              </li>
-              <li>
-                <i class="fa fa-check-circle"></i>Technology adoption planning
-              </li>
-              <li>
-                <i class="fa fa-check-circle"></i>Digital workplace enablement
-              </li>
-              <li>
-                <i class="fa fa-check-circle"></i>Change and adoption support
-              </li>
-            </ul>
+
+          <article
+            class="ve-tech-card wow fadeInUp"
+            id="digital"
+            data-wow-delay="180ms"
+          >
+            <div class="ve-tech-card-image">
+              <img
+                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=900&h=620&fit=crop"
+                alt="Digital transformation and connected technology"
+                loading="lazy"
+              />
+
+              <div class="ve-tech-price">Transformation</div>
+
+              <div class="ve-tech-overlay">
+                <a href="#consultationPlanner" class="ve-tech-overlay-btn">
+                  Discuss Service
+                </a>
+              </div>
+            </div>
+
+            <div class="ve-tech-card-body">
+              <div class="ve-tech-icon">
+                <i class="fa fa-refresh" aria-hidden="true"></i>
+              </div>
+
+              <h4>Digital Transformation</h4>
+
+              <p>
+                Modernise operations, improve customer experience, strengthen
+                agility, and support successful technology adoption across
+                your organisation.
+              </p>
+
+              <a href="#consultationPlanner" class="ve-tech-link">
+                Learn more
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
           </article>
-          <article class="service-card">
-            <span class="service-icon"><i class="fa fa-shield"></i></span>
-            <h3>Cybersecurity &amp; Risk Advisory</h3>
-            <p>
-              Understand risks, strengthen controls, and build resilience
-              against evolving threats.
-            </p>
-            <ul class="list">
-              <li>
-                <i class="fa fa-check-circle"></i>Security posture assessment
-              </li>
-              <li><i class="fa fa-check-circle"></i>Awareness planning</li>
-              <li>
-                <i class="fa fa-check-circle"></i>Policy and control development
-              </li>
-              <li>
-                <i class="fa fa-check-circle"></i>Risk treatment recommendations
-              </li>
-            </ul>
+
+          <article
+            class="ve-tech-card wow fadeInUp"
+            id="cybersecurity"
+            data-wow-delay="260ms"
+          >
+            <div class="ve-tech-card-image">
+              <img
+                src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=900&h=620&fit=crop"
+                alt="Cybersecurity monitoring screens"
+                loading="lazy"
+              />
+
+              <div class="ve-tech-price">Security</div>
+
+              <div class="ve-tech-overlay">
+                <a href="#consultationPlanner" class="ve-tech-overlay-btn">
+                  Discuss Service
+                </a>
+              </div>
+            </div>
+
+            <div class="ve-tech-card-body">
+              <div class="ve-tech-icon">
+                <i class="fa fa-shield" aria-hidden="true"></i>
+              </div>
+
+              <h4>Cybersecurity &amp; Risk Advisory</h4>
+
+              <p>
+                Assess risks, strengthen controls, develop policies, improve
+                awareness, and build resilience against evolving digital
+                threats.
+              </p>
+
+              <a href="#consultationPlanner" class="ve-tech-link">
+                Learn more
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
           </article>
-          <article class="service-card">
-            <span class="service-icon"><i class="fa fa-tasks"></i></span>
-            <h3>Project &amp; Delivery Advisory</h3>
-            <p>
-              Improve how projects are planned, governed, monitored, and
-              delivered.
-            </p>
-            <ul class="list">
-              <li>
-                <i class="fa fa-check-circle"></i>Project planning and
-                governance
-              </li>
-              <li>
-                <i class="fa fa-check-circle"></i>Scope, schedule, cost and risk
-                review
-              </li>
-              <li>
-                <i class="fa fa-check-circle"></i>Delivery assurance and
-                reporting
-              </li>
-              <li><i class="fa fa-check-circle"></i>PMO capability support</li>
-            </ul>
+
+          <article
+            class="ve-tech-card wow fadeInUp"
+            id="project"
+            data-wow-delay="340ms"
+          >
+            <div class="ve-tech-card-image">
+              <img
+                src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=900&h=620&fit=crop"
+                alt="Project team planning technology delivery"
+                loading="lazy"
+              />
+
+              <div class="ve-tech-price">Delivery</div>
+
+              <div class="ve-tech-overlay">
+                <a href="#consultationPlanner" class="ve-tech-overlay-btn">
+                  Discuss Service
+                </a>
+              </div>
+            </div>
+
+            <div class="ve-tech-card-body">
+              <div class="ve-tech-icon">
+                <i class="fa fa-tasks" aria-hidden="true"></i>
+              </div>
+
+              <h4>Project &amp; Delivery Advisory</h4>
+
+              <p>
+                Improve planning, governance, reporting, risk management, and
+                delivery assurance for complex technology and transformation
+                projects.
+              </p>
+
+              <a href="#consultationPlanner" class="ve-tech-link">
+                Learn more
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
           </article>
-          <article class="service-card">
-            <span class="service-icon"><i class="fa fa-cogs"></i></span>
-            <h3>Process Improvement &amp; Automation</h3>
-            <p>
-              Remove bottlenecks, reduce repetitive work, and improve
-              consistency.
-            </p>
-            <ul class="list">
-              <li>
-                <i class="fa fa-check-circle"></i>Business process assessment
-              </li>
-              <li><i class="fa fa-check-circle"></i>Workflow redesign</li>
-              <li>
-                <i class="fa fa-check-circle"></i>Automation opportunities
-              </li>
-              <li>
-                <i class="fa fa-check-circle"></i>Productivity improvement
-              </li>
-            </ul>
+
+          <article
+            class="ve-tech-card wow fadeInUp"
+            id="automation"
+            data-wow-delay="420ms"
+          >
+            <div class="ve-tech-card-image">
+              <img
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&h=620&fit=crop"
+                alt="Technology automation and connected systems"
+                loading="lazy"
+              />
+
+              <div class="ve-tech-price">Automation</div>
+
+              <div class="ve-tech-overlay">
+                <a href="#consultationPlanner" class="ve-tech-overlay-btn">
+                  Discuss Service
+                </a>
+              </div>
+            </div>
+
+            <div class="ve-tech-card-body">
+              <div class="ve-tech-icon">
+                <i class="fa fa-cogs" aria-hidden="true"></i>
+              </div>
+
+              <h4>Process Improvement &amp; Automation</h4>
+
+              <p>
+                Redesign workflows, remove bottlenecks, reduce repetitive
+                tasks, and identify responsible automation opportunities that
+                improve consistency.
+              </p>
+
+              <a href="#consultationPlanner" class="ve-tech-link">
+                Learn more
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
           </article>
-          <article class="service-card">
-            <span class="service-icon"><i class="fa fa-cloud"></i></span>
-            <h3>Infrastructure &amp; Digital Workplace</h3>
-            <p>
-              Build reliable, secure, and scalable technology environments for
-              modern work.
-            </p>
-            <ul class="list">
-              <li>
-                <i class="fa fa-check-circle"></i>Cloud and infrastructure
-                planning
-              </li>
-              <li>
-                <i class="fa fa-check-circle"></i>Networking and connectivity
-                review
-              </li>
-              <li><i class="fa fa-check-circle"></i>Collaboration tools</li>
-              <li>
-                <i class="fa fa-check-circle"></i>Continuity recommendations
-              </li>
-            </ul>
+
+          <article
+            class="ve-tech-card wow fadeInUp"
+            id="infrastructure"
+            data-wow-delay="500ms"
+          >
+            <div class="ve-tech-card-image">
+              <img
+                src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=900&h=620&fit=crop"
+                alt="Cloud infrastructure and data centre technology"
+                loading="lazy"
+              />
+
+              <div class="ve-tech-price">Infrastructure</div>
+
+              <div class="ve-tech-overlay">
+                <a href="#consultationPlanner" class="ve-tech-overlay-btn">
+                  Discuss Service
+                </a>
+              </div>
+            </div>
+
+            <div class="ve-tech-card-body">
+              <div class="ve-tech-icon">
+                <i class="fa fa-cloud" aria-hidden="true"></i>
+              </div>
+
+              <h4>Infrastructure &amp; Digital Workplace</h4>
+
+              <p>
+                Plan secure, reliable, and scalable cloud, networking,
+                connectivity, collaboration, and business-continuity
+                environments.
+              </p>
+
+              <a href="#consultationPlanner" class="ve-tech-link">
+                Learn more
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
           </article>
+
         </div>
+
+        <div
+          class="ve-tech-btn-wrap text-center wow fadeInUp"
+          data-wow-delay="580ms"
+        >
+          <a href="#consultationPlanner" class="ve-btn-tech">
+            <span>Plan Your Consultation</span>
+            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+
       </div>
     </section>
+
 
     <section class="section">
       <div class="container">
