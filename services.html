@@ -1,21 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="Radiant Cullings technology consulting services for strategy, cybersecurity, project delivery, process improvement and digital transformation."
-    />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width,initial-scale=1,shrink-to-fit=no"
-    />
-    <title>Technology Consulting — Radiant Cullings</title>
-    <link rel="icon" href="img/core-img/radiant_cullings.png" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="css/custom-override.css" />
-    <script>
+<head>
+<meta charset="utf-8"/>
+<meta content="Radiant Cullings technology consulting services for strategy, cybersecurity, project delivery, process improvement and digital transformation." name="description"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"/>
+<title>Technology Consulting — Radiant Cullings</title>
+<link href="img/core-img/radiant_cullings.png" rel="icon"/>
+<link href="style.css" rel="stylesheet"/>
+<link href="css/custom-override.css" rel="stylesheet"/>
+<script>
       (function () {
         try {
           if (localStorage.getItem("darkMode") === "enabled")
@@ -23,7 +18,7 @@
         } catch (e) {}
       })();
     </script>
-    <style>
+<style>
       :root {
         --b: #2575ab;
         --bd: #164f73;
@@ -1994,74 +1989,195 @@
         }
       }
 
-    </style>
-  </head>
+    
 
-  <body>
-    <div
-      class="custom-cursor-circle"
-      id="customCursorCircle"
-      aria-hidden="true"
-    ></div>
-    <div
-      class="custom-cursor-dot"
-      id="customCursorDot"
-      aria-hidden="true"
-    ></div>
-    <div class="preloader d-flex align-items-center justify-content-center">
-      <div class="lds-ellipsis">
-        <div style="background-color: #2575ab"></div>
-        <div style="background-color: #2575ab"></div>
-        <div style="background-color: #2575ab"></div>
-        <div style="background-color: #2575ab"></div>
-      </div>
-    </div>
-    <div class="floating-whatsapp">
-      <a
-        href="https://wa.me/2348146710908?text=Hello%20Radiant%20Cullings%2C%20I%20want%20to%20discuss%20a%20technology%20consulting%20need"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Discuss consulting on WhatsApp"
-        ><i class="fa fa-whatsapp"></i></a
-      ><span class="whatsapp-label">Discuss consulting</span>
-    </div>
+/* ==================================================
+   COMPACT SERVICE CARDS — HOMEPAGE MATCH
+   Top-right badges removed
+================================================== */
 
-    <header class="ve-header" id="ve-sticky">
-      <div
-        class="container-fluid ve-nav-wrap"
-        style="background-color: #2575ab"
-      >
-        <!-- Logo -->
+.ve-tech-services-section {
+  padding-top: 58px !important;
+  padding-bottom: 64px !important;
+}
 
-        <div class="ve-logo">
-          <a href="index.html">
-            <img
-              src="img/core-img/radiant_cullings.png"
-              alt="Radiant Cullings Logo"
-              class="ve-logo-img"
-              style="max-width: 120px"
-            />
-          </a>
-        </div>
+.ve-tech-services-section .ve-section-header {
+  margin-bottom: 28px !important;
+}
 
-        <!-- Desktop Navigation -->
+.ve-tech-services-grid {
+  gap: 22px !important;
+  margin-top: 30px !important;
+}
 
-        <nav class="ve-nav" aria-label="Main navigation">
-          <ul>
-            <li>
-              <a href="index.html">Home</a>
-            </li>
+.ve-tech-card {
+  height: 100% !important;
+  border-radius: 20px !important;
+  box-shadow: 0 13px 38px rgba(20, 62, 86, 0.10) !important;
+}
 
-            <li class="has-drop">
-              <a href="about.html">
+.ve-tech-card:hover {
+  transform: translateY(-7px) !important;
+  box-shadow: 0 22px 54px rgba(31, 87, 119, 0.15) !important;
+}
+
+.ve-tech-card-image {
+  height: 158px !important;
+}
+
+.ve-tech-price {
+  display: none !important;
+}
+
+.ve-tech-overlay {
+  background: rgba(37, 117, 171, 0.78) !important;
+}
+
+.ve-tech-overlay-btn {
+  padding: 10px 24px !important;
+  font-size: 12.5px !important;
+}
+
+.ve-tech-card-body {
+  padding: 18px 18px 19px !important;
+}
+
+.ve-tech-icon {
+  width: 50px !important;
+  height: 50px !important;
+  margin-top: -37px !important;
+  margin-bottom: 13px !important;
+  border-width: 4px !important;
+  box-shadow: 0 7px 20px rgba(37, 117, 171, 0.22) !important;
+}
+
+.ve-tech-icon i {
+  font-size: 21px !important;
+}
+
+.ve-tech-card-body h4 {
+  min-height: 46px !important;
+  margin: 0 0 8px !important;
+  font-size: 18px !important;
+  line-height: 1.28 !important;
+}
+
+.ve-tech-card-body p {
+  display: -webkit-box !important;
+  min-height: 57px !important;
+  margin: 0 0 13px !important;
+  overflow: hidden !important;
+  font-size: 12.5px !important;
+  line-height: 1.52 !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 3 !important;
+}
+
+.ve-tech-link {
+  margin-top: auto !important;
+  padding-top: 11px !important;
+  border-top: 1px solid rgba(37, 117, 171, 0.09) !important;
+  font-size: 12px !important;
+}
+
+.ve-tech-link i {
+  font-size: 12px !important;
+}
+
+.ve-tech-btn-wrap {
+  margin-top: 30px !important;
+}
+
+.ve-btn-tech {
+  padding: 13px 29px !important;
+  font-size: 14px !important;
+}
+
+body.dark-mode .ve-tech-icon {
+  border-color: #1d1d31 !important;
+}
+
+@media (max-width: 991px) {
+  .ve-tech-services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .ve-tech-card-image {
+    height: 168px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .ve-tech-services-section {
+    padding-top: 50px !important;
+    padding-bottom: 56px !important;
+  }
+
+  .ve-tech-services-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 460px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+
+  .ve-tech-card-image {
+    height: 170px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .ve-tech-card-image {
+    height: 150px !important;
+  }
+
+  .ve-tech-card-body {
+    padding: 16px !important;
+  }
+
+  .ve-tech-card-body h4 {
+    min-height: auto !important;
+    font-size: 18px !important;
+  }
+}
+</style>
+</head>
+<body>
+<div aria-hidden="true" class="custom-cursor-circle" id="customCursorCircle"></div>
+<div aria-hidden="true" class="custom-cursor-dot" id="customCursorDot"></div>
+<div class="preloader d-flex align-items-center justify-content-center">
+<div class="lds-ellipsis">
+<div style="background-color: #2575ab"></div>
+<div style="background-color: #2575ab"></div>
+<div style="background-color: #2575ab"></div>
+<div style="background-color: #2575ab"></div>
+</div>
+</div>
+<div class="floating-whatsapp">
+<a aria-label="Discuss consulting on WhatsApp" href="https://wa.me/2348146710908?text=Hello%20Radiant%20Cullings%2C%20I%20want%20to%20discuss%20a%20technology%20consulting%20need" rel="noopener noreferrer" target="_blank"><i class="fa fa-whatsapp"></i></a><span class="whatsapp-label">Discuss consulting</span>
+</div>
+<header class="ve-header" id="ve-sticky">
+<div class="container-fluid ve-nav-wrap" style="background-color: #2575ab">
+<!-- Logo -->
+<div class="ve-logo">
+<a href="index.html">
+<img alt="Radiant Cullings Logo" class="ve-logo-img" src="img/core-img/radiant_cullings.png" style="max-width: 120px"/>
+</a>
+</div>
+<!-- Desktop Navigation -->
+<nav aria-label="Main navigation" class="ve-nav">
+<ul>
+<li>
+<a href="index.html">Home</a>
+</li>
+<li class="has-drop">
+<a href="about.html">
                 About
                 <!-- <i
                                 class="fa fa-angle-down"
                                 aria-hidden="true"
                             ></i> -->
-              </a>
-
-              <!-- <ul class="ve-dropdown">
+</a>
+<!-- <ul class="ve-dropdown">
                             <li>
                                 <a href="about.html">About Us</a>
                             </li>
@@ -2078,207 +2194,155 @@
                                 <a href="products.html">Products</a>
                             </li>
                         </ul> -->
-            </li>
-
-            <li class="has-drop">
-              <a href="services.html" class="active">
+</li>
+<li class="has-drop">
+<a class="active" href="services.html">
                 Services
 
                 <!-- <i
                                 class="fa fa-angle-down"
                                 aria-hidden="true"
                             ></i> -->
-              </a>
-            </li>
-
-            <li>
-              <a href="courses.html">Courses</a>
-            </li>
-
-            <li>
-              <a href="blogs.html">Blogs</a>
-            </li>
-
-            <li>
-              <a href="contact.html">Contact</a>
-            </li>
-          </ul>
-        </nav>
-
-        <!-- CTA -->
-
-        <div class="ve-nav-cta">
-          <a href="contact.html" class="ve-cta-btn text-white">
+</a>
+</li>
+<li>
+<a href="courses.html">Courses</a>
+</li>
+<li>
+<a href="blogs.html">Blogs</a>
+</li>
+<li>
+<a href="contact.html">Contact</a>
+</li>
+</ul>
+</nav>
+<!-- CTA -->
+<div class="ve-nav-cta">
+<a class="ve-cta-btn text-white" href="contact.html">
             Get Started
 
-            <i class="fa fa-arrow-right" aria-hidden="true"></i>
-          </a>
-        </div>
-
-        <!-- Dark and Light Mode Button -->
-
-        <button
-          class="dark-mode-toggle"
-          id="darkModeToggle"
-          type="button"
-          aria-label="Switch to dark mode"
-          aria-pressed="false"
-          title="Switch to dark mode"
-        >
-          <i class="fa fa-moon-o" aria-hidden="true"></i>
-          <i class="fa fa-sun-o" aria-hidden="true"></i>
-        </button>
-
-        <!-- Hamburger Button -->
-
-        <button
-          class="ve-toggler"
-          id="ve-toggle"
-          type="button"
-          aria-label="Open navigation menu"
-          aria-controls="ve-mobile-menu"
-          aria-expanded="false"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-
-      <!-- Mobile Menu -->
-
-      <div class="ve-mobile-menu" id="ve-mobile-menu">
-        <ul>
-          <li>
-            <a href="index.html">Home</a>
-          </li>
-
-          <li>
-            <a href="about.html">About</a>
-          </li>
-
-          <li>
-            <a href="services.html" class="active">Services</a>
-          </li>
-
-          <li>
-            <a href="courses.html">Courses</a>
-          </li>
-
-          <li>
-            <a href="blogs.html">Blogs</a>
-          </li>
-
-          <li>
-            <a href="contact.html">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </header>
-
-    <section class="rc-hero">
-      <div class="container">
-        <div class="rc-hero-grid">
-          <div class="rc-hero-copy">
-            <span class="kicker"
-              ><i class="fa fa-lightbulb-o"></i> Technology Consulting</span
-            >
-            <h1>Turn Technology Into a <span>Business Advantage.</span></h1>
-            <p>
+            <i aria-hidden="true" class="fa fa-arrow-right"></i>
+</a>
+</div>
+<!-- Dark and Light Mode Button -->
+<button aria-label="Switch to dark mode" aria-pressed="false" class="dark-mode-toggle" id="darkModeToggle" title="Switch to dark mode" type="button">
+<i aria-hidden="true" class="fa fa-moon-o"></i>
+<i aria-hidden="true" class="fa fa-sun-o"></i>
+</button>
+<!-- Hamburger Button -->
+<button aria-controls="ve-mobile-menu" aria-expanded="false" aria-label="Open navigation menu" class="ve-toggler" id="ve-toggle" type="button">
+<span></span>
+<span></span>
+<span></span>
+</button>
+</div>
+<!-- Mobile Menu -->
+<div class="ve-mobile-menu" id="ve-mobile-menu">
+<ul>
+<li>
+<a href="index.html">Home</a>
+</li>
+<li>
+<a href="about.html">About</a>
+</li>
+<li>
+<a class="active" href="services.html">Services</a>
+</li>
+<li>
+<a href="courses.html">Courses</a>
+</li>
+<li>
+<a href="blogs.html">Blogs</a>
+</li>
+<li>
+<a href="contact.html">Contact</a>
+</li>
+</ul>
+</div>
+</header>
+<section class="rc-hero">
+<div class="container">
+<div class="rc-hero-grid">
+<div class="rc-hero-copy">
+<span class="kicker"><i class="fa fa-lightbulb-o"></i> Technology Consulting</span>
+<h1>Turn Technology Into a <span>Business Advantage.</span></h1>
+<p>
               Radiant Cullings helps organisations and individuals make informed
               technology decisions, improve operational efficiency, strengthen
               security, deliver complex projects, and adopt digital solutions
               that support sustainable growth.
             </p>
-            <div class="actions">
-              <a href="#consultationPlanner" class="btn-main"
-                >Book a Consultation <i class="fa fa-calendar-check-o"></i></a
-              ><a href="#services" class="btn-ghost"
-                >Explore Our Expertise <i class="fa fa-arrow-down"></i
-              ></a>
-            </div>
-            <div class="hero-points">
-              <div class="hero-point">
-                <i class="fa fa-check-circle"></i> Strategy aligned with
+<div class="actions">
+<a class="btn-main" href="#consultationPlanner">Book a Consultation <i class="fa fa-calendar-check-o"></i></a><a class="btn-ghost" href="#services">Explore Our Expertise <i class="fa fa-arrow-down"></i></a>
+</div>
+<div class="hero-points">
+<div class="hero-point">
+<i class="fa fa-check-circle"></i> Strategy aligned with
                 business goals
               </div>
-              <div class="hero-point">
-                <i class="fa fa-check-circle"></i> Practical implementation
+<div class="hero-point">
+<i class="fa fa-check-circle"></i> Practical implementation
                 guidance
               </div>
-              <div class="hero-point">
-                <i class="fa fa-check-circle"></i> Tailored solutions for every
+<div class="hero-point">
+<i class="fa fa-check-circle"></i> Tailored solutions for every
                 sector
               </div>
-            </div>
-          </div>
-          <div class="hero-panel">
-            <div class="hero-image">
-              <img
-                src="img/bg-img/rad8.png"
-                alt="Consultants collaborating with business leaders"
-              /><span class="hero-badge"
-                ><i class="fa fa-compass"></i> Strategy to execution</span
-              >
-            </div>
-            <div class="mini-grid">
-              <div class="mini">
-                <strong>Strategic</strong
-                ><span>Technology tied to measurable goals</span>
-              </div>
-              <div class="mini">
-                <strong>Practical</strong
-                ><span>Clear recommendations that can be implemented</span>
-              </div>
-              <div class="mini">
-                <strong>Secure</strong
-                ><span>Risk-aware solutions built for resilience</span>
-              </div>
-              <div class="mini">
-                <strong>Scalable</strong
-                ><span>Systems designed to support growth</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="trust">
-      <div class="container">
-        <div class="trust-grid">
-          <div class="trust-item">
-            <span class="trust-icon"><i class="fa fa-bullseye"></i></span>
-            <div>
-              <strong>Business-Aligned</strong
-              ><span>Built around real priorities</span>
-            </div>
-          </div>
-          <div class="trust-item">
-            <span class="trust-icon"><i class="fa fa-cogs"></i></span>
-            <div>
-              <strong>Implementation-Focused</strong
-              ><span>Advice that moves into action</span>
-            </div>
-          </div>
-          <div class="trust-item">
-            <span class="trust-icon"><i class="fa fa-shield"></i></span>
-            <div>
-              <strong>Risk-Aware</strong><span>Security considered early</span>
-            </div>
-          </div>
-          <div class="trust-item">
-            <span class="trust-icon"><i class="fa fa-line-chart"></i></span>
-            <div>
-              <strong>Outcome-Driven</strong
-              ><span>Focused on value and performance</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- <section class="section">
+</div>
+</div>
+<div class="hero-panel">
+<div class="hero-image">
+<img alt="Consultants collaborating with business leaders" src="img/bg-img/rad8.png"/><span class="hero-badge"><i class="fa fa-compass"></i> Strategy to execution</span>
+</div>
+<div class="mini-grid">
+<div class="mini">
+<strong>Strategic</strong><span>Technology tied to measurable goals</span>
+</div>
+<div class="mini">
+<strong>Practical</strong><span>Clear recommendations that can be implemented</span>
+</div>
+<div class="mini">
+<strong>Secure</strong><span>Risk-aware solutions built for resilience</span>
+</div>
+<div class="mini">
+<strong>Scalable</strong><span>Systems designed to support growth</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="trust">
+<div class="container">
+<div class="trust-grid">
+<div class="trust-item">
+<span class="trust-icon"><i class="fa fa-bullseye"></i></span>
+<div>
+<strong>Business-Aligned</strong><span>Built around real priorities</span>
+</div>
+</div>
+<div class="trust-item">
+<span class="trust-icon"><i class="fa fa-cogs"></i></span>
+<div>
+<strong>Implementation-Focused</strong><span>Advice that moves into action</span>
+</div>
+</div>
+<div class="trust-item">
+<span class="trust-icon"><i class="fa fa-shield"></i></span>
+<div>
+<strong>Risk-Aware</strong><span>Security considered early</span>
+</div>
+</div>
+<div class="trust-item">
+<span class="trust-icon"><i class="fa fa-line-chart"></i></span>
+<div>
+<strong>Outcome-Driven</strong><span>Focused on value and performance</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- <section class="section">
       <div class="container">
         <div class="split">
           <div class="split-image">
@@ -2347,368 +2411,262 @@
         </div>
       </div>
     </section> -->
-
-    
-    <section class="ve-tech-services-section" id="services">
-      <div class="container">
-
-        <div class="ve-section-header text-center">
-          <span class="ve-section-tag">
-            <i class="fa fa-briefcase" aria-hidden="true"></i>
+<section class="ve-tech-services-section" id="services">
+<div class="container">
+<div class="ve-section-header text-center">
+<span class="ve-section-tag">
+<i aria-hidden="true" class="fa fa-briefcase"></i>
             Consulting Expertise
           </span>
-
-          <h2>
+<h2>
             Practical Support Across Your
             <span>Technology Journey</span>
-          </h2>
-
-          <p>
+</h2>
+<p>
             From strategy and cybersecurity to project delivery, process
             improvement, infrastructure, and digital transformation.
           </p>
-        </div>
+</div>
+<div class="ve-tech-services-grid">
+<article class="ve-tech-card wow fadeInUp" data-wow-delay="100ms" id="consulting">
+<div class="ve-tech-card-image">
+<img alt="Technology strategy meeting" loading="lazy" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&amp;h=620&amp;fit=crop"/>
 
-        <div class="ve-tech-services-grid">
-
-          <article
-            class="ve-tech-card wow fadeInUp"
-            id="consulting"
-            data-wow-delay="100ms"
-          >
-            <div class="ve-tech-card-image">
-              <img
-                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&h=620&fit=crop"
-                alt="Technology strategy meeting"
-                loading="lazy"
-              />
-
-              <div class="ve-tech-price">Strategy</div>
-
-              <div class="ve-tech-overlay">
-                <a href="#consultationPlanner" class="ve-tech-overlay-btn">
+<div class="ve-tech-overlay">
+<a class="ve-tech-overlay-btn" href="#consultationPlanner">
                   Discuss Service
                 </a>
-              </div>
-            </div>
-
-            <div class="ve-tech-card-body">
-              <div class="ve-tech-icon">
-                <i class="fa fa-compass" aria-hidden="true"></i>
-              </div>
-
-              <h4>Technology Strategy &amp; Roadmaps</h4>
-
-              <p>
+</div>
+</div>
+<div class="ve-tech-card-body">
+<div class="ve-tech-icon">
+<i aria-hidden="true" class="fa fa-compass"></i>
+</div>
+<h4>Technology Strategy &amp; Roadmaps</h4>
+<p>
                 Align technology priorities, investments, governance, and
                 capabilities with clear organisational goals and a practical
                 implementation roadmap.
               </p>
-
-              <a href="#consultationPlanner" class="ve-tech-link">
+<a class="ve-tech-link" href="#consultationPlanner">
                 Learn more
-                <i class="fa fa-arrow-right" aria-hidden="true"></i>
-              </a>
-            </div>
-          </article>
+                <i aria-hidden="true" class="fa fa-arrow-right"></i>
+</a>
+</div>
+</article>
+<article class="ve-tech-card wow fadeInUp" data-wow-delay="180ms" id="digital">
+<div class="ve-tech-card-image">
+<img alt="Digital transformation and connected technology" loading="lazy" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=900&amp;h=620&amp;fit=crop"/>
 
-          <article
-            class="ve-tech-card wow fadeInUp"
-            id="digital"
-            data-wow-delay="180ms"
-          >
-            <div class="ve-tech-card-image">
-              <img
-                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=900&h=620&fit=crop"
-                alt="Digital transformation and connected technology"
-                loading="lazy"
-              />
-
-              <div class="ve-tech-price">Transformation</div>
-
-              <div class="ve-tech-overlay">
-                <a href="#consultationPlanner" class="ve-tech-overlay-btn">
+<div class="ve-tech-overlay">
+<a class="ve-tech-overlay-btn" href="#consultationPlanner">
                   Discuss Service
                 </a>
-              </div>
-            </div>
-
-            <div class="ve-tech-card-body">
-              <div class="ve-tech-icon">
-                <i class="fa fa-refresh" aria-hidden="true"></i>
-              </div>
-
-              <h4>Digital Transformation</h4>
-
-              <p>
+</div>
+</div>
+<div class="ve-tech-card-body">
+<div class="ve-tech-icon">
+<i aria-hidden="true" class="fa fa-refresh"></i>
+</div>
+<h4>Digital Transformation</h4>
+<p>
                 Modernise operations, improve customer experience, strengthen
                 agility, and support successful technology adoption across
                 your organisation.
               </p>
-
-              <a href="#consultationPlanner" class="ve-tech-link">
+<a class="ve-tech-link" href="#consultationPlanner">
                 Learn more
-                <i class="fa fa-arrow-right" aria-hidden="true"></i>
-              </a>
-            </div>
-          </article>
+                <i aria-hidden="true" class="fa fa-arrow-right"></i>
+</a>
+</div>
+</article>
+<article class="ve-tech-card wow fadeInUp" data-wow-delay="260ms" id="cybersecurity">
+<div class="ve-tech-card-image">
+<img alt="Cybersecurity monitoring screens" loading="lazy" src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=900&amp;h=620&amp;fit=crop"/>
 
-          <article
-            class="ve-tech-card wow fadeInUp"
-            id="cybersecurity"
-            data-wow-delay="260ms"
-          >
-            <div class="ve-tech-card-image">
-              <img
-                src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=900&h=620&fit=crop"
-                alt="Cybersecurity monitoring screens"
-                loading="lazy"
-              />
-
-              <div class="ve-tech-price">Security</div>
-
-              <div class="ve-tech-overlay">
-                <a href="#consultationPlanner" class="ve-tech-overlay-btn">
+<div class="ve-tech-overlay">
+<a class="ve-tech-overlay-btn" href="#consultationPlanner">
                   Discuss Service
                 </a>
-              </div>
-            </div>
-
-            <div class="ve-tech-card-body">
-              <div class="ve-tech-icon">
-                <i class="fa fa-shield" aria-hidden="true"></i>
-              </div>
-
-              <h4>Cybersecurity &amp; Risk Advisory</h4>
-
-              <p>
+</div>
+</div>
+<div class="ve-tech-card-body">
+<div class="ve-tech-icon">
+<i aria-hidden="true" class="fa fa-shield"></i>
+</div>
+<h4>Cybersecurity &amp; Risk Advisory</h4>
+<p>
                 Assess risks, strengthen controls, develop policies, improve
                 awareness, and build resilience against evolving digital
                 threats.
               </p>
-
-              <a href="#consultationPlanner" class="ve-tech-link">
+<a class="ve-tech-link" href="#consultationPlanner">
                 Learn more
-                <i class="fa fa-arrow-right" aria-hidden="true"></i>
-              </a>
-            </div>
-          </article>
+                <i aria-hidden="true" class="fa fa-arrow-right"></i>
+</a>
+</div>
+</article>
+<article class="ve-tech-card wow fadeInUp" data-wow-delay="340ms" id="project">
+<div class="ve-tech-card-image">
+<img alt="Project team planning technology delivery" loading="lazy" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=900&amp;h=620&amp;fit=crop"/>
 
-          <article
-            class="ve-tech-card wow fadeInUp"
-            id="project"
-            data-wow-delay="340ms"
-          >
-            <div class="ve-tech-card-image">
-              <img
-                src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=900&h=620&fit=crop"
-                alt="Project team planning technology delivery"
-                loading="lazy"
-              />
-
-              <div class="ve-tech-price">Delivery</div>
-
-              <div class="ve-tech-overlay">
-                <a href="#consultationPlanner" class="ve-tech-overlay-btn">
+<div class="ve-tech-overlay">
+<a class="ve-tech-overlay-btn" href="#consultationPlanner">
                   Discuss Service
                 </a>
-              </div>
-            </div>
-
-            <div class="ve-tech-card-body">
-              <div class="ve-tech-icon">
-                <i class="fa fa-tasks" aria-hidden="true"></i>
-              </div>
-
-              <h4>Project &amp; Delivery Advisory</h4>
-
-              <p>
+</div>
+</div>
+<div class="ve-tech-card-body">
+<div class="ve-tech-icon">
+<i aria-hidden="true" class="fa fa-tasks"></i>
+</div>
+<h4>Project &amp; Delivery Advisory</h4>
+<p>
                 Improve planning, governance, reporting, risk management, and
                 delivery assurance for complex technology and transformation
                 projects.
               </p>
-
-              <a href="#consultationPlanner" class="ve-tech-link">
+<a class="ve-tech-link" href="#consultationPlanner">
                 Learn more
-                <i class="fa fa-arrow-right" aria-hidden="true"></i>
-              </a>
-            </div>
-          </article>
+                <i aria-hidden="true" class="fa fa-arrow-right"></i>
+</a>
+</div>
+</article>
+<article class="ve-tech-card wow fadeInUp" data-wow-delay="420ms" id="automation">
+<div class="ve-tech-card-image">
+<img alt="Technology automation and connected systems" loading="lazy" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&amp;h=620&amp;fit=crop"/>
 
-          <article
-            class="ve-tech-card wow fadeInUp"
-            id="automation"
-            data-wow-delay="420ms"
-          >
-            <div class="ve-tech-card-image">
-              <img
-                src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&h=620&fit=crop"
-                alt="Technology automation and connected systems"
-                loading="lazy"
-              />
-
-              <div class="ve-tech-price">Automation</div>
-
-              <div class="ve-tech-overlay">
-                <a href="#consultationPlanner" class="ve-tech-overlay-btn">
+<div class="ve-tech-overlay">
+<a class="ve-tech-overlay-btn" href="#consultationPlanner">
                   Discuss Service
                 </a>
-              </div>
-            </div>
-
-            <div class="ve-tech-card-body">
-              <div class="ve-tech-icon">
-                <i class="fa fa-cogs" aria-hidden="true"></i>
-              </div>
-
-              <h4>Process Improvement &amp; Automation</h4>
-
-              <p>
+</div>
+</div>
+<div class="ve-tech-card-body">
+<div class="ve-tech-icon">
+<i aria-hidden="true" class="fa fa-cogs"></i>
+</div>
+<h4>Process Improvement &amp; Automation</h4>
+<p>
                 Redesign workflows, remove bottlenecks, reduce repetitive
                 tasks, and identify responsible automation opportunities that
                 improve consistency.
               </p>
-
-              <a href="#consultationPlanner" class="ve-tech-link">
+<a class="ve-tech-link" href="#consultationPlanner">
                 Learn more
-                <i class="fa fa-arrow-right" aria-hidden="true"></i>
-              </a>
-            </div>
-          </article>
+                <i aria-hidden="true" class="fa fa-arrow-right"></i>
+</a>
+</div>
+</article>
+<article class="ve-tech-card wow fadeInUp" data-wow-delay="500ms" id="infrastructure">
+<div class="ve-tech-card-image">
+<img alt="Cloud infrastructure and data centre technology" loading="lazy" src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=900&amp;h=620&amp;fit=crop"/>
 
-          <article
-            class="ve-tech-card wow fadeInUp"
-            id="infrastructure"
-            data-wow-delay="500ms"
-          >
-            <div class="ve-tech-card-image">
-              <img
-                src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=900&h=620&fit=crop"
-                alt="Cloud infrastructure and data centre technology"
-                loading="lazy"
-              />
-
-              <div class="ve-tech-price">Infrastructure</div>
-
-              <div class="ve-tech-overlay">
-                <a href="#consultationPlanner" class="ve-tech-overlay-btn">
+<div class="ve-tech-overlay">
+<a class="ve-tech-overlay-btn" href="#consultationPlanner">
                   Discuss Service
                 </a>
-              </div>
-            </div>
-
-            <div class="ve-tech-card-body">
-              <div class="ve-tech-icon">
-                <i class="fa fa-cloud" aria-hidden="true"></i>
-              </div>
-
-              <h4>Infrastructure &amp; Digital Workplace</h4>
-
-              <p>
+</div>
+</div>
+<div class="ve-tech-card-body">
+<div class="ve-tech-icon">
+<i aria-hidden="true" class="fa fa-cloud"></i>
+</div>
+<h4>Infrastructure &amp; Digital Workplace</h4>
+<p>
                 Plan secure, reliable, and scalable cloud, networking,
                 connectivity, collaboration, and business-continuity
                 environments.
               </p>
-
-              <a href="#consultationPlanner" class="ve-tech-link">
+<a class="ve-tech-link" href="#consultationPlanner">
                 Learn more
-                <i class="fa fa-arrow-right" aria-hidden="true"></i>
-              </a>
-            </div>
-          </article>
-
-        </div>
-
-        <div
-          class="ve-tech-btn-wrap text-center wow fadeInUp"
-          data-wow-delay="580ms"
-        >
-          <a href="#consultationPlanner" class="ve-btn-tech">
-            <span>Plan Your Consultation</span>
-            <i class="fa fa-arrow-right" aria-hidden="true"></i>
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-
-    <section class="section">
-      <div class="container">
-        <div class="heading">
-          <span class="tag"
-            ><i class="fa fa-exclamation-circle"></i> Challenges We Help
-            Solve</span
-          >
-          <h2>When Technology Is Not Delivering <span>Enough Value</span></h2>
-          <p>
+                <i aria-hidden="true" class="fa fa-arrow-right"></i>
+</a>
+</div>
+</article>
+</div>
+<div class="ve-tech-btn-wrap text-center wow fadeInUp" data-wow-delay="580ms">
+<a class="ve-btn-tech" href="#consultationPlanner">
+<span>Plan Your Consultation</span>
+<i aria-hidden="true" class="fa fa-arrow-right"></i>
+</a>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<div class="heading">
+<span class="tag"><i class="fa fa-exclamation-circle"></i> Challenges We Help
+            Solve</span>
+<h2>When Technology Is Not Delivering <span>Enough Value</span></h2>
+<p>
             Turn uncertainty, fragmented systems, delivery problems, and
             security concerns into clear priorities and practical action.
           </p>
-        </div>
-        <div class="challenge-grid">
-          <article class="challenge-card">
-            <span class="num">01</span>
-            <div>
-              <h3>Unclear Technology Direction</h3>
-              <p>
+</div>
+<div class="challenge-grid">
+<article class="challenge-card">
+<span class="num">01</span>
+<div>
+<h3>Unclear Technology Direction</h3>
+<p>
                 Investments and priorities are not connected to a clear business
                 roadmap.
               </p>
-            </div>
-          </article>
-          <article class="challenge-card">
-            <span class="num">02</span>
-            <div>
-              <h3>Inefficient Processes</h3>
-              <p>
+</div>
+</article>
+<article class="challenge-card">
+<span class="num">02</span>
+<div>
+<h3>Inefficient Processes</h3>
+<p>
                 Manual workflows and disconnected systems are slowing teams
                 down.
               </p>
-            </div>
-          </article>
-          <article class="challenge-card">
-            <span class="num">03</span>
-            <div>
-              <h3>Cybersecurity Concerns</h3>
-              <p>
+</div>
+</article>
+<article class="challenge-card">
+<span class="num">03</span>
+<div>
+<h3>Cybersecurity Concerns</h3>
+<p>
                 Leadership needs clearer visibility into risks, controls,
                 policies, and readiness.
               </p>
-            </div>
-          </article>
-          <article class="challenge-card">
-            <span class="num">04</span>
-            <div>
-              <h3>Projects Struggling to Deliver</h3>
-              <p>
+</div>
+</article>
+<article class="challenge-card">
+<span class="num">04</span>
+<div>
+<h3>Projects Struggling to Deliver</h3>
+<p>
                 Weak governance, limited visibility, and unmanaged risks affect
                 outcomes.
               </p>
-            </div>
-          </article>
-          <article class="challenge-card">
-            <span class="num">05</span>
-            <div>
-              <h3>Low Technology Adoption</h3>
-              <p>
+</div>
+</article>
+<article class="challenge-card">
+<span class="num">05</span>
+<div>
+<h3>Low Technology Adoption</h3>
+<p>
                 New tools have been introduced without enough training and
                 change support.
               </p>
-            </div>
-          </article>
-          <article class="challenge-card">
-            <span class="num">06</span>
-            <div>
-              <h3>Growth Without Scalable Systems</h3>
-              <p>
+</div>
+</article>
+<article class="challenge-card">
+<span class="num">06</span>
+<div>
+<h3>Growth Without Scalable Systems</h3>
+<p>
                 Existing technology cannot support the next stage of business
                 growth.
               </p>
-            </div>
-          </article>
-        </div>
-        <!-- <div class="outcomes">
+</div>
+</article>
+</div>
+<!-- <div class="outcomes">
           <div class="outcome">
             <i class="fa fa-map"></i><strong>Clear Roadmaps</strong
             ><span
@@ -2735,499 +2693,432 @@
             >
           </div>
         </div> -->
-      </div>
-    </section>
-
-    <section class="section soft">
-      <div class="container">
-        <div class="heading">
-          <span class="tag"><i class="fa fa-sitemap"></i> How We Work</span>
-          <h2>A Clear Path From <span>Discovery to Results</span></h2>
-          <p>
+</div>
+</section>
+<section class="section soft">
+<div class="container">
+<div class="heading">
+<span class="tag"><i class="fa fa-sitemap"></i> How We Work</span>
+<h2>A Clear Path From <span>Discovery to Results</span></h2>
+<p>
             A disciplined process that keeps decisions grounded, transparent,
             and connected to outcomes.
           </p>
-        </div>
-        <div class="process-grid">
-          <article class="process-card">
-            <span class="step">01</span>
-            <h3>Discover</h3>
-            <p>
+</div>
+<div class="process-grid">
+<article class="process-card">
+<span class="step">01</span>
+<h3>Discover</h3>
+<p>
               Understand goals, stakeholders, challenges, constraints, risks,
               and the current environment.
             </p>
-          </article>
-          <article class="process-card">
-            <span class="step">02</span>
-            <h3>Assess</h3>
-            <p>
+</article>
+<article class="process-card">
+<span class="step">02</span>
+<h3>Assess</h3>
+<p>
               Review systems, processes, capabilities, gaps, and improvement
               opportunities.
             </p>
-          </article>
-          <article class="process-card">
-            <span class="step">03</span>
-            <h3>Design</h3>
-            <p>
+</article>
+<article class="process-card">
+<span class="step">03</span>
+<h3>Design</h3>
+<p>
               Create a practical strategy, roadmap, operating model, or solution
               plan.
             </p>
-          </article>
-          <article class="process-card">
-            <span class="step">04</span>
-            <h3>Deliver</h3>
-            <p>
+</article>
+<article class="process-card">
+<span class="step">04</span>
+<h3>Deliver</h3>
+<p>
               Support implementation, governance, vendor coordination, training,
               and adoption.
             </p>
-          </article>
-          <article class="process-card">
-            <span class="step">05</span>
-            <h3>Optimise</h3>
-            <p>
+</article>
+<article class="process-card">
+<span class="step">05</span>
+<h3>Optimise</h3>
+<p>
               Review results, resolve gaps, strengthen capability, and improve
               performance.
             </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="heading">
-          <span class="tag"
-            ><i class="fa fa-building"></i> Industries We Support</span
-          >
-          <h2>Consulting Built Around <span>Your Sector</span></h2>
-          <p>
+</article>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<div class="heading">
+<span class="tag"><i class="fa fa-building"></i> Industries We Support</span>
+<h2>Consulting Built Around <span>Your Sector</span></h2>
+<p>
             Recommendations adapted to your operating pressures, users, risks,
             regulations, and growth priorities.
           </p>
-        </div>
-        <div class="industry-grid">
-          <div class="industry">
-            <i class="fa fa-university"></i><strong>Government</strong>
-          </div>
-          <div class="industry">
-            <i class="fa fa-graduation-cap"></i><strong>Education</strong>
-          </div>
-          <div class="industry">
-            <i class="fa fa-money"></i><strong>Financial Services</strong>
-          </div>
-          <div class="industry">
-            <i class="fa fa-heartbeat"></i><strong>Healthcare</strong>
-          </div>
-          <div class="industry">
-            <i class="fa fa-leaf"></i><strong>Agriculture</strong>
-          </div>
-          <div class="industry">
-            <i class="fa fa-industry"></i><strong>Oil &amp; Gas</strong>
-          </div>
-          <div class="industry">
-            <i class="fa fa-rocket"></i><strong>Startups</strong>
-          </div>
-          <div class="industry">
-            <i class="fa fa-briefcase"></i><strong>SMEs</strong>
-          </div>
-          <div class="industry">
-            <i class="fa fa-handshake-o"></i><strong>NGOs</strong>
-          </div>
-          <div class="industry">
-            <i class="fa fa-building-o"></i
-            ><strong>Corporate Organisations</strong>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section soft">
-      <div class="container">
-        <div class="heading">
-          <span class="tag"
-            ><i class="fa fa-handshake-o"></i> Ways to Work With Us</span
-          >
-          <h2>Flexible Consulting <span>Engagements</span></h2>
-          <p>
+</div>
+<div class="industry-grid">
+<div class="industry">
+<i class="fa fa-university"></i><strong>Government</strong>
+</div>
+<div class="industry">
+<i class="fa fa-graduation-cap"></i><strong>Education</strong>
+</div>
+<div class="industry">
+<i class="fa fa-money"></i><strong>Financial Services</strong>
+</div>
+<div class="industry">
+<i class="fa fa-heartbeat"></i><strong>Healthcare</strong>
+</div>
+<div class="industry">
+<i class="fa fa-leaf"></i><strong>Agriculture</strong>
+</div>
+<div class="industry">
+<i class="fa fa-industry"></i><strong>Oil &amp; Gas</strong>
+</div>
+<div class="industry">
+<i class="fa fa-rocket"></i><strong>Startups</strong>
+</div>
+<div class="industry">
+<i class="fa fa-briefcase"></i><strong>SMEs</strong>
+</div>
+<div class="industry">
+<i class="fa fa-handshake-o"></i><strong>NGOs</strong>
+</div>
+<div class="industry">
+<i class="fa fa-building-o"></i><strong>Corporate Organisations</strong>
+</div>
+</div>
+</div>
+</section>
+<section class="section soft">
+<div class="container">
+<div class="heading">
+<span class="tag"><i class="fa fa-handshake-o"></i> Ways to Work With Us</span>
+<h2>Flexible Consulting <span>Engagements</span></h2>
+<p>
             Choose focused advice, a complete assessment and roadmap,
             implementation support, or ongoing strategic advisory.
           </p>
-        </div>
-        <div class="engagement-grid">
-          <article class="engagement-card">
-            <span class="label">Focused Support</span>
-            <h3>Advisory Session</h3>
-            <p>
+</div>
+<div class="engagement-grid">
+<article class="engagement-card">
+<span class="label">Focused Support</span>
+<h3>Advisory Session</h3>
+<p>
               Focused consultation for a specific technology decision or
               challenge.
             </p>
-            <ul class="list">
-              <li>
-                <i class="fa fa-check-circle"></i>Defined issue or decision
+<ul class="list">
+<li>
+<i class="fa fa-check-circle"></i>Defined issue or decision
               </li>
-              <li><i class="fa fa-check-circle"></i>Expert recommendations</li>
-              <li><i class="fa fa-check-circle"></i>Clear next actions</li>
-            </ul>
-            <a href="#consultationPlanner" class="btn-main"
-              >Plan an Advisory Session <i class="fa fa-arrow-right"></i
-            ></a>
-          </article>
-          <article class="engagement-card featured">
-            <span class="label">Recommended</span>
-            <h3>Assessment &amp; Roadmap</h3>
-            <p>
+<li><i class="fa fa-check-circle"></i>Expert recommendations</li>
+<li><i class="fa fa-check-circle"></i>Clear next actions</li>
+</ul>
+<a class="btn-main" href="#consultationPlanner">Plan an Advisory Session <i class="fa fa-arrow-right"></i></a>
+</article>
+<article class="engagement-card featured">
+<span class="label">Recommended</span>
+<h3>Assessment &amp; Roadmap</h3>
+<p>
               Structured review of your environment, risks, gaps, priorities,
               and opportunities.
             </p>
-            <ul class="list">
-              <li><i class="fa fa-check-circle"></i>Stakeholder discovery</li>
-              <li>
-                <i class="fa fa-check-circle"></i>Current-state assessment
+<ul class="list">
+<li><i class="fa fa-check-circle"></i>Stakeholder discovery</li>
+<li>
+<i class="fa fa-check-circle"></i>Current-state assessment
               </li>
-              <li>
-                <i class="fa fa-check-circle"></i>Prioritised recommendations
+<li>
+<i class="fa fa-check-circle"></i>Prioritised recommendations
               </li>
-              <li><i class="fa fa-check-circle"></i>Implementation roadmap</li>
-            </ul>
-            <a href="#consultationPlanner" class="btn-main"
-              >Request an Assessment <i class="fa fa-arrow-right"></i
-            ></a>
-          </article>
-          <article class="engagement-card">
-            <span class="label">Ongoing Support</span>
-            <h3>Delivery &amp; Retained Advisory</h3>
-            <p>
+<li><i class="fa fa-check-circle"></i>Implementation roadmap</li>
+</ul>
+<a class="btn-main" href="#consultationPlanner">Request an Assessment <i class="fa fa-arrow-right"></i></a>
+</article>
+<article class="engagement-card">
+<span class="label">Ongoing Support</span>
+<h3>Delivery &amp; Retained Advisory</h3>
+<p>
               Continued support during implementation, transformation, or
               project delivery.
             </p>
-            <ul class="list">
-              <li>
-                <i class="fa fa-check-circle"></i>Implementation oversight
+<ul class="list">
+<li>
+<i class="fa fa-check-circle"></i>Implementation oversight
               </li>
-              <li>
-                <i class="fa fa-check-circle"></i>Project and vendor support
+<li>
+<i class="fa fa-check-circle"></i>Project and vendor support
               </li>
-              <li><i class="fa fa-check-circle"></i>Leadership advisory</li>
-              <li><i class="fa fa-check-circle"></i>Review and optimisation</li>
-            </ul>
-            <a href="#consultationPlanner" class="btn-main"
-              >Discuss Ongoing Support <i class="fa fa-arrow-right"></i
-            ></a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section planner" id="consultationPlanner">
-      <div class="container">
-        <div class="planner-grid">
-          <div class="planner-copy">
-            <span
-              class="tag"
-              style="background: rgba(255, 255, 255, 0.12); color: #fff"
-              ><i class="fa fa-comments"></i> Consultation Planner</span
-            >
-            <h2>Tell Us What You <span>Need to Improve</span></h2>
-            <p>
+<li><i class="fa fa-check-circle"></i>Leadership advisory</li>
+<li><i class="fa fa-check-circle"></i>Review and optimisation</li>
+</ul>
+<a class="btn-main" href="#consultationPlanner">Discuss Ongoing Support <i class="fa fa-arrow-right"></i></a>
+</article>
+</div>
+</div>
+</section>
+<section class="section planner" id="consultationPlanner">
+<div class="container">
+<div class="planner-grid">
+<div class="planner-copy">
+<span class="tag" style="background: rgba(255, 255, 255, 0.12); color: #fff"><i class="fa fa-comments"></i> Consultation Planner</span>
+<h2>Tell Us What You <span>Need to Improve</span></h2>
+<p>
               Complete the short planner. WhatsApp will open with a structured
               message containing your selections.
             </p>
-            <div class="planner-points">
-              <div class="planner-point">
-                <i class="fa fa-check-circle"></i>No complicated registration
+<div class="planner-points">
+<div class="planner-point">
+<i class="fa fa-check-circle"></i>No complicated registration
               </div>
-              <div class="planner-point">
-                <i class="fa fa-check-circle"></i>Share your priority and
+<div class="planner-point">
+<i class="fa fa-check-circle"></i>Share your priority and
                 preferred support
               </div>
-              <div class="planner-point">
-                <i class="fa fa-check-circle"></i>Continue directly on WhatsApp
+<div class="planner-point">
+<i class="fa fa-check-circle"></i>Continue directly on WhatsApp
               </div>
-            </div>
-          </div>
-          <form class="planner-form" id="consultationForm">
-            <div class="form-grid">
-              <div class="group">
-                <label for="consultName">Your name</label
-                ><input
-                  type="text"
-                  id="consultName"
-                  placeholder="Enter your name"
-                  required
-                />
-              </div>
-              <div class="group">
-                <label for="consultOrganisation">Organisation or business</label
-                ><input
-                  type="text"
-                  id="consultOrganisation"
-                  placeholder="Organisation name"
-                />
-              </div>
-              <div class="group">
-                <label for="consultSector">Sector</label
-                ><select id="consultSector" required>
-                  <option value="">Select your sector</option>
-                  <option>Government</option>
-                  <option>Education</option>
-                  <option>Financial Services</option>
-                  <option>Healthcare</option>
-                  <option>Agriculture</option>
-                  <option>Oil &amp; Gas</option>
-                  <option>SME</option>
-                  <option>Startup</option>
-                  <option>NGO</option>
-                  <option>Corporate Organisation</option>
-                  <option>Individual / Professional</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div class="group">
-                <label for="consultPriority">Main priority</label
-                ><select id="consultPriority" required>
-                  <option value="">Select a priority</option>
-                  <option>Technology Strategy &amp; Roadmap</option>
-                  <option>Digital Transformation</option>
-                  <option>Cybersecurity &amp; Risk</option>
-                  <option>Project Management &amp; Delivery</option>
-                  <option>Process Improvement &amp; Automation</option>
-                  <option>Cloud, Infrastructure &amp; Networking</option>
-                  <option>Business Technology Advisory</option>
-                  <option>Not Sure — I Need Guidance</option>
-                </select>
-              </div>
-              <div class="group">
-                <label for="consultEngagement">Preferred engagement</label
-                ><select id="consultEngagement" required>
-                  <option value="">Select an engagement</option>
-                  <option>Advisory Session</option>
-                  <option>Assessment &amp; Roadmap</option>
-                  <option>Implementation Support</option>
-                  <option>Ongoing / Retained Advisory</option>
-                  <option>Not Sure</option>
-                </select>
-              </div>
-              <div class="group">
-                <label for="consultTimeline">Preferred timeline</label
-                ><select id="consultTimeline" required>
-                  <option value="">Select a timeline</option>
-                  <option>As soon as possible</option>
-                  <option>Within 2–4 weeks</option>
-                  <option>Within 1–3 months</option>
-                  <option>Planning for later</option>
-                  <option>Not decided</option>
-                </select>
-              </div>
-              <div class="group full">
-                <label for="consultMessage"
-                  >Briefly describe the challenge</label
-                ><textarea
-                  id="consultMessage"
-                  placeholder="What are you trying to improve, solve, protect, or deliver?"
-                  required
-                ></textarea>
-              </div>
-            </div>
-            <button type="submit" class="btn-main">
+</div>
+</div>
+<form class="planner-form" id="consultationForm">
+<div class="form-grid">
+<div class="group">
+<label for="consultName">Your name</label><input id="consultName" placeholder="Enter your name" required="" type="text"/>
+</div>
+<div class="group">
+<label for="consultOrganisation">Organisation or business</label><input id="consultOrganisation" placeholder="Organisation name" type="text"/>
+</div>
+<div class="group">
+<label for="consultSector">Sector</label><select id="consultSector" required="">
+<option value="">Select your sector</option>
+<option>Government</option>
+<option>Education</option>
+<option>Financial Services</option>
+<option>Healthcare</option>
+<option>Agriculture</option>
+<option>Oil &amp; Gas</option>
+<option>SME</option>
+<option>Startup</option>
+<option>NGO</option>
+<option>Corporate Organisation</option>
+<option>Individual / Professional</option>
+<option>Other</option>
+</select>
+</div>
+<div class="group">
+<label for="consultPriority">Main priority</label><select id="consultPriority" required="">
+<option value="">Select a priority</option>
+<option>Technology Strategy &amp; Roadmap</option>
+<option>Digital Transformation</option>
+<option>Cybersecurity &amp; Risk</option>
+<option>Project Management &amp; Delivery</option>
+<option>Process Improvement &amp; Automation</option>
+<option>Cloud, Infrastructure &amp; Networking</option>
+<option>Business Technology Advisory</option>
+<option>Not Sure — I Need Guidance</option>
+</select>
+</div>
+<div class="group">
+<label for="consultEngagement">Preferred engagement</label><select id="consultEngagement" required="">
+<option value="">Select an engagement</option>
+<option>Advisory Session</option>
+<option>Assessment &amp; Roadmap</option>
+<option>Implementation Support</option>
+<option>Ongoing / Retained Advisory</option>
+<option>Not Sure</option>
+</select>
+</div>
+<div class="group">
+<label for="consultTimeline">Preferred timeline</label><select id="consultTimeline" required="">
+<option value="">Select a timeline</option>
+<option>As soon as possible</option>
+<option>Within 2–4 weeks</option>
+<option>Within 1–3 months</option>
+<option>Planning for later</option>
+<option>Not decided</option>
+</select>
+</div>
+<div class="group full">
+<label for="consultMessage">Briefly describe the challenge</label><textarea id="consultMessage" placeholder="What are you trying to improve, solve, protect, or deliver?" required=""></textarea>
+</div>
+</div>
+<button class="btn-main" type="submit">
               Continue on WhatsApp <i class="fa fa-whatsapp"></i>
-            </button>
-            <p class="planner-note">
+</button>
+<p class="planner-note">
               This prepares a message and opens WhatsApp for you to review
               before sending.
             </p>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="faq-grid">
-          <div class="faq-copy">
-            <span class="tag"
-              ><i class="fa fa-question-circle"></i> Frequently Asked
-              Questions</span
-            >
-            <h2>Consulting <span>Information</span></h2>
-            <p>
+</form>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<div class="faq-grid">
+<div class="faq-copy">
+<span class="tag"><i class="fa fa-question-circle"></i> Frequently Asked
+              Questions</span>
+<h2>Consulting <span>Information</span></h2>
+<p>
               Common questions about scope, delivery, customisation,
               implementation support, and how to begin.
             </p>
-          </div>
-          <div class="faq-list">
-            <article class="faq-item open">
-              <button class="faq-question" type="button" aria-expanded="true">
-                What types of organisations do you work with?<i
-                  class="fa fa-plus"
-                ></i>
-              </button>
-              <div class="faq-answer">
-                <p>
+</div>
+<div class="faq-list">
+<article class="faq-item open">
+<button aria-expanded="true" class="faq-question" type="button">
+                What types of organisations do you work with?<i class="fa fa-plus"></i>
+</button>
+<div class="faq-answer">
+<p>
                   Radiant Cullings supports government, education, financial
                   services, healthcare, agriculture, oil and gas, SMEs, NGOs,
                   startups, corporate organisations, and individual
                   professionals.
                 </p>
-              </div>
-            </article>
-            <article class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false">
-                Can you help us identify what technology we need?<i
-                  class="fa fa-plus"
-                ></i>
-              </button>
-              <div class="faq-answer">
-                <p>
+</div>
+</article>
+<article class="faq-item">
+<button aria-expanded="false" class="faq-question" type="button">
+                Can you help us identify what technology we need?<i class="fa fa-plus"></i>
+</button>
+<div class="faq-answer">
+<p>
                   Yes. We assess goals, processes, systems, risks, users, and
                   constraints, then recommend priorities and a practical
                   roadmap.
                 </p>
-              </div>
-            </article>
-            <article class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false">
+</div>
+</article>
+<article class="faq-item">
+<button aria-expanded="false" class="faq-question" type="button">
                 Do you only provide recommendations?<i class="fa fa-plus"></i>
-              </button>
-              <div class="faq-answer">
-                <p>
+</button>
+<div class="faq-answer">
+<p>
                   No. Depending on scope, we can support implementation
                   planning, project governance, vendor coordination, training,
                   adoption, and ongoing advisory.
                 </p>
-              </div>
-            </article>
-            <article class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false">
+</div>
+</article>
+<article class="faq-item">
+<button aria-expanded="false" class="faq-question" type="button">
                 Can consulting be delivered remotely?<i class="fa fa-plus"></i>
-              </button>
-              <div class="faq-answer">
-                <p>
+</button>
+<div class="faq-answer">
+<p>
                   Yes. Consulting may be online, physical, or hybrid depending
                   on the project, stakeholders, and site requirements.
                 </p>
-              </div>
-            </article>
-            <article class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false">
+</div>
+</article>
+<article class="faq-item">
+<button aria-expanded="false" class="faq-question" type="button">
                 How is consulting cost decided?<i class="fa fa-plus"></i>
-              </button>
-              <div class="faq-answer">
-                <p>
+</button>
+<div class="faq-answer">
+<p>
                   Fees depend on scope, complexity, stakeholders, timeline,
                   assessments, site work, implementation support, and
                   deliverables.
                 </p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta">
-      <div class="container">
-        <div class="cta-inner">
-          <div>
-            <h2>Ready to Make Technology Work Better?</h2>
-            <p>
+</div>
+</article>
+</div>
+</div>
+</div>
+</section>
+<section class="cta">
+<div class="container">
+<div class="cta-inner">
+<div>
+<h2>Ready to Make Technology Work Better?</h2>
+<p>
               Start with a focused conversation about your goals, challenges,
               risks, or transformation plans.
             </p>
-          </div>
-          <div class="cta-actions">
-            <a href="#consultationPlanner" class="btn-main"
-              >Plan Your Consultation <i class="fa fa-arrow-up"></i></a
-            ><a href="contact.html" class="btn-ghost"
-              >Contact the Team <i class="fa fa-envelope"></i
-            ></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer class="ve-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-sm-6 col-lg-4 mb-50">
-            <div class="ve-footer-brand">
-              <a href="index.html" class="ve-footer-logo"
-                ><img
-                  src="img/core-img/radiant_cullings.png"
-                  alt="Radiant Cullings"
-                  style="max-width: 120px"
-              /></a>
-              <p>
+</div>
+<div class="cta-actions">
+<a class="btn-main" href="#consultationPlanner">Plan Your Consultation <i class="fa fa-arrow-up"></i></a><a class="btn-ghost" href="contact.html">Contact the Team <i class="fa fa-envelope"></i></a>
+</div>
+</div>
+</div>
+</section>
+<footer class="ve-footer">
+<div class="container">
+<div class="row">
+<div class="col-12 col-sm-6 col-lg-4 mb-50">
+<div class="ve-footer-brand">
+<a class="ve-footer-logo" href="index.html"><img alt="Radiant Cullings" src="img/core-img/radiant_cullings.png" style="max-width: 120px"/></a>
+<p>
                 Empowering People. Transforming Businesses. Driving Innovation.
               </p>
-              <div class="ve-social">
-                <a href="#" aria-label="Facebook"
-                  ><i class="fa fa-facebook"></i></a
-                ><a href="#" aria-label="Twitter"
-                  ><i class="fa fa-twitter"></i></a
-                ><a href="#" aria-label="LinkedIn"
-                  ><i class="fa fa-linkedin"></i></a
-                ><a href="#" aria-label="Instagram"
-                  ><i class="fa fa-instagram"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-lg-2 mb-50">
-            <h5 class="ve-footer-title">Quick Links</h5>
-            <ul class="ve-footer-links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="courses.html">Courses</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </div>
-          <div class="col-12 col-sm-6 col-lg-3 mb-50">
-            <h5 class="ve-footer-title">Our Services</h5>
-            <ul class="ve-footer-links">
-              <li><a href="courses.html">Technology Training</a></li>
-              <li><a href="consulting.html">Technology Consulting</a></li>
-              <li><a href="services.html#cybersecurity">Cybersecurity</a></li>
-              <li><a href="services.html#project">Project Management</a></li>
-              <li>
-                <a href="services.html#digital">Digital Transformation</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-12 col-sm-6 col-lg-3 mb-50">
-            <h5 class="ve-footer-title">Contact Us</h5>
-            <ul class="ve-footer-contact">
-              <li><i class="fa fa-map-marker"></i> Ikeja, Lagos, Nigeria</li>
-              <li>
-                <i class="fa fa-map-marker"></i> 17 Romoke Complex, Igodo Road,
+<div class="ve-social">
+<a aria-label="Facebook" href="#"><i class="fa fa-facebook"></i></a><a aria-label="Twitter" href="#"><i class="fa fa-twitter"></i></a><a aria-label="LinkedIn" href="#"><i class="fa fa-linkedin"></i></a><a aria-label="Instagram" href="#"><i class="fa fa-instagram"></i></a>
+</div>
+</div>
+</div>
+<div class="col-12 col-sm-6 col-lg-2 mb-50">
+<h5 class="ve-footer-title">Quick Links</h5>
+<ul class="ve-footer-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="courses.html">Courses</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div class="col-12 col-sm-6 col-lg-3 mb-50">
+<h5 class="ve-footer-title">Our Services</h5>
+<ul class="ve-footer-links">
+<li><a href="courses.html">Technology Training</a></li>
+<li><a href="consulting.html">Technology Consulting</a></li>
+<li><a href="services.html#cybersecurity">Cybersecurity</a></li>
+<li><a href="services.html#project">Project Management</a></li>
+<li>
+<a href="services.html#digital">Digital Transformation</a>
+</li>
+</ul>
+</div>
+<div class="col-12 col-sm-6 col-lg-3 mb-50">
+<h5 class="ve-footer-title">Contact Us</h5>
+<ul class="ve-footer-contact">
+<li><i class="fa fa-map-marker"></i> Ikeja, Lagos, Nigeria</li>
+<li>
+<i class="fa fa-map-marker"></i> 17 Romoke Complex, Igodo Road,
                 Magboro, Ogun State, Nigeria
               </li>
-              <li><i class="fa fa-phone"></i> +234 814 671 0908</li>
-              <li><i class="fa fa-phone"></i> +234 703 740 3162</li>
-              <li><i class="fa fa-phone"></i> +234 704 383 7008</li>
-              <li><i class="fa fa-envelope"></i> info@radiantcullings.com</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="ve-footer-bottom">
-        <div class="container">
-          <div class="ve-footer-bottom-inner">
-            <p>
-              Copyright &copy; <span id="currentYear"></span> Radiant Cullings.
+<li><i class="fa fa-phone"></i> +234 814 671 0908</li>
+<li><i class="fa fa-phone"></i> +234 703 740 3162</li>
+<li><i class="fa fa-phone"></i> +234 704 383 7008</li>
+<li><i class="fa fa-envelope"></i> info@radiantcullings.com</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="ve-footer-bottom">
+<div class="container">
+<div class="ve-footer-bottom-inner">
+<p>
+              Copyright © <span id="currentYear"></span> Radiant Cullings.
               All Rights Reserved.
             </p>
-            <ul>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms of Use</a></li>
-              <li><a href="#">Cookie Policy</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <script>
+<ul>
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Terms of Use</a></li>
+<li><a href="#">Cookie Policy</a></li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+<script>
       document.addEventListener("DOMContentLoaded", function () {
         const body = document.body,
           root = document.documentElement,
@@ -3362,7 +3253,7 @@
         }
       });
     </script>
-    <script type="text/javascript">
+<script type="text/javascript">
       var Tawk_API = Tawk_API || {},
         Tawk_LoadStart = new Date();
       (function () {
@@ -3375,11 +3266,11 @@
         s1.parentNode.insertBefore(s0, s1);
       })();
     </script>
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
-    <script src="js/bootstrap/popper.min.js"></script>
-    <script src="js/bootstrap/bootstrap.min.js"></script>
-    <script src="js/plugins/plugins.js"></script>
-    <script src="js/active.js"></script>
-    <script src="js/vaultedge.js"></script>
-  </body>
+<script src="js/jquery/jquery-2.2.4.min.js"></script>
+<script src="js/bootstrap/popper.min.js"></script>
+<script src="js/bootstrap/bootstrap.min.js"></script>
+<script src="js/plugins/plugins.js"></script>
+<script src="js/active.js"></script>
+<script src="js/vaultedge.js"></script>
+</body>
 </html>
