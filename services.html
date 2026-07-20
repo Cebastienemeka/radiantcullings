@@ -1,3276 +1,3164 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="Radiant Cullings technology consulting services for strategy, cybersecurity, project delivery, process improvement and digital transformation." name="description"/>
-<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-<meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"/>
-<title>Technology Consulting — Radiant Cullings</title>
-<link href="img/core-img/radiant_cullings.png" rel="icon"/>
-<link href="style.css" rel="stylesheet"/>
-<link href="css/custom-override.css" rel="stylesheet"/>
-<script>
-      (function () {
-        try {
-          if (localStorage.getItem("darkMode") === "enabled")
-            document.documentElement.classList.add("dark-theme-loading");
-        } catch (e) {}
-      })();
-    </script>
-<style>
-      :root {
-        --b: #2575ab;
-        --bd: #164f73;
-        --deep: #0d354f;
-        --p: #ed948c;
-        --pd: #d97a72;
-        --ink: #102f40;
-        --muted: #607985;
-        --soft: #f4f8fb;
-        --line: rgba(37, 117, 171, 0.12);
-        --shadow: 0 18px 55px rgba(20, 62, 86, 0.1);
+  <meta charset="utf-8" />
+  <meta
+    name="description"
+    content="Radiant Cullings technology consulting services for strategy, cybersecurity, project delivery, process improvement and digital transformation."
+  />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+  <title>Technology Consulting — Radiant Cullings</title>
+
+  <link href="img/core-img/radiant_cullings.png" rel="icon" />
+  <link href="style.css" rel="stylesheet" />
+  <link href="css/custom-override.css" rel="stylesheet" />
+
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem("darkMode") === "enabled") {
+          document.documentElement.classList.add("dark-theme-loading");
+        }
+      } catch (error) {}
+    })();
+  </script>
+
+  <style>
+    :root {
+      --b: #2575ab;
+      --bd: #164f73;
+      --deep: #0d354f;
+      --p: #ed948c;
+      --pd: #d97a72;
+      --ink: #102f40;
+      --muted: #607985;
+      --soft: #f4f8fb;
+      --line: rgba(37, 117, 171, 0.12);
+      --shadow: 0 18px 55px rgba(20, 62, 86, 0.1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: var(--ink);
+      transition: background 0.35s ease, color 0.35s ease;
+    }
+
+    html.dark-theme-loading body {
+      background: #11111f;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    /* ==================================================
+       DARK MODE BUTTON
+    ================================================== */
+    .dark-mode-toggle {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      margin-left: 12px;
+      overflow: hidden;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.14);
+      color: #ffffff;
+      font-size: 19px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .dark-mode-toggle:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+    }
+
+    .dark-mode-toggle i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transition: 0.35s ease;
+    }
+
+    .dark-mode-toggle .fa-moon-o {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+
+    .dark-mode-toggle .fa-sun-o {
+      opacity: 0;
+      transform: translate(-50%, -50%) rotate(-90deg) scale(0.5);
+    }
+
+    body.dark-mode .dark-mode-toggle .fa-moon-o {
+      opacity: 0;
+      transform: translate(-50%, -50%) rotate(90deg) scale(0.5);
+    }
+
+    body.dark-mode .dark-mode-toggle .fa-sun-o {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+
+    body.dark-mode .dark-mode-toggle {
+      color: #fbbf24;
+    }
+
+    /* ==================================================
+       FLOATING WHATSAPP
+    ================================================== */
+    .floating-whatsapp {
+      position: fixed;
+      left: 20px;
+      bottom: 30px;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      animation: whatsappPulse 2s ease-in-out infinite;
+    }
+
+    .floating-whatsapp a {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--b);
+      color: #ffffff;
+      text-decoration: none;
+      box-shadow: 0 6px 25px rgba(37, 117, 171, 0.4);
+      transition: 0.3s ease;
+    }
+
+    .floating-whatsapp a:hover {
+      background: var(--p);
+      color: #ffffff;
+      transform: scale(1.1) translateY(-4px);
+    }
+
+    .floating-whatsapp a i {
+      font-size: 32px;
+    }
+
+    .floating-whatsapp a::before {
+      content: "";
+      position: absolute;
+      inset: -8px;
+      border: 2px solid rgba(37, 117, 171, 0.3);
+      border-radius: 50%;
+      animation: whatsappRipple 2s ease-out infinite;
+    }
+
+    .whatsapp-label {
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--b);
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+      opacity: 0;
+      transform: translateX(-10px);
+      transition: 0.3s ease;
+    }
+
+    .floating-whatsapp:hover .whatsapp-label {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    @keyframes whatsappPulse {
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    @keyframes whatsappRipple {
+      0% {
+        opacity: 1;
+        transform: scale(0.8);
       }
 
-      html {
-        scroll-behavior: smooth;
+      100% {
+        opacity: 0;
+        transform: scale(1.5);
       }
+    }
 
-      body {
-        background: #fff;
-        color: var(--ink);
-        transition: 0.35s;
-      }
+    /* ==================================================
+       HERO
+    ================================================== */
+    .rc-hero {
+      position: relative;
+      min-height: 690px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      isolation: isolate;
+      background:
+        linear-gradient(
+          112deg,
+          rgba(7, 34, 52, 0.98),
+          rgba(14, 72, 105, 0.93) 54%,
+          rgba(37, 117, 171, 0.62)
+        ),
+        url("img/bg-img/rad2.png") center / cover no-repeat;
+    }
 
-      html.dark-theme-loading body {
-        background: #11111f;
-      }
+    .rc-hero::before,
+    .rc-hero::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      border-radius: 50%;
+    }
 
+    .rc-hero::before {
+      width: 520px;
+      height: 520px;
+      top: -240px;
+      right: -120px;
+      border: 72px solid rgba(255, 255, 255, 0.065);
+    }
+
+    .rc-hero::after {
+      width: 340px;
+      height: 340px;
+      left: -140px;
+      bottom: -170px;
+      background: rgba(237, 148, 140, 0.12);
+    }
+
+    .rc-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr);
+      align-items: center;
+      gap: 60px;
+      padding: 110px 0 95px;
+    }
+
+    .kicker,
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 15px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .kicker {
+      margin-bottom: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      background: rgba(255, 255, 255, 0.09);
+      color: #ffffff;
+    }
+
+    .kicker i {
+      color: var(--p);
+    }
+
+    .tag {
+      margin-bottom: 14px;
+      background: rgba(37, 117, 171, 0.1);
+      color: var(--b);
+    }
+
+    .rc-hero h1 {
+      max-width: 770px;
+      margin: 0 0 22px;
+      color: #ffffff;
+      font-size: clamp(46px, 6vw, 80px);
+      line-height: 1.01;
+      letter-spacing: -0.05em;
+    }
+
+    .rc-hero h1 span,
+    .heading h2 span,
+    .planner-copy h2 span,
+    .faq-copy h2 span {
+      color: var(--p);
+    }
+
+    .rc-hero-copy > p {
+      max-width: 690px;
+      margin: 0 0 31px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .actions,
+    .inline-actions,
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .actions {
+      margin-bottom: 34px;
+    }
+
+    .btn-main,
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 54px;
+      padding: 0 28px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .btn-main {
+      border: 2px solid var(--p);
+      background: var(--p);
+      color: #ffffff;
+      box-shadow: 0 14px 34px rgba(237, 148, 140, 0.28);
+    }
+
+    .btn-main:hover {
+      border-color: var(--pd);
+      background: var(--pd);
+      color: #ffffff;
+      transform: translateY(-4px);
+    }
+
+    .btn-ghost {
+      border: 2px solid rgba(255, 255, 255, 0.32);
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+    }
+
+    .btn-ghost:hover {
+      border-color: #ffffff;
+      background: rgba(255, 255, 255, 0.16);
+      color: #ffffff;
+      transform: translateY(-4px);
+    }
+
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 28px;
+    }
+
+    .hero-point {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .hero-point i {
+      color: var(--p);
+      font-size: 18px;
+    }
+
+    .hero-panel {
+      padding: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.28);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero-image {
+      position: relative;
+      height: 285px;
+      overflow: hidden;
+      border-radius: 21px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-badge {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--b);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .mini {
+      padding: 17px;
+      border-radius: 17px;
+      background: rgba(7, 31, 49, 0.38);
+      color: #ffffff;
+    }
+
+    .mini strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 20px;
+    }
+
+    .mini span {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 12px;
+    }
+
+    /* ==================================================
+       TRUST STRIP
+    ================================================== */
+    .trust {
+      padding: 28px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: var(--soft);
+    }
+
+    .trust-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      width: 42px;
+      height: 42px;
+      border-radius: 13px;
+      background: rgba(37, 117, 171, 0.12);
+      color: var(--b);
+    }
+
+    .trust-item strong {
+      display: block;
+      color: var(--b);
+      font-size: 14px;
+    }
+
+    .trust-item span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* ==================================================
+       GENERAL SECTIONS
+    ================================================== */
+    .section {
+      position: relative;
+      padding: 90px 0;
+    }
+
+    .soft {
+      background: var(--soft);
+    }
+
+    .heading {
+      max-width: 760px;
+      margin: 0 auto 46px;
+      text-align: center;
+    }
+
+    .heading h2,
+    .planner-copy h2,
+    .faq-copy h2 {
+      margin: 0 0 16px;
+      color: var(--b);
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+    }
+
+    .heading p,
+    .planner-copy > p,
+    .faq-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    /* ==================================================
+       TECH CONSULTING SERVICES
+       3 CARDS PER ROW (ONE ROW PER PAGE)
+    ================================================== */
+    .ve-tech-services-section {
+      padding: 58px 0 64px;
+      background: #f8faff;
+    }
+
+    .ve-tech-services-section .ve-section-header {
+      max-width: 760px;
+      margin: 0 auto 28px;
+      text-align: center;
+    }
+
+    .ve-tech-services-section .ve-section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 15px;
+      margin-bottom: 14px;
+      border-radius: 999px;
+      background: rgba(37, 117, 171, 0.1);
+      color: var(--b);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .ve-tech-services-section .ve-section-header h2 {
+      margin: 0 0 16px;
+      color: var(--b);
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+    }
+
+    .ve-tech-services-section .ve-section-header h2 span {
+      color: var(--p);
+    }
+
+    .ve-tech-services-section .ve-section-header p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .ve-tech-results-status {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .ve-tech-services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 30px;
+    }
+
+    .ve-tech-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      overflow: hidden;
+      border: 1px solid rgba(37, 117, 171, 0.08);
+      border-radius: 20px;
+      background: #ffffff;
+      box-shadow: 0 13px 38px rgba(20, 62, 86, 0.1);
+      transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+    }
+
+    .ve-tech-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 6;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--b), var(--p));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s ease;
+    }
+
+    .ve-tech-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .ve-tech-card:hover {
+      border-color: rgba(237, 148, 140, 0.38);
+      transform: translateY(-7px);
+      box-shadow: 0 22px 54px rgba(31, 87, 119, 0.15);
+    }
+
+    .ve-tech-card-image {
+      position: relative;
+      width: 100%;
+      height: 158px;
+      overflow: hidden;
+      background: #e9f0f5;
+    }
+
+    .ve-tech-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.55s ease;
+    }
+
+    .ve-tech-card:hover .ve-tech-card-image img {
+      transform: scale(1.08);
+    }
+
+    .ve-tech-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(37, 117, 171, 0.78);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    .ve-tech-card:hover .ve-tech-overlay {
+      opacity: 1;
+    }
+
+    .ve-tech-overlay-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 24px;
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--b);
+      font-size: 12.5px;
+      font-weight: 700;
+      text-decoration: none;
+      transform: translateY(18px);
+      transition: 0.35s ease;
+    }
+
+    .ve-tech-card:hover .ve-tech-overlay-btn {
+      transform: translateY(0);
+    }
+
+    .ve-tech-overlay-btn:hover {
+      background: var(--p);
+      color: #ffffff;
+      transform: translateY(-3px);
+    }
+
+    .ve-tech-card-body {
+      position: relative;
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 18px 18px 19px;
+    }
+
+    .ve-tech-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      margin-top: -37px;
+      margin-bottom: 13px;
+      border: 4px solid #ffffff;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--b), #1a5a7a);
+      color: #ffffff;
+      box-shadow: 0 7px 20px rgba(37, 117, 171, 0.22);
+      transition: 0.4s ease;
+    }
+
+    .ve-tech-card:hover .ve-tech-icon {
+      background: linear-gradient(135deg, var(--p), var(--pd));
+      transform: rotate(360deg) scale(1.08);
+    }
+
+    .ve-tech-icon i {
+      font-size: 21px;
+    }
+
+    .ve-tech-card-body h4 {
+      min-height: 46px;
+      margin: 0 0 8px;
+      color: var(--b);
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.28;
+      transition: color 0.3s ease;
+    }
+
+    .ve-tech-card:hover .ve-tech-card-body h4 {
+      color: var(--p);
+    }
+
+    .ve-tech-card-body p {
+      display: -webkit-box;
+      min-height: 57px;
+      margin: 0 0 13px;
+      overflow: hidden;
+      color: #5a7a8a;
+      font-size: 12.5px;
+      line-height: 1.52;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+    }
+
+    .ve-tech-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: auto;
+      padding-top: 11px;
+      border-top: 1px solid rgba(37, 117, 171, 0.09);
+      color: var(--b);
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .ve-tech-link i {
+      font-size: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .ve-tech-link:hover {
+      color: var(--p);
+    }
+
+    .ve-tech-link:hover i {
+      transform: translateX(7px);
+    }
+
+    .ve-tech-btn-wrap {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .ve-btn-tech {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 29px;
+      border-radius: 999px;
+      background: var(--p);
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 8px 35px rgba(237, 148, 140, 0.25);
+      transition: 0.35s ease;
+    }
+
+    .ve-btn-tech:hover {
+      background: var(--pd);
+      color: #ffffff;
+      transform: translateY(-5px);
+      box-shadow: 0 18px 45px rgba(237, 148, 140, 0.32);
+    }
+
+    .ve-btn-tech i {
+      transition: transform 0.3s ease;
+    }
+
+    .ve-btn-tech:hover i {
+      transform: translateX(7px);
+    }
+
+    /* ==================================================
+       PAGINATION
+    ================================================== */
+    .rc-pagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 38px;
+    }
+
+    .rc-pagination button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      padding: 0;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: #ffffff;
+      color: var(--b);
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .rc-pagination button:hover,
+    .rc-pagination button.active {
+      border-color: var(--p);
+      background: var(--p);
+      color: #ffffff;
+      transform: translateY(-3px);
+    }
+
+    .rc-pagination button:disabled {
+      border-color: var(--line);
+      background: rgba(37, 117, 171, 0.05);
+      color: rgba(97, 123, 137, 0.55);
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .rc-pagination[hidden] {
+      display: none !important;
+    }
+
+    /* ==================================================
+       CHALLENGES
+    ================================================== */
+    .challenge-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .challenge-card {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 19px;
+      padding: 27px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: #ffffff;
+      box-shadow: 0 14px 38px rgba(31, 87, 119, 0.07);
+    }
+
+    .num,
+    .step {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--b);
+      color: #ffffff;
+      font-weight: 800;
+    }
+
+    .num {
+      width: 50px;
+      height: 50px;
+      border-radius: 16px;
+    }
+
+    .challenge-card:nth-child(even) .num,
+    .process-card:nth-child(even) .step {
+      background: var(--p);
+    }
+
+    .challenge-card h3,
+    .process-card h3,
+    .engagement-card h3 {
+      margin: 0 0 11px;
+      color: var(--b);
+    }
+
+    .challenge-card h3 {
+      font-size: 18px;
+    }
+
+    .challenge-card p,
+    .process-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* ==================================================
+       PROCESS
+    ================================================== */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .process-card {
+      padding: 28px 21px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: #ffffff;
+      box-shadow: 0 14px 38px rgba(31, 87, 119, 0.07);
+    }
+
+    .step {
+      width: 46px;
+      height: 46px;
+      margin-bottom: 18px;
+      border-radius: 15px;
+    }
+
+    .process-card h3 {
+      font-size: 18px;
+    }
+
+    /* ==================================================
+       INDUSTRIES
+    ================================================== */
+    .industry-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 17px;
+    }
+
+    .industry {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-height: 78px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #ffffff;
+      box-shadow: 0 10px 30px rgba(31, 87, 119, 0.055);
+      transition: 0.3s ease;
+    }
+
+    .industry:hover {
+      border-color: rgba(237, 148, 140, 0.42);
+      transform: translateY(-5px);
+    }
+
+    .industry i {
+      color: var(--b);
+      font-size: 21px;
+    }
+
+    .industry strong {
+      color: var(--b);
+      font-size: 14px;
+    }
+
+    /* ==================================================
+       ENGAGEMENTS
+    ================================================== */
+    .engagement-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 27px;
+    }
+
+    .engagement-card {
+      display: flex;
+      flex-direction: column;
+      padding: 31px 27px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    .engagement-card.featured {
+      border-color: rgba(237, 148, 140, 0.48);
+      background: linear-gradient(
+        150deg,
+        rgba(37, 117, 171, 0.06),
+        rgba(237, 148, 140, 0.09)
+      );
+    }
+
+    .label {
+      display: inline-flex;
+      align-self: flex-start;
+      padding: 7px 11px;
+      margin-bottom: 18px;
+      border-radius: 999px;
+      background: rgba(37, 117, 171, 0.1);
+      color: var(--b);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .featured .label {
+      background: var(--p);
+      color: #ffffff;
+    }
+
+    .engagement-card h3 {
+      font-size: 22px;
+    }
+
+    .engagement-card > p {
+      margin: 0 0 19px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .list {
+      display: grid;
+      gap: 9px;
+      padding: 0;
+      margin: 0 0 24px;
+      list-style: none;
+    }
+
+    .list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .list i {
+      margin-top: 4px;
+      color: var(--p);
+    }
+
+    .engagement-card .btn-main {
+      width: 100%;
+      margin-top: auto;
+    }
+
+    /* ==================================================
+       PLANNER
+    ================================================== */
+    .planner {
+      overflow: hidden;
+      background: linear-gradient(135deg, #0e344d, #2575ab);
+    }
+
+    .planner-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.16fr);
+      align-items: center;
+      gap: 60px;
+    }
+
+    .planner-copy h2 {
+      color: #ffffff;
+    }
+
+    .planner-copy > p {
+      color: rgba(255, 255, 255, 0.76);
+    }
+
+    .planner-points {
+      display: grid;
+      gap: 13px;
+      margin-top: 27px;
+    }
+
+    .planner-point {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .planner-point i {
+      color: var(--p);
+    }
+
+    .planner-form {
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 26px;
+      background: rgba(255, 255, 255, 0.11);
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.22);
+      backdrop-filter: blur(18px);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .group {
+      display: grid;
+      gap: 8px;
+    }
+
+    .group.full {
+      grid-column: 1 / -1;
+    }
+
+    .group label {
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .group input,
+    .group select,
+    .group textarea {
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.94);
+      color: var(--ink);
+      outline: none;
+    }
+
+    .group input,
+    .group select {
+      height: 52px;
+      padding: 0 15px;
+    }
+
+    .group textarea {
+      min-height: 115px;
+      padding: 14px 15px;
+      resize: vertical;
+    }
+
+    .group input:focus,
+    .group select:focus,
+    .group textarea:focus {
+      border-color: var(--p);
+      box-shadow: 0 0 0 4px rgba(237, 148, 140, 0.18);
+    }
+
+    .planner-form .btn-main {
+      width: 100%;
+      margin-top: 18px;
+      border: 0;
+    }
+
+    .planner-note {
+      margin: 13px 0 0;
+      color: rgba(255, 255, 255, 0.66);
+      font-size: 11px;
+    }
+
+    /* ==================================================
+       FAQ
+    ================================================== */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.75fr) minmax(0, 1.25fr);
+      gap: 55px;
+      align-items: start;
+    }
+
+    .faq-copy {
+      position: sticky;
+      top: 110px;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .faq-item {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #ffffff;
+      box-shadow: 0 10px 28px rgba(31, 87, 119, 0.05);
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 20px 22px;
+      border: 0;
+      background: transparent;
+      color: var(--b);
+      text-align: left;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .faq-question i {
+      color: var(--b);
+      transition: 0.3s ease;
+    }
+
+    .faq-item.open .faq-question i {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      padding: 0 22px 22px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    /* ==================================================
+       CTA
+    ================================================== */
+    .cta {
+      padding: 77px 0;
+      background: linear-gradient(135deg, #173f59, #2575ab);
+      color: #ffffff;
+    }
+
+    .cta-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .cta h2 {
+      margin: 0 0 10px;
+      color: #ffffff;
+      font-size: clamp(34px, 4vw, 52px);
+    }
+
+    .cta p {
+      max-width: 700px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.78);
+      line-height: 1.75;
+    }
+
+    .cta-actions {
+      justify-content: flex-end;
+    }
+
+    /* ==================================================
+       CUSTOM CURSOR
+    ================================================== */
+    @media (pointer: fine) and (hover: hover) {
+      html,
+      body,
+      a,
       button,
       input,
       select,
-      textarea {
-        font: inherit;
+      textarea,
+      [role="button"] {
+        cursor: none !important;
+      }
+    }
+
+    .custom-cursor-dot,
+    .custom-cursor-circle {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000001;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(-50%, -50%);
+    }
+
+    .custom-cursor-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--p);
+    }
+
+    .custom-cursor-circle {
+      z-index: 1000000;
+      width: 38px;
+      height: 38px;
+      border: 2px solid var(--b);
+      border-radius: 50%;
+      background: rgba(37, 117, 171, 0.04);
+      transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease,
+        background 0.25s ease, opacity 0.25s ease;
+    }
+
+    .cursor-visible {
+      opacity: 1;
+    }
+
+    .custom-cursor-circle.cursor-hover {
+      width: 58px;
+      height: 58px;
+      border-color: var(--p);
+      background: rgba(237, 148, 140, 0.13);
+    }
+
+    .custom-cursor-dot.cursor-hover {
+      width: 9px;
+      height: 9px;
+      background: var(--b);
+    }
+
+    .custom-cursor-circle.cursor-click {
+      width: 28px;
+      height: 28px;
+    }
+
+    /* ==================================================
+       DARK MODE
+    ================================================== */
+    body.dark-mode {
+      background: #11111f;
+      color: #e8e8ef;
+    }
+
+    body.dark-mode .ve-nav-wrap {
+      background: #17172a !important;
+    }
+
+    body.dark-mode .ve-nav ul li a,
+    body.dark-mode .ve-mobile-menu ul li a {
+      color: #d7d7e2;
+    }
+
+    body.dark-mode .ve-nav ul li a:hover,
+    body.dark-mode .ve-nav ul li a.active {
+      color: var(--p);
+    }
+
+    body.dark-mode .ve-dropdown,
+    body.dark-mode .ve-mobile-menu {
+      background: #1b1b30;
+    }
+
+    body.dark-mode .section {
+      background: #11111f;
+    }
+
+    body.dark-mode .soft,
+    body.dark-mode .trust,
+    body.dark-mode .ve-tech-services-section {
+      background: #17172a;
+    }
+
+    body.dark-mode .trust {
+      border-color: rgba(255, 255, 255, 0.07);
+    }
+
+    body.dark-mode .trust-item {
+      background: #212138;
+    }
+
+    body.dark-mode .heading h2,
+    body.dark-mode .faq-copy h2,
+    body.dark-mode .ve-tech-services-section .ve-section-header h2,
+    body.dark-mode .trust-item strong,
+    body.dark-mode .challenge-card h3,
+    body.dark-mode .process-card h3,
+    body.dark-mode .industry strong,
+    body.dark-mode .engagement-card h3,
+    body.dark-mode .faq-question,
+    body.dark-mode .ve-tech-card-body h4 {
+      color: #7cb5df;
+    }
+
+    body.dark-mode .heading p,
+    body.dark-mode .faq-copy p,
+    body.dark-mode .ve-tech-services-section .ve-section-header p,
+    body.dark-mode .trust-item span,
+    body.dark-mode .challenge-card p,
+    body.dark-mode .process-card p,
+    body.dark-mode .engagement-card > p,
+    body.dark-mode .list li,
+    body.dark-mode .faq-answer p,
+    body.dark-mode .ve-tech-card-body p,
+    body.dark-mode .ve-tech-results-status {
+      color: #adadbb;
+    }
+
+    body.dark-mode .ve-tech-card,
+    body.dark-mode .challenge-card,
+    body.dark-mode .process-card,
+    body.dark-mode .industry,
+    body.dark-mode .engagement-card,
+    body.dark-mode .faq-item {
+      border-color: rgba(255, 255, 255, 0.07);
+      background: #1d1d31;
+      box-shadow: 0 16px 46px rgba(0, 0, 0, 0.24);
+    }
+
+    body.dark-mode .engagement-card.featured {
+      background: linear-gradient(
+        150deg,
+        rgba(37, 117, 171, 0.15),
+        rgba(237, 148, 140, 0.11)
+      );
+    }
+
+    body.dark-mode .ve-tech-icon {
+      border-color: #1d1d31;
+    }
+
+    body.dark-mode .rc-pagination button {
+      border-color: rgba(255, 255, 255, 0.09);
+      background: #202036;
+      color: #d8d8e2;
+    }
+
+    body.dark-mode .rc-pagination button:hover,
+    body.dark-mode .rc-pagination button.active {
+      border-color: var(--p);
+      background: var(--p);
+      color: #ffffff;
+    }
+
+    body.dark-mode .rc-pagination button:disabled {
+      border-color: rgba(255, 255, 255, 0.06);
+      background: rgba(255, 255, 255, 0.05);
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    body.dark-mode .ve-footer {
+      background: #0d0d18;
+    }
+
+    body.dark-mode .ve-footer p,
+    body.dark-mode .ve-footer-links li a,
+    body.dark-mode .ve-footer-contact li {
+      color: #a8a8b6;
+    }
+
+    body.dark-mode .ve-footer-title {
+      color: #eeeef4;
+    }
+
+    body.dark-mode .ve-footer-bottom {
+      background: #090912;
+    }
+
+    /* ==================================================
+       RESPONSIVE
+    ================================================== */
+    @media (max-width: 1120px) {
+      .process-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .industry-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 991px) {
+      .ve-nav-wrap {
+        display: flex;
+        align-items: center;
       }
 
       .dark-mode-toggle {
-        position: relative;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        flex: 0 0 auto;
-        width: 44px;
-        height: 44px;
-        padding: 0;
-        margin-left: 12px;
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.14);
-        color: #fff;
-        font-size: 19px;
-        cursor: pointer;
-        overflow: hidden;
-        transition: 0.3s;
+        order: 8;
+        width: 40px;
+        height: 40px;
+        margin-left: auto;
+        margin-right: 9px;
       }
 
-      .dark-mode-toggle:hover {
-        background: rgba(255, 255, 255, 0.25);
-        transform: translateY(-2px);
+      .ve-toggler {
+        order: 9;
+        margin-left: 0 !important;
       }
 
-      .dark-mode-toggle i {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transition: 0.35s;
+      .rc-hero-grid,
+      .planner-grid,
+      .faq-grid {
+        grid-template-columns: 1fr;
       }
 
-      .dark-mode-toggle .fa-moon-o {
-        opacity: 1;
-        transform: translate(-50%, -50%);
+      .ve-tech-services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .dark-mode-toggle .fa-sun-o {
-        opacity: 0;
-        transform: translate(-50%, -50%) rotate(-90deg) scale(0.5);
+      .trust-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      body.dark-mode .dark-mode-toggle .fa-moon-o {
-        opacity: 0;
-        transform: translate(-50%, -50%) rotate(90deg) scale(0.5);
+      .faq-copy {
+        position: static;
       }
 
-      body.dark-mode .dark-mode-toggle .fa-sun-o {
-        opacity: 1;
-        transform: translate(-50%, -50%);
-      }
-
-      body.dark-mode .dark-mode-toggle {
-        color: #fbbf24;
-      }
-
-      .floating-whatsapp {
-        position: fixed;
-        left: 20px;
-        bottom: 30px;
-        z-index: 9999;
-        display: flex;
+      .cta-inner {
+        align-items: flex-start;
         flex-direction: column;
-        align-items: center;
-        gap: 8px;
-        animation: wp 2s ease-in-out infinite;
       }
 
-      .floating-whatsapp a {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        background: var(--b);
-        color: #fff;
-        text-decoration: none;
-        box-shadow: 0 6px 25px rgba(37, 117, 171, 0.4);
-        transition: 0.3s;
+      .cta-actions {
+        justify-content: flex-start;
       }
 
-      .floating-whatsapp a:hover {
-        background: var(--p);
-        color: #fff;
-        transform: scale(1.1) translateY(-4px);
+      .heading h2,
+      .planner-copy h2,
+      .faq-copy h2,
+      .ve-tech-services-section .ve-section-header h2 {
+        font-size: 38px;
       }
+    }
 
-      .floating-whatsapp a i {
-        font-size: 32px;
-      }
-
-      .floating-whatsapp a:before {
-        content: "";
-        position: absolute;
-        inset: -8px;
-        border: 2px solid rgba(37, 117, 171, 0.3);
-        border-radius: 50%;
-        animation: ripple 2s ease-out infinite;
-      }
-
-      .whatsapp-label {
-        padding: 6px 14px;
-        border-radius: 999px;
-        background: var(--b);
-        color: #fff;
-        font-size: 12px;
-        font-weight: 700;
-        white-space: nowrap;
-        opacity: 0;
-        transform: translateX(-10px);
-        transition: 0.3s;
-      }
-
-      .floating-whatsapp:hover .whatsapp-label {
-        opacity: 1;
-        transform: none;
-      }
-
-      @keyframes wp {
-        50% {
-          transform: scale(1.05);
-        }
-      }
-
-      @keyframes ripple {
-        0% {
-          opacity: 1;
-          transform: scale(0.8);
-        }
-
-        100% {
-          opacity: 0;
-          transform: scale(1.5);
-        }
-      }
-
+    @media (max-width: 767px) {
       .rc-hero {
-        position: relative;
-        min-height: 690px;
-        display: flex;
-        align-items: center;
-        overflow: hidden;
-        isolation: isolate;
-        background:
-          linear-gradient(
-            112deg,
-            rgba(7, 34, 52, 0.98),
-            rgba(14, 72, 105, 0.93) 54%,
-            rgba(37, 117, 171, 0.62)
-          ),
-          url("img/bg-img/rad2.png")
-            center/cover no-repeat;
-      }
-
-      .rc-hero:before,
-      .rc-hero:after {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        border-radius: 50%;
-      }
-
-      .rc-hero:before {
-        width: 520px;
-        height: 520px;
-        top: -240px;
-        right: -120px;
-        border: 72px solid rgba(255, 255, 255, 0.065);
-      }
-
-      .rc-hero:after {
-        width: 340px;
-        height: 340px;
-        left: -140px;
-        bottom: -170px;
-        background: rgba(237, 148, 140, 0.12);
+        min-height: auto;
       }
 
       .rc-hero-grid {
-        display: grid;
-        grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr);
-        align-items: center;
-        gap: 60px;
-        padding: 110px 0 95px;
-      }
-
-      .kicker,
-      .tag {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 15px;
-        border-radius: 999px;
-        font-size: 12px;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .kicker {
-        margin-bottom: 22px;
-        border: 1px solid rgba(255, 255, 255, 0.24);
-        background: rgba(255, 255, 255, 0.09);
-        color: #fff;
-      }
-
-      .kicker i {
-        color: var(--p);
-      }
-
-      .tag {
-        margin-bottom: 14px;
-        background: rgba(37, 117, 171, 0.1);
-        color: var(--b);
+        padding: 86px 0 72px;
       }
 
       .rc-hero h1 {
-        max-width: 770px;
-        margin: 0 0 22px;
-        color: #fff;
-        font-size: clamp(46px, 6vw, 80px);
-        line-height: 1.01;
-        letter-spacing: -0.05em;
+        font-size: 47px;
       }
 
-      .rc-hero h1 span,
-      .heading h2 span,
-      .split-copy h2 span,
-      .faq-copy h2 span,
-      .planner-copy h2 span {
-        color: var(--p);
+      .section {
+        padding: 70px 0;
       }
 
-      .rc-hero-copy > p {
-        max-width: 690px;
-        margin: 0 0 31px;
-        color: rgba(255, 255, 255, 0.82);
-        font-size: 18px;
-        line-height: 1.8;
+      .ve-tech-services-section {
+        padding: 50px 0 56px;
+      }
+
+      .ve-tech-services-grid,
+      .challenge-grid,
+      .process-grid,
+      .industry-grid,
+      .engagement-grid,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ve-tech-services-grid {
+        max-width: 460px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .group.full {
+        grid-column: auto;
+      }
+
+      .floating-whatsapp {
+        left: 15px;
+        bottom: 20px;
+      }
+
+      .floating-whatsapp a {
+        width: 50px;
+        height: 50px;
+      }
+
+      .whatsapp-label {
+        display: none;
+      }
+
+      .heading h2,
+      .planner-copy h2,
+      .faq-copy h2,
+      .ve-tech-services-section .ve-section-header h2 {
+        font-size: 34px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .rc-hero h1 {
+        font-size: 40px;
       }
 
       .actions,
       .inline-actions,
       .cta-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 14px;
-      }
-
-      .actions {
-        margin-bottom: 34px;
+        flex-direction: column;
+        align-items: stretch;
       }
 
       .btn-main,
       .btn-ghost {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        min-height: 54px;
-        padding: 0 28px;
-        border-radius: 999px;
-        font-size: 15px;
-        font-weight: 800;
-        text-decoration: none;
-        transition: 0.3s;
-      }
-
-      .btn-main {
-        border: 2px solid var(--p);
-        background: var(--p);
-        color: #fff;
-        box-shadow: 0 14px 34px rgba(237, 148, 140, 0.28);
-      }
-
-      .btn-main:hover {
-        border-color: var(--pd);
-        background: var(--pd);
-        color: #fff;
-        transform: translateY(-4px);
-      }
-
-      .btn-ghost {
-        border: 2px solid rgba(255, 255, 255, 0.32);
-        background: rgba(255, 255, 255, 0.08);
-        color: #fff;
-      }
-
-      .btn-ghost:hover {
-        border-color: #fff;
-        background: rgba(255, 255, 255, 0.16);
-        color: #fff;
-        transform: translateY(-4px);
-      }
-
-      .hero-points {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 18px 28px;
-      }
-
-      .hero-point {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        color: rgba(255, 255, 255, 0.88);
-        font-size: 14px;
-        font-weight: 700;
-      }
-
-      .hero-point i {
-        color: var(--p);
-        font-size: 18px;
-      }
-
-      .hero-panel {
-        padding: 25px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 30px;
-        background: rgba(255, 255, 255, 0.12);
-        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.28);
-        backdrop-filter: blur(18px);
-      }
-
-      .hero-image {
-        position: relative;
-        height: 285px;
-        overflow: hidden;
-        border-radius: 21px;
-      }
-
-      .hero-image img {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
       }
 
-      .hero-badge {
-        position: absolute;
-        top: 18px;
-        left: 18px;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 14px;
-        border-radius: 999px;
-        background: #fff;
-        color: var(--b);
-        font-size: 12px;
-        font-weight: 800;
-      }
-
-      .mini-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-        margin-top: 16px;
-      }
-
-      .mini {
-        padding: 17px;
-        border-radius: 17px;
-        background: rgba(7, 31, 49, 0.38);
-        color: #fff;
-      }
-
-      .mini strong {
-        display: block;
-        margin-bottom: 4px;
-        font-size: 20px;
-      }
-
-      .mini span {
-        color: rgba(255, 255, 255, 0.72);
-        font-size: 12px;
-      }
-
-      .trust {
-        padding: 28px 0;
-        border-top: 1px solid var(--line);
-        border-bottom: 1px solid var(--line);
-        background: #fff;
-      }
-
+      .mini-grid,
       .trust-grid {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 20px;
-      }
-
-      .trust-item {
-        display: flex;
-        align-items: center;
-        gap: 13px;
-        padding: 16px 18px;
-        border-radius: 16px;
-        background: var(--soft);
-      }
-
-      .trust-icon,
-      .service-icon {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        flex: 0 0 auto;
-        background: rgba(37, 117, 171, 0.12);
-        color: var(--b);
-      }
-
-      .trust-icon {
-        width: 42px;
-        height: 42px;
-        border-radius: 13px;
-      }
-
-      .trust-item strong {
-        display: block;
-        color: var(--ink);
-        font-size: 14px;
-      }
-
-      .trust-item span {
-        color: var(--muted);
-        font-size: 12px;
-      }
-
-      .section {
-        position: relative;
-        padding: 90px 0;
-      }
-
-      .soft {
-        background: var(--soft);
-      }
-
-      .heading {
-        max-width: 760px;
-        margin: 0 auto 46px;
-        text-align: center;
-      }
-
-      .heading h2,
-      .split-copy h2,
-      .faq-copy h2,
-      .planner-copy h2 {
-        margin: 0 0 16px;
-        color: var(--ink);
-        font-size: clamp(34px, 4vw, 54px);
-        line-height: 1.08;
-        letter-spacing: -0.04em;
-      }
-
-      .heading p,
-      .split-copy > p,
-      .faq-copy p,
-      .planner-copy > p {
-        margin: 0;
-        color: var(--muted);
-        font-size: 17px;
-        line-height: 1.8;
-      }
-
-      .split {
-        display: grid;
-        grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-        align-items: center;
-        gap: 64px;
-      }
-
-      .split-image {
-        position: relative;
-        min-height: 560px;
-        overflow: hidden;
-        border-radius: 32px;
-        box-shadow: 0 28px 80px rgba(20, 62, 86, 0.16);
-      }
-
-      .split-image img {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .split-image:after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          180deg,
-          rgba(7, 30, 46, 0.02) 36%,
-          rgba(7, 30, 46, 0.82)
-        );
-      }
-
-      .split-note {
-        position: absolute;
-        right: 23px;
-        bottom: 23px;
-        z-index: 2;
-        max-width: 285px;
-        padding: 21px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 21px;
-        background: rgba(255, 255, 255, 0.14);
-        color: #fff;
-        backdrop-filter: blur(16px);
-      }
-
-      .split-note strong {
-        display: block;
-        margin-bottom: 6px;
-        font-size: 21px;
-      }
-
-      .split-note span {
-        color: rgba(255, 255, 255, 0.8);
-        font-size: 13px;
-        line-height: 1.6;
-      }
-
-      .checks {
-        display: grid;
-        gap: 15px;
-        margin: 28px 0 31px;
-      }
-
-      .check {
-        display: flex;
-        align-items: flex-start;
-        gap: 13px;
-      }
-
-      .check i {
-        margin-top: 4px;
-        color: var(--p);
-        font-size: 18px;
-      }
-
-      .check strong {
-        display: block;
-        margin-bottom: 4px;
-        color: var(--ink);
-        font-size: 15px;
-      }
-
-      .check span {
-        color: var(--muted);
-        font-size: 14px;
-        line-height: 1.65;
-      }
-
-      .inline-actions .btn-ghost {
-        border-color: rgba(37, 117, 171, 0.2);
-        background: rgba(37, 117, 171, 0.06);
-        color: var(--b);
-      }
-
-      .inline-actions .btn-ghost:hover {
-        border-color: var(--b);
-        background: var(--b);
-        color: #fff;
-      }
-
-      .service-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 28px;
-      }
-
-      .service-card {
-        position: relative;
-        padding: 31px 27px 28px;
-        overflow: hidden;
-        border: 1px solid var(--line);
-        border-radius: 24px;
-        background: #fff;
-        box-shadow: var(--shadow);
-        transition: 0.35s;
-      }
-
-      .service-card:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 4px;
-        background: linear-gradient(90deg, var(--b), var(--p));
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: 0.35s;
-      }
-
-      .service-card:hover {
-        border-color: rgba(237, 148, 140, 0.38);
-        transform: translateY(-10px);
-        box-shadow: 0 28px 75px rgba(31, 87, 119, 0.15);
-      }
-
-      .service-card:hover:before {
-        transform: scaleX(1);
-      }
-
-      .service-icon {
-        width: 58px;
-        height: 58px;
-        margin-bottom: 21px;
-        border-radius: 18px;
-        font-size: 24px;
-        transition: 0.35s;
-      }
-
-      .service-card:hover .service-icon {
-        background: var(--b);
-        color: #fff;
-        transform: rotate(-5deg) scale(1.06);
-      }
-
-      .service-card h3,
-      .challenge-card h3,
-      .process-card h3,
-      .engagement-card h3 {
-        margin: 0 0 11px;
-        color: var(--ink);
-      }
-
-      .service-card h3 {
-        font-size: 21px;
-      }
-
-      .service-card > p,
-      .engagement-card > p {
-        margin: 0 0 19px;
-        color: var(--muted);
-        font-size: 14px;
-        line-height: 1.75;
-      }
-
-      .list {
-        display: grid;
-        gap: 9px;
-        padding: 0;
-        margin: 0;
-        list-style: none;
-      }
-
-      .list li {
-        display: flex;
-        align-items: flex-start;
-        gap: 9px;
-        color: var(--muted);
-        font-size: 13px;
-        line-height: 1.55;
-      }
-
-      .list i {
-        margin-top: 4px;
-        color: var(--p);
-      }
-
-      .challenge-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 24px;
-      }
-
-      .challenge-card {
-        display: grid;
-        grid-template-columns: auto minmax(0, 1fr);
-        gap: 19px;
-        padding: 27px;
-        border: 1px solid var(--line);
-        border-radius: 22px;
-        background: #fff;
-        box-shadow: 0 14px 38px rgba(31, 87, 119, 0.07);
-      }
-
-      .num,
-      .step {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        background: var(--b);
-        color: #fff;
-        font-weight: 800;
-      }
-
-      .num {
-        width: 50px;
-        height: 50px;
-        border-radius: 16px;
-      }
-
-      .challenge-card:nth-child(even) .num,
-      .process-card:nth-child(even) .step {
-        background: var(--p);
-      }
-
-      .challenge-card h3 {
-        font-size: 18px;
-      }
-
-      .challenge-card p,
-      .process-card p {
-        margin: 0;
-        color: var(--muted);
-        font-size: 14px;
-        line-height: 1.7;
-      }
-
-      .outcomes {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 20px;
-        margin-top: 32px;
-      }
-
-      .outcome {
-        padding: 24px 21px;
-        border-radius: 19px;
-        background: linear-gradient(145deg, var(--deep), var(--b));
-        color: #fff;
-      }
-
-      .outcome i {
-        margin-bottom: 14px;
-        color: var(--p);
-        font-size: 24px;
-      }
-
-      .outcome strong {
-        display: block;
-        margin-bottom: 6px;
-        font-size: 17px;
-      }
-
-      .outcome span {
-        color: rgba(255, 255, 255, 0.72);
-        font-size: 12px;
-        line-height: 1.55;
-      }
-
-      .process-grid {
-        display: grid;
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-        gap: 18px;
-      }
-
-      .process-card {
-        padding: 28px 21px;
-        border: 1px solid var(--line);
-        border-radius: 22px;
-        background: #fff;
-        box-shadow: 0 14px 38px rgba(31, 87, 119, 0.07);
-      }
-
-      .step {
-        width: 46px;
-        height: 46px;
-        margin-bottom: 18px;
-        border-radius: 15px;
-      }
-
-      .process-card h3 {
-        font-size: 18px;
-      }
-
-      .industry-grid {
-        display: grid;
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-        gap: 17px;
-      }
-
-      .industry {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        min-height: 78px;
-        padding: 18px;
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        background: #fff;
-        box-shadow: 0 10px 30px rgba(31, 87, 119, 0.055);
-        transition: 0.3s;
-      }
-
-      .industry:hover {
-        border-color: rgba(237, 148, 140, 0.42);
-        transform: translateY(-5px);
-      }
-
-      .industry i {
-        color: var(--b);
-        font-size: 21px;
-      }
-
-      .industry strong {
-        color: var(--ink);
-        font-size: 14px;
-      }
-
-      .engagement-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 27px;
-      }
-
-      .engagement-card {
-        display: flex;
-        flex-direction: column;
-        padding: 31px 27px;
-        border: 1px solid var(--line);
-        border-radius: 24px;
-        background: #fff;
-        box-shadow: var(--shadow);
-      }
-
-      .engagement-card.featured {
-        border-color: rgba(237, 148, 140, 0.48);
-        background: linear-gradient(
-          150deg,
-          rgba(37, 117, 171, 0.06),
-          rgba(237, 148, 140, 0.09)
-        );
-      }
-
-      .label {
-        display: inline-flex;
-        align-self: flex-start;
-        padding: 7px 11px;
-        margin-bottom: 18px;
-        border-radius: 999px;
-        background: rgba(37, 117, 171, 0.1);
-        color: var(--b);
-        font-size: 11px;
-        font-weight: 800;
-        letter-spacing: 0.07em;
-        text-transform: uppercase;
-      }
-
-      .featured .label {
-        background: var(--p);
-        color: #fff;
-      }
-
-      .engagement-card h3 {
-        font-size: 22px;
-      }
-
-      .engagement-card .list {
-        margin-bottom: 24px;
-      }
-
-      .engagement-card .btn-main {
-        width: 100%;
-        margin-top: auto;
-      }
-
-      .planner {
-        background: linear-gradient(135deg, #0e344d, #2575ab);
-        overflow: hidden;
-      }
-
-      .planner-grid {
-        display: grid;
-        grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.16fr);
-        align-items: center;
-        gap: 60px;
-      }
-
-      .planner-copy h2 {
-        color: #fff;
-      }
-
-      .planner-copy > p {
-        color: rgba(255, 255, 255, 0.76);
-      }
-
-      .planner-points {
-        display: grid;
-        gap: 13px;
-        margin-top: 27px;
-      }
-
-      .planner-point {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        color: rgba(255, 255, 255, 0.88);
-        font-size: 14px;
-        font-weight: 700;
-      }
-
-      .planner-point i {
-        color: var(--p);
+        grid-template-columns: 1fr;
       }
 
       .planner-form {
-        padding: 30px;
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        border-radius: 26px;
-        background: rgba(255, 255, 255, 0.11);
-        box-shadow: 0 28px 70px rgba(0, 0, 0, 0.22);
-        backdrop-filter: blur(18px);
+        padding: 23px;
       }
 
-      .form-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px;
+      .ve-tech-card-image {
+        height: 150px;
       }
 
-      .group {
-        display: grid;
-        gap: 8px;
+      .ve-tech-card-body {
+        padding: 16px;
       }
 
-      .group.full {
-        grid-column: 1/-1;
+      .ve-tech-card-body h4 {
+        min-height: auto;
+        font-size: 18px;
       }
 
-      .group label {
-        color: rgba(255, 255, 255, 0.88);
-        font-size: 12px;
-        font-weight: 800;
+      .heading h2,
+      .planner-copy h2,
+      .faq-copy h2,
+      .ve-tech-services-section .ve-section-header h2 {
+        font-size: 30px;
       }
+    }
 
-      .group input,
-      .group select,
-      .group textarea {
-        width: 100%;
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        border-radius: 14px;
-        background: rgba(255, 255, 255, 0.94);
-        color: var(--ink);
-        outline: none;
-      }
-
-      .group input,
-      .group select {
-        height: 52px;
-        padding: 0 15px;
-      }
-
-      .group textarea {
-        min-height: 115px;
-        padding: 14px 15px;
-        resize: vertical;
-      }
-
-      .group input:focus,
-      .group select:focus,
-      .group textarea:focus {
-        border-color: var(--p);
-        box-shadow: 0 0 0 4px rgba(237, 148, 140, 0.18);
-      }
-
-      .planner-form .btn-main {
-        width: 100%;
-        margin-top: 18px;
-        border: 0;
-      }
-
-      .planner-note {
-        margin: 13px 0 0;
-        color: rgba(255, 255, 255, 0.66);
-        font-size: 11px;
-      }
-
-      .faq-grid {
-        display: grid;
-        grid-template-columns: minmax(280px, 0.75fr) minmax(0, 1.25fr);
-        gap: 55px;
-        align-items: start;
-      }
-
-      .faq-copy {
-        position: sticky;
-        top: 110px;
-      }
-
-      .faq-list {
-        display: grid;
-        gap: 14px;
-      }
-
-      .faq-item {
-        overflow: hidden;
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        background: #fff;
-        box-shadow: 0 10px 28px rgba(31, 87, 119, 0.05);
-      }
-
-      .faq-question {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 18px;
-        padding: 20px 22px;
-        border: 0;
-        background: transparent;
-        color: var(--ink);
-        text-align: left;
-        font-size: 15px;
-        font-weight: 800;
-        cursor: pointer;
-      }
-
-      .faq-question i {
-        color: var(--b);
-        transition: 0.3s;
-      }
-
-      .faq-item.open .faq-question i {
-        transform: rotate(45deg);
-      }
-
-      .faq-answer {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.35s ease;
-      }
-
-      .faq-answer p {
-        margin: 0;
-        padding: 0 22px 22px;
-        color: var(--muted);
-        font-size: 14px;
-        line-height: 1.75;
-      }
-
-      .cta {
-        padding: 77px 0;
-        background: linear-gradient(135deg, #173f59, #2575ab);
-        color: #fff;
-      }
-
-      .cta-inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 32px;
-      }
-
-      .cta h2 {
-        margin: 0 0 10px;
-        color: #fff;
-        font-size: clamp(34px, 4vw, 52px);
-      }
-
-      .cta p {
-        max-width: 700px;
-        margin: 0;
-        color: rgba(255, 255, 255, 0.78);
-        line-height: 1.75;
-      }
-
-      .cta-actions {
-        justify-content: flex-end;
-      }
-
-      @media (pointer: fine) and (hover: hover) {
-        html,
-        body,
-        a,
-        button,
-        input,
-        select,
-        textarea,
-        [role="button"] {
-          cursor: none !important;
-        }
+    @media (pointer: coarse), (hover: none) {
+      html,
+      body,
+      a,
+      button,
+      input,
+      select,
+      textarea,
+      [role="button"] {
+        cursor: auto !important;
       }
 
       .custom-cursor-dot,
       .custom-cursor-circle {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 1000001;
-        pointer-events: none;
-        opacity: 0;
-        transform: translate(-50%, -50%);
+        display: none !important;
       }
-
-      .custom-cursor-dot {
-        width: 7px;
-        height: 7px;
-        border-radius: 50%;
-        background: var(--p);
-      }
-
-      .custom-cursor-circle {
-        z-index: 1000000;
-        width: 38px;
-        height: 38px;
-        border: 2px solid var(--b);
-        border-radius: 50%;
-        background: rgba(37, 117, 171, 0.04);
-        transition: 0.25s;
-      }
-
-      .cursor-visible {
-        opacity: 1;
-      }
-
-      .custom-cursor-circle.cursor-hover {
-        width: 58px;
-        height: 58px;
-        border-color: var(--p);
-        background: rgba(237, 148, 140, 0.13);
-      }
-
-      .custom-cursor-dot.cursor-hover {
-        width: 9px;
-        height: 9px;
-        background: var(--b);
-      }
-
-      .custom-cursor-circle.cursor-click {
-        width: 28px;
-        height: 28px;
-      }
-
-      .cursor-hidden {
-        opacity: 0;
-      }
-
-      body.dark-mode {
-        background: #11111f;
-        color: #e8e8ef;
-      }
-
-      body.dark-mode .ve-nav-wrap {
-        background: #17172a !important;
-      }
-
-      body.dark-mode .ve-nav ul li a,
-      body.dark-mode .ve-mobile-menu ul li a {
-        color: #d7d7e2;
-      }
-
-      body.dark-mode .ve-nav ul li a:hover,
-      body.dark-mode .ve-nav ul li a.active {
-        color: var(--p);
-      }
-
-      body.dark-mode .ve-dropdown,
-      body.dark-mode .ve-mobile-menu {
-        background: #1b1b30;
-      }
-
-      body.dark-mode .section {
-        background: #11111f;
-      }
-
-      body.dark-mode .soft,
-      body.dark-mode .trust {
-        background: #17172a;
-      }
-
-      body.dark-mode .trust {
-        border-color: rgba(255, 255, 255, 0.07);
-      }
-
-      body.dark-mode .trust-item {
-        background: #212138;
-      }
-
-      body.dark-mode .heading h2,
-      body.dark-mode .split-copy h2,
-      body.dark-mode .faq-copy h2,
-      body.dark-mode .trust-item strong,
-      body.dark-mode .check strong,
-      body.dark-mode .service-card h3,
-      body.dark-mode .challenge-card h3,
-      body.dark-mode .process-card h3,
-      body.dark-mode .industry strong,
-      body.dark-mode .engagement-card h3,
-      body.dark-mode .faq-question {
-        color: #f0f0f5;
-      }
-
-      body.dark-mode .heading p,
-      body.dark-mode .split-copy > p,
-      body.dark-mode .faq-copy p,
-      body.dark-mode .trust-item span,
-      body.dark-mode .check span,
-      body.dark-mode .service-card > p,
-      body.dark-mode .list li,
-      body.dark-mode .challenge-card p,
-      body.dark-mode .process-card p,
-      body.dark-mode .engagement-card > p,
-      body.dark-mode .faq-answer p {
-        color: #adadbb;
-      }
-
-      body.dark-mode .service-card,
-      body.dark-mode .challenge-card,
-      body.dark-mode .process-card,
-      body.dark-mode .industry,
-      body.dark-mode .engagement-card,
-      body.dark-mode .faq-item {
-        border-color: rgba(255, 255, 255, 0.07);
-        background: #1d1d31;
-        box-shadow: 0 16px 46px rgba(0, 0, 0, 0.24);
-      }
-
-      body.dark-mode .engagement-card.featured {
-        background: linear-gradient(
-          150deg,
-          rgba(37, 117, 171, 0.15),
-          rgba(237, 148, 140, 0.11)
-        );
-      }
-
-      body.dark-mode .ve-footer {
-        background: #0d0d18;
-      }
-
-      body.dark-mode .ve-footer p,
-      body.dark-mode .ve-footer-links li a,
-      body.dark-mode .ve-footer-contact li {
-        color: #a8a8b6;
-      }
-
-      body.dark-mode .ve-footer-title {
-        color: #eeeef4;
-      }
-
-      body.dark-mode .ve-footer-bottom {
-        background: #090912;
-      }
-
-      @media (max-width: 1120px) {
-        .service-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .process-grid {
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
-
-        .industry-grid {
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
-
-        .outcomes {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-      }
-
-      @media (max-width: 991px) {
-        .ve-nav-wrap {
-          display: flex;
-          align-items: center;
-        }
-
-        .dark-mode-toggle {
-          order: 8;
-          width: 40px;
-          height: 40px;
-          margin-left: auto;
-          margin-right: 9px;
-        }
-
-        .ve-toggler {
-          order: 9;
-          margin-left: 0 !important;
-        }
-
-        .rc-hero-grid,
-        .split,
-        .planner-grid,
-        .faq-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .trust-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .faq-copy {
-          position: static;
-        }
-
-        .cta-inner {
-          align-items: flex-start;
-          flex-direction: column;
-        }
-
-        .cta-actions {
-          justify-content: flex-start;
-        }
-      }
-
-      @media (max-width: 767px) {
-        .rc-hero {
-          min-height: auto;
-        }
-
-        .rc-hero-grid {
-          padding: 86px 0 72px;
-        }
-
-        .rc-hero h1 {
-          font-size: 47px;
-        }
-
-        .section {
-          padding: 70px 0;
-        }
-
-        .service-grid,
-        .challenge-grid,
-        .process-grid,
-        .industry-grid,
-        .engagement-grid,
-        .form-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .group.full {
-          grid-column: auto;
-        }
-
-        .split-image {
-          min-height: 430px;
-        }
-
-        .floating-whatsapp {
-          left: 15px;
-          bottom: 20px;
-        }
-
-        .floating-whatsapp a {
-          width: 50px;
-          height: 50px;
-        }
-
-        .whatsapp-label {
-          display: none;
-        }
-      }
-
-      @media (max-width: 520px) {
-        .rc-hero h1 {
-          font-size: 40px;
-        }
-
-        .actions,
-        .inline-actions,
-        .cta-actions {
-          flex-direction: column;
-          align-items: stretch;
-        }
-
-        .btn-main,
-        .btn-ghost {
-          width: 100%;
-        }
-
-        .mini-grid,
-        .trust-grid,
-        .outcomes {
-          grid-template-columns: 1fr;
-        }
-
-        .planner-form {
-          padding: 23px;
-        }
-      }
-
-      @media (pointer: coarse), (hover: none) {
-        html,
-        body,
-        a,
-        button,
-        input,
-        select,
-        textarea,
-        [role="button"] {
-          cursor: auto !important;
-        }
-
-        .custom-cursor-dot,
-        .custom-cursor-circle {
-          display: none !important;
-        }
-      }
-
-      /* ==================================================
-         HOMEPAGE-MATCHED HEADING TYPOGRAPHY
-         Uses the same font inherited from the shared style.css file.
-      ================================================== */
-
-      /* Main section headings: homepage blue with pink highlights */
-      .heading h2,
-      .split-copy h2,
-      .faq-copy h2 {
-        color: #2575ab !important;
-        font-size: 42px;
-        font-weight: 700;
-        line-height: 1.15;
-        letter-spacing: -0.025em;
-      }
-
-      .heading h2 span,
-      .split-copy h2 span,
-      .faq-copy h2 span {
-        color: #ed948c !important;
-      }
-
-      /* Headings placed on blue/dark backgrounds stay white for contrast */
-      .planner-copy h2,
-      .cta h2 {
-        color: #ffffff !important;
-        font-size: 42px;
-        font-weight: 700;
-        line-height: 1.15;
-        letter-spacing: -0.025em;
-      }
-
-      .planner-copy h2 span,
-      .cta h2 span {
-        color: #ed948c !important;
-      }
-
-      /* Card and supporting headings: blue instead of black */
-      .trust-item strong,
-      .check strong,
-      .service-card h3,
-      .challenge-card h3,
-      .process-card h3,
-      .industry strong,
-      .engagement-card h3,
-      .faq-question {
-        color: #2575ab !important;
-        font-weight: 700;
-        transition: color 0.3s ease;
-      }
-
-      /* Pink heading hover, matching the homepage interaction colour */
-      .trust-item:hover strong,
-      .service-card:hover h3,
-      .challenge-card:hover h3,
-      .process-card:hover h3,
-      .industry:hover strong,
-      .engagement-card:hover h3,
-      .faq-question:hover {
-        color: #ed948c !important;
-      }
-
-      /* Dark-mode heading colours */
-      body.dark-mode .heading h2,
-      body.dark-mode .split-copy h2,
-      body.dark-mode .faq-copy h2,
-      body.dark-mode .trust-item strong,
-      body.dark-mode .check strong,
-      body.dark-mode .service-card h3,
-      body.dark-mode .challenge-card h3,
-      body.dark-mode .process-card h3,
-      body.dark-mode .industry strong,
-      body.dark-mode .engagement-card h3,
-      body.dark-mode .faq-question {
-        color: #7cb5df !important;
-      }
-
-      body.dark-mode .heading h2 span,
-      body.dark-mode .split-copy h2 span,
-      body.dark-mode .faq-copy h2 span,
-      body.dark-mode .planner-copy h2 span,
-      body.dark-mode .cta h2 span {
-        color: #ed948c !important;
-      }
-
-      body.dark-mode .planner-copy h2,
-      body.dark-mode .cta h2 {
-        color: #ffffff !important;
-      }
-
-      @media (max-width: 991px) {
-        .heading h2,
-        .split-copy h2,
-        .faq-copy h2,
-        .planner-copy h2,
-        .cta h2 {
-          font-size: 38px;
-        }
-      }
-
-      @media (max-width: 767px) {
-        .heading h2,
-        .split-copy h2,
-        .faq-copy h2,
-        .planner-copy h2,
-        .cta h2 {
-          font-size: 34px;
-        }
-      }
-
-      @media (max-width: 520px) {
-        .heading h2,
-        .split-copy h2,
-        .faq-copy h2,
-        .planner-copy h2,
-        .cta h2 {
-          font-size: 30px;
-        }
-      }
-    
-      /* ==================================================
-         HOMEPAGE TECHNOLOGY SERVICES DESIGN
-         Implemented on the Services page
-      ================================================== */
-
-      .ve-tech-services-section {
-        padding: 90px 0;
-        background: #f8faff;
-      }
-
-      .ve-tech-services-section .ve-section-header {
-        max-width: 760px;
-        margin: 0 auto 46px;
-        text-align: center;
-      }
-
-      .ve-tech-services-section .ve-section-tag {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 15px;
-        margin-bottom: 14px;
-        border-radius: 999px;
-        background: rgba(37, 117, 171, 0.1);
-        color: #2575ab;
-        font-size: 12px;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .ve-tech-services-section .ve-section-header h2 {
-        margin: 0 0 16px;
-        color: #2575ab;
-        font-family: inherit;
-        font-size: 42px;
-        font-weight: 700;
-        line-height: 1.15;
-        letter-spacing: -0.025em;
-      }
-
-      .ve-tech-services-section .ve-section-header h2 span {
-        color: #ed948c;
-      }
-
-      .ve-tech-services-section .ve-section-header p {
-        margin: 0;
-        color: #607985;
-        font-size: 17px;
-        line-height: 1.8;
-      }
-
-      .ve-tech-services-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 30px;
-        margin-top: 50px;
-      }
-
-      .ve-tech-card {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        border: 1px solid rgba(37, 117, 171, 0.06);
-        border-radius: 20px;
-        background: #ffffff;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
-        transition:
-          transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-          box-shadow 0.4s ease,
-          border-color 0.4s ease;
-      }
-
-      .ve-tech-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 6;
-        width: 100%;
-        height: 4px;
-        background: linear-gradient(90deg, #2575ab, #ed948c);
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.4s ease;
-      }
-
-      .ve-tech-card:hover::before {
-        transform: scaleX(1);
-      }
-
-      .ve-tech-card:hover {
-        border-color: rgba(37, 117, 171, 0.18);
-        transform: translateY(-15px) scale(1.02);
-        box-shadow: 0 25px 70px rgba(37, 117, 171, 0.12);
-      }
-
-      .ve-tech-card-image {
-        position: relative;
-        width: 100%;
-        height: 240px;
-        overflow: hidden;
-        background: #e9f0f5;
-      }
-
-      .ve-tech-card-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.6s ease;
-      }
-
-      .ve-tech-card:hover .ve-tech-card-image img {
-        transform: scale(1.08);
-      }
-
-      .ve-tech-price {
-        position: absolute;
-        top: 18px;
-        right: 18px;
-        z-index: 4;
-        padding: 8px 18px;
-        border-radius: 30px;
-        background: linear-gradient(135deg, #2575ab, #1a5a7a);
-        color: #ffffff;
-        font-size: 13px;
-        font-weight: 700;
-        letter-spacing: 0.4px;
-        box-shadow: 0 4px 20px rgba(37, 117, 171, 0.3);
-      }
-
-      .ve-tech-overlay {
-        position: absolute;
-        inset: 0;
-        z-index: 3;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(37, 117, 171, 0.85);
-        opacity: 0;
-        transition: opacity 0.4s ease;
-      }
-
-      .ve-tech-card:hover .ve-tech-overlay {
-        opacity: 1;
-      }
-
-      .ve-tech-overlay-btn {
-        display: inline-block;
-        padding: 14px 32px;
-        border-radius: 50px;
-        background: #ffffff;
-        color: #2575ab;
-        font-size: 15px;
-        font-weight: 700;
-        text-decoration: none;
-        transform: translateY(20px);
-        transition:
-          background 0.3s ease,
-          color 0.3s ease,
-          transform 0.4s ease,
-          box-shadow 0.3s ease;
-      }
-
-      .ve-tech-card:hover .ve-tech-overlay-btn {
-        transform: translateY(0);
-      }
-
-      .ve-tech-overlay-btn:hover {
-        background: #ed948c;
-        color: #ffffff;
-        transform: translateY(-4px);
-        box-shadow: 0 10px 30px rgba(237, 148, 140, 0.4);
-      }
-
-      .ve-tech-card-body {
-        position: relative;
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        padding: 25px 28px 30px;
-      }
-
-      .ve-tech-icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 60px;
-        height: 60px;
-        margin-top: -45px;
-        margin-bottom: 18px;
-        border: 5px solid #ffffff;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #2575ab, #1a5a7a);
-        box-shadow: 0 8px 25px rgba(37, 117, 171, 0.25);
-        transition:
-          transform 0.4s ease,
-          background 0.4s ease;
-      }
-
-      .ve-tech-card:hover .ve-tech-icon {
-        background: linear-gradient(135deg, #ed948c, #d97a72);
-        transform: rotate(360deg) scale(1.1);
-      }
-
-      .ve-tech-icon i {
-        color: #ffffff;
-        font-size: 25px;
-      }
-
-      .ve-tech-card-body h4 {
-        margin: 0 0 12px;
-        color: #2575ab;
-        font-family: inherit;
-        font-size: 20px;
-        font-weight: 700;
-        line-height: 1.35;
-        transition: color 0.3s ease;
-      }
-
-      .ve-tech-card:hover .ve-tech-card-body h4 {
-        color: #ed948c;
-      }
-
-      .ve-tech-card-body p {
-        margin: 0 0 20px;
-        color: #5a7a8a;
-        font-size: 14px;
-        line-height: 1.75;
-      }
-
-      .ve-tech-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        margin-top: auto;
-        color: #2575ab;
-        font-size: 14px;
-        font-weight: 700;
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
-
-      .ve-tech-link i {
-        font-size: 14px;
-        transition: transform 0.3s ease;
-      }
-
-      .ve-tech-link:hover {
-        color: #ed948c;
-      }
-
-      .ve-tech-link:hover i {
-        transform: translateX(8px);
-      }
-
-      .ve-tech-btn-wrap {
-        margin-top: 55px;
-      }
-
-      .ve-btn-tech {
-        position: relative;
-        display: inline-flex;
-        align-items: center;
-        gap: 15px;
-        padding: 18px 45px;
-        overflow: hidden;
-        border-radius: 50px;
-        background: #ed948c;
-        color: #ffffff;
-        font-size: 18px;
-        font-weight: 600;
-        letter-spacing: 0.5px;
-        text-decoration: none;
-        box-shadow: 0 8px 35px rgba(237, 148, 140, 0.25);
-        transition:
-          background 0.4s ease,
-          transform 0.4s ease,
-          box-shadow 0.4s ease;
-      }
-
-      .ve-btn-tech:hover {
-        background: linear-gradient(135deg, #ed948c, #d97a72);
-        color: #ffffff;
-        transform: translateY(-6px) scale(1.03);
-        box-shadow: 0 20px 50px rgba(237, 148, 140, 0.35);
-      }
-
-      .ve-btn-tech i {
-        transition: transform 0.35s ease;
-      }
-
-      .ve-btn-tech:hover i {
-        transform: translateX(8px);
-      }
-
-      body.dark-mode .ve-tech-services-section {
-        background: #11111f;
-      }
-
-      body.dark-mode .ve-tech-services-section .ve-section-header h2 {
-        color: #7cb5df;
-      }
-
-      body.dark-mode .ve-tech-services-section .ve-section-header h2 span {
-        color: #ed948c;
-      }
-
-      body.dark-mode .ve-tech-services-section .ve-section-header p {
-        color: #adadbb;
-      }
-
-      body.dark-mode .ve-tech-services-section .ve-section-tag {
-        background: rgba(37, 117, 171, 0.18);
-        color: #7cb5df;
-      }
-
-      body.dark-mode .ve-tech-card {
-        border-color: rgba(255, 255, 255, 0.06);
-        background: #1d1d31;
-        box-shadow: 0 12px 45px rgba(0, 0, 0, 0.3);
-      }
-
-      body.dark-mode .ve-tech-card:hover {
-        border-color: rgba(237, 148, 140, 0.25);
-        box-shadow: 0 25px 65px rgba(0, 0, 0, 0.42);
-      }
-
-      body.dark-mode .ve-tech-card-image {
-        background: #25253a;
-      }
-
-      body.dark-mode .ve-tech-icon {
-        border-color: #1d1d31;
-      }
-
-      body.dark-mode .ve-tech-card-body h4 {
-        color: #7cb5df;
-      }
-
-      body.dark-mode .ve-tech-card:hover .ve-tech-card-body h4 {
-        color: #ed948c;
-      }
-
-      body.dark-mode .ve-tech-card-body p {
-        color: #ababba;
-      }
-
-      body.dark-mode .ve-tech-link {
-        color: #77b4df;
-      }
-
-      body.dark-mode .ve-tech-link:hover {
-        color: #ed948c;
-      }
-
-      @media (max-width: 991px) {
-        .ve-tech-services-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 25px;
-        }
-
-        .ve-tech-services-section .ve-section-header h2 {
-          font-size: 38px;
-        }
-      }
-
-      @media (max-width: 767px) {
-        .ve-tech-services-section {
-          padding: 70px 0;
-        }
-
-        .ve-tech-services-grid {
-          grid-template-columns: 1fr;
-          max-width: 470px;
-          margin-right: auto;
-          margin-left: auto;
-        }
-
-        .ve-tech-card-image {
-          height: 210px;
-        }
-
-        .ve-tech-services-section .ve-section-header h2 {
-          font-size: 34px;
-        }
-
-        .ve-tech-card-body {
-          padding: 22px 23px 27px;
-        }
-      }
-
-      @media (max-width: 520px) {
-        .ve-tech-services-section .ve-section-header h2 {
-          font-size: 30px;
-        }
-
-        .ve-tech-card-image {
-          height: 180px;
-        }
-
-        .ve-tech-price {
-          top: 14px;
-          right: 14px;
-          padding: 6px 13px;
-          font-size: 11px;
-        }
-
-        .ve-tech-card-body h4 {
-          font-size: 19px;
-        }
-
-        .ve-btn-tech {
-          padding: 14px 27px;
-          font-size: 15px;
-        }
-      }
-
-    
-
-/* ==================================================
-   COMPACT SERVICE CARDS — HOMEPAGE MATCH
-   Top-right badges removed
-================================================== */
-
-.ve-tech-services-section {
-  padding-top: 58px !important;
-  padding-bottom: 64px !important;
-}
-
-.ve-tech-services-section .ve-section-header {
-  margin-bottom: 28px !important;
-}
-
-.ve-tech-services-grid {
-  gap: 22px !important;
-  margin-top: 30px !important;
-}
-
-.ve-tech-card {
-  height: 100% !important;
-  border-radius: 20px !important;
-  box-shadow: 0 13px 38px rgba(20, 62, 86, 0.10) !important;
-}
-
-.ve-tech-card:hover {
-  transform: translateY(-7px) !important;
-  box-shadow: 0 22px 54px rgba(31, 87, 119, 0.15) !important;
-}
-
-.ve-tech-card-image {
-  height: 158px !important;
-}
-
-.ve-tech-price {
-  display: none !important;
-}
-
-.ve-tech-overlay {
-  background: rgba(37, 117, 171, 0.78) !important;
-}
-
-.ve-tech-overlay-btn {
-  padding: 10px 24px !important;
-  font-size: 12.5px !important;
-}
-
-.ve-tech-card-body {
-  padding: 18px 18px 19px !important;
-}
-
-.ve-tech-icon {
-  width: 50px !important;
-  height: 50px !important;
-  margin-top: -37px !important;
-  margin-bottom: 13px !important;
-  border-width: 4px !important;
-  box-shadow: 0 7px 20px rgba(37, 117, 171, 0.22) !important;
-}
-
-.ve-tech-icon i {
-  font-size: 21px !important;
-}
-
-.ve-tech-card-body h4 {
-  min-height: 46px !important;
-  margin: 0 0 8px !important;
-  font-size: 18px !important;
-  line-height: 1.28 !important;
-}
-
-.ve-tech-card-body p {
-  display: -webkit-box !important;
-  min-height: 57px !important;
-  margin: 0 0 13px !important;
-  overflow: hidden !important;
-  font-size: 12.5px !important;
-  line-height: 1.52 !important;
-  -webkit-box-orient: vertical !important;
-  -webkit-line-clamp: 3 !important;
-}
-
-.ve-tech-link {
-  margin-top: auto !important;
-  padding-top: 11px !important;
-  border-top: 1px solid rgba(37, 117, 171, 0.09) !important;
-  font-size: 12px !important;
-}
-
-.ve-tech-link i {
-  font-size: 12px !important;
-}
-
-.ve-tech-btn-wrap {
-  margin-top: 30px !important;
-}
-
-.ve-btn-tech {
-  padding: 13px 29px !important;
-  font-size: 14px !important;
-}
-
-body.dark-mode .ve-tech-icon {
-  border-color: #1d1d31 !important;
-}
-
-@media (max-width: 991px) {
-  .ve-tech-services-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  }
-
-  .ve-tech-card-image {
-    height: 168px !important;
-  }
-}
-
-@media (max-width: 767px) {
-  .ve-tech-services-section {
-    padding-top: 50px !important;
-    padding-bottom: 56px !important;
-  }
-
-  .ve-tech-services-grid {
-    grid-template-columns: 1fr !important;
-    max-width: 460px !important;
-    margin-right: auto !important;
-    margin-left: auto !important;
-  }
-
-  .ve-tech-card-image {
-    height: 170px !important;
-  }
-}
-
-@media (max-width: 520px) {
-  .ve-tech-card-image {
-    height: 150px !important;
-  }
-
-  .ve-tech-card-body {
-    padding: 16px !important;
-  }
-
-  .ve-tech-card-body h4 {
-    min-height: auto !important;
-    font-size: 18px !important;
-  }
-}
-</style>
+    }
+  </style>
 </head>
+
 <body>
-<div aria-hidden="true" class="custom-cursor-circle" id="customCursorCircle"></div>
-<div aria-hidden="true" class="custom-cursor-dot" id="customCursorDot"></div>
-<div class="preloader d-flex align-items-center justify-content-center">
-<div class="lds-ellipsis">
-<div style="background-color: #2575ab"></div>
-<div style="background-color: #2575ab"></div>
-<div style="background-color: #2575ab"></div>
-<div style="background-color: #2575ab"></div>
-</div>
-</div>
-<div class="floating-whatsapp">
-<a aria-label="Discuss consulting on WhatsApp" href="https://wa.me/2348146710908?text=Hello%20Radiant%20Cullings%2C%20I%20want%20to%20discuss%20a%20technology%20consulting%20need" rel="noopener noreferrer" target="_blank"><i class="fa fa-whatsapp"></i></a><span class="whatsapp-label">Discuss consulting</span>
-</div>
-<header class="ve-header" id="ve-sticky">
-<div class="container-fluid ve-nav-wrap" style="background-color: #2575ab">
-<!-- Logo -->
-<div class="ve-logo">
-<a href="index.html">
-<img alt="Radiant Cullings Logo" class="ve-logo-img" src="img/core-img/radiant_cullings.png" style="max-width: 120px"/>
-</a>
-</div>
-<!-- Desktop Navigation -->
-<nav aria-label="Main navigation" class="ve-nav">
-<ul>
-<li>
-<a href="index.html">Home</a>
-</li>
-<li class="has-drop">
-<a href="about.html">
-                About
-                <!-- <i
-                                class="fa fa-angle-down"
-                                aria-hidden="true"
-                            ></i> -->
-</a>
-<!-- <ul class="ve-dropdown">
-                            <li>
-                                <a href="about.html">About Us</a>
-                            </li>
+  <div
+    id="customCursorCircle"
+    class="custom-cursor-circle"
+    aria-hidden="true"
+  ></div>
+  <div
+    id="customCursorDot"
+    class="custom-cursor-dot"
+    aria-hidden="true"
+  ></div>
 
-                            <li>
-                                <a href="services.html">Our Services</a>
-                            </li>
+  <div class="preloader d-flex align-items-center justify-content-center">
+    <div class="lds-ellipsis">
+      <div style="background-color: #2575ab"></div>
+      <div style="background-color: #2575ab"></div>
+      <div style="background-color: #2575ab"></div>
+      <div style="background-color: #2575ab"></div>
+    </div>
+  </div>
 
-                            <li>
-                                <a href="portfolio.html">Portfolio</a>
-                            </li>
+  <div class="floating-whatsapp">
+    <a
+      href="https://wa.me/2348146710908?text=Hello%20Radiant%20Cullings%2C%20I%20want%20to%20discuss%20a%20technology%20consulting%20need"
+      aria-label="Discuss consulting on WhatsApp"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <i class="fa fa-whatsapp"></i>
+    </a>
+    <span class="whatsapp-label">Discuss consulting</span>
+  </div>
 
-                            <li>
-                                <a href="products.html">Products</a>
-                            </li>
-                        </ul> -->
-</li>
-<li class="has-drop">
-<a class="active" href="services.html">
-                Services
+  <header class="ve-header" id="ve-sticky">
+    <div
+      class="container-fluid ve-nav-wrap"
+      style="background-color: #2575ab"
+    >
+      <div class="ve-logo">
+        <a href="index.html">
+          <img
+            src="img/core-img/radiant_cullings.png"
+            alt="Radiant Cullings Logo"
+            class="ve-logo-img"
+            style="max-width: 120px"
+          />
+        </a>
+      </div>
 
-                <!-- <i
-                                class="fa fa-angle-down"
-                                aria-hidden="true"
-                            ></i> -->
-</a>
-</li>
-<li>
-<a href="courses.html">Courses</a>
-</li>
-<li>
-<a href="blogs.html">Blogs</a>
-</li>
-<li>
-<a href="contact.html">Contact</a>
-</li>
-</ul>
-</nav>
-<!-- CTA -->
-<div class="ve-nav-cta">
-<a class="ve-cta-btn text-white" href="contact.html">
-            Get Started
+      <nav class="ve-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a class="active" href="services.html">Services</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="blogs.html">Blogs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
 
-            <i aria-hidden="true" class="fa fa-arrow-right"></i>
-</a>
-</div>
-<!-- Dark and Light Mode Button -->
-<button aria-label="Switch to dark mode" aria-pressed="false" class="dark-mode-toggle" id="darkModeToggle" title="Switch to dark mode" type="button">
-<i aria-hidden="true" class="fa fa-moon-o"></i>
-<i aria-hidden="true" class="fa fa-sun-o"></i>
-</button>
-<!-- Hamburger Button -->
-<button aria-controls="ve-mobile-menu" aria-expanded="false" aria-label="Open navigation menu" class="ve-toggler" id="ve-toggle" type="button">
-<span></span>
-<span></span>
-<span></span>
-</button>
-</div>
-<!-- Mobile Menu -->
-<div class="ve-mobile-menu" id="ve-mobile-menu">
-<ul>
-<li>
-<a href="index.html">Home</a>
-</li>
-<li>
-<a href="about.html">About</a>
-</li>
-<li>
-<a class="active" href="services.html">Services</a>
-</li>
-<li>
-<a href="courses.html">Courses</a>
-</li>
-<li>
-<a href="blogs.html">Blogs</a>
-</li>
-<li>
-<a href="contact.html">Contact</a>
-</li>
-</ul>
-</div>
-</header>
-<section class="rc-hero">
-<div class="container">
-<div class="rc-hero-grid">
-<div class="rc-hero-copy">
-<span class="kicker"><i class="fa fa-lightbulb-o"></i> Technology Consulting</span>
-<h1>Turn Technology Into a <span>Business Advantage.</span></h1>
-<p>
-              Radiant Cullings helps organisations and individuals make informed
-              technology decisions, improve operational efficiency, strengthen
-              security, deliver complex projects, and adopt digital solutions
-              that support sustainable growth.
-            </p>
-<div class="actions">
-<a class="btn-main" href="#consultationPlanner">Book a Consultation <i class="fa fa-calendar-check-o"></i></a><a class="btn-ghost" href="#services">Explore Our Expertise <i class="fa fa-arrow-down"></i></a>
-</div>
-<div class="hero-points">
-<div class="hero-point">
-<i class="fa fa-check-circle"></i> Strategy aligned with
-                business goals
-              </div>
-<div class="hero-point">
-<i class="fa fa-check-circle"></i> Practical implementation
-                guidance
-              </div>
-<div class="hero-point">
-<i class="fa fa-check-circle"></i> Tailored solutions for every
-                sector
-              </div>
-</div>
-</div>
-<div class="hero-panel">
-<div class="hero-image">
-<img alt="Consultants collaborating with business leaders" src="img/bg-img/rad8.png"/><span class="hero-badge"><i class="fa fa-compass"></i> Strategy to execution</span>
-</div>
-<div class="mini-grid">
-<div class="mini">
-<strong>Strategic</strong><span>Technology tied to measurable goals</span>
-</div>
-<div class="mini">
-<strong>Practical</strong><span>Clear recommendations that can be implemented</span>
-</div>
-<div class="mini">
-<strong>Secure</strong><span>Risk-aware solutions built for resilience</span>
-</div>
-<div class="mini">
-<strong>Scalable</strong><span>Systems designed to support growth</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="trust">
-<div class="container">
-<div class="trust-grid">
-<div class="trust-item">
-<span class="trust-icon"><i class="fa fa-bullseye"></i></span>
-<div>
-<strong>Business-Aligned</strong><span>Built around real priorities</span>
-</div>
-</div>
-<div class="trust-item">
-<span class="trust-icon"><i class="fa fa-cogs"></i></span>
-<div>
-<strong>Implementation-Focused</strong><span>Advice that moves into action</span>
-</div>
-</div>
-<div class="trust-item">
-<span class="trust-icon"><i class="fa fa-shield"></i></span>
-<div>
-<strong>Risk-Aware</strong><span>Security considered early</span>
-</div>
-</div>
-<div class="trust-item">
-<span class="trust-icon"><i class="fa fa-line-chart"></i></span>
-<div>
-<strong>Outcome-Driven</strong><span>Focused on value and performance</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- <section class="section">
-      <div class="container">
-        <div class="split">
-          <div class="split-image">
-            <img
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1100&h=1200&fit=crop"
-              alt="Technology consultants working with a business team"
-            />
-            <div class="split-note">
-              <strong>Clear Direction</strong
-              ><span
-                >Understand where you are, where you need to go, and the
-                practical steps required.</span
-              >
+      <div class="ve-nav-cta">
+        <a class="ve-cta-btn text-white" href="contact.html">
+          Get Started
+          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <button
+        id="darkModeToggle"
+        class="dark-mode-toggle"
+        type="button"
+        aria-label="Switch to dark mode"
+        aria-pressed="false"
+        title="Switch to dark mode"
+      >
+        <i class="fa fa-moon-o" aria-hidden="true"></i>
+        <i class="fa fa-sun-o" aria-hidden="true"></i>
+      </button>
+
+      <button
+        id="ve-toggle"
+        class="ve-toggler"
+        type="button"
+        aria-controls="ve-mobile-menu"
+        aria-expanded="false"
+        aria-label="Open navigation menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div class="ve-mobile-menu" id="ve-mobile-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="active" href="services.html">Services</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- <section class="rc-hero">
+    <div class="container">
+      <div class="rc-hero-grid">
+        <div class="rc-hero-copy">
+          <span class="kicker">
+            <i class="fa fa-lightbulb-o"></i>
+            Technology Consulting
+          </span>
+
+          <h1>Turn Technology Into a <span>Business Advantage.</span></h1>
+
+          <p>
+            Radiant Cullings helps organisations and individuals make informed
+            technology decisions, improve operational efficiency, strengthen
+            security, deliver complex projects, and adopt digital solutions
+            that support sustainable growth.
+          </p>
+
+          <div class="actions">
+            <a class="btn-main" href="#consultationPlanner">
+              Book a Consultation
+              <i class="fa fa-calendar-check-o"></i>
+            </a>
+            <a class="btn-ghost" href="#services">
+              Explore Our Expertise
+              <i class="fa fa-arrow-down"></i>
+            </a>
+          </div>
+
+          <div class="hero-points">
+            <div class="hero-point">
+              <i class="fa fa-check-circle"></i>
+              Strategy aligned with business goals
+            </div>
+            <div class="hero-point">
+              <i class="fa fa-check-circle"></i>
+              Practical implementation guidance
+            </div>
+            <div class="hero-point">
+              <i class="fa fa-check-circle"></i>
+              Tailored solutions for every sector
             </div>
           </div>
-          <div class="split-copy">
-            <span class="tag"
-              ><i class="fa fa-map-signs"></i> From Complexity to Clarity</span
-            >
-            <h2>Better Decisions. <span>Stronger Systems.</span></h2>
-            <p>
-              Technology investments should improve performance, reduce
-              friction, protect critical assets, and create measurable value.
-              Our approach connects business needs with the right technology,
-              people, processes, and delivery plan.
-            </p>
-            <div class="checks">
-              <div class="check">
-                <i class="fa fa-check-circle"></i>
-                <div>
-                  <strong>Understand the real problem</strong
-                  ><span
-                    >We begin with your goals, operational challenges, risks,
-                    users, and current capabilities.</span
-                  >
-                </div>
-              </div>
-              <div class="check">
-                <i class="fa fa-check-circle"></i>
-                <div>
-                  <strong>Prioritise the right investments</strong
-                  ><span
-                    >Focus resources where they create the greatest value.</span
-                  >
-                </div>
-              </div>
-              <div class="check">
-                <i class="fa fa-check-circle"></i>
-                <div>
-                  <strong>Move from advice to execution</strong
-                  ><span
-                    >Recommendations are supported with practical roadmaps and
-                    implementation guidance.</span
-                  >
-                </div>
-              </div>
+        </div>
+
+        <div class="hero-panel">
+          <div class="hero-image">
+            <img
+              src="img/bg-img/rad8.png"
+              alt="Consultants collaborating with business leaders"
+            />
+            <span class="hero-badge">
+              <i class="fa fa-compass"></i>
+              Strategy to execution
+            </span>
+          </div>
+
+          <div class="mini-grid">
+            <div class="mini">
+              <strong>Strategic</strong>
+              <span>Technology tied to measurable goals</span>
             </div>
-            <div class="inline-actions">
-              <a href="#services" class="btn-main"
-                >View Consulting Services <i class="fa fa-arrow-down"></i></a
-              ><a href="about.html" class="btn-ghost"
-                >About Radiant Cullings <i class="fa fa-arrow-right"></i
-              ></a>
+            <div class="mini">
+              <strong>Practical</strong>
+              <span>Clear recommendations that can be implemented</span>
+            </div>
+            <div class="mini">
+              <strong>Secure</strong>
+              <span>Risk-aware solutions built for resilience</span>
+            </div>
+            <div class="mini">
+              <strong>Scalable</strong>
+              <span>Systems designed to support growth</span>
             </div>
           </div>
         </div>
       </div>
-    </section> -->
-<section class="ve-tech-services-section" id="services">
-<div class="container">
-<div class="ve-section-header text-center">
-<span class="ve-section-tag">
-<i aria-hidden="true" class="fa fa-briefcase"></i>
-            Consulting Expertise
+    </div>
+  </section> -->
+
+  <!-- <section class="trust">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-item">
+          <span class="trust-icon"><i class="fa fa-bullseye"></i></span>
+          <div>
+            <strong>Business-Aligned</strong>
+            <span>Built around real priorities</span>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <span class="trust-icon"><i class="fa fa-cogs"></i></span>
+          <div>
+            <strong>Implementation-Focused</strong>
+            <span>Advice that moves into action</span>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <span class="trust-icon"><i class="fa fa-shield"></i></span>
+          <div>
+            <strong>Risk-Aware</strong>
+            <span>Security considered early</span>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <span class="trust-icon"><i class="fa fa-line-chart"></i></span>
+          <div>
+            <strong>Outcome-Driven</strong>
+            <span>Focused on value and performance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- ==================================================
+       TECH CONSULTING SERVICES WITH PAGINATION
+       3 SERVICES PER PAGE (ONE ROW)
+  ================================================== -->
+  <section class="ve-tech-services-section" id="services">
+    <div class="container">
+      <div class="ve-section-header text-center">
+        <br> <br> <br>
+        <span class="ve-section-tag">
+          <i class="fa fa-briefcase" aria-hidden="true"></i>
+          Consulting Expertise
+        </span>
+
+        <h2>Tech Consulting <span>Services</span></h2>
+
+        <p>
+          From strategy and cybersecurity to project delivery, process
+          improvement, infrastructure, data, cloud, governance, and digital
+          transformation.
+        </p>
+      </div>
+
+      <p
+        id="servicesResultsStatus"
+        class="ve-tech-results-status"
+        aria-live="polite"
+      ></p>
+
+      <div class="ve-tech-services-grid" id="servicesGrid">
+        <!-- Consulting service cards are injected by JavaScript. -->
+      </div>
+
+      <nav
+        class="rc-pagination"
+        id="servicesPagination"
+        aria-label="Technology consulting service pagination"
+      ></nav>
+
+      <div class="ve-tech-btn-wrap">
+        <a class="ve-btn-tech" href="#consultationPlanner">
+          <span>Plan Your Consultation</span>
+          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="heading">
+        <span class="tag">
+          <i class="fa fa-exclamation-circle"></i>
+          Challenges We Help Solve
+        </span>
+        <h2>When Technology Is Not Delivering <span>Enough Value</span></h2>
+        <p>
+          Turn uncertainty, fragmented systems, delivery problems, and
+          security concerns into clear priorities and practical action.
+        </p>
+      </div>
+
+      <div class="challenge-grid">
+        <article class="challenge-card">
+          <span class="num">01</span>
+          <div>
+            <h3>Unclear Technology Direction</h3>
+            <p>
+              Investments and priorities are not connected to a clear business
+              roadmap.
+            </p>
+          </div>
+        </article>
+
+        <article class="challenge-card">
+          <span class="num">02</span>
+          <div>
+            <h3>Inefficient Processes</h3>
+            <p>
+              Manual workflows and disconnected systems are slowing teams
+              down.
+            </p>
+          </div>
+        </article>
+
+        <article class="challenge-card">
+          <span class="num">03</span>
+          <div>
+            <h3>Cybersecurity Concerns</h3>
+            <p>
+              Leadership needs clearer visibility into risks, controls,
+              policies, and readiness.
+            </p>
+          </div>
+        </article>
+
+        <article class="challenge-card">
+          <span class="num">04</span>
+          <div>
+            <h3>Projects Struggling to Deliver</h3>
+            <p>
+              Weak governance, limited visibility, and unmanaged risks affect
+              outcomes.
+            </p>
+          </div>
+        </article>
+
+        <article class="challenge-card">
+          <span class="num">05</span>
+          <div>
+            <h3>Low Technology Adoption</h3>
+            <p>
+              New tools have been introduced without enough training and
+              change support.
+            </p>
+          </div>
+        </article>
+
+        <article class="challenge-card">
+          <span class="num">06</span>
+          <div>
+            <h3>Growth Without Scalable Systems</h3>
+            <p>
+              Existing technology cannot support the next stage of business
+              growth.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft">
+    <div class="container">
+      <div class="heading">
+        <span class="tag">
+          <i class="fa fa-sitemap"></i>
+          How We Work
+        </span>
+        <h2>A Clear Path From <span>Discovery to Results</span></h2>
+        <p>
+          A disciplined process that keeps decisions grounded, transparent,
+          and connected to outcomes.
+        </p>
+      </div>
+
+      <div class="process-grid">
+        <article class="process-card">
+          <span class="step">01</span>
+          <h3>Discover</h3>
+          <p>
+            Understand goals, stakeholders, challenges, constraints, risks,
+            and the current environment.
+          </p>
+        </article>
+
+        <article class="process-card">
+          <span class="step">02</span>
+          <h3>Assess</h3>
+          <p>
+            Review systems, processes, capabilities, gaps, and improvement
+            opportunities.
+          </p>
+        </article>
+
+        <article class="process-card">
+          <span class="step">03</span>
+          <h3>Design</h3>
+          <p>
+            Create a practical strategy, roadmap, operating model, or solution
+            plan.
+          </p>
+        </article>
+
+        <article class="process-card">
+          <span class="step">04</span>
+          <h3>Deliver</h3>
+          <p>
+            Support implementation, governance, vendor coordination, training,
+            and adoption.
+          </p>
+        </article>
+
+        <article class="process-card">
+          <span class="step">05</span>
+          <h3>Optimise</h3>
+          <p>
+            Review results, resolve gaps, strengthen capability, and improve
+            performance.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="heading">
+        <span class="tag">
+          <i class="fa fa-building"></i>
+          Industries We Support
+        </span>
+        <h2>Consulting Built Around <span>Your Sector</span></h2>
+        <p>
+          Recommendations adapted to your operating pressures, users, risks,
+          regulations, and growth priorities.
+        </p>
+      </div>
+
+      <div class="industry-grid">
+        <div class="industry">
+          <i class="fa fa-university"></i>
+          <strong>Government</strong>
+        </div>
+        <div class="industry">
+          <i class="fa fa-graduation-cap"></i>
+          <strong>Education</strong>
+        </div>
+        <div class="industry">
+          <i class="fa fa-money"></i>
+          <strong>Financial Services</strong>
+        </div>
+        <div class="industry">
+          <i class="fa fa-heartbeat"></i>
+          <strong>Healthcare</strong>
+        </div>
+        <div class="industry">
+          <i class="fa fa-leaf"></i>
+          <strong>Agriculture</strong>
+        </div>
+        <div class="industry">
+          <i class="fa fa-industry"></i>
+          <strong>Oil &amp; Gas</strong>
+        </div>
+        <div class="industry">
+          <i class="fa fa-rocket"></i>
+          <strong>Startups</strong>
+        </div>
+        <div class="industry">
+          <i class="fa fa-briefcase"></i>
+          <strong>SMEs</strong>
+        </div>
+        <div class="industry">
+          <i class="fa fa-handshake-o"></i>
+          <strong>NGOs</strong>
+        </div>
+        <div class="industry">
+          <i class="fa fa-building-o"></i>
+          <strong>Corporate Organisations</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft">
+    <div class="container">
+      <div class="heading">
+        <span class="tag">
+          <i class="fa fa-handshake-o"></i>
+          Ways to Work With Us
+        </span>
+        <h2>Flexible Consulting <span>Engagements</span></h2>
+        <p>
+          Choose focused advice, a complete assessment and roadmap,
+          implementation support, or ongoing strategic advisory.
+        </p>
+      </div>
+
+      <div class="engagement-grid">
+        <article class="engagement-card">
+          <span class="label">Focused Support</span>
+          <h3>Advisory Session</h3>
+          <p>
+            Focused consultation for a specific technology decision or
+            challenge.
+          </p>
+          <ul class="list">
+            <li><i class="fa fa-check-circle"></i>Defined issue or decision</li>
+            <li><i class="fa fa-check-circle"></i>Expert recommendations</li>
+            <li><i class="fa fa-check-circle"></i>Clear next actions</li>
+          </ul>
+          <a class="btn-main" href="#consultationPlanner">
+            Plan an Advisory Session
+            <i class="fa fa-arrow-right"></i>
+          </a>
+        </article>
+
+        <article class="engagement-card featured">
+          <span class="label">Recommended</span>
+          <h3>Assessment &amp; Roadmap</h3>
+          <p>
+            Structured review of your environment, risks, gaps, priorities,
+            and opportunities.
+          </p>
+          <ul class="list">
+            <li><i class="fa fa-check-circle"></i>Stakeholder discovery</li>
+            <li><i class="fa fa-check-circle"></i>Current-state assessment</li>
+            <li><i class="fa fa-check-circle"></i>Prioritised recommendations</li>
+            <li><i class="fa fa-check-circle"></i>Implementation roadmap</li>
+          </ul>
+          <a class="btn-main" href="#consultationPlanner">
+            Request an Assessment
+            <i class="fa fa-arrow-right"></i>
+          </a>
+        </article>
+
+        <article class="engagement-card">
+          <span class="label">Ongoing Support</span>
+          <h3>Delivery &amp; Retained Advisory</h3>
+          <p>
+            Continued support during implementation, transformation, or
+            project delivery.
+          </p>
+          <ul class="list">
+            <li><i class="fa fa-check-circle"></i>Implementation oversight</li>
+            <li><i class="fa fa-check-circle"></i>Project and vendor support</li>
+            <li><i class="fa fa-check-circle"></i>Leadership advisory</li>
+            <li><i class="fa fa-check-circle"></i>Review and optimisation</li>
+          </ul>
+          <a class="btn-main" href="#consultationPlanner">
+            Discuss Ongoing Support
+            <i class="fa fa-arrow-right"></i>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section planner" id="consultationPlanner">
+    <div class="container">
+      <div class="planner-grid">
+        <div class="planner-copy">
+          <span
+            class="tag"
+            style="background: rgba(255, 255, 255, 0.12); color: #ffffff"
+          >
+            <i class="fa fa-comments"></i>
+            Consultation Planner
           </span>
-<h2>
-            Practical Support Across Your
-            <span>Technology Journey</span>
-</h2>
-<p>
-            From strategy and cybersecurity to project delivery, process
-            improvement, infrastructure, and digital transformation.
+
+          <h2>Tell Us What You <span>Need to Improve</span></h2>
+
+          <p>
+            Complete the short planner. WhatsApp will open with a structured
+            message containing your selections.
           </p>
-</div>
-<div class="ve-tech-services-grid">
-<article class="ve-tech-card wow fadeInUp" data-wow-delay="100ms" id="consulting">
-<div class="ve-tech-card-image">
-<img alt="Technology strategy meeting" loading="lazy" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&amp;h=620&amp;fit=crop"/>
 
-<div class="ve-tech-overlay">
-<a class="ve-tech-overlay-btn" href="#consultationPlanner">
-                  Discuss Service
-                </a>
-</div>
-</div>
-<div class="ve-tech-card-body">
-<div class="ve-tech-icon">
-<i aria-hidden="true" class="fa fa-compass"></i>
-</div>
-<h4>Technology Strategy &amp; Roadmaps</h4>
-<p>
-                Align technology priorities, investments, governance, and
-                capabilities with clear organisational goals and a practical
-                implementation roadmap.
-              </p>
-<a class="ve-tech-link" href="#consultationPlanner">
-                Learn more
-                <i aria-hidden="true" class="fa fa-arrow-right"></i>
-</a>
-</div>
-</article>
-<article class="ve-tech-card wow fadeInUp" data-wow-delay="180ms" id="digital">
-<div class="ve-tech-card-image">
-<img alt="Digital transformation and connected technology" loading="lazy" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=900&amp;h=620&amp;fit=crop"/>
+          <div class="planner-points">
+            <div class="planner-point">
+              <i class="fa fa-check-circle"></i>
+              No complicated registration
+            </div>
+            <div class="planner-point">
+              <i class="fa fa-check-circle"></i>
+              Share your priority and preferred support
+            </div>
+            <div class="planner-point">
+              <i class="fa fa-check-circle"></i>
+              Continue directly on WhatsApp
+            </div>
+          </div>
+        </div>
 
-<div class="ve-tech-overlay">
-<a class="ve-tech-overlay-btn" href="#consultationPlanner">
-                  Discuss Service
-                </a>
-</div>
-</div>
-<div class="ve-tech-card-body">
-<div class="ve-tech-icon">
-<i aria-hidden="true" class="fa fa-refresh"></i>
-</div>
-<h4>Digital Transformation</h4>
-<p>
-                Modernise operations, improve customer experience, strengthen
-                agility, and support successful technology adoption across
-                your organisation.
-              </p>
-<a class="ve-tech-link" href="#consultationPlanner">
-                Learn more
-                <i aria-hidden="true" class="fa fa-arrow-right"></i>
-</a>
-</div>
-</article>
-<article class="ve-tech-card wow fadeInUp" data-wow-delay="260ms" id="cybersecurity">
-<div class="ve-tech-card-image">
-<img alt="Cybersecurity monitoring screens" loading="lazy" src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=900&amp;h=620&amp;fit=crop"/>
+        <form class="planner-form" id="consultationForm">
+          <div class="form-grid">
+            <div class="group">
+              <label for="consultName">Your name</label>
+              <input
+                id="consultName"
+                type="text"
+                placeholder="Enter your name"
+                required
+              />
+            </div>
 
-<div class="ve-tech-overlay">
-<a class="ve-tech-overlay-btn" href="#consultationPlanner">
-                  Discuss Service
-                </a>
-</div>
-</div>
-<div class="ve-tech-card-body">
-<div class="ve-tech-icon">
-<i aria-hidden="true" class="fa fa-shield"></i>
-</div>
-<h4>Cybersecurity &amp; Risk Advisory</h4>
-<p>
-                Assess risks, strengthen controls, develop policies, improve
-                awareness, and build resilience against evolving digital
-                threats.
-              </p>
-<a class="ve-tech-link" href="#consultationPlanner">
-                Learn more
-                <i aria-hidden="true" class="fa fa-arrow-right"></i>
-</a>
-</div>
-</article>
-<article class="ve-tech-card wow fadeInUp" data-wow-delay="340ms" id="project">
-<div class="ve-tech-card-image">
-<img alt="Project team planning technology delivery" loading="lazy" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=900&amp;h=620&amp;fit=crop"/>
+            <div class="group">
+              <label for="consultOrganisation">Organisation or business</label>
+              <input
+                id="consultOrganisation"
+                type="text"
+                placeholder="Organisation name"
+              />
+            </div>
 
-<div class="ve-tech-overlay">
-<a class="ve-tech-overlay-btn" href="#consultationPlanner">
-                  Discuss Service
-                </a>
-</div>
-</div>
-<div class="ve-tech-card-body">
-<div class="ve-tech-icon">
-<i aria-hidden="true" class="fa fa-tasks"></i>
-</div>
-<h4>Project &amp; Delivery Advisory</h4>
-<p>
-                Improve planning, governance, reporting, risk management, and
-                delivery assurance for complex technology and transformation
-                projects.
-              </p>
-<a class="ve-tech-link" href="#consultationPlanner">
-                Learn more
-                <i aria-hidden="true" class="fa fa-arrow-right"></i>
-</a>
-</div>
-</article>
-<article class="ve-tech-card wow fadeInUp" data-wow-delay="420ms" id="automation">
-<div class="ve-tech-card-image">
-<img alt="Technology automation and connected systems" loading="lazy" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&amp;h=620&amp;fit=crop"/>
+            <div class="group">
+              <label for="consultSector">Sector</label>
+              <select id="consultSector" required>
+                <option value="">Select your sector</option>
+                <option>Government</option>
+                <option>Education</option>
+                <option>Financial Services</option>
+                <option>Healthcare</option>
+                <option>Agriculture</option>
+                <option>Oil &amp; Gas</option>
+                <option>SME</option>
+                <option>Startup</option>
+                <option>NGO</option>
+                <option>Corporate Organisation</option>
+                <option>Individual / Professional</option>
+                <option>Other</option>
+              </select>
+            </div>
 
-<div class="ve-tech-overlay">
-<a class="ve-tech-overlay-btn" href="#consultationPlanner">
-                  Discuss Service
-                </a>
-</div>
-</div>
-<div class="ve-tech-card-body">
-<div class="ve-tech-icon">
-<i aria-hidden="true" class="fa fa-cogs"></i>
-</div>
-<h4>Process Improvement &amp; Automation</h4>
-<p>
-                Redesign workflows, remove bottlenecks, reduce repetitive
-                tasks, and identify responsible automation opportunities that
-                improve consistency.
-              </p>
-<a class="ve-tech-link" href="#consultationPlanner">
-                Learn more
-                <i aria-hidden="true" class="fa fa-arrow-right"></i>
-</a>
-</div>
-</article>
-<article class="ve-tech-card wow fadeInUp" data-wow-delay="500ms" id="infrastructure">
-<div class="ve-tech-card-image">
-<img alt="Cloud infrastructure and data centre technology" loading="lazy" src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=900&amp;h=620&amp;fit=crop"/>
+            <div class="group">
+              <label for="consultPriority">Main priority</label>
+              <select id="consultPriority" required>
+                <option value="">Select a priority</option>
+                <option>Technology Strategy &amp; Roadmap</option>
+                <option>Digital Transformation</option>
+                <option>Cybersecurity &amp; Risk</option>
+                <option>Project Management &amp; Delivery</option>
+                <option>Process Improvement &amp; Automation</option>
+                <option>Cloud, Infrastructure &amp; Networking</option>
+                <option>Data Analytics &amp; Business Intelligence</option>
+                <option>Artificial Intelligence Adoption</option>
+                <option>IT Governance &amp; Policies</option>
+                <option>Business Continuity &amp; Disaster Recovery</option>
+                <option>Business Technology Advisory</option>
+                <option>Not Sure — I Need Guidance</option>
+              </select>
+            </div>
 
-<div class="ve-tech-overlay">
-<a class="ve-tech-overlay-btn" href="#consultationPlanner">
-                  Discuss Service
-                </a>
-</div>
-</div>
-<div class="ve-tech-card-body">
-<div class="ve-tech-icon">
-<i aria-hidden="true" class="fa fa-cloud"></i>
-</div>
-<h4>Infrastructure &amp; Digital Workplace</h4>
-<p>
-                Plan secure, reliable, and scalable cloud, networking,
-                connectivity, collaboration, and business-continuity
-                environments.
-              </p>
-<a class="ve-tech-link" href="#consultationPlanner">
-                Learn more
-                <i aria-hidden="true" class="fa fa-arrow-right"></i>
-</a>
-</div>
-</article>
-</div>
-<div class="ve-tech-btn-wrap text-center wow fadeInUp" data-wow-delay="580ms">
-<a class="ve-btn-tech" href="#consultationPlanner">
-<span>Plan Your Consultation</span>
-<i aria-hidden="true" class="fa fa-arrow-right"></i>
-</a>
-</div>
-</div>
-</section>
-<section class="section">
-<div class="container">
-<div class="heading">
-<span class="tag"><i class="fa fa-exclamation-circle"></i> Challenges We Help
-            Solve</span>
-<h2>When Technology Is Not Delivering <span>Enough Value</span></h2>
-<p>
-            Turn uncertainty, fragmented systems, delivery problems, and
-            security concerns into clear priorities and practical action.
+            <div class="group">
+              <label for="consultEngagement">Preferred engagement</label>
+              <select id="consultEngagement" required>
+                <option value="">Select an engagement</option>
+                <option>Advisory Session</option>
+                <option>Assessment &amp; Roadmap</option>
+                <option>Implementation Support</option>
+                <option>Ongoing / Retained Advisory</option>
+                <option>Not Sure</option>
+              </select>
+            </div>
+
+            <div class="group">
+              <label for="consultTimeline">Preferred timeline</label>
+              <select id="consultTimeline" required>
+                <option value="">Select a timeline</option>
+                <option>As soon as possible</option>
+                <option>Within 2–4 weeks</option>
+                <option>Within 1–3 months</option>
+                <option>Planning for later</option>
+                <option>Not decided</option>
+              </select>
+            </div>
+
+            <div class="group full">
+              <label for="consultMessage">Briefly describe the challenge</label>
+              <textarea
+                id="consultMessage"
+                placeholder="What are you trying to improve, solve, protect, or deliver?"
+                required
+              ></textarea>
+            </div>
+          </div>
+
+          <button class="btn-main" type="submit">
+            Continue on WhatsApp
+            <i class="fa fa-whatsapp"></i>
+          </button>
+
+          <p class="planner-note">
+            This prepares a message and opens WhatsApp for you to review before
+            sending.
           </p>
-</div>
-<div class="challenge-grid">
-<article class="challenge-card">
-<span class="num">01</span>
-<div>
-<h3>Unclear Technology Direction</h3>
-<p>
-                Investments and priorities are not connected to a clear business
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="faq-grid">
+        <div class="faq-copy">
+          <span class="tag">
+            <i class="fa fa-question-circle"></i>
+            Frequently Asked Questions
+          </span>
+          <h2>Consulting <span>Information</span></h2>
+          <p>
+            Common questions about scope, delivery, customisation,
+            implementation support, and how to begin.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <article class="faq-item open">
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="true"
+            >
+              What types of organisations do you work with?
+              <i class="fa fa-plus"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Radiant Cullings supports government, education, financial
+                services, healthcare, agriculture, oil and gas, SMEs, NGOs,
+                startups, corporate organisations, and individual
+                professionals.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
+            >
+              Can you help us identify what technology we need?
+              <i class="fa fa-plus"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes. We assess goals, processes, systems, risks, users, and
+                constraints, then recommend priorities and a practical
                 roadmap.
               </p>
-</div>
-</article>
-<article class="challenge-card">
-<span class="num">02</span>
-<div>
-<h3>Inefficient Processes</h3>
-<p>
-                Manual workflows and disconnected systems are slowing teams
-                down.
-              </p>
-</div>
-</article>
-<article class="challenge-card">
-<span class="num">03</span>
-<div>
-<h3>Cybersecurity Concerns</h3>
-<p>
-                Leadership needs clearer visibility into risks, controls,
-                policies, and readiness.
-              </p>
-</div>
-</article>
-<article class="challenge-card">
-<span class="num">04</span>
-<div>
-<h3>Projects Struggling to Deliver</h3>
-<p>
-                Weak governance, limited visibility, and unmanaged risks affect
-                outcomes.
-              </p>
-</div>
-</article>
-<article class="challenge-card">
-<span class="num">05</span>
-<div>
-<h3>Low Technology Adoption</h3>
-<p>
-                New tools have been introduced without enough training and
-                change support.
-              </p>
-</div>
-</article>
-<article class="challenge-card">
-<span class="num">06</span>
-<div>
-<h3>Growth Without Scalable Systems</h3>
-<p>
-                Existing technology cannot support the next stage of business
-                growth.
-              </p>
-</div>
-</article>
-</div>
-<!-- <div class="outcomes">
-          <div class="outcome">
-            <i class="fa fa-map"></i><strong>Clear Roadmaps</strong
-            ><span
-              >Priorities, responsibilities, dependencies, and next
-              actions.</span
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
             >
-          </div>
-          <div class="outcome">
-            <i class="fa fa-line-chart"></i><strong>Better Performance</strong
-            ><span
-              >Improved productivity, consistency, and decision-making.</span
+              Do you only provide recommendations?
+              <i class="fa fa-plus"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                No. Depending on scope, we can support implementation
+                planning, project governance, vendor coordination, training,
+                adoption, and ongoing advisory.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
             >
-          </div>
-          <div class="outcome">
-            <i class="fa fa-shield"></i><strong>Stronger Resilience</strong
-            ><span
-              >Better risk, control, continuity, and security awareness.</span
+              Can consulting be delivered remotely?
+              <i class="fa fa-plus"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes. Consulting may be online, physical, or hybrid depending
+                on the project, stakeholders, and site requirements.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
             >
-          </div>
-          <div class="outcome">
-            <i class="fa fa-users"></i><strong>Greater Adoption</strong
-            ><span
-              >Technology supported by training and change management.</span
-            >
-          </div>
-        </div> -->
-</div>
-</section>
-<section class="section soft">
-<div class="container">
-<div class="heading">
-<span class="tag"><i class="fa fa-sitemap"></i> How We Work</span>
-<h2>A Clear Path From <span>Discovery to Results</span></h2>
-<p>
-            A disciplined process that keeps decisions grounded, transparent,
-            and connected to outcomes.
+              How is consulting cost decided?
+              <i class="fa fa-plus"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Fees depend on scope, complexity, stakeholders, timeline,
+                assessments, site work, implementation support, and
+                deliverables.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <div class="cta-inner">
+        <div>
+          <h2>Ready to Make Technology Work Better?</h2>
+          <p>
+            Start with a focused conversation about your goals, challenges,
+            risks, or transformation plans.
           </p>
-</div>
-<div class="process-grid">
-<article class="process-card">
-<span class="step">01</span>
-<h3>Discover</h3>
-<p>
-              Understand goals, stakeholders, challenges, constraints, risks,
-              and the current environment.
+        </div>
+
+        <div class="cta-actions">
+          <a class="btn-main" href="#consultationPlanner">
+            Plan Your Consultation
+            <i class="fa fa-arrow-up"></i>
+          </a>
+          <a class="btn-ghost" href="contact.html">
+            Contact the Team
+            <i class="fa fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="ve-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-lg-4 mb-50">
+          <div class="ve-footer-brand">
+            <a class="ve-footer-logo" href="index.html">
+              <img
+                src="img/core-img/radiant_cullings.png"
+                alt="Radiant Cullings"
+                style="max-width: 120px"
+              />
+            </a>
+            <p>
+              Empowering People. Transforming Businesses. Driving Innovation.
             </p>
-</article>
-<article class="process-card">
-<span class="step">02</span>
-<h3>Assess</h3>
-<p>
-              Review systems, processes, capabilities, gaps, and improvement
-              opportunities.
-            </p>
-</article>
-<article class="process-card">
-<span class="step">03</span>
-<h3>Design</h3>
-<p>
-              Create a practical strategy, roadmap, operating model, or solution
-              plan.
-            </p>
-</article>
-<article class="process-card">
-<span class="step">04</span>
-<h3>Deliver</h3>
-<p>
-              Support implementation, governance, vendor coordination, training,
-              and adoption.
-            </p>
-</article>
-<article class="process-card">
-<span class="step">05</span>
-<h3>Optimise</h3>
-<p>
-              Review results, resolve gaps, strengthen capability, and improve
-              performance.
-            </p>
-</article>
-</div>
-</div>
-</section>
-<section class="section">
-<div class="container">
-<div class="heading">
-<span class="tag"><i class="fa fa-building"></i> Industries We Support</span>
-<h2>Consulting Built Around <span>Your Sector</span></h2>
-<p>
-            Recommendations adapted to your operating pressures, users, risks,
-            regulations, and growth priorities.
+            <div class="ve-social">
+              <a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-2 mb-50">
+          <h5 class="ve-footer-title">Quick Links</h5>
+          <ul class="ve-footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 mb-50">
+          <h5 class="ve-footer-title">Our Services</h5>
+          <ul class="ve-footer-links">
+            <li><a href="courses.html">Technology Training</a></li>
+            <li><a href="consulting.html">Technology Consulting</a></li>
+            <li><a href="services.html#cybersecurity">Cybersecurity</a></li>
+            <li><a href="services.html#project">Project Management</a></li>
+            <li><a href="services.html#digital">Digital Transformation</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 mb-50">
+          <h5 class="ve-footer-title">Contact Us</h5>
+          <ul class="ve-footer-contact">
+            <li><i class="fa fa-map-marker"></i> Ikeja, Lagos, Nigeria</li>
+            <li>
+              <i class="fa fa-map-marker"></i>
+              17 Romoke Complex, Igodo Road, Magboro, Ogun State, Nigeria
+            </li>
+            <li><i class="fa fa-phone"></i> +234 814 671 0908</li>
+            <li><i class="fa fa-phone"></i> +234 703 740 3162</li>
+            <li><i class="fa fa-phone"></i> +234 704 383 7008</li>
+            <li><i class="fa fa-envelope"></i> info@radiantcullings.com</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="ve-footer-bottom">
+      <div class="container">
+        <div class="ve-footer-bottom-inner">
+          <p>
+            Copyright © <span id="currentYear"></span> Radiant Cullings. All
+            Rights Reserved.
           </p>
-</div>
-<div class="industry-grid">
-<div class="industry">
-<i class="fa fa-university"></i><strong>Government</strong>
-</div>
-<div class="industry">
-<i class="fa fa-graduation-cap"></i><strong>Education</strong>
-</div>
-<div class="industry">
-<i class="fa fa-money"></i><strong>Financial Services</strong>
-</div>
-<div class="industry">
-<i class="fa fa-heartbeat"></i><strong>Healthcare</strong>
-</div>
-<div class="industry">
-<i class="fa fa-leaf"></i><strong>Agriculture</strong>
-</div>
-<div class="industry">
-<i class="fa fa-industry"></i><strong>Oil &amp; Gas</strong>
-</div>
-<div class="industry">
-<i class="fa fa-rocket"></i><strong>Startups</strong>
-</div>
-<div class="industry">
-<i class="fa fa-briefcase"></i><strong>SMEs</strong>
-</div>
-<div class="industry">
-<i class="fa fa-handshake-o"></i><strong>NGOs</strong>
-</div>
-<div class="industry">
-<i class="fa fa-building-o"></i><strong>Corporate Organisations</strong>
-</div>
-</div>
-</div>
-</section>
-<section class="section soft">
-<div class="container">
-<div class="heading">
-<span class="tag"><i class="fa fa-handshake-o"></i> Ways to Work With Us</span>
-<h2>Flexible Consulting <span>Engagements</span></h2>
-<p>
-            Choose focused advice, a complete assessment and roadmap,
-            implementation support, or ongoing strategic advisory.
-          </p>
-</div>
-<div class="engagement-grid">
-<article class="engagement-card">
-<span class="label">Focused Support</span>
-<h3>Advisory Session</h3>
-<p>
-              Focused consultation for a specific technology decision or
-              challenge.
-            </p>
-<ul class="list">
-<li>
-<i class="fa fa-check-circle"></i>Defined issue or decision
-              </li>
-<li><i class="fa fa-check-circle"></i>Expert recommendations</li>
-<li><i class="fa fa-check-circle"></i>Clear next actions</li>
-</ul>
-<a class="btn-main" href="#consultationPlanner">Plan an Advisory Session <i class="fa fa-arrow-right"></i></a>
-</article>
-<article class="engagement-card featured">
-<span class="label">Recommended</span>
-<h3>Assessment &amp; Roadmap</h3>
-<p>
-              Structured review of your environment, risks, gaps, priorities,
-              and opportunities.
-            </p>
-<ul class="list">
-<li><i class="fa fa-check-circle"></i>Stakeholder discovery</li>
-<li>
-<i class="fa fa-check-circle"></i>Current-state assessment
-              </li>
-<li>
-<i class="fa fa-check-circle"></i>Prioritised recommendations
-              </li>
-<li><i class="fa fa-check-circle"></i>Implementation roadmap</li>
-</ul>
-<a class="btn-main" href="#consultationPlanner">Request an Assessment <i class="fa fa-arrow-right"></i></a>
-</article>
-<article class="engagement-card">
-<span class="label">Ongoing Support</span>
-<h3>Delivery &amp; Retained Advisory</h3>
-<p>
-              Continued support during implementation, transformation, or
-              project delivery.
-            </p>
-<ul class="list">
-<li>
-<i class="fa fa-check-circle"></i>Implementation oversight
-              </li>
-<li>
-<i class="fa fa-check-circle"></i>Project and vendor support
-              </li>
-<li><i class="fa fa-check-circle"></i>Leadership advisory</li>
-<li><i class="fa fa-check-circle"></i>Review and optimisation</li>
-</ul>
-<a class="btn-main" href="#consultationPlanner">Discuss Ongoing Support <i class="fa fa-arrow-right"></i></a>
-</article>
-</div>
-</div>
-</section>
-<section class="section planner" id="consultationPlanner">
-<div class="container">
-<div class="planner-grid">
-<div class="planner-copy">
-<span class="tag" style="background: rgba(255, 255, 255, 0.12); color: #fff"><i class="fa fa-comments"></i> Consultation Planner</span>
-<h2>Tell Us What You <span>Need to Improve</span></h2>
-<p>
-              Complete the short planner. WhatsApp will open with a structured
-              message containing your selections.
-            </p>
-<div class="planner-points">
-<div class="planner-point">
-<i class="fa fa-check-circle"></i>No complicated registration
-              </div>
-<div class="planner-point">
-<i class="fa fa-check-circle"></i>Share your priority and
-                preferred support
-              </div>
-<div class="planner-point">
-<i class="fa fa-check-circle"></i>Continue directly on WhatsApp
-              </div>
-</div>
-</div>
-<form class="planner-form" id="consultationForm">
-<div class="form-grid">
-<div class="group">
-<label for="consultName">Your name</label><input id="consultName" placeholder="Enter your name" required="" type="text"/>
-</div>
-<div class="group">
-<label for="consultOrganisation">Organisation or business</label><input id="consultOrganisation" placeholder="Organisation name" type="text"/>
-</div>
-<div class="group">
-<label for="consultSector">Sector</label><select id="consultSector" required="">
-<option value="">Select your sector</option>
-<option>Government</option>
-<option>Education</option>
-<option>Financial Services</option>
-<option>Healthcare</option>
-<option>Agriculture</option>
-<option>Oil &amp; Gas</option>
-<option>SME</option>
-<option>Startup</option>
-<option>NGO</option>
-<option>Corporate Organisation</option>
-<option>Individual / Professional</option>
-<option>Other</option>
-</select>
-</div>
-<div class="group">
-<label for="consultPriority">Main priority</label><select id="consultPriority" required="">
-<option value="">Select a priority</option>
-<option>Technology Strategy &amp; Roadmap</option>
-<option>Digital Transformation</option>
-<option>Cybersecurity &amp; Risk</option>
-<option>Project Management &amp; Delivery</option>
-<option>Process Improvement &amp; Automation</option>
-<option>Cloud, Infrastructure &amp; Networking</option>
-<option>Business Technology Advisory</option>
-<option>Not Sure — I Need Guidance</option>
-</select>
-</div>
-<div class="group">
-<label for="consultEngagement">Preferred engagement</label><select id="consultEngagement" required="">
-<option value="">Select an engagement</option>
-<option>Advisory Session</option>
-<option>Assessment &amp; Roadmap</option>
-<option>Implementation Support</option>
-<option>Ongoing / Retained Advisory</option>
-<option>Not Sure</option>
-</select>
-</div>
-<div class="group">
-<label for="consultTimeline">Preferred timeline</label><select id="consultTimeline" required="">
-<option value="">Select a timeline</option>
-<option>As soon as possible</option>
-<option>Within 2–4 weeks</option>
-<option>Within 1–3 months</option>
-<option>Planning for later</option>
-<option>Not decided</option>
-</select>
-</div>
-<div class="group full">
-<label for="consultMessage">Briefly describe the challenge</label><textarea id="consultMessage" placeholder="What are you trying to improve, solve, protect, or deliver?" required=""></textarea>
-</div>
-</div>
-<button class="btn-main" type="submit">
-              Continue on WhatsApp <i class="fa fa-whatsapp"></i>
-</button>
-<p class="planner-note">
-              This prepares a message and opens WhatsApp for you to review
-              before sending.
-            </p>
-</form>
-</div>
-</div>
-</section>
-<section class="section">
-<div class="container">
-<div class="faq-grid">
-<div class="faq-copy">
-<span class="tag"><i class="fa fa-question-circle"></i> Frequently Asked
-              Questions</span>
-<h2>Consulting <span>Information</span></h2>
-<p>
-              Common questions about scope, delivery, customisation,
-              implementation support, and how to begin.
-            </p>
-</div>
-<div class="faq-list">
-<article class="faq-item open">
-<button aria-expanded="true" class="faq-question" type="button">
-                What types of organisations do you work with?<i class="fa fa-plus"></i>
-</button>
-<div class="faq-answer">
-<p>
-                  Radiant Cullings supports government, education, financial
-                  services, healthcare, agriculture, oil and gas, SMEs, NGOs,
-                  startups, corporate organisations, and individual
-                  professionals.
-                </p>
-</div>
-</article>
-<article class="faq-item">
-<button aria-expanded="false" class="faq-question" type="button">
-                Can you help us identify what technology we need?<i class="fa fa-plus"></i>
-</button>
-<div class="faq-answer">
-<p>
-                  Yes. We assess goals, processes, systems, risks, users, and
-                  constraints, then recommend priorities and a practical
-                  roadmap.
-                </p>
-</div>
-</article>
-<article class="faq-item">
-<button aria-expanded="false" class="faq-question" type="button">
-                Do you only provide recommendations?<i class="fa fa-plus"></i>
-</button>
-<div class="faq-answer">
-<p>
-                  No. Depending on scope, we can support implementation
-                  planning, project governance, vendor coordination, training,
-                  adoption, and ongoing advisory.
-                </p>
-</div>
-</article>
-<article class="faq-item">
-<button aria-expanded="false" class="faq-question" type="button">
-                Can consulting be delivered remotely?<i class="fa fa-plus"></i>
-</button>
-<div class="faq-answer">
-<p>
-                  Yes. Consulting may be online, physical, or hybrid depending
-                  on the project, stakeholders, and site requirements.
-                </p>
-</div>
-</article>
-<article class="faq-item">
-<button aria-expanded="false" class="faq-question" type="button">
-                How is consulting cost decided?<i class="fa fa-plus"></i>
-</button>
-<div class="faq-answer">
-<p>
-                  Fees depend on scope, complexity, stakeholders, timeline,
-                  assessments, site work, implementation support, and
-                  deliverables.
-                </p>
-</div>
-</article>
-</div>
-</div>
-</div>
-</section>
-<section class="cta">
-<div class="container">
-<div class="cta-inner">
-<div>
-<h2>Ready to Make Technology Work Better?</h2>
-<p>
-              Start with a focused conversation about your goals, challenges,
-              risks, or transformation plans.
-            </p>
-</div>
-<div class="cta-actions">
-<a class="btn-main" href="#consultationPlanner">Plan Your Consultation <i class="fa fa-arrow-up"></i></a><a class="btn-ghost" href="contact.html">Contact the Team <i class="fa fa-envelope"></i></a>
-</div>
-</div>
-</div>
-</section>
-<footer class="ve-footer">
-<div class="container">
-<div class="row">
-<div class="col-12 col-sm-6 col-lg-4 mb-50">
-<div class="ve-footer-brand">
-<a class="ve-footer-logo" href="index.html"><img alt="Radiant Cullings" src="img/core-img/radiant_cullings.png" style="max-width: 120px"/></a>
-<p>
-                Empowering People. Transforming Businesses. Driving Innovation.
-              </p>
-<div class="ve-social">
-<a aria-label="Facebook" href="#"><i class="fa fa-facebook"></i></a><a aria-label="Twitter" href="#"><i class="fa fa-twitter"></i></a><a aria-label="LinkedIn" href="#"><i class="fa fa-linkedin"></i></a><a aria-label="Instagram" href="#"><i class="fa fa-instagram"></i></a>
-</div>
-</div>
-</div>
-<div class="col-12 col-sm-6 col-lg-2 mb-50">
-<h5 class="ve-footer-title">Quick Links</h5>
-<ul class="ve-footer-links">
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About Us</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="courses.html">Courses</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</div>
-<div class="col-12 col-sm-6 col-lg-3 mb-50">
-<h5 class="ve-footer-title">Our Services</h5>
-<ul class="ve-footer-links">
-<li><a href="courses.html">Technology Training</a></li>
-<li><a href="consulting.html">Technology Consulting</a></li>
-<li><a href="services.html#cybersecurity">Cybersecurity</a></li>
-<li><a href="services.html#project">Project Management</a></li>
-<li>
-<a href="services.html#digital">Digital Transformation</a>
-</li>
-</ul>
-</div>
-<div class="col-12 col-sm-6 col-lg-3 mb-50">
-<h5 class="ve-footer-title">Contact Us</h5>
-<ul class="ve-footer-contact">
-<li><i class="fa fa-map-marker"></i> Ikeja, Lagos, Nigeria</li>
-<li>
-<i class="fa fa-map-marker"></i> 17 Romoke Complex, Igodo Road,
-                Magboro, Ogun State, Nigeria
-              </li>
-<li><i class="fa fa-phone"></i> +234 814 671 0908</li>
-<li><i class="fa fa-phone"></i> +234 703 740 3162</li>
-<li><i class="fa fa-phone"></i> +234 704 383 7008</li>
-<li><i class="fa fa-envelope"></i> info@radiantcullings.com</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="ve-footer-bottom">
-<div class="container">
-<div class="ve-footer-bottom-inner">
-<p>
-              Copyright © <span id="currentYear"></span> Radiant Cullings.
-              All Rights Reserved.
-            </p>
-<ul>
-<li><a href="#">Privacy Policy</a></li>
-<li><a href="#">Terms of Use</a></li>
-<li><a href="#">Cookie Policy</a></li>
-</ul>
-</div>
-</div>
-</div>
-</footer>
-<script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const body = document.body,
-          root = document.documentElement,
-          toggle = document.getElementById("darkModeToggle"),
-          year = document.getElementById("currentYear");
-        try {
-          if (localStorage.getItem("darkMode") === "enabled")
-            body.classList.add("dark-mode");
-        } catch (e) {}
-        root.classList.remove("dark-theme-loading");
-        if (year) year.textContent = new Date().getFullYear();
-        function syncTheme() {
-          if (!toggle) return;
-          const d = body.classList.contains("dark-mode");
-          toggle.setAttribute("aria-pressed", d ? "true" : "false");
-          toggle.setAttribute(
-            "aria-label",
-            d ? "Switch to light mode" : "Switch to dark mode",
-          );
-          toggle.title = d ? "Switch to light mode" : "Switch to dark mode";
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const body = document.body;
+      const root = document.documentElement;
+      const toggle = document.getElementById("darkModeToggle");
+      const year = document.getElementById("currentYear");
+
+      try {
+        if (localStorage.getItem("darkMode") === "enabled") {
+          body.classList.add("dark-mode");
         }
-        if (toggle) {
-          syncTheme();
-          toggle.addEventListener("click", function () {
-            body.classList.toggle("dark-mode");
-            try {
-              localStorage.setItem(
-                "darkMode",
-                body.classList.contains("dark-mode") ? "enabled" : "disabled",
-              );
-            } catch (e) {}
-            syncTheme();
-          });
-        }
-        document.querySelectorAll(".faq-item").forEach(function (item) {
-          const q = item.querySelector(".faq-question"),
-            a = item.querySelector(".faq-answer");
-          function sync() {
-            const o = item.classList.contains("open");
-            q.setAttribute("aria-expanded", o ? "true" : "false");
-            a.style.maxHeight = o ? a.scrollHeight + "px" : "0";
-          }
-          q.addEventListener("click", function () {
-            item.classList.toggle("open");
-            sync();
-          });
-          sync();
-        });
-        const form = document.getElementById("consultationForm");
-        if (form)
-          form.addEventListener("submit", function (e) {
-            e.preventDefault();
-            const name = document.getElementById("consultName").value.trim(),
-              org = document.getElementById("consultOrganisation").value.trim(),
-              sector = document.getElementById("consultSector").value,
-              priority = document.getElementById("consultPriority").value,
-              engagement = document.getElementById("consultEngagement").value,
-              timeline = document.getElementById("consultTimeline").value,
-              msg = document.getElementById("consultMessage").value.trim();
-            const text =
-              "Hello Radiant Cullings, I would like to discuss a technology consulting need.\n\nName: " +
-              name +
-              "\nOrganisation: " +
-              (org || "Not provided") +
-              "\nSector: " +
-              sector +
-              "\nMain priority: " +
-              priority +
-              "\nPreferred engagement: " +
-              engagement +
-              "\nPreferred timeline: " +
-              timeline +
-              "\n\nChallenge or goal:\n" +
-              msg;
-            window.open(
-              "https://wa.me/2348146710908?text=" + encodeURIComponent(text),
-              "_blank",
-              "noopener,noreferrer",
+      } catch (error) {}
+
+      root.classList.remove("dark-theme-loading");
+
+      if (year) {
+        year.textContent = new Date().getFullYear();
+      }
+
+      function syncThemeButton() {
+        if (!toggle) return;
+
+        const darkModeEnabled = body.classList.contains("dark-mode");
+
+        toggle.setAttribute(
+          "aria-pressed",
+          darkModeEnabled ? "true" : "false"
+        );
+        toggle.setAttribute(
+          "aria-label",
+          darkModeEnabled ? "Switch to light mode" : "Switch to dark mode"
+        );
+        toggle.title = darkModeEnabled
+          ? "Switch to light mode"
+          : "Switch to dark mode";
+      }
+
+      if (toggle) {
+        syncThemeButton();
+
+        toggle.addEventListener("click", function () {
+          body.classList.toggle("dark-mode");
+
+          try {
+            localStorage.setItem(
+              "darkMode",
+              body.classList.contains("dark-mode") ? "enabled" : "disabled"
             );
-          });
-        const dot = document.getElementById("customCursorDot"),
-          circle = document.getElementById("customCursorCircle"),
-          fine =
-            matchMedia("(pointer:fine)").matches &&
-            matchMedia("(hover:hover)").matches;
-        if (dot && circle && fine) {
-          let mx = 0,
-            my = 0,
-            cx = 0,
-            cy = 0,
-            started = false;
-          document.addEventListener("mousemove", (e) => {
-            mx = e.clientX;
-            my = e.clientY;
-            dot.style.left = mx + "px";
-            dot.style.top = my + "px";
-            if (!started) {
-              cx = mx;
-              cy = my;
-              started = true;
-              dot.classList.add("cursor-visible");
-              circle.classList.add("cursor-visible");
-            }
-          });
-          (function animate() {
-            cx += (mx - cx) * 0.16;
-            cy += (my - cy) * 0.16;
-            circle.style.left = cx + "px";
-            circle.style.top = cy + "px";
-            requestAnimationFrame(animate);
-          })();
-          const sel =
-            "a,button,input,select,textarea,[role='button'],.service-card,.challenge-card,.process-card,.industry,.engagement-card,.faq-item";
-          document.addEventListener("mouseover", (e) => {
-            if (e.target.closest(sel)) {
-              dot.classList.add("cursor-hover");
-              circle.classList.add("cursor-hover");
-            }
-          });
-          document.addEventListener("mouseout", (e) => {
-            if (e.target.closest(sel)) {
-              dot.classList.remove("cursor-hover");
-              circle.classList.remove("cursor-hover");
-            }
-          });
-          document.addEventListener("mousedown", () =>
-            circle.classList.add("cursor-click"),
-          );
-          document.addEventListener("mouseup", () =>
-            circle.classList.remove("cursor-click"),
-          );
+          } catch (error) {}
+
+          syncThemeButton();
+        });
+      }
+
+      /* ==================================================
+         TECH CONSULTING SERVICES DATA
+         18 SERVICES = 6 PAGES (3 per page)
+      ================================================== */
+      const servicesData = [
+        {
+          id: "strategy",
+          icon: "fa-compass",
+          title: "Technology Strategy & Roadmaps",
+          desc: "Align technology priorities, investments, governance, and capabilities with organisational goals and a practical implementation roadmap.",
+          img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&h=620&fit=crop"
+        },
+        {
+          id: "digital",
+          icon: "fa-refresh",
+          title: "Digital Transformation",
+          desc: "Modernise operations, improve customer experience, strengthen agility, and support successful technology adoption across your organisation.",
+          img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=900&h=620&fit=crop"
+        },
+        {
+          id: "cybersecurity",
+          icon: "fa-shield",
+          title: "Cybersecurity & Risk Advisory",
+          desc: "Assess risks, strengthen controls, develop policies, improve awareness, and build resilience against evolving digital threats.",
+          img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=900&h=620&fit=crop"
+        },
+        {
+          id: "project",
+          icon: "fa-tasks",
+          title: "Project & Delivery Advisory",
+          desc: "Improve planning, governance, reporting, risk management, and delivery assurance for complex technology and transformation projects.",
+          img: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=900&h=620&fit=crop"
+        },
+        {
+          id: "automation",
+          icon: "fa-cogs",
+          title: "Process Improvement & Automation",
+          desc: "Redesign workflows, remove bottlenecks, reduce repetitive tasks, and identify responsible automation opportunities.",
+          img: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&h=620&fit=crop"
+        },
+        {
+          id: "infrastructure",
+          icon: "fa-cloud",
+          title: "Infrastructure & Digital Workplace",
+          desc: "Plan secure, reliable, and scalable cloud, networking, connectivity, collaboration, and business-continuity environments.",
+          img: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=900&h=620&fit=crop"
+        },
+        {
+          id: "governance",
+          icon: "fa-gavel",
+          title: "IT Governance & Policy Development",
+          desc: "Establish clear decision rights, policies, standards, controls, accountability, and oversight for technology management.",
+          img: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=900&h=620&fit=crop"
+        },
+        {
+          id: "cloud-migration",
+          icon: "fa-upload",
+          title: "Cloud Adoption & Migration",
+          desc: "Assess cloud readiness, select suitable platforms, plan migration, control cost, and strengthen security and reliability.",
+          img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=900&h=620&fit=crop"
+        },
+        {
+          id: "data-analytics",
+          icon: "fa-bar-chart",
+          title: "Data Analytics & Business Intelligence",
+          desc: "Improve data quality, reporting, dashboards, measurement, and decision-making through practical analytics solutions.",
+          img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&h=620&fit=crop"
+        },
+        {
+          id: "continuity",
+          icon: "fa-life-ring",
+          title: "Business Continuity & Disaster Recovery",
+          desc: "Prepare systems, teams, backups, recovery procedures, and communication plans to reduce disruption and downtime.",
+          img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&h=620&fit=crop"
+        },
+        {
+          id: "procurement",
+          icon: "fa-shopping-cart",
+          title: "Technology Procurement & Vendor Selection",
+          desc: "Define requirements, evaluate vendors, compare solutions, control procurement risk, and improve technology purchasing decisions.",
+          img: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=900&h=620&fit=crop"
+        },
+        {
+          id: "change-management",
+          icon: "fa-users",
+          title: "Change Management & Technology Adoption",
+          desc: "Prepare users, leaders, processes, training, communication, and support structures for successful technology adoption.",
+          img: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&h=620&fit=crop"
+        },
+        {
+          id: "enterprise-architecture",
+          icon: "fa-sitemap",
+          title: "Enterprise Architecture Advisory",
+          desc: "Connect business capabilities, applications, information, infrastructure, and integration decisions within a coherent architecture.",
+          img: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900&h=620&fit=crop"
+        },
+        {
+          id: "collaboration",
+          icon: "fa-comments-o",
+          title: "Digital Workplace & Collaboration",
+          desc: "Improve communication, document sharing, productivity, remote work, access, and collaboration across teams and locations.",
+          img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&h=620&fit=crop"
+        },
+        {
+          id: "technology-audit",
+          icon: "fa-search",
+          title: "Technology Audit & Health Check",
+          desc: "Review systems, licences, controls, performance, risks, support arrangements, and opportunities for improvement.",
+          img: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=900&h=620&fit=crop"
+        },
+        {
+          id: "ai-advisory",
+          icon: "fa-lightbulb-o",
+          title: "Artificial Intelligence Adoption Advisory",
+          desc: "Identify responsible AI use cases, assess readiness, manage risk, select tools, and plan practical implementation.",
+          img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=900&h=620&fit=crop"
+        },
+        {
+          id: "data-protection",
+          icon: "fa-lock",
+          title: "Data Protection & Compliance Advisory",
+          desc: "Strengthen privacy, records handling, access controls, responsibilities, documentation, and compliance readiness.",
+          img: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=900&h=620&fit=crop"
+        },
+        {
+          id: "capacity-development",
+          icon: "fa-graduation-cap",
+          title: "Technology Training & Capacity Development",
+          desc: "Build practical digital, security, project, data, AI, governance, and technology-management capability for teams and leaders.",
+          img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&h=620&fit=crop"
         }
+      ];
+
+      const servicesGrid = document.getElementById("servicesGrid");
+      const servicesPagination = document.getElementById(
+        "servicesPagination"
+      );
+      const servicesResultsStatus = document.getElementById(
+        "servicesResultsStatus"
+      );
+
+      let currentServicePage = 1;
+      const servicesPerPage = 3; // Only 3 per page (one row)
+
+      function escapeHtml(value) {
+        return String(value)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;");
+      }
+
+      function buildServiceCard(service) {
+        const serviceTitle = escapeHtml(service.title);
+        const serviceDescription = escapeHtml(service.desc);
+        const serviceId = escapeHtml(service.id);
+        const serviceIcon = escapeHtml(service.icon);
+        const serviceImage = escapeHtml(service.img);
+
+        return `
+          <article class="ve-tech-card" id="${serviceId}">
+            <div class="ve-tech-card-image">
+              <img
+                src="${serviceImage}"
+                alt="${serviceTitle}"
+                loading="lazy"
+              />
+              <div class="ve-tech-overlay">
+                <a
+                  class="ve-tech-overlay-btn"
+                  href="#consultationPlanner"
+                  data-service-title="${serviceTitle}"
+                >
+                  Discuss Service
+                </a>
+              </div>
+            </div>
+
+            <div class="ve-tech-card-body">
+              <div class="ve-tech-icon">
+                <i class="fa ${serviceIcon}" aria-hidden="true"></i>
+              </div>
+              <h4>${serviceTitle}</h4>
+              <p>${serviceDescription}</p>
+              <a
+                class="ve-tech-link"
+                href="#consultationPlanner"
+                data-service-title="${serviceTitle}"
+              >
+                Learn more
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+        `;
+      }
+
+      function renderServicesPage() {
+        if (!servicesGrid || !servicesPagination) return;
+
+        const totalServices = servicesData.length;
+        const totalPages = Math.max(
+          1,
+          Math.ceil(totalServices / servicesPerPage)
+        );
+
+        if (currentServicePage > totalPages) {
+          currentServicePage = totalPages;
+        }
+
+        const startIndex = (currentServicePage - 1) * servicesPerPage;
+        const endIndex = Math.min(
+          startIndex + servicesPerPage,
+          totalServices
+        );
+        const currentServices = servicesData.slice(startIndex, endIndex);
+
+        servicesGrid.innerHTML = currentServices
+          .map(buildServiceCard)
+          .join("");
+
+        if (servicesResultsStatus) {
+          servicesResultsStatus.textContent = `Showing ${
+            startIndex + 1
+          }–${endIndex} of ${totalServices} consulting services`;
+        }
+
+        bindServiceLinks();
+        renderServicesPagination(totalPages);
+      }
+
+      function renderServicesPagination(totalPages) {
+        servicesPagination.innerHTML = "";
+        servicesPagination.hidden = totalPages <= 1;
+
+        if (totalPages <= 1) return;
+
+        function createPaginationButton(label, page, options = {}) {
+          const button = document.createElement("button");
+
+          button.type = "button";
+          button.dataset.page = String(page);
+          button.setAttribute(
+            "aria-label",
+            options.ariaLabel || `Go to page ${page}`
+          );
+
+          if (options.icon) {
+            button.innerHTML = `<i class="fa ${options.icon}" aria-hidden="true"></i>`;
+          } else {
+            button.textContent = label;
+          }
+
+          if (options.active) {
+            button.classList.add("active");
+            button.setAttribute("aria-current", "page");
+          }
+
+          if (options.disabled) {
+            button.disabled = true;
+          }
+
+          button.addEventListener("click", function () {
+            if (button.disabled || page === currentServicePage) return;
+
+            currentServicePage = page;
+            renderServicesPage();
+
+            const servicesSection = document.getElementById("services");
+
+            if (servicesSection) {
+              const scrollTop =
+                servicesSection.getBoundingClientRect().top +
+                window.pageYOffset -
+                20;
+
+              window.scrollTo({
+                top: Math.max(0, scrollTop),
+                behavior: "smooth"
+              });
+            }
+          });
+
+          servicesPagination.appendChild(button);
+        }
+
+        createPaginationButton("", currentServicePage - 1, {
+          icon: "fa-chevron-left",
+          disabled: currentServicePage === 1,
+          ariaLabel: "Go to previous page"
+        });
+
+        for (let page = 1; page <= totalPages; page += 1) {
+          createPaginationButton(String(page), page, {
+            active: page === currentServicePage,
+            ariaLabel: `Go to page ${page}`
+          });
+        }
+
+        createPaginationButton("", currentServicePage + 1, {
+          icon: "fa-chevron-right",
+          disabled: currentServicePage === totalPages,
+          ariaLabel: "Go to next page"
+        });
+      }
+
+      function bindServiceLinks() {
+        document
+          .querySelectorAll("[data-service-title]")
+          .forEach(function (serviceLink) {
+            serviceLink.addEventListener("click", function () {
+              const selectedService = serviceLink.dataset.serviceTitle || "";
+              const prioritySelect = document.getElementById("consultPriority");
+              const messageField = document.getElementById("consultMessage");
+
+              if (prioritySelect) {
+                const matchingOption = Array.from(prioritySelect.options).find(
+                  function (option) {
+                    return (
+                      option.textContent.trim().toLowerCase() ===
+                      selectedService.trim().toLowerCase()
+                    );
+                  }
+                );
+
+                if (matchingOption) {
+                  prioritySelect.value = matchingOption.value;
+                }
+              }
+
+              if (messageField && !messageField.value.trim()) {
+                messageField.value =
+                  "I would like to discuss " + selectedService + ".";
+              }
+            });
+          });
+      }
+
+      renderServicesPage();
+
+      /* ==================================================
+         FAQ
+      ================================================== */
+      document.querySelectorAll(".faq-item").forEach(function (item) {
+        const question = item.querySelector(".faq-question");
+        const answer = item.querySelector(".faq-answer");
+
+        if (!question || !answer) return;
+
+        function syncFaq() {
+          const open = item.classList.contains("open");
+
+          question.setAttribute("aria-expanded", open ? "true" : "false");
+          answer.style.maxHeight = open ? answer.scrollHeight + "px" : "0";
+        }
+
+        question.addEventListener("click", function () {
+          item.classList.toggle("open");
+          syncFaq();
+        });
+
+        syncFaq();
       });
-    </script>
-<script type="text/javascript">
-      var Tawk_API = Tawk_API || {},
-        Tawk_LoadStart = new Date();
-      (function () {
-        var s1 = document.getElementsByTagName("script")[0],
-          s0 = document.createElement("script");
-        s0.async = true;
-        s0.src = "https://embed.tawk.to/6a3513702fa5b31d456f8768/1jrfl7tle";
-        s0.charset = "UTF-8";
-        s0.setAttribute("crossorigin", "*");
-        s1.parentNode.insertBefore(s0, s1);
-      })();
-    </script>
-<script src="js/jquery/jquery-2.2.4.min.js"></script>
-<script src="js/bootstrap/popper.min.js"></script>
-<script src="js/bootstrap/bootstrap.min.js"></script>
-<script src="js/plugins/plugins.js"></script>
-<script src="js/active.js"></script>
-<script src="js/vaultedge.js"></script>
+
+      /* ==================================================
+         CONSULTATION FORM
+      ================================================== */
+      const consultationForm = document.getElementById("consultationForm");
+
+      if (consultationForm) {
+        consultationForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const name = document.getElementById("consultName").value.trim();
+          const organisation = document
+            .getElementById("consultOrganisation")
+            .value.trim();
+          const sector = document.getElementById("consultSector").value;
+          const priority = document.getElementById("consultPriority").value;
+          const engagement = document.getElementById(
+            "consultEngagement"
+          ).value;
+          const timeline = document.getElementById("consultTimeline").value;
+          const message = document
+            .getElementById("consultMessage")
+            .value.trim();
+
+          const whatsappMessage =
+            "Hello Radiant Cullings, I would like to discuss a technology consulting need.\n\n" +
+            "Name: " +
+            name +
+            "\nOrganisation: " +
+            (organisation || "Not provided") +
+            "\nSector: " +
+            sector +
+            "\nMain priority: " +
+            priority +
+            "\nPreferred engagement: " +
+            engagement +
+            "\nPreferred timeline: " +
+            timeline +
+            "\n\nChallenge or goal:\n" +
+            message;
+
+          window.open(
+            "https://wa.me/2348146710908?text=" +
+              encodeURIComponent(whatsappMessage),
+            "_blank",
+            "noopener,noreferrer"
+          );
+        });
+      }
+
+      /* ==================================================
+         CUSTOM CURSOR
+      ================================================== */
+      const cursorDot = document.getElementById("customCursorDot");
+      const cursorCircle = document.getElementById("customCursorCircle");
+      const finePointer =
+        matchMedia("(pointer: fine)").matches &&
+        matchMedia("(hover: hover)").matches;
+
+      if (cursorDot && cursorCircle && finePointer) {
+        let mouseX = 0;
+        let mouseY = 0;
+        let circleX = 0;
+        let circleY = 0;
+        let cursorStarted = false;
+
+        document.addEventListener("mousemove", function (event) {
+          mouseX = event.clientX;
+          mouseY = event.clientY;
+
+          cursorDot.style.left = mouseX + "px";
+          cursorDot.style.top = mouseY + "px";
+
+          if (!cursorStarted) {
+            circleX = mouseX;
+            circleY = mouseY;
+            cursorStarted = true;
+            cursorDot.classList.add("cursor-visible");
+            cursorCircle.classList.add("cursor-visible");
+          }
+        });
+
+        function animateCursor() {
+          circleX += (mouseX - circleX) * 0.16;
+          circleY += (mouseY - circleY) * 0.16;
+
+          cursorCircle.style.left = circleX + "px";
+          cursorCircle.style.top = circleY + "px";
+
+          requestAnimationFrame(animateCursor);
+        }
+
+        animateCursor();
+
+        const interactiveSelector =
+          "a, button, input, select, textarea, [role='button'], .ve-tech-card, .challenge-card, .process-card, .industry, .engagement-card, .faq-item";
+
+        document.addEventListener("mouseover", function (event) {
+          if (event.target.closest(interactiveSelector)) {
+            cursorDot.classList.add("cursor-hover");
+            cursorCircle.classList.add("cursor-hover");
+          }
+        });
+
+        document.addEventListener("mouseout", function (event) {
+          if (event.target.closest(interactiveSelector)) {
+            cursorDot.classList.remove("cursor-hover");
+            cursorCircle.classList.remove("cursor-hover");
+          }
+        });
+
+        document.addEventListener("mousedown", function () {
+          cursorCircle.classList.add("cursor-click");
+        });
+
+        document.addEventListener("mouseup", function () {
+          cursorCircle.classList.remove("cursor-click");
+        });
+      }
+    });
+  </script>
+
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {};
+    var Tawk_LoadStart = new Date();
+
+    (function () {
+      var firstScript = document.getElementsByTagName("script")[0];
+      var tawkScript = document.createElement("script");
+
+      tawkScript.async = true;
+      tawkScript.src =
+        "https://embed.tawk.to/6a3513702fa5b31d456f8768/1jrfl7tle";
+      tawkScript.charset = "UTF-8";
+      tawkScript.setAttribute("crossorigin", "*");
+
+      firstScript.parentNode.insertBefore(tawkScript, firstScript);
+    })();
+  </script>
+
+  <script src="js/jquery/jquery-2.2.4.min.js"></script>
+  <script src="js/bootstrap/popper.min.js"></script>
+  <script src="js/bootstrap/bootstrap.min.js"></script>
+  <script src="js/plugins/plugins.js"></script>
+  <script src="js/active.js"></script>
+  <script src="js/vaultedge.js"></script>
 </body>
 </html>
