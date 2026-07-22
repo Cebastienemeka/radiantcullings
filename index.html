@@ -3401,8 +3401,73 @@
           justify-content: center !important;
         }
       }
+
+      /* Tech Consulting Services carousel: matches Our Tech Courses */
+      .rc-home-services-shell {
+        position: relative;
+        margin-top: 32px;
+      }
+
+      .rc-home-services-viewport {
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        overscroll-behavior-inline: contain;
+        touch-action: pan-x;
+      }
+
+      .rc-home-services-viewport::-webkit-scrollbar {
+        display: none;
+      }
+
+      .rc-home-services-track {
+        display: flex;
+        align-items: stretch;
+        gap: 22px;
+        padding: 8px 4px 28px;
+      }
+
+      .rc-home-service-slide {
+        /* Show two cards on desktop so the three services can paginate. */
+        flex: 0 0 calc((100% - 22px) / 2);
+        min-width: 0;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+      }
+
+      .rc-home-services-shell > .rc-home-courses-arrow {
+        display: inline-flex !important;
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .rc-home-service-slide .ve-tech-card {
+        height: 100% !important;
+      }
+
+      @media (max-width: 991px) {
+        .rc-home-service-slide {
+          flex-basis: calc((100% - 22px) / 2);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .rc-home-service-slide {
+          flex-basis: 86%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .rc-home-service-slide {
+          flex-basis: 94%;
+        }
+      }
     </style>
   </head>
+
   <body>
     <!-- Custom Circle and Dot Cursor -->
     <div
@@ -3573,7 +3638,8 @@
           <span class="ve-highlight">Radiant Cullings</span>
         </h1>
         <span class="ve-hero-badge">
-          Empowering Businesses Through Technology, Innovation, and Digital Excellence
+          Empowering Businesses Through Technology, Innovation, and Digital
+          Excellence
         </span>
         <p>
           Where technology meets excellence. We help individuals, organizations,
@@ -4032,7 +4098,7 @@
         <i aria-hidden="true" class="fa fa-chevron-right"></i>
       </button>
     </div>
-    <!-- Technology Services -->
+    <!-- Tech Services -->
     <section class="ve-section ve-tech-services-section">
       <div class="container">
         <div class="ve-section-header text-center">
@@ -4046,100 +4112,192 @@
             designed to equip you with in-demand digital skills.
           </p>
         </div>
-        <div class="ve-tech-services-grid">
-          <!-- Technology Training -->
-          <article class="ve-tech-card wow fadeInUp" data-wow-delay="100ms">
-            <div class="ve-tech-card-image">
-              <img
-                alt="Technology training class"
-                src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&amp;h=400&amp;fit=crop"
-              />
-              <div class="ve-tech-overlay">
-                <a class="ve-tech-overlay-btn" href="services.html#training">
-                  Explore
-                </a>
-              </div>
-            </div>
-            <div class="ve-tech-card-body">
-              <div class="ve-tech-icon">
-                <i class="icon-profits"></i>
-              </div>
-              <h4>Tech Training Company</h4>
-              <p>
-                Cybersecurity, data analysis, AI training, project management,
-                UI/UX, graphic design, video editing, software development, and
-                more.
-              </p>
-              <a class="ve-tech-link" href="services.html#training">
-                Book now
+        <div class="rc-home-services-shell">
+          <button
+            aria-label="Show previous consulting services"
+            class="rc-home-courses-arrow rc-home-courses-prev"
+            id="rcHomeServicesPrev"
+            type="button"
+          >
+            <i aria-hidden="true" class="fa fa-chevron-left"></i>
+          </button>
+          <div
+            aria-label="Tech consulting services carousel"
+            class="rc-home-services-viewport"
+            id="rcHomeServicesViewport"
+            tabindex="0"
+          >
+            <div class="rc-home-services-track" id="rcHomeServicesTrack">
+              <!-- Technology Training -->
+              <div class="rc-home-service-slide">
+                <article
+                  class="ve-tech-card wow fadeInUp"
+                  data-wow-delay="100ms">
+                  <div class="ve-tech-card-image">
+                    <img
+                      alt="Technology training class"
+                      src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&amp;h=400&amp;fit=crop"
+                    />
+                    <div class="ve-tech-overlay">
+                      <a
+                        class="ve-tech-overlay-btn"
+                        href="services.html#training">
+                        Explore
+                      </a>
+                    </div>
+                  </div>
+                  <div class="ve-tech-card-body">
+                    <div class="ve-tech-icon">
+                      <i class="icon-profits"></i>
+                    </div>
+                    <h4>Tech Training</h4>
+                    <p>
+                      Cybersecurity, data analysis, AI training, project
+                      management, UI/UX, graphic design, video editing, software
+                      development, and more.
+                    </p>
+                    <a class="ve-tech-link" href="courses.html">
+                      Enroll now
 
-                <i aria-hidden="true" class="fa fa-arrow-right"></i>
-              </a>
-            </div>
-          </article>
-          <!-- Technology Consulting -->
-          <article class="ve-tech-card wow fadeInUp" data-wow-delay="200ms">
-            <div class="ve-tech-card-image">
-              <img
-                alt="Technology consulting"
-                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&amp;h=400&amp;fit=crop"
-              />
-              <div class="ve-tech-overlay">
-                <a class="ve-tech-overlay-btn" href="services.html#consulting">
-                  Explore
-                </a>
+                      <i aria-hidden="true" class="fa fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </article>
               </div>
-            </div>
-            <div class="ve-tech-card-body">
-              <div class="ve-tech-icon">
-                <i class="icon-money-1"></i>
-              </div>
-              <h4>Tech Consulting Firm</h4>
-              <p>
-                Make informed technology decisions, improve operational
-                efficiency, and implement solutions that support sustainable
-                business growth.
-              </p>
-              <a class="ve-tech-link" href="services.html#consulting">
-                Book now
-
-                <i aria-hidden="true" class="fa fa-arrow-right"></i>
-              </a>
-            </div>
-          </article>
-          <!-- Cybersecurity -->
-          <article class="ve-tech-card wow fadeInUp" data-wow-delay="300ms">
-            <div class="ve-tech-card-image">
-              <img
-                alt="Cybersecurity services"
-                src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&amp;h=400&amp;fit=crop"
-              />
-              <div class="ve-tech-overlay">
-                <a
-                  class="ve-tech-overlay-btn"
-                  href="services.html#cybersecurity"
+              <!-- Technology Consulting -->
+              <div class="rc-home-service-slide">
+                <article
+                  class="ve-tech-card wow fadeInUp"
+                  data-wow-delay="200ms"
                 >
-                  Explore
-                </a>
-              </div>
-            </div>
-            <div class="ve-tech-card-body">
-              <div class="ve-tech-icon">
-                <i class="icon-coin"></i>
-              </div>
-              <h4>Cybersecurity Services</h4>
-              <p>
-                Protect your digital assets with cybersecurity awareness,
-                training, security assessments, risk management, and policy
-                development.
-              </p>
-              <a class="ve-tech-link" href="services.html#cybersecurity">
-                Book seesion with an expert
+                  <div class="ve-tech-card-image">
+                    <img
+                      alt="Technology consulting"
+                      src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&amp;h=400&amp;fit=crop"
+                    />
+                    <div class="ve-tech-overlay">
+                      <a
+                        class="ve-tech-overlay-btn"
+                        href="services.html#consulting"
+                      >
+                        Explore
+                      </a>
+                    </div>
+                  </div>
+                  <div class="ve-tech-card-body">
+                    <div class="ve-tech-icon">
+                      <i class="icon-money-1"></i>
+                    </div>
+                    <h4>Tech Consulting Firm</h4>
+                    <p>
+                      Make informed technology decisions, improve operational
+                      efficiency, and implement solutions that support
+                      sustainable business growth.
+                    </p>
+                    <a class="ve-tech-link" href="services.html#consulting">
+                      Book now
 
-                <i aria-hidden="true" class="fa fa-arrow-right"></i>
-              </a>
+                      <i aria-hidden="true" class="fa fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              <!-- Cybersecurity -->
+              <div class="rc-home-service-slide">
+                <article
+                  class="ve-tech-card wow fadeInUp"
+                  data-wow-delay="300ms"
+                >
+                  <div class="ve-tech-card-image">
+                    <img
+                      alt="Cybersecurity services"
+                      src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&amp;h=400&amp;fit=crop"
+                    />
+                    <div class="ve-tech-overlay">
+                      <a
+                        class="ve-tech-overlay-btn"
+                        href="services.html#cybersecurity"
+                      >
+                        Explore
+                      </a>
+                    </div>
+                  </div>
+                  <div class="ve-tech-card-body">
+                    <div class="ve-tech-icon">
+                      <i class="icon-coin"></i>
+                    </div>
+                    <h4>Cybersecurity Services</h4>
+                    <p>
+                      Protect your digital assets with cybersecurity awareness,
+                      training, security assessments, risk management, and
+                      policy development.
+                    </p>
+                    <a class="ve-tech-link" href="services.html#cybersecurity">
+                      Book seesion with an expert
+
+                      <i aria-hidden="true" class="fa fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              <!-- International Exams and Certifications -->
+              <div class="rc-home-service-slide">
+                <article
+                  class="ve-tech-card wow fadeInUp"
+                  data-wow-delay="100ms">
+                  <div class="ve-tech-card-image">
+                    <img
+                      alt="Technology training class"
+                      src="./img/bg-img/exams.jpeg"
+                    />
+                    <div class="ve-tech-overlay">
+                      <a
+                        class="ve-tech-overlay-btn"
+                        href="services.html#training">
+                        Explore
+                      </a>
+                    </div>
+                  </div>
+                  <div class="ve-tech-card-body">
+                    <div class="ve-tech-icon">
+                      <i class="icon-profits"></i>
+                    </div>
+                    <h4>International Exams and Certification</h4>
+                    <p>
+                      Globally recognized certifications in cybersecurity, cloud computing,
+                      project management, data science, IT service management, and more.
+                    </p>
+                    <a class="ve-tech-link" href="courses.html">
+                      Enroll now
+
+                      <i aria-hidden="true" class="fa fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </article>
+              </div>
+
+              
             </div>
-          </article>
+          </div>
+          <button
+            aria-label="Show next consulting services"
+            class="rc-home-courses-arrow rc-home-courses-next"
+            id="rcHomeServicesNext"
+            type="button"
+          >
+            <i aria-hidden="true" class="fa fa-chevron-right"></i>
+          </button>
+        </div>
+        <div aria-live="polite" class="rc-home-courses-status">
+          <div aria-hidden="true" class="rc-home-courses-progress">
+            <span
+              class="rc-home-courses-progress-bar"
+              id="rcHomeServicesProgress"
+            ></span>
+          </div>
+          <span class="rc-home-courses-counter" id="rcHomeServicesCounter">
+            01 / 01
+          </span>
         </div>
         <div
           class="ve-tech-btn-wrap text-center wow fadeInUp"
@@ -4218,7 +4376,6 @@
         </span>
       </div>
     </div> -->
-
 
     <!-- Why Choose Us -->
     <section class="ve-section ve-whyus-section">
@@ -4818,10 +4975,9 @@
           </article>
         </div>
         <!-- Sponsorship Partners -->
-        <div
+        <!-- <div
           class="ve-sponsorship-partners wow fadeInUp"
-          data-wow-delay="400ms"
-        >
+          data-wow-delay="400ms">
           <h4>Our Sponsorship Partners</h4>
           <div class="ve-partners-grid">
             <div class="ve-partner-item">
@@ -4840,7 +4996,7 @@
               <img alt="Microsoft" src="img/bg-img/microsoft.png" />
             </div>
           </div>
-        </div>
+        </div> -->
         <!-- Donation CTA -->
         <div
           class="ve-donation-cta text-center wow fadeInUp"
@@ -5069,7 +5225,7 @@
             <h5 class="ve-footer-title">Our Services</h5>
             <ul class="ve-footer-links">
               <li><a href="courses.html">Tech Training</a></li>
-              <li><a href="consulting.html">Tech Consulting Services</a></li>
+              <li><a href="services.html">Tech Consulting Services</a></li>
               <li><a href="services.html#cybersecurity">Cybersecurity</a></li>
               <li><a href="services.html#project">Project Management</a></li>
               <li>
@@ -5976,6 +6132,179 @@
         window.addEventListener("resize", function () {
           window.clearTimeout(resizeTimer);
 
+          resizeTimer = window.setTimeout(function () {
+            calculateVisibleSlides();
+            goToSlide(currentIndex, false);
+            restartAutoplay();
+          }, 150);
+        });
+
+        calculateVisibleSlides();
+        goToSlide(0, false);
+        startAutoplay();
+      });
+    </script>
+    <!-- Tech Consulting Services Carousel Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var viewport = document.getElementById("rcHomeServicesViewport");
+        var track = document.getElementById("rcHomeServicesTrack");
+        var previousButton = document.getElementById("rcHomeServicesPrev");
+        var nextButton = document.getElementById("rcHomeServicesNext");
+        var progressBar = document.getElementById("rcHomeServicesProgress");
+        var counter = document.getElementById("rcHomeServicesCounter");
+
+        if (!viewport || !track || !previousButton || !nextButton) return;
+
+        var slides = Array.prototype.slice.call(
+          track.querySelectorAll(".rc-home-service-slide"),
+        );
+        if (!slides.length) return;
+
+        var currentIndex = 0;
+        var visibleSlides = 1;
+        var maximumIndex = slides.length - 1;
+        var autoplayTimer = null;
+        var scrollTimer = null;
+        var resizeTimer = null;
+        var reducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+
+        function formatNumber(number) {
+          return String(number).padStart(2, "0");
+        }
+
+        function calculateVisibleSlides() {
+          var styles = window.getComputedStyle(track);
+          var gap = parseFloat(styles.columnGap) || parseFloat(styles.gap) || 0;
+          var unitWidth = slides[0].getBoundingClientRect().width + gap;
+          visibleSlides = Math.max(
+            1,
+            Math.floor((viewport.clientWidth + gap) / unitWidth),
+          );
+          maximumIndex = Math.max(0, slides.length - visibleSlides);
+          currentIndex = Math.min(currentIndex, maximumIndex);
+        }
+
+        function slideLeftPosition(index) {
+          return slides[index].offsetLeft - track.offsetLeft;
+        }
+
+        function updateStatus() {
+          var totalPositions = maximumIndex + 1;
+          var progress = ((currentIndex + 1) / totalPositions) * 100;
+          if (progressBar)
+            progressBar.style.width = Math.max(10, progress) + "%";
+          if (counter) {
+            counter.textContent =
+              formatNumber(currentIndex + 1) +
+              " / " +
+              formatNumber(totalPositions);
+          }
+          var hasMultiplePositions = maximumIndex > 0;
+          previousButton.style.display = "inline-flex";
+          nextButton.style.display = "inline-flex";
+          previousButton.disabled = !hasMultiplePositions;
+          nextButton.disabled = !hasMultiplePositions;
+        }
+
+        function goToSlide(index, smooth) {
+          if (index < 0) index = maximumIndex;
+          if (index > maximumIndex) index = 0;
+          currentIndex = index;
+          viewport.scrollTo({
+            left: slideLeftPosition(currentIndex),
+            behavior: smooth === false || reducedMotion ? "auto" : "smooth",
+          });
+          updateStatus();
+        }
+
+        function nextSlide() {
+          goToSlide(currentIndex + 1, true);
+        }
+        function previousSlide() {
+          goToSlide(currentIndex - 1, true);
+        }
+
+        function stopAutoplay() {
+          if (autoplayTimer) {
+            window.clearInterval(autoplayTimer);
+            autoplayTimer = null;
+          }
+        }
+
+        function startAutoplay() {
+          stopAutoplay();
+          if (reducedMotion || maximumIndex === 0 || document.hidden) return;
+          autoplayTimer = window.setInterval(nextSlide, 3500);
+        }
+
+        function restartAutoplay() {
+          stopAutoplay();
+          startAutoplay();
+        }
+
+        function nearestIndex() {
+          var nearest = 0;
+          var shortestDistance = Infinity;
+          for (var index = 0; index <= maximumIndex; index += 1) {
+            var distance = Math.abs(
+              viewport.scrollLeft - slideLeftPosition(index),
+            );
+            if (distance < shortestDistance) {
+              shortestDistance = distance;
+              nearest = index;
+            }
+          }
+          return nearest;
+        }
+
+        previousButton.addEventListener("click", function () {
+          previousSlide();
+          restartAutoplay();
+        });
+        nextButton.addEventListener("click", function () {
+          nextSlide();
+          restartAutoplay();
+        });
+        viewport.addEventListener(
+          "scroll",
+          function () {
+            window.clearTimeout(scrollTimer);
+            scrollTimer = window.setTimeout(function () {
+              currentIndex = nearestIndex();
+              updateStatus();
+            }, 90);
+          },
+          { passive: true },
+        );
+        viewport.addEventListener("keydown", function (event) {
+          if (event.key === "ArrowRight") {
+            event.preventDefault();
+            nextSlide();
+            restartAutoplay();
+          }
+          if (event.key === "ArrowLeft") {
+            event.preventDefault();
+            previousSlide();
+            restartAutoplay();
+          }
+        });
+        viewport.addEventListener("mouseenter", stopAutoplay);
+        viewport.addEventListener("mouseleave", startAutoplay);
+        viewport.addEventListener("focusin", stopAutoplay);
+        viewport.addEventListener("focusout", startAutoplay);
+        viewport.addEventListener("touchstart", stopAutoplay, {
+          passive: true,
+        });
+        viewport.addEventListener("touchend", startAutoplay, { passive: true });
+        document.addEventListener("visibilitychange", function () {
+          if (document.hidden) stopAutoplay();
+          else startAutoplay();
+        });
+        window.addEventListener("resize", function () {
+          window.clearTimeout(resizeTimer);
           resizeTimer = window.setTimeout(function () {
             calculateVisibleSlides();
             goToSlide(currentIndex, false);
