@@ -674,16 +674,36 @@
       }
 
       /* ==================================================
-           DARK MODE TEAM SECTION
+           TEAM SECTION - FULL IMAGE
         ================================================== */
+
+      .ve-team-section {
+        padding: 80px 0;
+        background: #f8faff;
+      }
 
       body.dark-mode .ve-team-section {
         background: #121212;
       }
 
+      .ve-team-card {
+        background: #ffffff;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .ve-team-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 60px rgba(37, 117, 171, 0.12);
+      }
+
       body.dark-mode .ve-team-card {
         background: #1a1a2e;
-
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
       }
 
@@ -691,12 +711,83 @@
         box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
       }
 
+      /* FULL IMAGE - NO CROPPING */
+      .ve-team-img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: transform 0.6s ease;
+        flex-shrink: 0;
+        background-color: #f0f5fa;
+      }
+
+      .ve-team-card:hover .ve-team-img {
+        transform: scale(1.03);
+      }
+
+      body.dark-mode .ve-team-img {
+        background-color: #25253a;
+      }
+
+      .ve-team-info {
+        padding: 20px 25px 25px;
+        text-align: center;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .ve-team-info h5 {
+        font-size: 18px;
+        font-weight: 700;
+        color: #0f2a38;
+        margin-bottom: 4px;
+        font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      }
+
       body.dark-mode .ve-team-info h5 {
         color: #e0e0e0;
       }
 
+      .ve-team-info span {
+        font-size: 14px;
+        color: #5a7a8a;
+        font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      }
+
       body.dark-mode .ve-team-info span {
         color: #aaaaaa;
+      }
+
+      .ve-team-social {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 12px;
+        flex-wrap: wrap;
+      }
+
+      .ve-team-social a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        background: #f0f5fa;
+        border-radius: 50%;
+        color: #2575AB;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+
+      .ve-team-social a:hover {
+        background: #2575AB;
+        color: #ffffff;
+        transform: translateY(-3px);
       }
 
       body.dark-mode .ve-team-social a {
@@ -705,8 +796,457 @@
       }
 
       body.dark-mode .ve-team-social a:hover {
-        background: #2575ab;
+        background: #ed948c;
         color: #ffffff;
+      }
+
+      /* ==================================================
+           TEAM READ MORE BUTTON
+        ================================================== */
+
+      .ve-team-read-more {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+
+        min-width: 132px;
+        margin-top: 18px;
+        padding: 11px 22px;
+
+        border: 1px solid #ed948c;
+        border-radius: 30px;
+
+        background: #ed948c;
+        color: #ffffff;
+
+        font: inherit;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.2;
+
+        cursor: pointer;
+
+        box-shadow: 0 8px 24px rgba(37, 117, 171, 0.22);
+
+        transition:
+          background 0.3s ease,
+          border-color 0.3s ease,
+          color 0.3s ease,
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .ve-team-read-more:hover,
+      .ve-team-read-more:focus-visible {
+        border-color: #ed948c;
+        background: #ed948c;
+        color: #ffffff;
+
+        transform: translateY(-3px);
+
+        box-shadow: 0 12px 30px rgba(237, 148, 140, 0.32);
+      }
+
+      .ve-team-read-more:focus-visible {
+        outline: 3px solid rgba(37, 117, 171, 0.24);
+        outline-offset: 3px;
+      }
+
+      .ve-team-read-more i {
+        font-size: 12px;
+
+        transition: transform 0.3s ease;
+      }
+
+      .ve-team-read-more:hover i,
+      .ve-team-read-more:focus-visible i {
+        transform: translateX(4px);
+      }
+
+      body.dark-mode .ve-team-read-more {
+        border-color: #ed948c;
+        background: #ed948c;
+        color: #ffffff;
+      }
+
+      body.dark-mode .ve-team-read-more:hover,
+      body.dark-mode .ve-team-read-more:focus-visible {
+        border-color: #ed948c;
+        background: #ed948c;
+      }
+
+      /* ==================================================
+           TEAM MEMBER MODAL - FULL IMAGE
+        ================================================== */
+
+      body.ve-modal-open {
+        overflow: hidden;
+      }
+
+      .ve-team-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 1000000;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 20px;
+
+        background: rgba(5, 15, 28, 0.76);
+        backdrop-filter: blur(7px);
+
+        opacity: 0;
+        visibility: hidden;
+
+        transition:
+          opacity 0.3s ease,
+          visibility 0.3s ease;
+      }
+
+      .ve-team-modal.is-open {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .ve-team-modal-dialog {
+        position: relative;
+
+        width: min(820px, 100%);
+        max-height: calc(100vh - 40px);
+        overflow-y: auto;
+
+        border: 1px solid rgba(37, 117, 171, 0.16);
+        border-radius: 20px;
+
+        background: #ffffff;
+
+        box-shadow: 0 30px 90px rgba(0, 0, 0, 0.28);
+
+        transform: translateY(28px) scale(0.97);
+
+        transition: transform 0.35s ease;
+      }
+
+      .ve-team-modal.is-open .ve-team-modal-dialog {
+        transform: translateY(0) scale(1);
+      }
+
+      .ve-team-modal-close {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        z-index: 3;
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 40px;
+        height: 40px;
+        padding: 0;
+
+        border: 1px solid rgba(37, 117, 171, 0.16);
+        border-radius: 50%;
+
+        background: #ffffff;
+        color: #2575ab;
+
+        font-size: 16px;
+
+        cursor: pointer;
+
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+
+        transition:
+          background 0.3s ease,
+          border-color 0.3s ease,
+          color 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      .ve-team-modal-close:hover,
+      .ve-team-modal-close:focus-visible {
+        border-color: #ed948c;
+        background: #ed948c;
+        color: #ffffff;
+
+        transform: rotate(90deg);
+      }
+
+      .ve-team-modal-close:focus-visible {
+        outline: 3px solid rgba(37, 117, 171, 0.24);
+        outline-offset: 3px;
+      }
+
+      .ve-team-modal-content {
+        display: grid;
+        grid-template-columns: minmax(240px, 0.75fr) minmax(0, 1.25fr);
+        min-height: 440px;
+      }
+
+      .ve-team-modal-photo-wrap {
+        position: relative;
+        min-height: 440px;
+        overflow: hidden;
+
+        border-radius: 19px 0 0 19px;
+
+        background: #2575ab;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* FULL IMAGE IN MODAL - NO CROPPING */
+      .ve-team-modal-photo {
+        display: block;
+
+        width: 100%;
+        height: 100%;
+        min-height: 440px;
+
+        object-fit: contain;
+        object-position: center;
+
+        background-color: #f0f5fa;
+      }
+
+      body.dark-mode .ve-team-modal-photo {
+        background-color: #25253a;
+      }
+
+      .ve-team-modal-photo-wrap::after {
+        display: none;
+      }
+
+      .ve-team-modal-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        padding: 36px 40px 40px 36px;
+      }
+
+      .ve-team-modal-tag {
+        display: inline-flex;
+        align-self: flex-start;
+
+        margin-bottom: 12px;
+        padding: 5px 14px;
+
+        border-radius: 30px;
+
+        background: rgba(37, 117, 171, 0.1);
+        color: #2575ab;
+
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .ve-team-modal-name {
+        margin: 0 0 4px;
+
+        color: #2575ab;
+
+        font-size: clamp(26px, 3.2vw, 36px);
+        font-weight: 700;
+        line-height: 1.1;
+      }
+
+      .ve-team-modal-position {
+        display: block;
+
+        margin-bottom: 16px;
+
+        color: #ed948c;
+
+        font-size: 15px;
+        font-weight: 600;
+      }
+
+      .ve-team-modal-divider {
+        width: 60px;
+        height: 3px;
+        margin-bottom: 16px;
+
+        border-radius: 999px;
+
+        background: linear-gradient(90deg, #2575ab, #ed948c);
+      }
+
+      .ve-team-modal-bio {
+        margin: 0;
+        max-height: 220px;
+        overflow-y: auto;
+
+        color: #5f6670;
+
+        font-size: 15px;
+        line-height: 1.8;
+
+        padding-right: 5px;
+        white-space: pre-line;
+      }
+
+      .ve-team-modal-bio::-webkit-scrollbar {
+        width: 4px;
+      }
+
+      .ve-team-modal-bio::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.04);
+        border-radius: 10px;
+      }
+
+      .ve-team-modal-bio::-webkit-scrollbar-thumb {
+        background: #ed948c;
+        border-radius: 10px;
+      }
+
+      body.dark-mode .ve-team-modal {
+        background: rgba(3, 8, 18, 0.86);
+      }
+
+      body.dark-mode .ve-team-modal-dialog {
+        border-color: rgba(255, 255, 255, 0.08);
+        background: #1a1a2e;
+
+        box-shadow: 0 30px 90px rgba(0, 0, 0, 0.52);
+      }
+
+      body.dark-mode .ve-team-modal-close {
+        border-color: rgba(255, 255, 255, 0.1);
+        background: #22223b;
+        color: #6ea8d4;
+      }
+
+      body.dark-mode .ve-team-modal-close:hover,
+      body.dark-mode .ve-team-modal-close:focus-visible {
+        border-color: #ed948c;
+        background: #ed948c;
+        color: #ffffff;
+      }
+
+      body.dark-mode .ve-team-modal-tag {
+        background: rgba(110, 168, 212, 0.14);
+        color: #7cb5df;
+      }
+
+      body.dark-mode .ve-team-modal-name {
+        color: #e6edf5;
+      }
+
+      body.dark-mode .ve-team-modal-position {
+        color: #ed948c;
+      }
+
+      body.dark-mode .ve-team-modal-bio {
+        color: #b5b5c5;
+      }
+
+      body.dark-mode .ve-team-modal-bio::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      body.dark-mode .ve-team-modal-bio::-webkit-scrollbar-thumb {
+        background: #ed948c;
+      }
+
+      @media (max-width: 767px) {
+        .ve-team-modal {
+          align-items: flex-start;
+          padding: 16px;
+          overflow-y: auto;
+        }
+
+        .ve-team-modal-dialog {
+          max-height: none;
+          margin: auto 0;
+          border-radius: 16px;
+        }
+
+        .ve-team-modal-content {
+          grid-template-columns: 1fr;
+          min-height: 0;
+        }
+
+        .ve-team-modal-photo-wrap {
+          min-height: 280px;
+          border-radius: 15px 15px 0 0;
+        }
+
+        .ve-team-modal-photo {
+          height: 280px;
+          min-height: 280px;
+        }
+
+        .ve-team-modal-details {
+          padding: 28px 24px 30px;
+        }
+
+        .ve-team-modal-close {
+          top: 10px;
+          right: 10px;
+          width: 36px;
+          height: 36px;
+          font-size: 14px;
+        }
+
+        .ve-team-modal-bio {
+          max-height: 180px;
+          font-size: 14px;
+        }
+
+        .ve-team-img {
+          aspect-ratio: 4 / 3;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .ve-team-modal {
+          padding: 10px;
+        }
+
+        .ve-team-modal-photo-wrap,
+        .ve-team-modal-photo {
+          min-height: 220px;
+          height: 220px;
+        }
+
+        .ve-team-modal-details {
+          padding: 20px 18px 24px;
+        }
+
+        .ve-team-modal-name {
+          font-size: 22px;
+        }
+
+        .ve-team-modal-position {
+          font-size: 13px;
+        }
+
+        .ve-team-modal-bio {
+          font-size: 13px;
+          line-height: 1.7;
+          max-height: 150px;
+        }
+
+        .ve-team-modal-close {
+          top: 8px;
+          right: 8px;
+          width: 32px;
+          height: 32px;
+          font-size: 13px;
+        }
+
+        .ve-team-img {
+          aspect-ratio: 1 / 1;
+        }
       }
 
       /* ==================================================
@@ -1069,6 +1609,9 @@
 
         .dark-mode-toggle,
         .dark-mode-toggle i,
+        .ve-team-modal,
+        .ve-team-modal-dialog,
+        .ve-team-read-more,
         .custom-cursor-dot,
         .custom-cursor-circle {
           transition: none !important;
@@ -1150,39 +1693,12 @@
             <li class="has-drop">
               <a href="about.html" class="active">
                 About
-                <!-- <i
-                                class="fa fa-angle-down"
-                                aria-hidden="true"
-                            ></i> -->
               </a>
-
-              <!-- <ul class="ve-dropdown">
-                            <li>
-                                <a href="about.html">About Us</a>
-                            </li>
-
-                            <li>
-                                <a href="services.html">Our Services</a>
-                            </li>
-
-                            <li>
-                                <a href="portfolio.html">Portfolio</a>
-                            </li>
-
-                            <li>
-                                <a href="products.html">Products</a>
-                            </li>
-                        </ul> -->
             </li>
 
             <li class="has-drop">
               <a href="services.html">
                 Services
-
-                <!-- <i
-                                class="fa fa-angle-down"
-                                aria-hidden="true"
-                            ></i> -->
               </a>
             </li>
 
@@ -1345,48 +1861,6 @@
                 security, strengthen project delivery, and build future-ready
                 professionals.
               </p>
-
-              <!-- <div class="ve-checklist">
-                <div class="ve-check-item">
-                  <i class="fa fa-check-circle" aria-hidden="true"></i>
-
-                  <div>
-                    <strong>Our Mission</strong>
-
-                    <p>
-                      To empower individuals and organizations through
-                      technology, innovation, and continuous learning.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="ve-check-item">
-                  <i class="fa fa-check-circle" aria-hidden="true"></i>
-
-                  <div>
-                    <strong>Our Vision</strong>
-
-                    <p>
-                      To become a trusted leader in technology consulting,
-                      professional training, and digital transformation across
-                      Africa and beyond.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="ve-check-item">
-                  <i class="fa fa-check-circle" aria-hidden="true"></i>
-
-                  <div>
-                    <strong>Core Values</strong>
-
-                    <p>
-                      Excellence · Innovation · Integrity · Professionalism ·
-                      Collaboration · Continuous Learning · Customer Success
-                    </p>
-                  </div>
-                </div>
-              </div> -->
             </div>
           </div>
         </div>
@@ -1485,126 +1959,185 @@
           </h2>
 
           <p>
-            Seasoned professionals with decades of combined experience across
-            global financial markets.
+            Dedicated professionals providing strategic leadership, reliable
+            administration, and innovative technology solutions.
           </p>
         </div>
 
-        <div class="row">
+        <div class="row justify-content-center">
           <div
-            class="col-12 col-sm-6 col-lg-3 wow fadeInUp"
+            class="col-12 col-sm-6 col-lg-4 wow fadeInUp"
             data-wow-delay="100ms"
           >
             <div class="ve-team-card">
               <div
                 class="ve-team-img bg-img"
-                style="background-image: url(img/bg-img/15.jpg)"
+                style="background-image: url(img/bg-img/praise.jpeg)"
               ></div>
 
-              <div class="ve-team-info">
-                <h5>Jordan Hayes</h5>
+              <div class="ve-team-info" style="height: 20px;">
+                <h5>Praise Jude</h5>
 
                 <span>Chief Executive Officer</span>
 
                 <div class="ve-team-social">
-                  <a href="#" aria-label="Jordan Hayes on LinkedIn">
+                  <a href="https://www.facebook.com/share/1B9qRAtPaQ/" target="_blank" aria-label="Praise Jude on Facebook">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                  </a>
+
+                  <a href="https://x.com/praisegodjude" target="_blank" aria-label="Praise Jude on X">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                  </a>
+
+                  <a href="https://www.linkedin.com/in/praise-jude-619227b6?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" aria-label="Praise Jude on LinkedIn">
                     <i class="fa fa-linkedin" aria-hidden="true"></i>
                   </a>
 
-                  <a href="#" aria-label="Jordan Hayes on Twitter">
-                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                  <a href="https://www.instagram.com/praisegodjude?utm_source=qr&igsh=MWNia2EzYnZ1bDYwaQ==" target="_blank" aria-label="Praise Jude on Instagram">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
                   </a>
                 </div>
+
+                <button
+                  type="button"
+                  class="ve-team-read-more"
+                  data-team-name="Praise Jude"
+                  data-team-position="Chief Executive Officer"
+                  data-team-image="img/bg-img/praise.jpeg"
+                  data-team-bio="About Praise Jude
+
+Founder & Chief Executive Officer
+With over a decade of experience in technology, sales  and administrative leadership, Praise Jude is the Founder and Chief Executive Officer of Radiant Cullings, a tech consulting and digital transformation company committed to equipping individuals, businesses, and institutions with innovative technology solutions.
+
+His career spans tech consulting, digital skills development, organizational administration, and capacity building. He has extensive training and practical experience in Cybersecurity, Project Management, Digital Marketing, Procurement and Supply Chain Management, Risk Management, Technical Writing, Sales, and Entrepreneurship, enabling him to deliver practical, results-driven solutions across multiple industries.
+
+As an accomplished technology educator, Praise has trained and mentored numerous students, professionals, entrepreneurs, and aspiring technology experts in various digital and emerging technology disciplines. His passion for teaching and knowledge transfer has empowered many individuals to launch successful careers and businesses within the technology ecosystem.
+
+At Radiant Cullings, he provides strategic leadership, driving the company's vision of helping organizations embrace innovation, strengthen their digital capabilities, improve operational efficiency, and navigate today's rapidly evolving technology landscape. Under his leadership, the company delivers professional services in technology consulting, cybersecurity, digital transformation, corporate training, software solutions, and business technology advisory.
+
+Praise is passionate about innovation, leadership, continuous learning, and developing practical technology solutions that create measurable impact. His mission is to bridge the gap between technology and business by empowering organizations and individuals with the knowledge, skills, and strategies required to thrive in the digital economy.
+
+Areas of Expertise
+• Tech Consulting
+• Cybersecurity
+• Digital Transformation
+• Project Management
+• Digital Marketing
+• Procurement & Supply Chain Management
+• Risk Management
+• Technical Writing
+• Tech Training & Capacity Building
+• Business Strategy & Entrepreneurship
+• Administrative Leadership"
+                  aria-haspopup="dialog"
+                  aria-controls="teamMemberModal"
+                >
+                  Read More
+                  <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                </button>
               </div>
             </div>
           </div>
 
           <div
-            class="col-12 col-sm-6 col-lg-3 wow fadeInUp"
+            class="col-12 col-sm-6 col-lg-4 wow fadeInUp"
             data-wow-delay="200ms"
           >
             <div class="ve-team-card">
               <div
                 class="ve-team-img bg-img"
-                style="background-image: url(img/bg-img/16.jpg)"
+                style="background-image: url(img/bg-img/ifeoma.jpeg)"
               ></div>
 
               <div class="ve-team-info">
-                <h5>Taylor Brooks</h5>
+                <h5>Ifeoma Mary</h5>
 
-                <span>Chief Investment Officer</span>
-
-                <div class="ve-team-social">
-                  <a href="#" aria-label="Taylor Brooks on LinkedIn">
-                    <i class="fa fa-linkedin" aria-hidden="true"></i>
-                  </a>
-
-                  <a href="#" aria-label="Taylor Brooks on Twitter">
-                    <i class="fa fa-twitter" aria-hidden="true"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="col-12 col-sm-6 col-lg-3 wow fadeInUp"
-            data-wow-delay="300ms"
-          >
-            <div class="ve-team-card">
-              <div
-                class="ve-team-img bg-img"
-                style="background-image: url(img/bg-img/17.jpg)"
-              ></div>
-
-              <div class="ve-team-info">
-                <h5>Morgan Lane</h5>
-
-                <span>Head of Wealth Planning</span>
+                <span>Secretary</span>
 
                 <div class="ve-team-social">
-                  <a href="#" aria-label="Morgan Lane on LinkedIn">
+                  <a href="https://www.facebook.com/share/1c4vdwQLfK/" target="_blank" aria-label="Ifeoma Mary on Facebook">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                  </a>
+
+                  <a href="https://www.linkedin.com/in/omenihu-ifeoma-0730051a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="Ifeoma Mary on LinkedIn">
                     <i class="fa fa-linkedin" aria-hidden="true"></i>
                   </a>
-
-                  <a href="#" aria-label="Morgan Lane on Twitter">
-                    <i class="fa fa-twitter" aria-hidden="true"></i>
-                  </a>
                 </div>
-              </div>
-            </div>
-          </div>
 
-          <div
-            class="col-12 col-sm-6 col-lg-3 wow fadeInUp"
-            data-wow-delay="400ms"
-          >
-            <div class="ve-team-card">
-              <div
-                class="ve-team-img bg-img"
-                style="background-image: url(img/bg-img/18.jpg)"
-              ></div>
+                <button
+                  type="button"
+                  class="ve-team-read-more"
+                  data-team-name="Ifeoma Mary"
+                  data-team-position="Secretary"
+                  data-team-image="img/bg-img/ifeoma.jpeg"
+                  data-team-bio="Ifeoma Mary is the Co-Founder and Company Secretary of Radiant Cullings Ltd., 
+                  with expertise in Information Technology, Network Security, and administrative leadership. 
+                  She has been trained in project management, Security practices, Information Technology, 
+                  Sales, Personnel Management, Customer Relationship Management, Administrative Leadership, 
+                  and Entrepreneurship, equipping her with the skills to provide practical and results-driven solutions across diverse industries.
 
-              <div class="ve-team-info">
-                <h5>Casey Rivera</h5>
-
-                <span>Head of Risk &amp; Compliance</span>
-
-                <div class="ve-team-social">
-                  <a href="#" aria-label="Casey Rivera on LinkedIn">
-                    <i class="fa fa-linkedin" aria-hidden="true"></i>
-                  </a>
-
-                  <a href="#" aria-label="Casey Rivera on Twitter">
-                    <i class="fa fa-twitter" aria-hidden="true"></i>
-                  </a>
-                </div>
+With a passion for innovation and operational excellence, Ifeoma contributes to the company's strategic growth by supporting effective governance, digital transformation initiatives, and technology-driven solutions. Her areas of expertise include Digital Transformation, Project Management, Information Technology, and Network Security."
+                  aria-haspopup="dialog"
+                  aria-controls="teamMemberModal"
+                >
+                  Read More
+                  <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Team Member Details Modal -->
+
+    <div
+      class="ve-team-modal"
+      id="teamMemberModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="teamModalName"
+      aria-describedby="teamModalBio"
+      aria-hidden="true"
+    >
+      <div class="ve-team-modal-dialog" role="document">
+        <button
+          type="button"
+          class="ve-team-modal-close"
+          id="teamModalClose"
+          aria-label="Close team member details"
+        >
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </button>
+
+        <div class="ve-team-modal-content">
+          <div class="ve-team-modal-photo-wrap">
+            <img
+              class="ve-team-modal-photo"
+              id="teamModalImage"
+              src=""
+              alt=""
+            />
+          </div>
+
+          <div class="ve-team-modal-details">
+            <span class="ve-team-modal-tag">Leadership Team</span>
+
+            <h3 class="ve-team-modal-name" id="teamModalName"></h3>
+
+            <span
+              class="ve-team-modal-position"
+              id="teamModalPosition"
+            ></span>
+
+            <div class="ve-team-modal-divider" aria-hidden="true"></div>
+
+            <p class="ve-team-modal-bio" id="teamModalBio"></p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Footer -->
 
@@ -1648,8 +2181,8 @@
           <div class="col-12 col-sm-6 col-lg-3 mb-50">
             <h5 class="ve-footer-title">Our Services</h5>
             <ul class="ve-footer-links">
-              <li><a href="courses.html">Technology Training</a></li>
-              <li><a href="consulting.html">Technology Consulting</a></li>
+              <li><a href="courses.html">Tech Training</a></li>
+              <li><a href="consulting.html">Tech Consulting Services</a></li>
               <li><a href="services.html#cybersecurity">Cybersecurity</a></li>
               <li><a href="services.html#project">Project Management</a></li>
               <li>
@@ -1689,6 +2222,119 @@
         </div>
       </div>
     </footer>
+
+    <!-- Team Member Modal Script -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const modal = document.getElementById("teamMemberModal");
+        const modalDialog = modal
+          ? modal.querySelector(".ve-team-modal-dialog")
+          : null;
+        const closeButton = document.getElementById("teamModalClose");
+        const modalImage = document.getElementById("teamModalImage");
+        const modalName = document.getElementById("teamModalName");
+        const modalPosition = document.getElementById("teamModalPosition");
+        const modalBio = document.getElementById("teamModalBio");
+        const readMoreButtons = document.querySelectorAll(
+          ".ve-team-read-more",
+        );
+
+        let lastFocusedElement = null;
+
+        if (
+          !modal ||
+          !modalDialog ||
+          !closeButton ||
+          !modalImage ||
+          !modalName ||
+          !modalPosition ||
+          !modalBio
+        ) {
+          return;
+        }
+
+        function openTeamModal(button) {
+          const name = button.dataset.teamName || "Team Member";
+          const position = button.dataset.teamPosition || "";
+          const image = button.dataset.teamImage || "";
+          const bio = button.dataset.teamBio || "";
+
+          lastFocusedElement = button;
+
+          modalName.textContent = name;
+          modalPosition.textContent = position;
+          modalBio.textContent = bio;
+          modalImage.src = image;
+          modalImage.alt = name + " — " + position;
+
+          modal.classList.add("is-open");
+          modal.setAttribute("aria-hidden", "false");
+          document.body.classList.add("ve-modal-open");
+
+          closeButton.focus();
+        }
+
+        function closeTeamModal() {
+          modal.classList.remove("is-open");
+          modal.setAttribute("aria-hidden", "true");
+          document.body.classList.remove("ve-modal-open");
+
+          if (lastFocusedElement) {
+            lastFocusedElement.focus();
+          }
+        }
+
+        readMoreButtons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            openTeamModal(button);
+          });
+        });
+
+        closeButton.addEventListener("click", closeTeamModal);
+
+        modal.addEventListener("click", function (event) {
+          if (event.target === modal) {
+            closeTeamModal();
+          }
+        });
+
+        document.addEventListener("keydown", function (event) {
+          if (!modal.classList.contains("is-open")) {
+            return;
+          }
+
+          if (event.key === "Escape") {
+            closeTeamModal();
+            return;
+          }
+
+          if (event.key === "Tab") {
+            const focusableElements = modalDialog.querySelectorAll(
+              'button, a[href], input, textarea, select, [tabindex]:not([tabindex="-1"])',
+            );
+
+            if (!focusableElements.length) {
+              return;
+            }
+
+            const firstElement = focusableElements[0];
+            const lastElement = focusableElements[focusableElements.length - 1];
+
+            if (event.shiftKey && document.activeElement === firstElement) {
+              event.preventDefault();
+              lastElement.focus();
+            } else if (
+              !event.shiftKey &&
+              document.activeElement === lastElement
+            ) {
+              event.preventDefault();
+              firstElement.focus();
+            }
+          }
+        });
+      });
+    </script>
 
     <!-- Dark and Light Mode Script -->
 
@@ -1816,6 +2462,8 @@
           "[role='button']",
           ".ve-mvv-card",
           ".ve-team-card",
+          ".ve-team-read-more",
+          ".ve-team-modal-close",
           ".ve-check-item",
           ".floating-whatsapp",
         ].join(",");
