@@ -1,0 +1,1050 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+
+    <meta name="description" content="Radiant Cullings Cookie Policy explains how cookies are used on our website." />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Cookie Policy | Radiant Cullings</title>
+
+    <link rel="icon" href="img/core-img/radiant_cullings.png" />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="stylesheet" href="css/custom-override.css" />
+
+    <!-- Apply saved theme before the page becomes visible -->
+    <script>
+        (function () {
+            try {
+                if (localStorage.getItem("darkMode") === "enabled") {
+                    document.documentElement.classList.add("dark-theme-loading");
+                }
+            } catch (error) {
+                /* Continue normally if localStorage is unavailable. */
+            }
+        })();
+    </script>
+
+    <style>
+        /* ==================================================
+           GENERAL THEME TRANSITIONS
+        ================================================== */
+
+        html,
+        body,
+        section,
+        header,
+        footer,
+        nav,
+        div,
+        article,
+        aside {
+            transition:
+                background-color 0.35s ease,
+                border-color 0.35s ease,
+                color 0.35s ease,
+                box-shadow 0.35s ease;
+        }
+
+        body {
+            background: #ffffff;
+            color: #0f2a38;
+        }
+
+        html.dark-theme-loading body {
+            background: #12121f;
+        }
+
+        /* ==================================================
+           DARK AND LIGHT MODE BUTTON
+        ================================================== */
+
+        .dark-mode-toggle {
+            position: relative;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 auto;
+
+            width: 44px;
+            height: 44px;
+            padding: 0;
+            margin-left: 12px;
+
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.14);
+            color: #ffffff;
+
+            font-size: 19px;
+            line-height: 1;
+
+            cursor: pointer;
+            overflow: hidden;
+
+            transition:
+                background 0.3s ease,
+                border-color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .dark-mode-toggle:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+        }
+
+        .dark-mode-toggle:focus-visible {
+            outline: 3px solid rgba(255, 255, 255, 0.45);
+            outline-offset: 3px;
+        }
+
+        .dark-mode-toggle i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            transition:
+                opacity 0.3s ease,
+                transform 0.35s ease;
+        }
+
+        .dark-mode-toggle .fa-moon-o {
+            opacity: 1;
+
+            transform: translate(-50%, -50%) rotate(0deg) scale(1);
+        }
+
+        .dark-mode-toggle .fa-sun-o {
+            opacity: 0;
+
+            transform: translate(-50%, -50%) rotate(-90deg) scale(0.5);
+        }
+
+        body.dark-mode .dark-mode-toggle .fa-moon-o {
+            opacity: 0;
+
+            transform: translate(-50%, -50%) rotate(90deg) scale(0.5);
+        }
+
+        body.dark-mode .dark-mode-toggle .fa-sun-o {
+            opacity: 1;
+
+            transform: translate(-50%, -50%) rotate(0deg) scale(1);
+        }
+
+        body.dark-mode .dark-mode-toggle {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.35);
+            color: #fbbf24;
+        }
+
+        body.dark-mode .dark-mode-toggle:hover {
+            background: rgba(255, 255, 255, 0.22);
+            border-color: rgba(251, 191, 36, 0.65);
+        }
+
+        /* ==================================================
+           FLOATING WHATSAPP BUTTON
+        ================================================== */
+
+        .floating-whatsapp {
+            position: fixed;
+            left: 20px;
+            bottom: 30px;
+            z-index: 9999;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+
+            animation: whatsappPulse 2s ease-in-out infinite;
+        }
+
+        .floating-whatsapp a {
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 60px;
+            height: 60px;
+
+            border-radius: 50%;
+
+            background: #2575ab;
+            color: #ffffff;
+
+            text-decoration: none;
+
+            box-shadow: 0 6px 25px rgba(37, 117, 171, 0.4);
+
+            transition:
+                background 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .floating-whatsapp a:hover {
+            background: #ed948c;
+            color: #ffffff;
+
+            transform: scale(1.1) translateY(-4px);
+
+            box-shadow: 0 10px 40px rgba(237, 148, 140, 0.5);
+        }
+
+        .floating-whatsapp a i {
+            font-size: 32px;
+            transition: transform 0.3s ease;
+        }
+
+        .floating-whatsapp a:hover i {
+            transform: scale(1.1);
+        }
+
+        .floating-whatsapp a::before {
+            content: "";
+
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            bottom: -8px;
+            left: -8px;
+
+            border: 2px solid rgba(37, 117, 171, 0.3);
+            border-radius: 50%;
+
+            animation: whatsappRipple 2s ease-out infinite;
+        }
+
+        .floating-whatsapp .whatsapp-label {
+            padding: 6px 14px;
+
+            border-radius: 20px;
+
+            background: #2575ab;
+            color: #ffffff;
+
+            font-family:
+                system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+
+            opacity: 0;
+            transform: translateX(-10px);
+
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+            transition:
+                opacity 0.3s ease,
+                transform 0.3s ease;
+        }
+
+        .floating-whatsapp:hover .whatsapp-label {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        @keyframes whatsappPulse {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes whatsappRipple {
+            0% {
+                opacity: 1;
+                transform: scale(0.8);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(1.5);
+            }
+        }
+
+        /* ==================================================
+           COOKIE POLICY STYLES
+        ================================================== */
+
+        :root {
+            --primary-blue: #2575ab;
+            --primary-pink: #ed948c;
+        }
+
+        .cookie-section {
+            padding: 80px 0;
+        }
+
+        .cookie-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .cookie-title h1 {
+            font-size: 42px;
+            color: var(--primary-blue);
+            font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .cookie-title h1 span {
+            color: var(--primary-pink);
+        }
+
+        .cookie-title p {
+            font-size: 16px;
+            color: #5a7a8a;
+            font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .cookie-wrapper {
+            background: #ffffff;
+            padding: 45px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .cookie-wrapper h2 {
+            margin-top: 35px;
+            margin-bottom: 15px;
+            font-size: 28px;
+            color: var(--primary-blue);
+            font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .cookie-wrapper h2 span {
+            color: var(--primary-pink);
+        }
+
+        .cookie-wrapper h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .cookie-wrapper p {
+            font-size: 16px;
+            line-height: 1.9;
+            color: #555;
+            font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .cookie-wrapper ul {
+            padding-left: 25px;
+        }
+
+        .cookie-wrapper ul li {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            color: #555;
+            font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .cookie-wrapper ul li strong {
+            color: #0f2a38;
+        }
+
+        .cookie-contact {
+            margin-top: 40px;
+            padding: 35px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #2575ab, #ed948c);
+        }
+
+        .cookie-contact h3,
+        .cookie-contact p {
+            color: white;
+        }
+
+        /* ==================================================
+           DARK MODE
+        ================================================== */
+
+        body.dark-mode {
+            background: #12121f;
+            color: #e7e7ef;
+        }
+
+        body.dark-mode .ve-nav-wrap {
+            background-color: #17172a !important;
+        }
+
+        body.dark-mode .ve-nav ul li a {
+            color: #d5d5df;
+        }
+
+        body.dark-mode .ve-nav ul li a:hover,
+        body.dark-mode .ve-nav ul li a.active {
+            color: #ed948c;
+        }
+
+        body.dark-mode .ve-mobile-menu {
+            background: #17172a;
+        }
+
+        body.dark-mode .ve-mobile-menu ul li a {
+            color: #d5d5df;
+        }
+
+        body.dark-mode .ve-mobile-menu ul li a:hover,
+        body.dark-mode .ve-mobile-menu ul li a.active {
+            color: #ed948c;
+        }
+
+        body.dark-mode .cookie-title p {
+            color: #ababba;
+        }
+
+        body.dark-mode .cookie-wrapper {
+            background: #1a1a2e;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark-mode .cookie-wrapper p {
+            color: #c6c6d2;
+        }
+
+        body.dark-mode .cookie-wrapper ul li {
+            color: #c6c6d2;
+        }
+
+        body.dark-mode .cookie-wrapper ul li strong {
+            color: #f0f0f5;
+        }
+
+        body.dark-mode .cookie-wrapper h2 {
+            color: #7cb5df;
+        }
+
+        body.dark-mode .ve-footer {
+            background: #0d0d18;
+        }
+
+        body.dark-mode .ve-footer p,
+        body.dark-mode .ve-footer-links li a,
+        body.dark-mode .ve-footer-contact li {
+            color: #a8a8b6;
+        }
+
+        body.dark-mode .ve-footer-title {
+            color: #eeeef4;
+        }
+
+        body.dark-mode .ve-footer-links li a:hover {
+            color: #ed948c;
+        }
+
+        body.dark-mode .ve-footer-bottom {
+            border-top-color: rgba(255, 255, 255, 0.06);
+            background: #090912;
+        }
+
+        body.dark-mode .ve-footer-bottom p,
+        body.dark-mode .ve-footer-bottom ul li a {
+            color: #858596;
+        }
+
+        body.dark-mode .ve-footer-bottom ul li a:hover {
+            color: #ed948c;
+        }
+
+        body.dark-mode .ve-social a {
+            background: rgba(255, 255, 255, 0.06);
+            color: #aaaaaa;
+        }
+
+        body.dark-mode .ve-social a:hover {
+            background: #2575ab;
+            color: #ffffff;
+        }
+
+        /* ==================================================
+           RESPONSIVE NAVIGATION AND CONTENT
+        ================================================== */
+
+        @media (max-width: 1100px) {
+            .ve-nav ul {
+                gap: 13px;
+            }
+
+            .ve-nav ul li a {
+                font-size: 13px;
+            }
+
+            .ve-nav-cta .ve-cta-btn {
+                padding-right: 17px;
+                padding-left: 17px;
+            }
+
+            .dark-mode-toggle {
+                margin-left: 8px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .ve-nav-wrap {
+                display: flex;
+                align-items: center;
+            }
+
+            .dark-mode-toggle {
+                order: 8;
+
+                width: 40px;
+                height: 40px;
+
+                margin-left: auto;
+                margin-right: 9px;
+
+                font-size: 17px;
+            }
+
+            .ve-toggler {
+                order: 9;
+                flex: 0 0 auto;
+
+                margin-left: 0 !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .floating-whatsapp {
+                left: 15px;
+                bottom: 20px;
+            }
+
+            .floating-whatsapp a {
+                width: 50px;
+                height: 50px;
+            }
+
+            .floating-whatsapp a i {
+                font-size: 26px;
+            }
+
+            .floating-whatsapp .whatsapp-label {
+                display: none;
+            }
+
+            .dark-mode-toggle {
+                width: 38px;
+                height: 38px;
+
+                margin-right: 8px;
+
+                font-size: 16px;
+            }
+
+            .cookie-section {
+                padding: 50px 0;
+            }
+
+            .cookie-title h1 {
+                font-size: 30px;
+            }
+
+            .cookie-wrapper {
+                padding: 25px 20px;
+            }
+
+            .cookie-wrapper h2 {
+                font-size: 22px;
+            }
+
+            .cookie-wrapper p,
+            .cookie-wrapper ul li {
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .floating-whatsapp {
+                left: 10px;
+                bottom: 15px;
+            }
+
+            .floating-whatsapp a {
+                width: 45px;
+                height: 45px;
+            }
+
+            .floating-whatsapp a i {
+                font-size: 22px;
+            }
+
+            .dark-mode-toggle {
+                width: 36px;
+                height: 36px;
+
+                margin-right: 7px;
+
+                border-width: 1.5px;
+
+                font-size: 15px;
+            }
+
+            .cookie-title h1 {
+                font-size: 24px;
+            }
+
+            .cookie-wrapper {
+                padding: 20px 15px;
+            }
+        }
+
+        /* ==================================================
+           REDUCED MOTION ACCESSIBILITY
+        ================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Custom Circle and Dot Cursor -->
+    <div class="custom-cursor-circle" id="customCursorCircle" aria-hidden="true"></div>
+    <div class="custom-cursor-dot" id="customCursorDot" aria-hidden="true"></div>
+
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="lds-ellipsis">
+            <div style="background-color: #2575ab"></div>
+            <div style="background-color: #2575ab"></div>
+            <div style="background-color: #2575ab"></div>
+            <div style="background-color: #2575ab"></div>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="floating-whatsapp">
+        <a href="https://wa.me/2348146710908?text=Hello%20Radiant%20Cullings%2C%20I%20want%20to%20make%20an%20enquiry"
+            target="_blank" rel="noopener noreferrer" class="whatsapp-brand"
+            aria-label="Chat with Radiant Cullings on WhatsApp">
+            <i class="fa fa-whatsapp" aria-hidden="true"></i>
+        </a>
+        <span class="whatsapp-label">Chat with us</span>
+    </div>
+
+    <!-- HEADER -->
+    <header class="ve-header" id="ve-sticky">
+        <div class="container-fluid ve-nav-wrap" style="background: #2575ab">
+            <div class="ve-logo">
+                <a href="index.html">
+                    <img src="img/core-img/radiant_cullings.png" style="max-width: 120px" alt="Radiant Cullings" />
+                </a>
+            </div>
+
+            <nav class="ve-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="blogs.html">Blogs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="ve-nav-cta">
+                <a href="contact.html" class="ve-cta-btn">
+                    Get Started
+                    <i class="fa fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <!-- Dark and Light Mode Button -->
+            <button class="dark-mode-toggle" id="darkModeToggle" type="button"
+                aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
+                <i class="fa fa-moon-o" aria-hidden="true"></i>
+                <i class="fa fa-sun-o" aria-hidden="true"></i>
+            </button>
+
+            <button class="ve-toggler" id="ve-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- COOKIE CONTENT -->
+    <section class="cookie-section">
+        <div class="container">
+            <div class="cookie-title">
+                <br />
+                <br />
+                <h1>Radiant Cullings <span>Cookie Policy</span></h1>
+                <p>August 2026</p>
+            </div>
+
+            <div class="cookie-wrapper">
+                <p>
+                    Radiant Cullings uses cookies and similar technologies to improve
+                    your browsing experience, understand website usage, and provide
+                    better services to our visitors.
+                </p>
+
+                <h2>What Are <span>Cookies?</span></h2>
+
+                <p>
+                    Cookies are small text files stored on your device when you visit
+                    our website. They help us improve your browsing experience, remember
+                    your preferences, and understand how visitors use our website.
+                </p>
+
+                <h2>Types of Cookies <span>We Use</span></h2>
+
+                <ul>
+                    <li>
+                        <strong>Essential Cookies</strong><br />
+                        These cookies are necessary for the website to function properly.
+                    </li>
+
+                    <li>
+                        <strong>Performance and Analytics Cookies</strong><br />
+                        These help us understand how visitors interact with our website so
+                        we can improve its performance and user experience.
+                    </li>
+
+                    <li>
+                        <strong>Functional Cookies</strong><br />
+                        These remember your preferences, such as language or region, to
+                        provide a more personalised experience.
+                    </li>
+
+                    <li>
+                        <strong>Marketing Cookies</strong><br />
+                        Where applicable, these cookies help us deliver relevant
+                        communications and measure the effectiveness of our marketing
+                        campaigns.
+                    </li>
+                </ul>
+
+                <h2>Managing <span>Cookies</span></h2>
+
+                <p>
+                    Most web browsers allow you to manage or disable cookies through
+                    your browser settings. Please note that disabling cookies may affect
+                    certain website features.
+                </p>
+
+                <h2>
+                    <span>Updates</span>
+                </h2>
+
+                <p>
+                    We may update this Cookie Policy from time to time. Changes will be
+                    posted on this page with the revised effective date.
+                </p>
+
+                <!-- <div class="cookie-contact">
+                    <h3>Contact Us</h3>
+
+                    <p>
+                        <strong> Radiant Cullings </strong>
+
+                        <br />
+
+                        Email: info@radiantcullings.com
+
+                        <br />
+
+                        Website: www.radiantcullings.com
+                    </p>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="ve-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-4 mb-50">
+                    <div class="ve-footer-brand">
+                        <a href="index.html" class="ve-footer-logo"><img src="img/core-img/radiant_cullings.png"
+                                alt="Radiant Cullings" style="max-width: 120px" /></a>
+                        <p>
+                            Empowering People. Transforming Businesses. Driving Innovation.
+                        </p>
+                        <div class="ve-social">
+                            <a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-2 mb-50">
+                    <h5 class="ve-footer-title">Quick Links</h5>
+                    <ul class="ve-footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 mb-50">
+                    <h5 class="ve-footer-title">Our Services</h5>
+                    <ul class="ve-footer-links">
+                        <li><a href="courses.html">Tech Training</a></li>
+                        <li>
+                            <a href="services.html#consulting">Tech Consulting Services</a>
+                        </li>
+                        <li><a href="services.html#cybersecurity">Cybersecurity</a></li>
+                        <li><a href="services.html#project">Project Management</a></li>
+                        <li>
+                            <a href="services.html#digital">Digital Transformation</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 mb-50">
+                    <h5 class="ve-footer-title">Contact Us</h5>
+                    <ul class="ve-footer-contact">
+                        <li><i class="fa fa-map-marker"></i> Ikeja, Lagos, Nigeria</li>
+                        <li>
+                            <i class="fa fa-map-marker"></i> 17 Romoke Complex, Igodo Road,
+                            Magboro, Ogun State, Nigeria
+                        </li>
+                        <li><i class="fa fa-phone"></i> +234 814 671 0908</li>
+                        <li><i class="fa fa-phone"></i> +234 703 740 3162</li>
+                        <li><i class="fa fa-phone"></i> +234 704 383 7008</li>
+                        <li><i class="fa fa-envelope"></i> info@radiantcullings.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="ve-footer-bottom">
+            <div class="container">
+                <div class="ve-footer-bottom-inner">
+                    <p>
+                        Copyright &copy; <span id="currentYear"></span> Radiant Cullings.
+                        All Rights Reserved.
+                    </p>
+                    <ul>
+                        <li><a href="policy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Use</a></li>
+                        <li><a href="cookie.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dark Mode and Current Year Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var body = document.body;
+            var root = document.documentElement;
+            var toggle = document.getElementById("darkModeToggle");
+            var currentYear = document.getElementById("currentYear");
+
+            try {
+                if (localStorage.getItem("darkMode") === "enabled") {
+                    body.classList.add("dark-mode");
+                }
+            } catch (error) {
+                /* Continue without a saved theme. */
+            }
+
+            root.classList.remove("dark-theme-loading");
+
+            /* Current footer year */
+            if (currentYear) {
+                currentYear.textContent = new Date().getFullYear();
+            }
+
+            /* Update theme button */
+            function updateThemeButton() {
+                if (!toggle) {
+                    return;
+                }
+
+                var isDark = body.classList.contains("dark-mode");
+
+                toggle.setAttribute("aria-pressed", isDark ? "true" : "false");
+                toggle.setAttribute(
+                    "aria-label",
+                    isDark ? "Switch to light mode" : "Switch to dark mode"
+                );
+                toggle.setAttribute(
+                    "title",
+                    isDark ? "Switch to light mode" : "Switch to dark mode"
+                );
+            }
+
+            /* Change theme */
+            if (toggle) {
+                updateThemeButton();
+
+                toggle.addEventListener("click", function () {
+                    body.classList.toggle("dark-mode");
+
+                    var isDark = body.classList.contains("dark-mode");
+
+                    try {
+                        localStorage.setItem("darkMode", isDark ? "enabled" : "disabled");
+                    } catch (error) {
+                        /* Theme works even without localStorage. */
+                    }
+
+                    updateThemeButton();
+                });
+            }
+        });
+    </script>
+
+    <!-- Custom Circle and Dot Cursor Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var cursorDot = document.getElementById("customCursorDot");
+            var cursorCircle = document.getElementById("customCursorCircle");
+
+            if (!cursorDot || !cursorCircle) {
+                return;
+            }
+
+            var supportsCustomCursor =
+                window.matchMedia("(pointer: fine)").matches &&
+                window.matchMedia("(hover: hover)").matches;
+
+            if (!supportsCustomCursor) {
+                return;
+            }
+
+            var mouseX = 0;
+            var mouseY = 0;
+            var circleX = 0;
+            var circleY = 0;
+            var cursorStarted = false;
+
+            document.addEventListener("mousemove", function (event) {
+                mouseX = event.clientX;
+                mouseY = event.clientY;
+
+                cursorDot.style.left = mouseX + "px";
+                cursorDot.style.top = mouseY + "px";
+
+                if (!cursorStarted) {
+                    circleX = mouseX;
+                    circleY = mouseY;
+                    cursorStarted = true;
+                    cursorDot.classList.add("cursor-visible");
+                    cursorCircle.classList.add("cursor-visible");
+                }
+
+                cursorDot.classList.remove("cursor-hidden");
+                cursorCircle.classList.remove("cursor-hidden");
+            });
+
+            function animateCursorCircle() {
+                circleX += (mouseX - circleX) * 0.16;
+                circleY += (mouseY - circleY) * 0.16;
+
+                cursorCircle.style.left = circleX + "px";
+                cursorCircle.style.top = circleY + "px";
+
+                window.requestAnimationFrame(animateCursorCircle);
+            }
+
+            animateCursorCircle();
+
+            var interactiveSelector = [
+                "a",
+                "button",
+                "input",
+                "textarea",
+                "select",
+                "[role='button']",
+                ".floating-whatsapp",
+            ].join(",");
+
+            document.addEventListener("mouseover", function (event) {
+                if (event.target.closest(interactiveSelector)) {
+                    cursorDot.classList.add("cursor-hover");
+                    cursorCircle.classList.add("cursor-hover");
+                }
+            });
+
+            document.addEventListener("mouseout", function (event) {
+                if (event.target.closest(interactiveSelector)) {
+                    cursorDot.classList.remove("cursor-hover");
+                    cursorCircle.classList.remove("cursor-hover");
+                }
+            });
+
+            document.addEventListener("mousedown", function () {
+                cursorDot.classList.add("cursor-click");
+                cursorCircle.classList.add("cursor-click");
+            });
+
+            document.addEventListener("mouseup", function () {
+                cursorDot.classList.remove("cursor-click");
+                cursorCircle.classList.remove("cursor-click");
+            });
+
+            document.addEventListener("mouseleave", function () {
+                cursorDot.classList.add("cursor-hidden");
+                cursorCircle.classList.add("cursor-hidden");
+            });
+
+            document.addEventListener("mouseenter", function () {
+                if (cursorStarted) {
+                    cursorDot.classList.remove("cursor-hidden");
+                    cursorCircle.classList.remove("cursor-hidden");
+                }
+            });
+
+            window.addEventListener("blur", function () {
+                cursorDot.classList.add("cursor-hidden");
+                cursorCircle.classList.add("cursor-hidden");
+            });
+
+            window.addEventListener("focus", function () {
+                if (cursorStarted) {
+                    cursorDot.classList.remove("cursor-hidden");
+                    cursorCircle.classList.remove("cursor-hidden");
+                }
+            });
+        });
+    </script>
+
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="js/bootstrap/popper.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/plugins/plugins.js"></script>
+    <script src="js/active.js"></script>
+    <script src="js/vaultedge.js"></script>
+</body>
+
+</html>
