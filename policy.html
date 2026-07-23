@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – Radiant Cullings</title>
+  <!-- Font Awesome (free version) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <style>
+    /* ----- global reset & base ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #fafcff;
+      color: #0f2a38;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 28px;
+      box-shadow: 0 20px 60px rgba(0, 20, 40, 0.06);
+      padding: 2.8rem 2.8rem 3.2rem;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    /* ----- header / brand ----- */
+    .privacy-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.2rem;
+      border-bottom: 2px solid #eef3f8;
+      padding-bottom: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .brand-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      background: #2575ab;
+      border-radius: 16px;
+      color: white;
+      font-size: 26px;
+    }
+
+    .brand-text {
+      font-weight: 700;
+      font-size: 1.6rem;
+      letter-spacing: -0.02em;
+      color: #0f2a38;
+    }
+
+    .brand-text span {
+      color: #2575ab;
+    }
+
+    .badge-date {
+      margin-left: auto;
+      background: #eef4f9;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #1f4b61;
+    }
+
+    /* ----- typography ----- */
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin: 0.2rem 0 0.4rem;
+      color: #0f2a38;
+    }
+
+    h1 i {
+      color: #2575ab;
+      margin-right: 10px;
+    }
+
+    .subhead {
+      color: #4a6a7a;
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      border-left: 4px solid #2575ab;
+      padding-left: 1rem;
+      background: #f5f9fe;
+      padding: 0.8rem 1.2rem;
+      border-radius: 12px;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #0f2a38;
+      margin: 2rem 0 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2 i {
+      color: #2575ab;
+      font-size: 1.2rem;
+      width: 1.8rem;
+    }
+
+    p {
+      margin: 0 0 0.8rem 0;
+      color: #1f3b4a;
+    }
+
+    ul, ol {
+      margin: 0.5rem 0 1.2rem 1.6rem;
+      color: #1f3b4a;
+    }
+
+    li {
+      margin-bottom: 0.35rem;
+    }
+
+    strong {
+      color: #0f2a38;
+    }
+
+    .highlight-box {
+      background: #f5f9fe;
+      border-radius: 16px;
+      padding: 1.5rem 1.8rem;
+      margin: 1.5rem 0;
+      border-left: 5px solid #2575ab;
+    }
+
+    .highlight-box p {
+      margin-bottom: 0.2rem;
+    }
+
+    .contact-block {
+      background: #f0f5fb;
+      border-radius: 16px;
+      padding: 1.2rem 1.8rem;
+      margin: 1.8rem 0 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.2rem 2rem;
+    }
+
+    .contact-block i {
+      color: #2575ab;
+      width: 1.6rem;
+      text-align: center;
+    }
+
+    .contact-block a {
+      color: #2575ab;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-block a:hover {
+      text-decoration: underline;
+    }
+
+    /* ----- footer / back link ----- */
+    .back-link {
+      margin-top: 2.8rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e2eaf0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .back-link a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #2575ab;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .back-link a:hover {
+      color: #ed948c;
+      gap: 12px;
+    }
+
+    .back-link .copy {
+      color: #5a7a8a;
+      font-size: 0.85rem;
+    }
+
+    /* ----- dark mode (optional, but consistent) ----- */
+    body.dark-mode {
+      background: #12121f;
+    }
+
+    body.dark-mode .container {
+      background: #1a1a2e;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    body.dark-mode .brand-text,
+    body.dark-mode h1,
+    body.dark-mode h2,
+    body.dark-mode strong,
+    body.dark-mode .subhead {
+      color: #e7e7ef;
+    }
+
+    body.dark-mode .brand-text span {
+      color: #7cb5df;
+    }
+
+    body.dark-mode p,
+    body.dark-mode li,
+    body.dark-mode .copy {
+      color: #b8b8c5;
+    }
+
+    body.dark-mode .badge-date {
+      background: #25253a;
+      color: #b0c4d0;
+    }
+
+    body.dark-mode .highlight-box {
+      background: #22223a;
+      border-left-color: #7cb5df;
+    }
+
+    body.dark-mode .contact-block {
+      background: #22223a;
+    }
+
+    body.dark-mode .contact-block a {
+      color: #8ec2e7;
+    }
+
+    body.dark-mode .back-link {
+      border-top-color: #2d2d44;
+    }
+
+    body.dark-mode .privacy-header {
+      border-bottom-color: #2d2d44;
+    }
+
+    /* ----- responsive ----- */
+    @media (max-width: 700px) {
+      .container {
+        padding: 1.6rem 1.2rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .brand-text {
+        font-size: 1.3rem;
+      }
+
+      .badge-date {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+      }
+
+      .contact-block {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 1.2rem 0.9rem;
+        border-radius: 18px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      .brand-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 20px;
+      }
+    }
+
+    /* ----- toggle for demo (optional) ----- */
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #2575ab;
+      color: #fff;
+      border: none;
+      border-radius: 40px;
+      padding: 8px 18px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(37, 117, 171, 0.25);
+      transition: 0.25s;
+      z-index: 99;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .theme-toggle:hover {
+      background: #ed948c;
+      transform: scale(1.04);
+    }
+
+    body.dark-mode .theme-toggle {
+      background: #2d2d48;
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    body.dark-mode .theme-toggle:hover {
+      background: #ed948c;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- theme toggle (demo) -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+    <i class="fa fa-moon-o" style="margin-right: 6px;"></i> Dark
+  </button>
+
+  <div class="container">
+
+    <!-- header -->
+    <div class="privacy-header">
+      <div class="brand-icon">
+        <i class="fa fa-shield"></i>
+      </div>
+      <div class="brand-text">Radiant <span>Cullings</span></div>
+      <span class="badge-date"><i class="fa fa-calendar"></i> August 2026</span>
+    </div>
+
+    <h1><i class="fa fa-lock"></i> Privacy Policy</h1>
+    <div class="subhead">
+      <i class="fa fa-check-circle" style="color:#2575ab; margin-right:8px;"></i>
+      Radiant Cullings is committed to protecting the privacy and personal information of her clients, website visitors, partners, and stakeholders. This Privacy statement explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
+    </div>
+
+    <!-- 1. Information We Collect -->
+    <h2><i class="fa fa-database"></i> 1. Information We Collect</h2>
+    <p>We may collect the following categories of information:</p>
+    <ul>
+      <li><strong>Personal Information</strong> – such as your name, email address, phone number, company name, and job title.</li>
+      <li><strong>Business Information</strong> – provided during project discussions or service engagements.</li>
+      <li><strong>Technical Information</strong> – including IP address, browser type, device information, and website usage data.</li>
+      <li><strong>Communication Records</strong> – including emails, enquiries, and customer support interactions.</li>
+    </ul>
+
+    <!-- 2. How We Use Your Information -->
+    <h2><i class="fa fa-cogs"></i> 2. How We Use Your Information</h2>
+    <p>We use your information to:</p>
+    <ul>
+      <li>Deliver our technology and consulting services.</li>
+      <li>Respond to enquiries and provide customer support.</li>
+      <li>Improve our website, products, and services.</li>
+      <li>Process contracts and business transactions.</li>
+      <li>Send service updates, newsletters, and marketing communications (where permitted).</li>
+      <li>Comply with legal and regulatory obligations.</li>
+    </ul>
+
+    <!-- 3. Sharing of Information -->
+    <h2><i class="fa fa-share-alt"></i> 3. Sharing of Information</h2>
+    <p>We do not sell or rent your personal information. We may share your information with:</p>
+    <ul>
+      <li>Trusted service providers supporting our business operations.</li>
+      <li>Professional advisers such as auditors and legal consultants.</li>
+      <li>Government or regulatory authorities where required by law.</li>
+      <li>Business partners involved in delivering requested services.</li>
+    </ul>
+
+    <!-- 4. Data Security -->
+    <h2><i class="fa fa-lock"></i> 4. Data Security</h2>
+    <p>Radiant Cullings employs appropriate administrative, technical, and physical safeguards to protect personal information against unauthorized access, disclosure, alteration, or destruction.</p>
+
+    <!-- 5. Cookies -->
+    <h2><i class="fa fa-info-circle"></i> 5. Cookies</h2>
+    <p>Our website may use cookies and similar technologies to improve user experience, analyze website traffic, and personalize content. Users may disable cookies through their browser settings.</p>
+
+    <!-- 6. Your Rights -->
+    <h2><i class="fa fa-gavel"></i> 6. Your Rights</h2>
+    <p>Depending on applicable laws, you may have the right to:</p>
+    <ul>
+      <li>Access your personal information.</li>
+      <li>Request correction of inaccurate information.</li>
+      <li>Request deletion of your information where legally permissible.</li>
+      <li>Withdraw consent where processing is based on consent.</li>
+      <li>Object to certain processing activities.</li>
+    </ul>
+
+    <!-- 7. Data Retention -->
+    <h2><i class="fa fa-clock-o"></i> 7. Data Retention</h2>
+    <p>We retain personal information only for as long as necessary to fulfil business, legal, contractual, and regulatory requirements.</p>
+
+    <!-- 8. Third-Party Links -->
+    <h2><i class="fa fa-external-link"></i> 8. Third-Party Links</h2>
+    <p>Our website may contain links to third-party websites. We are not responsible for their privacy practices or content.</p>
+
+    <!-- 9. Changes to this Policy -->
+    <h2><i class="fa fa-edit"></i> 9. Changes to this Policy</h2>
+    <p>We reserve the right to update this Privacy Policy at any time. Updates will be published on this page with a revised effective date.</p>
+
+    <!-- 10. Contact Us -->
+    <h2><i class="fa fa-envelope"></i> 10. Contact Us</h2>
+    <div class="contact-block">
+      <span><i class="fa fa-building"></i> Radiant Cullings</span>
+      <span><i class="fa fa-envelope"></i> <a href="mailto:info@radiantcullings.com">info@radiantcullings.com</a></span>
+      <span><i class="fa fa-phone"></i> +234 814 671 0908</span>
+      <span><i class="fa fa-phone"></i> +234 704 383 7008</span>
+      <span><i class="fa fa-globe"></i> <a href="#">www.radiantcullings.com</a></span>
+    </div>
+
+    <!-- back / footer -->
+    <div class="back-link">
+      <a href="#"><i class="fa fa-arrow-left"></i> Back to Home</a>
+      <span class="copy"><i class="fa fa-copyright"></i> Radiant Cullings – Privacy Policy v1.0</span>
+    </div>
+
+  </div>
+
+  <script>
+    (function() {
+      // Dark mode toggle (matches the style)
+      const toggleBtn = document.getElementById('themeToggle');
+      const body = document.body;
+      const icon = toggleBtn.querySelector('i');
+
+      // Load saved preference
+      if (localStorage.getItem('privacyDarkMode') === 'enabled') {
+        body.classList.add('dark-mode');
+        toggleBtn.innerHTML = '<i class="fa fa-sun-o" style="margin-right:6px;"></i> Light';
+      }
+
+      toggleBtn.addEventListener('click', function() {
+        body.classList.toggle('dark-mode');
+        const isDark = body.classList.contains('dark-mode');
+        toggleBtn.innerHTML = isDark
+          ? '<i class="fa fa-sun-o" style="margin-right:6px;"></i> Light'
+          : '<i class="fa fa-moon-o" style="margin-right:6px;"></i> Dark';
+        localStorage.setItem('privacyDarkMode', isDark ? 'enabled' : 'disabled');
+      });
+
+      // smooth back link (demo)
+      const backLink = document.querySelector('.back-link a');
+      if (backLink) {
+        backLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          alert('🔙 Navigate to your homepage or previous page.');
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>
