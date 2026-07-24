@@ -1619,6 +1619,152 @@
           transition: none !important;
         }
       }
+
+      /* ==================================================
+   WHY CHOOSE US SECTION - PINK ICONS
+================================================== */
+
+      .ve-why-choose-section {
+        padding: 80px 0;
+        background: #ffffff;
+      }
+
+      body.dark-mode .ve-why-choose-section {
+        background: #121212;
+      }
+
+      .ve-why-choose-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .ve-why-choose-item {
+        background: #f8faff;
+        border-radius: 16px;
+        padding: 35px 30px;
+        text-align: center;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        border: 1px solid rgba(37, 117, 171, 0.06);
+        position: relative;
+        overflow: hidden;
+      }
+
+      body.dark-mode .ve-why-choose-item {
+        background: #1a1a2e;
+        border-color: rgba(255, 255, 255, 0.06);
+      }
+
+      .ve-why-choose-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, #2575ab, #ed948c);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
+      }
+
+      .ve-why-choose-item:hover::before {
+        transform: scaleX(1);
+      }
+
+      .ve-why-choose-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px rgba(37, 117, 171, 0.08);
+      }
+
+      body.dark-mode .ve-why-choose-item:hover {
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+      }
+
+      .ve-why-choose-icon {
+        width: 70px;
+        height: 70px;
+        margin: 0 auto 20px;
+        background: rgba(237, 148, 140, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease;
+        border: 2px solid rgba(237, 148, 140, 0.15);
+      }
+
+      body.dark-mode .ve-why-choose-icon {
+        background: rgba(237, 148, 140, 0.08);
+        border-color: rgba(237, 148, 140, 0.1);
+      }
+
+      .ve-why-choose-item:hover .ve-why-choose-icon {
+        background: linear-gradient(135deg, #ed948c, #d97a72);
+        transform: rotate(360deg) scale(1.05);
+        border-color: #ed948c;
+      }
+
+      .ve-why-choose-icon i {
+        font-size: 30px;
+        color: #ed948c;
+        transition: all 0.4s ease;
+      }
+
+      .ve-why-choose-item:hover .ve-why-choose-icon i {
+        color: #ffffff;
+      }
+
+      .ve-why-choose-item h4 {
+        font-size: 20px;
+        font-weight: 700;
+        color: #0f2a38;
+        margin-bottom: 12px;
+        font-family:
+          system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      }
+
+      body.dark-mode .ve-why-choose-item h4 {
+        color: #e0e0e0;
+      }
+
+      .ve-why-choose-item p {
+        font-size: 15px;
+        color: #5a7a8a;
+        line-height: 1.7;
+        font-family:
+          system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      }
+
+      body.dark-mode .ve-why-choose-item p {
+        color: #aaaaaa;
+      }
+
+      @media (max-width: 991px) {
+        .ve-why-choose-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 25px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .ve-why-choose-section {
+          padding: 50px 0;
+        }
+
+        .ve-why-choose-grid {
+          grid-template-columns: 1fr;
+          gap: 20px;
+          max-width: 450px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .ve-why-choose-item {
+          padding: 30px 20px;
+        }
+      }
     </style>
   </head>
 
@@ -1847,10 +1993,10 @@
               </h2>
 
               <p>
-                Radiant Cullings is a technology consulting and tech training institute
-                 dedicated to empowering individuals and
-                organizations with the knowledge, tools, and strategies needed
-                to succeed in an ever-evolving digital world.
+                Radiant Cullings is a technology consulting and tech training
+                institute dedicated to empowering individuals and organizations
+                with the knowledge, tools, and strategies needed to succeed in
+                an ever-evolving digital world.
               </p>
 
               <p>
@@ -1943,6 +2089,89 @@
         </div>
       </div>
     </section>
+    
+    <!-- Why Choose Us Section -->
+
+    <section class="ve-why-choose-section">
+      <div class="container">
+        <div class="ve-section-header text-center">
+          <span class="ve-section-tag">Why Choose Us</span>
+          <h2>Why <span>Radiant Cullings</span></h2>
+          <p>
+            We are committed to delivering exceptional value through expertise,
+            innovation, and a customer-first approach.
+          </p>
+        </div>
+
+        <div class="ve-why-choose-grid">
+          <div class="ve-why-choose-item wow fadeInUp" data-wow-delay="100ms">
+            <div class="ve-why-choose-icon">
+              <i class="fa fa-users" aria-hidden="true"></i>
+            </div>
+            <h4>Experienced Professionals</h4>
+            <p>
+              Our team consists of seasoned professionals with years of hands-on
+              experience across diverse technology domains and industries.
+            </p>
+          </div>
+
+          <div class="ve-why-choose-item wow fadeInUp" data-wow-delay="200ms">
+            <div class="ve-why-choose-icon">
+              <i class="fa fa-certificate" aria-hidden="true"></i>
+            </div>
+            <h4>Certified Consultants</h4>
+            <p>
+              We hold globally recognized certifications in cybersecurity, cloud
+              computing, project management, and technology consulting.
+            </p>
+          </div>
+
+          <div class="ve-why-choose-item wow fadeInUp" data-wow-delay="300ms">
+            <div class="ve-why-choose-icon">
+              <i class="fa fa-money" aria-hidden="true"></i>
+            </div>
+            <h4>Affordable Solutions</h4>
+            <p>
+              We offer competitive pricing without compromising on quality,
+              making professional technology services accessible to all.
+            </p>
+          </div>
+
+          <div class="ve-why-choose-item wow fadeInUp" data-wow-delay="400ms">
+            <div class="ve-why-choose-icon">
+              <i class="fa fa-support" aria-hidden="true"></i>
+            </div>
+            <h4>End-to-End Support</h4>
+            <p>
+              From initial consultation to implementation and beyond, we provide
+              comprehensive support throughout your entire journey.
+            </p>
+          </div>
+
+          <div class="ve-why-choose-item wow fadeInUp" data-wow-delay="500ms">
+            <div class="ve-why-choose-icon">
+              <i class="fa fa-star" aria-hidden="true"></i>
+            </div>
+            <h4>Industry Best Practices</h4>
+            <p>
+              We follow global standards and industry best practices to ensure
+              quality, reliability, and measurable outcomes.
+            </p>
+          </div>
+
+          <div class="ve-why-choose-item wow fadeInUp" data-wow-delay="600ms">
+            <div class="ve-why-choose-icon">
+              <i class="fa fa-heart" aria-hidden="true"></i>
+            </div>
+            <h4>Customer-Centric Approach</h4>
+            <p>
+              Your success is our priority. We tailor our solutions to meet your
+              unique needs and deliver exceptional value.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Team Section -->
 
@@ -1973,7 +2202,7 @@
                 style="background-image: url(img/bg-img/praise.jpeg)"
               ></div>
 
-              <div class="ve-team-info" style="height: 20px">
+              <div class="ve-team-info">
                 <h5>Praise Jude</h5>
 
                 <span>Chief Executive Officer</span>
@@ -2067,7 +2296,7 @@ Areas of Expertise
               <div class="ve-team-info">
                 <h5>Ifeoma Mary</h5>
 
-                <span>Secretary</span>
+                <span>Co-Founder</span>
 
                 <div class="ve-team-social">
                   <a
@@ -2097,9 +2326,7 @@ Areas of Expertise
                   with expertise in Information Technology, Network Security, and administrative leadership. 
                   She has been trained in project management, Security practices, Information Technology, 
                   Sales, Personnel Management, Customer Relationship Management, Administrative Leadership, 
-                  and Entrepreneurship, equipping her with the skills to provide practical and results-driven solutions across diverse industries.
-
-With a passion for innovation and operational excellence, Ifeoma contributes to the company's strategic growth by supporting effective governance, digital transformation initiatives, and technology-driven solutions. Her areas of expertise include Digital Transformation, Project Management, Information Technology, and Network Security."
+                  and Entrepreneurship, equipping her with the skills to provide practical and results-driven solutions across diverse industries.With a passion for innovation and operational excellence, Ifeoma contributes to the company's strategic growth by supporting effective governance, digital transformation initiatives, and technology-driven solutions. Her areas of expertise include Digital Transformation, Project Management, Information Technology, and Network Security."
                   aria-haspopup="dialog"
                   aria-controls="teamMemberModal"
                 >
@@ -2485,6 +2712,7 @@ With a passion for innovation and operational excellence, Ifeoma contributes to 
           ".ve-team-read-more",
           ".ve-team-modal-close",
           ".ve-check-item",
+          ".ve-why-choose-item",
           ".floating-whatsapp",
         ].join(",");
 
